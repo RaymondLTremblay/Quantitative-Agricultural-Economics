@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 15 Linear Regression | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 15 Linear Regression | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 15 Linear Regression | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 15 Linear Regression | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2024-12-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="other-visualizations.html"/>
+<link rel="next" href="generalized-linear-models.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-funcions-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding funcions in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data.html"><a href="data.html#using-the-function-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data.html"><a href="data.html#csv-file"><i class="fa fa-check"></i><b>4.2.1</b> .csv file</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data.html"><a href="data.html#excel-file"><i class="fa fa-check"></i><b>4.2.2</b> .excel file</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data.html"><a href="data.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data.html"><a href="data.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#section"><i class="fa fa-check"></i><b>4.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1</b> cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-data.html"><a href="understanding-your-data.html"><i class="fa fa-check"></i><b>6</b> Understanding your data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-data.html"><a href="understanding-your-data.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.1</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-data.html"><a href="understanding-your-data.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.2</b> dimensions of the data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-data.html"><a href="understanding-your-data.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3</b> structure of the data</a></li>
+<li class="chapter" data-level="6.4" data-path="understanding-your-data.html"><a href="understanding-your-data.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.4</b> Levels of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.2</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#kolmogorov-smirnov-normality-test"><i class="fa fa-check"></i><b>7.3</b> Kolmogorov-Smirnov normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.4</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="test-of-normality.html"><a href="test-of-normality.html#qq-plot"><i class="fa fa-check"></i><b>7.4.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.4.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.4.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.4.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.4.3</b> Density plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>8</b> Non-parametric test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1</b> Altenative to non-parametric tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.2</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.3</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.4</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>10</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>10.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>10.2</b> the linear model</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>10.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>10.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to pie chart)</a></li>
+<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a></li>
+<li class="chapter" data-level="13" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>13</b> Boxplots</a></li>
+<li class="chapter" data-level="14" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>14</b> Other visualizations</a></li>
+<li class="chapter" data-level="15" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>15</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>15.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="15.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>15.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="15.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>15.3</b> Visualization of the model</a></li>
+<li class="chapter" data-level="15.4" data-path="linear-regression.html"><a href="linear-regression.html#quantile-regression"><i class="fa fa-check"></i><b>15.4</b> Quantile Regression</a></li>
+<li class="chapter" data-level="15.5" data-path="linear-regression.html"><a href="linear-regression.html#the-model"><i class="fa fa-check"></i><b>15.5</b> The model</a></li>
+<li class="chapter" data-level="15.6" data-path="linear-regression.html"><a href="linear-regression.html#the-assumptions"><i class="fa fa-check"></i><b>15.6</b> The assumptions</a></li>
+<li class="chapter" data-level="15.7" data-path="linear-regression.html"><a href="linear-regression.html#visualization"><i class="fa fa-check"></i><b>15.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>16</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>16.1</b> Binomial regression</a></li>
+<li class="chapter" data-level="16.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>16.2</b> Poisson regression</a></li>
+<li class="chapter" data-level="16.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>16.3</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="16.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>16.4</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>16.4.1</b> Model</a></li>
+<li class="chapter" data-level="16.4.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>16.4.2</b> Assumptions</a></li>
+<li class="chapter" data-level="16.4.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>16.4.3</b> Post estimation analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>17</b> Beta Regression</a></li>
+<li class="chapter" data-level="18" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>18</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linear-regression" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Chapter 15</span> Linear Regression<a href="linear-regression.html#linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="model-of-linear-regression" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Model of linear regression<a href="linear-regression.html#model-of-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="assumption-of-linear-regression" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Assumption of linear regression<a href="linear-regression.html#assumption-of-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="visualization-of-the-model" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Visualization of the model<a href="linear-regression.html#visualization-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+<div id="quantile-regression" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Quantile Regression<a href="linear-regression.html#quantile-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="the-model" class="section level2 hasAnchor" number="15.5">
+<h2><span class="header-section-number">15.5</span> The model<a href="linear-regression.html#the-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="the-assumptions" class="section level2 hasAnchor" number="15.6">
+<h2><span class="header-section-number">15.6</span> The assumptions<a href="linear-regression.html#the-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="visualization" class="section level2 hasAnchor" number="15.7">
+<h2><span class="header-section-number">15.7</span> Visualization<a href="linear-regression.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="other-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generalized-linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/15-Linear_Regression.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/15-Linear_Regression.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+# Generalized Linear Models
+
+
+## Binomial regression
+
+
+
+## Poisson regression
+
+
+
+## Negative binomial regression
