@@ -10,9 +10,9 @@ site: bookdown::bookdown_site
 
 Día 1: Introducción a RStudio y paquetes disponibles
 
-  •⁠  ⁠Interacción con la Plataforma
+  •⁠  ⁠Interacción con la Plataforma (Chapter 2)
   
-  •⁠  ⁠¿Cómo buscar y bajar los paquetes estadísticos?
+  •⁠  ⁠¿Cómo buscar y bajar los paquetes estadísticos?(CHapter3)
   
 •⁠  ⁠¿Cómo entender las programaciones predeterminadas de los paquetes estadísticos?
 

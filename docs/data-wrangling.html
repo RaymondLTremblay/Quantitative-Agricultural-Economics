@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Data wrangling | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 5 Data wrangling | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Data wrangling | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Data wrangling | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2024-12-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-funcions-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding funcions in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data.html"><a href="data.html#using-the-function-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data.html"><a href="data.html#csv-file"><i class="fa fa-check"></i><b>4.2.1</b> .csv file</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data.html"><a href="data.html#excel-file"><i class="fa fa-check"></i><b>4.2.2</b> .excel file</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data.html"><a href="data.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data.html"><a href="data.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#section"><i class="fa fa-check"></i><b>4.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1</b> cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-wrangling" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Data wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cleaning-the-names-of-the-variables-with-janitor" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> cleaning the names of the variables with <strong>janitor</strong><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="changing-the-names-to-variables" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Changing the names to variables<a href="data-wrangling.html#changing-the-names-to-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="deleting-variables" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Deleting variables<a href="data-wrangling.html#deleting-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="changing-names-of-levelsfactors" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> changing names of levels/factors<a href="data-wrangling.html#changing-names-of-levelsfactors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="finding-missing-values" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Finding missing values<a href="data-wrangling.html#finding-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/05-Data_Wrangling.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/05-Data_Wrangling.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

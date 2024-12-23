@@ -1,9 +1,9 @@
 {
     "id": "731B8FA8",
-    "path": "~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Quantitative_Agricultural_Economics/02-tears.Rmd",
-    "project_path": "02-tears.Rmd",
+    "path": "~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Quantitative_Agricultural_Economics/02-Intro_R_RStudio.Rmd",
+    "project_path": "02-Intro_R_RStudio.Rmd",
     "type": "r_markdown",
-    "hash": "2711896253",
+    "hash": "2762285573",
     "contents": "",
     "dirty": false,
     "created": 1734989854745.0,
@@ -11,14 +11,16 @@
     "relative_order": 3,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "3,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1734988119,
+    "lastKnownWriteTime": 1734993429,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1734988119,
+    "last_content_update": 1734993429095,
     "read_only": false,
     "read_only_alternatives": []
 }
