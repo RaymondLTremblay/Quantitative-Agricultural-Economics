@@ -1,0 +1,9 @@
+--- 
+title: "Quantitative Agricultural Economics"
+author: "Raymond L. Tremblay"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
+
+# Down the rabbit-hole
+

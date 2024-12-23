@@ -1,0 +1,19 @@
+Version: 1.0
+ProjectId: 0f2736a0-7a39-4409-8a69-f58371a50767
+
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: knitr
+LaTeX: pdfLaTeX
+
+BuildType: Website
+WebsitePath: ~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Quantitative_Agricultural_Economics
+
+ProjectName: Quantitative_Agricultural_Economics
