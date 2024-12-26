@@ -209,9 +209,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>10.1</b> Basic scatter plots</a></li>
-<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.2</b> Scatter plots with jitter</a></li>
-<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.3</b> Scatter plots with marginal histograms</a></li>
-<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.4</b> Scatter plots for multiple variables</a></li>
+<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>10.2</b> the lm() function</a></li>
+<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>10.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>10.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="10.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>10.5</b> Selling music records</a></li>
+<li class="chapter" data-level="10.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>10.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="10.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>10.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="10.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>10.8</b> Steps to do a linear regression analysis</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="10.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="10.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3</a></li>
+<li class="chapter" data-level="10.8.4" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>10.8.4</b> Plot the residuals</a></li>
+<li class="chapter" data-level="10.8.5" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>10.8.5</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.8.6" data-path="scatter-plots.html"><a href="scatter-plots.html#eexercise-2"><i class="fa fa-check"></i><b>10.8.6</b> EExercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.9</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="10.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.10</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="10.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.11</b> Scatter plots for multiple variables</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>11</b> Linear regression model</a>
 <ul>
@@ -319,21 +334,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="what-is-the-problem-with-the-data" class="section level2 hasAnchor" number="18.2">
 <h2><span class="header-section-number">18.2</span> What is the problem with the data?<a href="beta-regression.html#what-is-the-problem-with-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="beta-regression.html#cb102-1" tabindex="-1"></a><span class="fu">library</span>(ggversa)</span>
-<span id="cb102-2"><a href="beta-regression.html#cb102-2" tabindex="-1"></a></span>
-<span id="cb102-3"><a href="beta-regression.html#cb102-3" tabindex="-1"></a><span class="co">#Edu_Salud_Gastos_GDP</span></span>
-<span id="cb102-4"><a href="beta-regression.html#cb102-4" tabindex="-1"></a></span>
-<span id="cb102-5"><a href="beta-regression.html#cb102-5" tabindex="-1"></a><span class="fu">ggplot</span>(Edu_Salud_Gastos_GDP, <span class="fu">aes</span>(Gasto_Salud_percapita, Porc_Ninas_no_escuela))<span class="sc">+</span></span>
-<span id="cb102-6"><a href="beta-regression.html#cb102-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb102-7"><a href="beta-regression.html#cb102-7" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span></span>
-<span id="cb102-8"><a href="beta-regression.html#cb102-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Per capita public health spending&quot;</span>)<span class="sc">+</span></span>
-<span id="cb102-9"><a href="beta-regression.html#cb102-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Percentage of girls not going to school&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="beta-regression.html#cb157-1" tabindex="-1"></a><span class="fu">library</span>(ggversa)</span>
+<span id="cb157-2"><a href="beta-regression.html#cb157-2" tabindex="-1"></a></span>
+<span id="cb157-3"><a href="beta-regression.html#cb157-3" tabindex="-1"></a><span class="co">#Edu_Salud_Gastos_GDP</span></span>
+<span id="cb157-4"><a href="beta-regression.html#cb157-4" tabindex="-1"></a></span>
+<span id="cb157-5"><a href="beta-regression.html#cb157-5" tabindex="-1"></a><span class="fu">ggplot</span>(Edu_Salud_Gastos_GDP, <span class="fu">aes</span>(Gasto_Salud_percapita, Porc_Ninas_no_escuela))<span class="sc">+</span></span>
+<span id="cb157-6"><a href="beta-regression.html#cb157-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb157-7"><a href="beta-regression.html#cb157-7" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span></span>
+<span id="cb157-8"><a href="beta-regression.html#cb157-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Per capita public health spending&quot;</span>)<span class="sc">+</span></span>
+<span id="cb157-9"><a href="beta-regression.html#cb157-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Percentage of girls not going to school&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 46 rows containing non-finite outside the scale range
 ## (`stat_smooth()`).</code></pre>
 <pre><code>## Warning: Removed 46 rows containing missing values or values outside the scale
 ## range (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <p>Note:</p>
 <ul>
 <li>there are negative proportion values</li>
@@ -348,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The most important thing about the beta distribution is that the values <strong>NEVER</strong> are less than 0 or greater than 1 (i.e. <span class="math inline">\(0 &lt; x &lt; 1\)</span>). In addition, the confidence intervals cannot be less than 0 or greater than 1.</p>
 <p>Here are some examples of the beta distribution. The beta distribution is calculated with two parameters, <strong>shape 1 or <span class="math inline">\(\alpha\)</span></strong> and <strong>shape 2 or <span class="math inline">\(\beta\)</span></strong>. We will not go into these parameters, although you can go to the Wikipedia page for more information. Note that if the parameters are not equal (<span class="math inline">\(\alpha \neq \beta\)</span>), the distribution is not symmetrical. There is always a tail that extends to small or large values.</p>
 <p>Here a series beta distributions. We will not go into how these these parameters are calculated, although you can go to the Wikipedia page for more information. Note that if the parameters are not equal (<span class="math inline">\(\alpha \neq \beta\)</span>), the distribution is not symmetrical. There is always a tail that extends to small or large values.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="wikipedia" class="section level2 hasAnchor" number="18.4">
@@ -360,8 +375,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="proportion-of-smokers-in-different-countries" class="section level2 hasAnchor" number="18.5">
 <h2><span class="header-section-number">18.5</span> Proportion of smokers in different countries<a href="beta-regression.html#proportion-of-smokers-in-different-countries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The data comes from the World Bank at the following link, <a href="https://data.worldbank.org/indicator/SH.PRV.SMOK">Smokers</a>. The file contains information on 187 countries and the proportion of the population over 15 years old who smoke.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="beta-regression.html#cb106-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb106-2"><a href="beta-regression.html#cb106-2" tabindex="-1"></a>Proportion_smokers_world <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/Proportion_smokers_world.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="beta-regression.html#cb161-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb161-2"><a href="beta-regression.html#cb161-2" tabindex="-1"></a>Proportion_smokers_world <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/Proportion_smokers_world.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 187 Columns: 13
 ## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -370,26 +385,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="beta-regression.html#cb108-1" tabindex="-1"></a>Smokers<span class="ot">=</span>Proportion_smokers_world </span>
-<span id="cb108-2"><a href="beta-regression.html#cb108-2" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="beta-regression.html#cb108-3" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(Smokers))</span></code></pre></div>
-<div id="mslqpwssds" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mslqpwssds table {
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="beta-regression.html#cb163-1" tabindex="-1"></a>Smokers<span class="ot">=</span>Proportion_smokers_world </span>
+<span id="cb163-2"><a href="beta-regression.html#cb163-2" tabindex="-1"></a></span>
+<span id="cb163-3"><a href="beta-regression.html#cb163-3" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(Smokers))</span></code></pre></div>
+<div id="fukidcnnil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fukidcnnil table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mslqpwssds thead, #mslqpwssds tbody, #mslqpwssds tfoot, #mslqpwssds tr, #mslqpwssds td, #mslqpwssds th {
+#fukidcnnil thead, #fukidcnnil tbody, #fukidcnnil tfoot, #fukidcnnil tr, #fukidcnnil td, #fukidcnnil th {
   border-style: none;
 }
 
-#mslqpwssds p {
+#fukidcnnil p {
   margin: 0;
   padding: 0;
 }
 
-#mslqpwssds .gt_table {
+#fukidcnnil .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -415,12 +430,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_caption {
+#fukidcnnil .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mslqpwssds .gt_title {
+#fukidcnnil .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -432,7 +447,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#mslqpwssds .gt_subtitle {
+#fukidcnnil .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -444,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#mslqpwssds .gt_heading {
+#fukidcnnil .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -456,13 +471,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_bottom_border {
+#fukidcnnil .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_col_headings {
+#fukidcnnil .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -477,7 +492,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_col_heading {
+#fukidcnnil .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -497,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#mslqpwssds .gt_column_spanner_outer {
+#fukidcnnil .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -509,15 +524,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#mslqpwssds .gt_column_spanner_outer:first-child {
+#fukidcnnil .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mslqpwssds .gt_column_spanner_outer:last-child {
+#fukidcnnil .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mslqpwssds .gt_column_spanner {
+#fukidcnnil .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -529,11 +544,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#mslqpwssds .gt_spanner_row {
+#fukidcnnil .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mslqpwssds .gt_group_heading {
+#fukidcnnil .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -559,7 +574,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#mslqpwssds .gt_empty_group_heading {
+#fukidcnnil .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -574,15 +589,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#mslqpwssds .gt_from_md > :first-child {
+#fukidcnnil .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mslqpwssds .gt_from_md > :last-child {
+#fukidcnnil .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mslqpwssds .gt_row {
+#fukidcnnil .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -601,7 +616,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#mslqpwssds .gt_stub {
+#fukidcnnil .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -614,7 +629,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#mslqpwssds .gt_stub_row_group {
+#fukidcnnil .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -628,15 +643,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#mslqpwssds .gt_row_group_first td {
+#fukidcnnil .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mslqpwssds .gt_row_group_first th {
+#fukidcnnil .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mslqpwssds .gt_summary_row {
+#fukidcnnil .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -646,16 +661,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#mslqpwssds .gt_first_summary_row {
+#fukidcnnil .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_first_summary_row.thick {
+#fukidcnnil .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mslqpwssds .gt_last_summary_row {
+#fukidcnnil .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -665,7 +680,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_grand_summary_row {
+#fukidcnnil .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -675,7 +690,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#mslqpwssds .gt_first_grand_summary_row {
+#fukidcnnil .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +700,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_last_grand_summary_row_top {
+#fukidcnnil .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -695,11 +710,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_striped {
+#fukidcnnil .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mslqpwssds .gt_table_body {
+#fukidcnnil .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -708,7 +723,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_footnotes {
+#fukidcnnil .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -722,7 +737,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_footnote {
+#fukidcnnil .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -731,7 +746,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#mslqpwssds .gt_sourcenotes {
+#fukidcnnil .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -745,7 +760,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#mslqpwssds .gt_sourcenote {
+#fukidcnnil .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -753,72 +768,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#mslqpwssds .gt_left {
+#fukidcnnil .gt_left {
   text-align: left;
 }
 
-#mslqpwssds .gt_center {
+#fukidcnnil .gt_center {
   text-align: center;
 }
 
-#mslqpwssds .gt_right {
+#fukidcnnil .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mslqpwssds .gt_font_normal {
+#fukidcnnil .gt_font_normal {
   font-weight: normal;
 }
 
-#mslqpwssds .gt_font_bold {
+#fukidcnnil .gt_font_bold {
   font-weight: bold;
 }
 
-#mslqpwssds .gt_font_italic {
+#fukidcnnil .gt_font_italic {
   font-style: italic;
 }
 
-#mslqpwssds .gt_super {
+#fukidcnnil .gt_super {
   font-size: 65%;
 }
 
-#mslqpwssds .gt_footnote_marks {
+#fukidcnnil .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mslqpwssds .gt_asterisk {
+#fukidcnnil .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mslqpwssds .gt_indent_1 {
+#fukidcnnil .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mslqpwssds .gt_indent_2 {
+#fukidcnnil .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mslqpwssds .gt_indent_3 {
+#fukidcnnil .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mslqpwssds .gt_indent_4 {
+#fukidcnnil .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mslqpwssds .gt_indent_5 {
+#fukidcnnil .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mslqpwssds .katex-display {
+#fukidcnnil .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mslqpwssds div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fukidcnnil div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -926,8 +941,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <hr />
 <p>First convert the data in proportions since the program has to use data greater than 0 and less than 1. Select the year 2000 and create a histogram of the distribution.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="beta-regression.html#cb109-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
-<span id="cb109-2"><a href="beta-regression.html#cb109-2" tabindex="-1"></a>Smokers <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Country_Name, Y2000P)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="beta-regression.html#cb164-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
+<span id="cb164-2"><a href="beta-regression.html#cb164-2" tabindex="-1"></a>Smokers <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Country_Name, Y2000P)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
 <col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Country_Name</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Y2000P</th></tr>
@@ -1320,14 +1335,14 @@ The variance os beta distribution is</p>
 <p><span class="math display">\[\alpha = \frac{1-mu}{(var-1)/mu}*mu^2\]</span>
 <span class="math display">\[\beta = \alpha*(\frac{1}{mu}-1)\]</span></p>
 <p>Here is the script to convert the parameters into shape.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="beta-regression.html#cb110-1" tabindex="-1"></a>estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
-<span id="cb110-2"><a href="beta-regression.html#cb110-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb110-3"><a href="beta-regression.html#cb110-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb110-4"><a href="beta-regression.html#cb110-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
-<span id="cb110-5"><a href="beta-regression.html#cb110-5" tabindex="-1"></a>}</span>
-<span id="cb110-6"><a href="beta-regression.html#cb110-6" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
-<span id="cb110-7"><a href="beta-regression.html#cb110-7" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
-<span id="cb110-8"><a href="beta-regression.html#cb110-8" tabindex="-1"></a><span class="fu">estBetaParams</span>((<span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P)), (<span class="fu">var</span>(Smokers<span class="sc">$</span>Y2000P)))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="beta-regression.html#cb165-1" tabindex="-1"></a>estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
+<span id="cb165-2"><a href="beta-regression.html#cb165-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb165-3"><a href="beta-regression.html#cb165-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb165-4"><a href="beta-regression.html#cb165-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
+<span id="cb165-5"><a href="beta-regression.html#cb165-5" tabindex="-1"></a>}</span>
+<span id="cb165-6"><a href="beta-regression.html#cb165-6" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
+<span id="cb165-7"><a href="beta-regression.html#cb165-7" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
+<span id="cb165-8"><a href="beta-regression.html#cb165-8" tabindex="-1"></a><span class="fu">estBetaParams</span>((<span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P)), (<span class="fu">var</span>(Smokers<span class="sc">$</span>Y2000P)))</span></code></pre></div>
 <pre><code>## $alpha
 ## [1] 3.592488
 ## 
@@ -1338,53 +1353,43 @@ The variance os beta distribution is</p>
 <li>Green line is the normal distribution</li>
 <li>Red line is the beta distribution</li>
 </ul>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="beta-regression.html#cb112-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
-<span id="cb112-2"><a href="beta-regression.html#cb112-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">len =</span> <span class="dv">100</span>)</span>
-<span id="cb112-3"><a href="beta-regression.html#cb112-3" tabindex="-1"></a></span>
-<span id="cb112-4"><a href="beta-regression.html#cb112-4" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
-<span id="cb112-5"><a href="beta-regression.html#cb112-5" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
-<span id="cb112-6"><a href="beta-regression.html#cb112-6" tabindex="-1"></a></span>
-<span id="cb112-7"><a href="beta-regression.html#cb112-7" tabindex="-1"></a><span class="fu">ggplot</span>(Smokers, <span class="fu">aes</span>(Y2000P))<span class="sc">+</span></span>
-<span id="cb112-8"><a href="beta-regression.html#cb112-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;grey50&quot;</span>)<span class="sc">+</span></span>
-<span id="cb112-9"><a href="beta-regression.html#cb112-9" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> Smokers<span class="sc">$</span>Y2000P, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>,</span>
-<span id="cb112-10"><a href="beta-regression.html#cb112-10" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">3.593</span>, <span class="at">shape2 =</span> <span class="fl">9.185</span>))<span class="sc">+</span></span>
-<span id="cb112-11"><a href="beta-regression.html#cb112-11" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
-<span id="cb112-12"><a href="beta-regression.html#cb112-12" tabindex="-1"></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb112-13"><a href="beta-regression.html#cb112-13" tabindex="-1"></a>                <span class="at">sd =</span> <span class="fu">sd</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), </span>
-<span id="cb112-14"><a href="beta-regression.html#cb112-14" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;green&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb112-15"><a href="beta-regression.html#cb112-15" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proporción de fumadores de mayor </span><span class="sc">\n</span><span class="st"> de 15 años por Pais&quot;</span>)<span class="sc">+</span></span>
-<span id="cb112-16"><a href="beta-regression.html#cb112-16" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
-<span id="cb112-17"><a href="beta-regression.html#cb112-17" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">4.2</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Normal&quot;</span>, <span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
-<span id="cb112-18"><a href="beta-regression.html#cb112-18" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">3.7</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Beta&quot;</span>, <span class="at">color=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb112-19"><a href="beta-regression.html#cb112-19" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="beta-regression.html#cb167-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
+<span id="cb167-2"><a href="beta-regression.html#cb167-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">len =</span> <span class="dv">100</span>)</span>
+<span id="cb167-3"><a href="beta-regression.html#cb167-3" tabindex="-1"></a></span>
+<span id="cb167-4"><a href="beta-regression.html#cb167-4" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
+<span id="cb167-5"><a href="beta-regression.html#cb167-5" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
+<span id="cb167-6"><a href="beta-regression.html#cb167-6" tabindex="-1"></a></span>
+<span id="cb167-7"><a href="beta-regression.html#cb167-7" tabindex="-1"></a><span class="fu">ggplot</span>(Smokers, <span class="fu">aes</span>(Y2000P))<span class="sc">+</span></span>
+<span id="cb167-8"><a href="beta-regression.html#cb167-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;grey50&quot;</span>)<span class="sc">+</span></span>
+<span id="cb167-9"><a href="beta-regression.html#cb167-9" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> Smokers<span class="sc">$</span>Y2000P, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>,</span>
+<span id="cb167-10"><a href="beta-regression.html#cb167-10" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">3.593</span>, <span class="at">shape2 =</span> <span class="fl">9.185</span>))<span class="sc">+</span></span>
+<span id="cb167-11"><a href="beta-regression.html#cb167-11" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb167-12"><a href="beta-regression.html#cb167-12" tabindex="-1"></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb167-13"><a href="beta-regression.html#cb167-13" tabindex="-1"></a>                <span class="at">sd =</span> <span class="fu">sd</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), </span>
+<span id="cb167-14"><a href="beta-regression.html#cb167-14" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;green&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb167-15"><a href="beta-regression.html#cb167-15" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proporción de fumadores de mayor </span><span class="sc">\n</span><span class="st"> de 15 años por Pais&quot;</span>)<span class="sc">+</span></span>
+<span id="cb167-16"><a href="beta-regression.html#cb167-16" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb167-17"><a href="beta-regression.html#cb167-17" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">4.2</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Normal&quot;</span>, <span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb167-18"><a href="beta-regression.html#cb167-18" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">3.7</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Beta&quot;</span>, <span class="at">color=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb167-19"><a href="beta-regression.html#cb167-19" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.9</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values or values outside the scale
 ## range (`geom_bar()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <hr />
 <p>Calculate the confidence interval of the average of a beta distribution. The following packages are needed <strong>simpleboot, boot</strong>.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="beta-regression.html#cb115-1" tabindex="-1"></a><span class="fu">library</span>(simpleboot)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="beta-regression.html#cb170-1" tabindex="-1"></a><span class="fu">library</span>(simpleboot)</span></code></pre></div>
 <pre><code>## Simple Bootstrap Routines (1.1-8)</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="beta-regression.html#cb117-1" tabindex="-1"></a><span class="fu">library</span>(boot) <span class="co"># package to calculate the confidence interval of a beta distribution</span></span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;boot&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:survival&#39;:
-## 
-##     aml</code></pre>
-<pre><code>## The following object is masked from &#39;package:psych&#39;:
-## 
-##     logit</code></pre>
-<pre><code>## The following object is masked from &#39;package:car&#39;:
-## 
-##     logit</code></pre>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="beta-regression.html#cb122-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">187</span> <span class="co"># The smaple size of the data set. </span></span>
-<span id="cb122-2"><a href="beta-regression.html#cb122-2" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">3.593</span> <span class="co"># The alpha parameter </span></span>
-<span id="cb122-3"><a href="beta-regression.html#cb122-3" tabindex="-1"></a>beta <span class="ot">=</span> <span class="fl">9.185</span> <span class="co"># the beta parameter</span></span>
-<span id="cb122-4"><a href="beta-regression.html#cb122-4" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rbeta</span>(n, alpha, beta)</span>
-<span id="cb122-5"><a href="beta-regression.html#cb122-5" tabindex="-1"></a></span>
-<span id="cb122-6"><a href="beta-regression.html#cb122-6" tabindex="-1"></a></span>
-<span id="cb122-7"><a href="beta-regression.html#cb122-7" tabindex="-1"></a>x.boot <span class="ot">=</span> <span class="fu">one.boot</span>(x, median, <span class="at">R=</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>) <span class="co"># Here we use the median as the central tendency because the *mean* is bias to the right </span></span>
-<span id="cb122-8"><a href="beta-regression.html#cb122-8" tabindex="-1"></a><span class="fu">boot.ci</span>(x.boot, <span class="at">type=</span><span class="st">&quot;bca&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="beta-regression.html#cb172-1" tabindex="-1"></a><span class="fu">library</span>(boot) <span class="co"># package to calculate the confidence interval of a beta distribution</span></span>
+<span id="cb172-2"><a href="beta-regression.html#cb172-2" tabindex="-1"></a></span>
+<span id="cb172-3"><a href="beta-regression.html#cb172-3" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">187</span> <span class="co"># The smaple size of the data set. </span></span>
+<span id="cb172-4"><a href="beta-regression.html#cb172-4" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">3.593</span> <span class="co"># The alpha parameter </span></span>
+<span id="cb172-5"><a href="beta-regression.html#cb172-5" tabindex="-1"></a>beta <span class="ot">=</span> <span class="fl">9.185</span> <span class="co"># the beta parameter</span></span>
+<span id="cb172-6"><a href="beta-regression.html#cb172-6" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rbeta</span>(n, alpha, beta)</span>
+<span id="cb172-7"><a href="beta-regression.html#cb172-7" tabindex="-1"></a></span>
+<span id="cb172-8"><a href="beta-regression.html#cb172-8" tabindex="-1"></a></span>
+<span id="cb172-9"><a href="beta-regression.html#cb172-9" tabindex="-1"></a>x.boot <span class="ot">=</span> <span class="fu">one.boot</span>(x, median, <span class="at">R=</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>) <span class="co"># Here we use the median as the central tendency because the *mean* is bias to the right </span></span>
+<span id="cb172-10"><a href="beta-regression.html#cb172-10" tabindex="-1"></a><span class="fu">boot.ci</span>(x.boot, <span class="at">type=</span><span class="st">&quot;bca&quot;</span>)</span></code></pre></div>
 <pre><code>## BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
 ## Based on 10000 bootstrap replicates
 ## 
@@ -1393,30 +1398,30 @@ The variance os beta distribution is</p>
 ## 
 ## Intervals : 
 ## Level       BCa          
-## 95%   ( 0.2459,  0.3046 )  
+## 95%   ( 0.2592,  0.3101 )  
 ## Calculations and Intervals on Original Scale</code></pre>
 <hr />
 </div>
 <div id="visualization-of-the-distribution-with-ci." class="section level2 hasAnchor" number="18.7">
 <h2><span class="header-section-number">18.7</span> Visualization of the distribution with CI.<a href="beta-regression.html#visualization-of-the-distribution-with-ci." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Overlay the confidence interval of the median on the beta distribution. The confidence interval is between 0.2320 and 0.2768. The confidence interval is not symmetric, and the distribution is not symmetric. The distribution is skewed to the right.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="beta-regression.html#cb124-1" tabindex="-1"></a><span class="fu">ggplot</span>(Smokers, <span class="fu">aes</span>(Y2000P))<span class="sc">+</span></span>
-<span id="cb124-2"><a href="beta-regression.html#cb124-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">bins=</span><span class="dv">20</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;grey50&quot;</span>)<span class="sc">+</span></span>
-<span id="cb124-3"><a href="beta-regression.html#cb124-3" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> Smokers<span class="sc">$</span>Y2000P, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>,</span>
-<span id="cb124-4"><a href="beta-regression.html#cb124-4" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">3.593</span>, <span class="at">shape2 =</span> <span class="fl">9.185</span>))<span class="sc">+</span></span>
-<span id="cb124-5"><a href="beta-regression.html#cb124-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span><span class="fl">0.2320</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> <span class="co"># the confidence interval, lower limit</span></span>
-<span id="cb124-6"><a href="beta-regression.html#cb124-6" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span><span class="fl">0.2768</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> <span class="co"># the confidence interval, upper limit</span></span>
-<span id="cb124-7"><a href="beta-regression.html#cb124-7" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb124-8"><a href="beta-regression.html#cb124-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion of smokers over 15 years old by country&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="beta-regression.html#cb174-1" tabindex="-1"></a><span class="fu">ggplot</span>(Smokers, <span class="fu">aes</span>(Y2000P))<span class="sc">+</span></span>
+<span id="cb174-2"><a href="beta-regression.html#cb174-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">bins=</span><span class="dv">20</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;grey50&quot;</span>)<span class="sc">+</span></span>
+<span id="cb174-3"><a href="beta-regression.html#cb174-3" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> Smokers<span class="sc">$</span>Y2000P, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>,</span>
+<span id="cb174-4"><a href="beta-regression.html#cb174-4" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">3.593</span>, <span class="at">shape2 =</span> <span class="fl">9.185</span>))<span class="sc">+</span></span>
+<span id="cb174-5"><a href="beta-regression.html#cb174-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span><span class="fl">0.2320</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> <span class="co"># the confidence interval, lower limit</span></span>
+<span id="cb174-6"><a href="beta-regression.html#cb174-6" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span><span class="fl">0.2768</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> <span class="co"># the confidence interval, upper limit</span></span>
+<span id="cb174-7"><a href="beta-regression.html#cb174-7" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb174-8"><a href="beta-regression.html#cb174-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion of smokers over 15 years old by country&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 </div>
 <div id="regression-model" class="section level2 hasAnchor" number="18.8">
 <h2><span class="header-section-number">18.8</span> Regression model<a href="beta-regression.html#regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now let us view an example using regression model, where the response is a proportion.</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="beta-regression.html#cb125-1" tabindex="-1"></a><span class="fu">library</span>(betareg) <span class="co"># El paquete para hacer regresión beta</span></span>
-<span id="cb125-2"><a href="beta-regression.html#cb125-2" tabindex="-1"></a><span class="fu">library</span>(ggversa) <span class="co"># paquete para los datos</span></span>
-<span id="cb125-3"><a href="beta-regression.html#cb125-3" tabindex="-1"></a><span class="fu">attach</span>(dipodium)</span>
-<span id="cb125-4"><a href="beta-regression.html#cb125-4" tabindex="-1"></a><span class="fu">head</span>(dipodium, <span class="at">n=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="beta-regression.html#cb175-1" tabindex="-1"></a><span class="fu">library</span>(betareg) <span class="co"># El paquete para hacer regresión beta</span></span>
+<span id="cb175-2"><a href="beta-regression.html#cb175-2" tabindex="-1"></a><span class="fu">library</span>(ggversa) <span class="co"># paquete para los datos</span></span>
+<span id="cb175-3"><a href="beta-regression.html#cb175-3" tabindex="-1"></a><span class="fu">attach</span>(dipodium)</span>
+<span id="cb175-4"><a href="beta-regression.html#cb175-4" tabindex="-1"></a><span class="fu">head</span>(dipodium, <span class="at">n=</span><span class="dv">4</span>)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
 <col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Tree Number</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Tree species</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">DBH</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Plant number</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Ramet number</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Distance</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Orientation</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Number_of_Flowers</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Height_Inflo</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Herbivory</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RowPosition_NF</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Number_Flowers_position</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Number_of_fruits</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Perc_FR_set</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">pardalinum_or_roseum</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Fruit_position_effect</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Frutos_si_o_no</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">P_or_R_Infl_Lenght</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Num of fruits</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Species_Name</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Cardinal orientation</th></tr>
@@ -1441,19 +1446,19 @@ The variance os beta distribution is</p>
 <li><p>the NAs are also removed from the file.</p></li>
 <li><p>Note that the model is constructed as a linear model <strong>betareg(y~x, data =na.omit(df))</strong>. The variables in the file are <strong>PropFR</strong>, the proportion of fruits (number of fruits/numbers of flowers) for each individual and the number of flowers, <strong>Number_of_Flowers</strong>.</p></li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="beta-regression.html#cb126-1" tabindex="-1"></a><span class="co">#head(dipodium)</span></span>
-<span id="cb126-2"><a href="beta-regression.html#cb126-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb126-3"><a href="beta-regression.html#cb126-3" tabindex="-1"></a>dipodium<span class="sc">$</span>PropFR<span class="ot">=</span>dipodium<span class="sc">$</span>Perc_FR_set<span class="fl">+0.0001</span> <span class="co"># solucionar para remover los cero</span></span>
-<span id="cb126-4"><a href="beta-regression.html#cb126-4" tabindex="-1"></a><span class="co">#dipodium$PropFR</span></span>
-<span id="cb126-5"><a href="beta-regression.html#cb126-5" tabindex="-1"></a>dipodium2<span class="ot">=</span>dipodium <span class="sc">%&gt;%</span> </span>
-<span id="cb126-6"><a href="beta-regression.html#cb126-6" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(PropFR, Number_of_Flowers,Height_Inflo, Distance) <span class="sc">%&gt;%</span> </span>
-<span id="cb126-7"><a href="beta-regression.html#cb126-7" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(PropFR, Number_of_Flowers,Height_Inflo, Distance))</span>
-<span id="cb126-8"><a href="beta-regression.html#cb126-8" tabindex="-1"></a><span class="co">#dipodium2</span></span>
-<span id="cb126-9"><a href="beta-regression.html#cb126-9" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x=</span>dipodium2, <span class="at">file=</span><span class="st">&quot;dipodium2.csv&quot;</span>)</span>
-<span id="cb126-10"><a href="beta-regression.html#cb126-10" tabindex="-1"></a></span>
-<span id="cb126-11"><a href="beta-regression.html#cb126-11" tabindex="-1"></a></span>
-<span id="cb126-12"><a href="beta-regression.html#cb126-12" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb126-13"><a href="beta-regression.html#cb126-13" tabindex="-1"></a>dipodium2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/dipodium2.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="beta-regression.html#cb176-1" tabindex="-1"></a><span class="co">#head(dipodium)</span></span>
+<span id="cb176-2"><a href="beta-regression.html#cb176-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb176-3"><a href="beta-regression.html#cb176-3" tabindex="-1"></a>dipodium<span class="sc">$</span>PropFR<span class="ot">=</span>dipodium<span class="sc">$</span>Perc_FR_set<span class="fl">+0.0001</span> <span class="co"># solucionar para remover los cero</span></span>
+<span id="cb176-4"><a href="beta-regression.html#cb176-4" tabindex="-1"></a><span class="co">#dipodium$PropFR</span></span>
+<span id="cb176-5"><a href="beta-regression.html#cb176-5" tabindex="-1"></a>dipodium2<span class="ot">=</span>dipodium <span class="sc">%&gt;%</span> </span>
+<span id="cb176-6"><a href="beta-regression.html#cb176-6" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(PropFR, Number_of_Flowers,Height_Inflo, Distance) <span class="sc">%&gt;%</span> </span>
+<span id="cb176-7"><a href="beta-regression.html#cb176-7" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(PropFR, Number_of_Flowers,Height_Inflo, Distance))</span>
+<span id="cb176-8"><a href="beta-regression.html#cb176-8" tabindex="-1"></a><span class="co">#dipodium2</span></span>
+<span id="cb176-9"><a href="beta-regression.html#cb176-9" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x=</span>dipodium2, <span class="at">file=</span><span class="st">&quot;dipodium2.csv&quot;</span>)</span>
+<span id="cb176-10"><a href="beta-regression.html#cb176-10" tabindex="-1"></a></span>
+<span id="cb176-11"><a href="beta-regression.html#cb176-11" tabindex="-1"></a></span>
+<span id="cb176-12"><a href="beta-regression.html#cb176-12" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb176-13"><a href="beta-regression.html#cb176-13" tabindex="-1"></a>dipodium2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/dipodium2.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## New names:
 ## Rows: 62 Columns: 5
 ## ── Column specification
@@ -1462,8 +1467,8 @@ The variance os beta distribution is</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ Specify the column types or set `show_col_types = FALSE` to
 ## quiet this message.
 ## • `` -&gt; `...1`</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="beta-regression.html#cb128-1" tabindex="-1"></a>modelpropFr<span class="ot">=</span><span class="fu">betareg</span>(PropFR<span class="sc">~</span>Number_of_Flowers<span class="sc">+</span>Height_Inflo<span class="sc">+</span>Distance, <span class="at">data =</span><span class="fu">na.omit</span>(dipodium2))</span>
-<span id="cb128-2"><a href="beta-regression.html#cb128-2" tabindex="-1"></a><span class="fu">summary</span>(modelpropFr)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="beta-regression.html#cb178-1" tabindex="-1"></a>modelpropFr<span class="ot">=</span><span class="fu">betareg</span>(PropFR<span class="sc">~</span>Number_of_Flowers<span class="sc">+</span>Height_Inflo<span class="sc">+</span>Distance, <span class="at">data =</span><span class="fu">na.omit</span>(dipodium2))</span>
+<span id="cb178-2"><a href="beta-regression.html#cb178-2" tabindex="-1"></a><span class="fu">summary</span>(modelpropFr)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## betareg(formula = PropFR ~ Number_of_Flowers + Height_Inflo + Distance, 
@@ -1494,12 +1499,12 @@ The variance os beta distribution is</p>
 </div>
 <div id="visualize-the-beta-regression" class="section level2 hasAnchor" number="18.10">
 <h2><span class="header-section-number">18.10</span> Visualize the beta regression<a href="beta-regression.html#visualize-the-beta-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="beta-regression.html#cb130-1" tabindex="-1"></a>dipodiumbeta<span class="ot">=</span>dipodium2[,<span class="fu">c</span>(<span class="st">&quot;Number_of_Flowers&quot;</span>,<span class="st">&quot;PropFR&quot;</span>)] <span class="co"># Create a df with only the variables of interest</span></span>
-<span id="cb130-2"><a href="beta-regression.html#cb130-2" tabindex="-1"></a></span>
-<span id="cb130-3"><a href="beta-regression.html#cb130-3" tabindex="-1"></a> dp2<span class="ot">=</span>dipodiumbeta[<span class="fu">complete.cases</span>(dipodiumbeta),] <span class="co"># remove all &quot;NA&quot; </span></span>
-<span id="cb130-4"><a href="beta-regression.html#cb130-4" tabindex="-1"></a> </span>
-<span id="cb130-5"><a href="beta-regression.html#cb130-5" tabindex="-1"></a>modelpropFr<span class="ot">=</span><span class="fu">betareg</span>(PropFR<span class="sc">~</span>Number_of_Flowers, <span class="at">data=</span>dp2) <span class="co"># The beta model using **betareg**</span></span>
-<span id="cb130-6"><a href="beta-regression.html#cb130-6" tabindex="-1"></a><span class="fu">summary</span>(modelpropFr)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="beta-regression.html#cb180-1" tabindex="-1"></a>dipodiumbeta<span class="ot">=</span>dipodium2[,<span class="fu">c</span>(<span class="st">&quot;Number_of_Flowers&quot;</span>,<span class="st">&quot;PropFR&quot;</span>)] <span class="co"># Create a df with only the variables of interest</span></span>
+<span id="cb180-2"><a href="beta-regression.html#cb180-2" tabindex="-1"></a></span>
+<span id="cb180-3"><a href="beta-regression.html#cb180-3" tabindex="-1"></a> dp2<span class="ot">=</span>dipodiumbeta[<span class="fu">complete.cases</span>(dipodiumbeta),] <span class="co"># remove all &quot;NA&quot; </span></span>
+<span id="cb180-4"><a href="beta-regression.html#cb180-4" tabindex="-1"></a> </span>
+<span id="cb180-5"><a href="beta-regression.html#cb180-5" tabindex="-1"></a>modelpropFr<span class="ot">=</span><span class="fu">betareg</span>(PropFR<span class="sc">~</span>Number_of_Flowers, <span class="at">data=</span>dp2) <span class="co"># The beta model using **betareg**</span></span>
+<span id="cb180-6"><a href="beta-regression.html#cb180-6" tabindex="-1"></a><span class="fu">summary</span>(modelpropFr)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## betareg(formula = PropFR ~ Number_of_Flowers, data = dp2)
@@ -1523,7 +1528,7 @@ The variance os beta distribution is</p>
 ## Log-likelihood: 112.9 on 3 Df
 ## Pseudo R-squared: 0.2538
 ## Number of iterations: 18 (BFGS) + 1 (Fisher scoring)</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="beta-regression.html#cb132-1" tabindex="-1"></a><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>) <span class="co"># calculate the predicted values</span></span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="beta-regression.html#cb182-1" tabindex="-1"></a><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>) <span class="co"># calculate the predicted values</span></span></code></pre></div>
 <pre><code>##          1          2          3          4          5          6          7 
 ## 0.02568523 0.02783519 0.03015954 0.04856508 0.05679268 0.05679268 0.05679268 
 ##          8          9         10         11         12         13         14 
@@ -1542,32 +1547,32 @@ The variance os beta distribution is</p>
 ## 0.14980172 0.14980172 0.17207828 0.17207828 0.17207828 0.17207828 0.19690033 
 ##         57         58         59         60         61         62 
 ## 0.19690033 0.22433274 0.22433274 0.23903102 0.27035714 0.28695536</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="beta-regression.html#cb134-1" tabindex="-1"></a>dp2<span class="sc">$</span>response<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb134-2"><a href="beta-regression.html#cb134-2" tabindex="-1"></a></span>
-<span id="cb134-3"><a href="beta-regression.html#cb134-3" tabindex="-1"></a>dp2<span class="sc">$</span>precision<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;precision&quot;</span>)</span>
-<span id="cb134-4"><a href="beta-regression.html#cb134-4" tabindex="-1"></a>dp2<span class="sc">$</span>variance<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;variance&quot;</span>)</span>
-<span id="cb134-5"><a href="beta-regression.html#cb134-5" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.01</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.01</span>)) <span class="co"># calculate the quantiles of 1%</span></span>
-<span id="cb134-6"><a href="beta-regression.html#cb134-6" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.05</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.05</span>))</span>
-<span id="cb134-7"><a href="beta-regression.html#cb134-7" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.10</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.10</span>)) <span class="co"># calculate the quantiles of 10%</span></span>
-<span id="cb134-8"><a href="beta-regression.html#cb134-8" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.15</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.15</span>))</span>
-<span id="cb134-9"><a href="beta-regression.html#cb134-9" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.20</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.20</span>))</span>
-<span id="cb134-10"><a href="beta-regression.html#cb134-10" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.25</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.25</span>))</span>
-<span id="cb134-11"><a href="beta-regression.html#cb134-11" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.30</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.30</span>))</span>
-<span id="cb134-12"><a href="beta-regression.html#cb134-12" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.35</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.35</span>))</span>
-<span id="cb134-13"><a href="beta-regression.html#cb134-13" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.40</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.40</span>))</span>
-<span id="cb134-14"><a href="beta-regression.html#cb134-14" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.45</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.45</span>))</span>
-<span id="cb134-15"><a href="beta-regression.html#cb134-15" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.50</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.50</span>)) <span class="co"># calculate the quantiles of 50% (the median)</span></span>
-<span id="cb134-16"><a href="beta-regression.html#cb134-16" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.55</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.55</span>))</span>
-<span id="cb134-17"><a href="beta-regression.html#cb134-17" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.60</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.60</span>))</span>
-<span id="cb134-18"><a href="beta-regression.html#cb134-18" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.65</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.65</span>))</span>
-<span id="cb134-19"><a href="beta-regression.html#cb134-19" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.70</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.70</span>))</span>
-<span id="cb134-20"><a href="beta-regression.html#cb134-20" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.75</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.75</span>))</span>
-<span id="cb134-21"><a href="beta-regression.html#cb134-21" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.80</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.80</span>))</span>
-<span id="cb134-22"><a href="beta-regression.html#cb134-22" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.85</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>))</span>
-<span id="cb134-23"><a href="beta-regression.html#cb134-23" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.90</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.90</span>)) <span class="co"># calculate the quantiles of 90%</span></span>
-<span id="cb134-24"><a href="beta-regression.html#cb134-24" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.95</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.95</span>))</span>
-<span id="cb134-25"><a href="beta-regression.html#cb134-25" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.99</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.99</span>)) <span class="co"># calculate the quantiles of 99%</span></span>
-<span id="cb134-26"><a href="beta-regression.html#cb134-26" tabindex="-1"></a>dp2</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="beta-regression.html#cb184-1" tabindex="-1"></a>dp2<span class="sc">$</span>response<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb184-2"><a href="beta-regression.html#cb184-2" tabindex="-1"></a></span>
+<span id="cb184-3"><a href="beta-regression.html#cb184-3" tabindex="-1"></a>dp2<span class="sc">$</span>precision<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;precision&quot;</span>)</span>
+<span id="cb184-4"><a href="beta-regression.html#cb184-4" tabindex="-1"></a>dp2<span class="sc">$</span>variance<span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;variance&quot;</span>)</span>
+<span id="cb184-5"><a href="beta-regression.html#cb184-5" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.01</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.01</span>)) <span class="co"># calculate the quantiles of 1%</span></span>
+<span id="cb184-6"><a href="beta-regression.html#cb184-6" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.05</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.05</span>))</span>
+<span id="cb184-7"><a href="beta-regression.html#cb184-7" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.10</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.10</span>)) <span class="co"># calculate the quantiles of 10%</span></span>
+<span id="cb184-8"><a href="beta-regression.html#cb184-8" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.15</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.15</span>))</span>
+<span id="cb184-9"><a href="beta-regression.html#cb184-9" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.20</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.20</span>))</span>
+<span id="cb184-10"><a href="beta-regression.html#cb184-10" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.25</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.25</span>))</span>
+<span id="cb184-11"><a href="beta-regression.html#cb184-11" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.30</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.30</span>))</span>
+<span id="cb184-12"><a href="beta-regression.html#cb184-12" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.35</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.35</span>))</span>
+<span id="cb184-13"><a href="beta-regression.html#cb184-13" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.40</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.40</span>))</span>
+<span id="cb184-14"><a href="beta-regression.html#cb184-14" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.45</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.45</span>))</span>
+<span id="cb184-15"><a href="beta-regression.html#cb184-15" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.50</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.50</span>)) <span class="co"># calculate the quantiles of 50% (the median)</span></span>
+<span id="cb184-16"><a href="beta-regression.html#cb184-16" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.55</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.55</span>))</span>
+<span id="cb184-17"><a href="beta-regression.html#cb184-17" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.60</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.60</span>))</span>
+<span id="cb184-18"><a href="beta-regression.html#cb184-18" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.65</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.65</span>))</span>
+<span id="cb184-19"><a href="beta-regression.html#cb184-19" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.70</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.70</span>))</span>
+<span id="cb184-20"><a href="beta-regression.html#cb184-20" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.75</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.75</span>))</span>
+<span id="cb184-21"><a href="beta-regression.html#cb184-21" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.80</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.80</span>))</span>
+<span id="cb184-22"><a href="beta-regression.html#cb184-22" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.85</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.85</span>))</span>
+<span id="cb184-23"><a href="beta-regression.html#cb184-23" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.90</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.90</span>)) <span class="co"># calculate the quantiles of 90%</span></span>
+<span id="cb184-24"><a href="beta-regression.html#cb184-24" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.95</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.95</span>))</span>
+<span id="cb184-25"><a href="beta-regression.html#cb184-25" tabindex="-1"></a>dp2<span class="sc">$</span>quantile_<span class="fl">.99</span><span class="ot">=</span><span class="fu">predict</span>(modelpropFr, <span class="at">type =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="fl">0.99</span>)) <span class="co"># calculate the quantiles of 99%</span></span>
+<span id="cb184-26"><a href="beta-regression.html#cb184-26" tabindex="-1"></a>dp2</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:beta regression plot preparation">
 <caption style="caption-side: top; text-align: center;">(#tab:beta regression plot preparation) </caption><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Number_of_Flowers</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">PropFR</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">response</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">precision</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">variance</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.01</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.05</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.10</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.15</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.20</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.25</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.30</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.35</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.40</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.45</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.50</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.55</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.60</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.65</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.70</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.75</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.80</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.85</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.90</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.95</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">quantile_.99</th></tr>
@@ -1699,29 +1704,29 @@ The variance os beta distribution is</p>
 
 <p>When constructing the figure for beta regression, one of the main advantages of using this approach is that the quartiles are calculated with a beta distribution. Therefore, the margin of error does NOT fall below 0 and does NOT exceed 1.</p>
 <p>Evaluate the following figure at each through regression.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="beta-regression.html#cb135-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb135-2"><a href="beta-regression.html#cb135-2" tabindex="-1"></a><span class="fu">ggplot</span>(dp2, <span class="fu">aes</span>(<span class="at">x=</span>Number_of_Flowers, <span class="at">y=</span>PropFR))<span class="sc">+</span></span>
-<span id="cb135-3"><a href="beta-regression.html#cb135-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb135-4"><a href="beta-regression.html#cb135-4" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.05</span>), <span class="at">linetype=</span><span class="st">&quot;twodash&quot;</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-5"><a href="beta-regression.html#cb135-5" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.25</span>),<span class="at">linetype=</span><span class="dv">2</span>, <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-6"><a href="beta-regression.html#cb135-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.50</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-7"><a href="beta-regression.html#cb135-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.75</span>), <span class="at">linetype=</span><span class="dv">2</span>, <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-8"><a href="beta-regression.html#cb135-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.95</span>), <span class="at">linetype=</span><span class="st">&quot;twodash&quot;</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-9"><a href="beta-regression.html#cb135-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Predicción de la proporción de frutos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-10"><a href="beta-regression.html#cb135-10" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Números de Flores&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-11"><a href="beta-regression.html#cb135-11" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">25</span>, <span class="at">y=</span><span class="fl">0.50</span>, <span class="at">label=</span><span class="st">&quot;95th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-12"><a href="beta-regression.html#cb135-12" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="fl">0.39</span>, <span class="at">label=</span><span class="st">&quot;75th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-13"><a href="beta-regression.html#cb135-13" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="fl">0.14</span>, <span class="at">label=</span><span class="st">&quot;25th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-14"><a href="beta-regression.html#cb135-14" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="fl">0.27</span>, <span class="at">label=</span><span class="st">&quot;Median&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-15"><a href="beta-regression.html#cb135-15" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">35</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.02</span>, <span class="at">label=</span><span class="st">&quot;5th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-16"><a href="beta-regression.html#cb135-16" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb135-17"><a href="beta-regression.html#cb135-17" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb135-18"><a href="beta-regression.html#cb135-18" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>), </span>
-<span id="cb135-19"><a href="beta-regression.html#cb135-19" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
-<span id="cb135-20"><a href="beta-regression.html#cb135-20" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb135-21"><a href="beta-regression.html#cb135-21" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="beta-regression.html#cb185-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb185-2"><a href="beta-regression.html#cb185-2" tabindex="-1"></a><span class="fu">ggplot</span>(dp2, <span class="fu">aes</span>(<span class="at">x=</span>Number_of_Flowers, <span class="at">y=</span>PropFR))<span class="sc">+</span></span>
+<span id="cb185-3"><a href="beta-regression.html#cb185-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb185-4"><a href="beta-regression.html#cb185-4" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.05</span>), <span class="at">linetype=</span><span class="st">&quot;twodash&quot;</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-5"><a href="beta-regression.html#cb185-5" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.25</span>),<span class="at">linetype=</span><span class="dv">2</span>, <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-6"><a href="beta-regression.html#cb185-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.50</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-7"><a href="beta-regression.html#cb185-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.75</span>), <span class="at">linetype=</span><span class="dv">2</span>, <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-8"><a href="beta-regression.html#cb185-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>quantile_<span class="fl">.95</span>), <span class="at">linetype=</span><span class="st">&quot;twodash&quot;</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-9"><a href="beta-regression.html#cb185-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Predicción de la proporción de frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-10"><a href="beta-regression.html#cb185-10" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Números de Flores&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-11"><a href="beta-regression.html#cb185-11" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">25</span>, <span class="at">y=</span><span class="fl">0.50</span>, <span class="at">label=</span><span class="st">&quot;95th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-12"><a href="beta-regression.html#cb185-12" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="fl">0.39</span>, <span class="at">label=</span><span class="st">&quot;75th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-13"><a href="beta-regression.html#cb185-13" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="fl">0.14</span>, <span class="at">label=</span><span class="st">&quot;25th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-14"><a href="beta-regression.html#cb185-14" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="fl">0.27</span>, <span class="at">label=</span><span class="st">&quot;Median&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-15"><a href="beta-regression.html#cb185-15" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">35</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.02</span>, <span class="at">label=</span><span class="st">&quot;5th quartile&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;italic&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-16"><a href="beta-regression.html#cb185-16" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb185-17"><a href="beta-regression.html#cb185-17" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb185-18"><a href="beta-regression.html#cb185-18" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>), </span>
+<span id="cb185-19"><a href="beta-regression.html#cb185-19" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb185-20"><a href="beta-regression.html#cb185-20" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb185-21"><a href="beta-regression.html#cb185-21" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/beta%20reg%20graph-1.png" width="672" /></p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="beta-regression.html#cb136-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures/Beta_number_flowers.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="beta-regression.html#cb186-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures/Beta_number_flowers.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p>This is a representation of the beta distributions in the x, number of flowers. In red we simulate the distribution of the expected proportion of fruits in plants that have 15 flowers and in the blue line we simulate the expected distribution of the proportion of fruits in plants with 30 flowers.</p>
 <hr />
@@ -1729,12 +1734,12 @@ The variance os beta distribution is</p>
 <div id="compare-the-traditional-linear-model-versus-a-beta-model" class="section level2 hasAnchor" number="18.11">
 <h2><span class="header-section-number">18.11</span> Compare the traditional linear model versus a beta model<a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To compare the effectiveness of the models we use the Akaike Information Criterion (AIC). In a model selection approach, the smallest AIC index, which represents the most parsimonious model, is accepted as the best model. An AIC difference of 4 is significant. Note that the beta model is much better (AIC = -219) than the linear regression model (AIC = -102)</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="beta-regression.html#cb138-1" tabindex="-1"></a><span class="co">#AIC(modelpropFr) # modelo beta</span></span>
-<span id="cb138-2"><a href="beta-regression.html#cb138-2" tabindex="-1"></a></span>
-<span id="cb138-3"><a href="beta-regression.html#cb138-3" tabindex="-1"></a></span>
-<span id="cb138-4"><a href="beta-regression.html#cb138-4" tabindex="-1"></a>modelpropFr_lm<span class="ot">=</span><span class="fu">lm</span>(PropFR<span class="sc">~</span>Number_of_Flowers, <span class="at">data=</span>dp2)</span>
-<span id="cb138-5"><a href="beta-regression.html#cb138-5" tabindex="-1"></a></span>
-<span id="cb138-6"><a href="beta-regression.html#cb138-6" tabindex="-1"></a><span class="fu">AIC</span>(modelpropFr,modelpropFr_lm)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="beta-regression.html#cb188-1" tabindex="-1"></a><span class="co">#AIC(modelpropFr) # modelo beta</span></span>
+<span id="cb188-2"><a href="beta-regression.html#cb188-2" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="beta-regression.html#cb188-3" tabindex="-1"></a></span>
+<span id="cb188-4"><a href="beta-regression.html#cb188-4" tabindex="-1"></a>modelpropFr_lm<span class="ot">=</span><span class="fu">lm</span>(PropFR<span class="sc">~</span>Number_of_Flowers, <span class="at">data=</span>dp2)</span>
+<span id="cb188-5"><a href="beta-regression.html#cb188-5" tabindex="-1"></a></span>
+<span id="cb188-6"><a href="beta-regression.html#cb188-6" tabindex="-1"></a><span class="fu">AIC</span>(modelpropFr,modelpropFr_lm)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
 <col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC</th></tr>
@@ -1751,32 +1756,32 @@ The variance os beta distribution is</p>
 <p>Evaluating the beta distribution for specific values of x = Ratio of fruits per plant based on the number of flowers on the plant.</p>
 <p>Select the different values of <strong>x</strong> and calculate the mean and variance and convert these to <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. With these parameters, the density of the distribution can be constructed for each value of x.</p>
 <p>Specific values are selected to display the distribution, plants that have 25, 30 and 35 flowers. The data has to be rearranged to calculate the mean and variance.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="beta-regression.html#cb139-1" tabindex="-1"></a>dpQ<span class="ot">=</span>dp2 <span class="sc">%&gt;%</span> </span>
-<span id="cb139-2"><a href="beta-regression.html#cb139-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">26</span>))</span>
-<span id="cb139-3"><a href="beta-regression.html#cb139-3" tabindex="-1"></a></span>
-<span id="cb139-4"><a href="beta-regression.html#cb139-4" tabindex="-1"></a>dpQ2<span class="ot">=</span>dpQ<span class="sc">%&gt;%</span> </span>
-<span id="cb139-5"><a href="beta-regression.html#cb139-5" tabindex="-1"></a>  <span class="fu">filter</span>(Number_of_Flowers<span class="sc">==</span> <span class="dv">35</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">22</span>))<span class="sc">%&gt;%</span> t <span class="sc">%&gt;%</span> as.data.frame</span>
-<span id="cb139-6"><a href="beta-regression.html#cb139-6" tabindex="-1"></a>dpQ2<span class="sc">$</span>Quartiles<span class="ot">=</span><span class="fu">c</span>(.<span class="dv">01</span>, <span class="fl">0.05</span>, .<span class="dv">1</span>, .<span class="dv">15</span>, .<span class="dv">2</span>, .<span class="dv">25</span>, .<span class="dv">30</span>, .<span class="dv">35</span>, .<span class="dv">4</span>, .<span class="dv">45</span>, .<span class="dv">5</span>, .<span class="dv">55</span>, .<span class="dv">6</span>, .<span class="dv">65</span>,  .<span class="dv">7</span>,.<span class="dv">75</span>, .<span class="dv">8</span>, .<span class="dv">85</span>, .<span class="dv">9</span>, .<span class="dv">95</span>, .<span class="dv">99</span> )</span>
-<span id="cb139-7"><a href="beta-regression.html#cb139-7" tabindex="-1"></a></span>
-<span id="cb139-8"><a href="beta-regression.html#cb139-8" tabindex="-1"></a><span class="fu">mean</span>(dpQ2<span class="sc">$</span>V1, <span class="at">na.rm=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="beta-regression.html#cb189-1" tabindex="-1"></a>dpQ<span class="ot">=</span>dp2 <span class="sc">%&gt;%</span> </span>
+<span id="cb189-2"><a href="beta-regression.html#cb189-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">26</span>))</span>
+<span id="cb189-3"><a href="beta-regression.html#cb189-3" tabindex="-1"></a></span>
+<span id="cb189-4"><a href="beta-regression.html#cb189-4" tabindex="-1"></a>dpQ2<span class="ot">=</span>dpQ<span class="sc">%&gt;%</span> </span>
+<span id="cb189-5"><a href="beta-regression.html#cb189-5" tabindex="-1"></a>  <span class="fu">filter</span>(Number_of_Flowers<span class="sc">==</span> <span class="dv">35</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">22</span>))<span class="sc">%&gt;%</span> t <span class="sc">%&gt;%</span> as.data.frame</span>
+<span id="cb189-6"><a href="beta-regression.html#cb189-6" tabindex="-1"></a>dpQ2<span class="sc">$</span>Quartiles<span class="ot">=</span><span class="fu">c</span>(.<span class="dv">01</span>, <span class="fl">0.05</span>, .<span class="dv">1</span>, .<span class="dv">15</span>, .<span class="dv">2</span>, .<span class="dv">25</span>, .<span class="dv">30</span>, .<span class="dv">35</span>, .<span class="dv">4</span>, .<span class="dv">45</span>, .<span class="dv">5</span>, .<span class="dv">55</span>, .<span class="dv">6</span>, .<span class="dv">65</span>,  .<span class="dv">7</span>,.<span class="dv">75</span>, .<span class="dv">8</span>, .<span class="dv">85</span>, .<span class="dv">9</span>, .<span class="dv">95</span>, .<span class="dv">99</span> )</span>
+<span id="cb189-7"><a href="beta-regression.html#cb189-7" tabindex="-1"></a></span>
+<span id="cb189-8"><a href="beta-regression.html#cb189-8" tabindex="-1"></a><span class="fu">mean</span>(dpQ2<span class="sc">$</span>V1, <span class="at">na.rm=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2757771</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="beta-regression.html#cb141-1" tabindex="-1"></a><span class="fu">var</span>(dpQ2<span class="sc">$</span>V1, <span class="at">na.rm=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="beta-regression.html#cb191-1" tabindex="-1"></a><span class="fu">var</span>(dpQ2<span class="sc">$</span>V1, <span class="at">na.rm=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.04226223</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="beta-regression.html#cb143-1" tabindex="-1"></a><span class="co">#dpQ2</span></span>
-<span id="cb143-2"><a href="beta-regression.html#cb143-2" tabindex="-1"></a></span>
-<span id="cb143-3"><a href="beta-regression.html#cb143-3" tabindex="-1"></a></span>
-<span id="cb143-4"><a href="beta-regression.html#cb143-4" tabindex="-1"></a><span class="fu">ggplot</span>(dpQ2, <span class="fu">aes</span>(Quartiles, V1))<span class="sc">+</span></span>
-<span id="cb143-5"><a href="beta-regression.html#cb143-5" tabindex="-1"></a> <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="beta-regression.html#cb193-1" tabindex="-1"></a><span class="co">#dpQ2</span></span>
+<span id="cb193-2"><a href="beta-regression.html#cb193-2" tabindex="-1"></a></span>
+<span id="cb193-3"><a href="beta-regression.html#cb193-3" tabindex="-1"></a></span>
+<span id="cb193-4"><a href="beta-regression.html#cb193-4" tabindex="-1"></a><span class="fu">ggplot</span>(dpQ2, <span class="fu">aes</span>(Quartiles, V1))<span class="sc">+</span></span>
+<span id="cb193-5"><a href="beta-regression.html#cb193-5" tabindex="-1"></a> <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <p>Using the variance calculated in the previous chunk, the <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be calculated.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="beta-regression.html#cb144-1" tabindex="-1"></a>estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
-<span id="cb144-2"><a href="beta-regression.html#cb144-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb144-3"><a href="beta-regression.html#cb144-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb144-4"><a href="beta-regression.html#cb144-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
-<span id="cb144-5"><a href="beta-regression.html#cb144-5" tabindex="-1"></a>}</span>
-<span id="cb144-6"><a href="beta-regression.html#cb144-6" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
-<span id="cb144-7"><a href="beta-regression.html#cb144-7" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
-<span id="cb144-8"><a href="beta-regression.html#cb144-8" tabindex="-1"></a><span class="fu">estBetaParams</span>(<span class="fl">0.2757771</span>,<span class="fl">0.04226223</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="beta-regression.html#cb194-1" tabindex="-1"></a>estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
+<span id="cb194-2"><a href="beta-regression.html#cb194-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb194-3"><a href="beta-regression.html#cb194-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb194-4"><a href="beta-regression.html#cb194-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
+<span id="cb194-5"><a href="beta-regression.html#cb194-5" tabindex="-1"></a>}</span>
+<span id="cb194-6"><a href="beta-regression.html#cb194-6" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
+<span id="cb194-7"><a href="beta-regression.html#cb194-7" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
+<span id="cb194-8"><a href="beta-regression.html#cb194-8" tabindex="-1"></a><span class="fu">estBetaParams</span>(<span class="fl">0.2757771</span>,<span class="fl">0.04226223</span>)</span></code></pre></div>
 <pre><code>## $alpha
 ## [1] 1.027498
 ## 
@@ -1784,45 +1789,45 @@ The variance os beta distribution is</p>
 ## [1] 2.698331</code></pre>
 <hr />
 <p>Graphics production. It is observed that for plants that have 25 and 30 flowers the density is skewed to the left, in other words the probability of having few fruits dominates the distributions.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="beta-regression.html#cb146-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="beta-regression.html#cb196-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;gridExtra&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:
 ## 
 ##     combine</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="beta-regression.html#cb149-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
-<span id="cb149-2"><a href="beta-regression.html#cb149-2" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
-<span id="cb149-3"><a href="beta-regression.html#cb149-3" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span><span class="fl">0.5418068</span>, <span class="at">shape2 =</span><span class="fl">3.135593</span>))<span class="sc">+</span></span>
-<span id="cb149-4"><a href="beta-regression.html#cb149-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-5"><a href="beta-regression.html#cb149-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-6"><a href="beta-regression.html#cb149-6" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))<span class="sc">+</span></span>
-<span id="cb149-7"><a href="beta-regression.html#cb149-7" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 25 flores&quot;</span>)</span>
-<span id="cb149-8"><a href="beta-regression.html#cb149-8" tabindex="-1"></a></span>
-<span id="cb149-9"><a href="beta-regression.html#cb149-9" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
-<span id="cb149-10"><a href="beta-regression.html#cb149-10" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
-<span id="cb149-11"><a href="beta-regression.html#cb149-11" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">0.7549048</span>, <span class="at">shape2 =</span><span class="fl">2.949404</span>))<span class="sc">+</span></span>
-<span id="cb149-12"><a href="beta-regression.html#cb149-12" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-13"><a href="beta-regression.html#cb149-13" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-14"><a href="beta-regression.html#cb149-14" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>))<span class="sc">+</span></span>
-<span id="cb149-15"><a href="beta-regression.html#cb149-15" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 30 flores&quot;</span>)</span>
-<span id="cb149-16"><a href="beta-regression.html#cb149-16" tabindex="-1"></a></span>
-<span id="cb149-17"><a href="beta-regression.html#cb149-17" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
-<span id="cb149-18"><a href="beta-regression.html#cb149-18" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
-<span id="cb149-19"><a href="beta-regression.html#cb149-19" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">1.027498</span>, <span class="at">shape2 =</span><span class="fl">2.698331</span>))<span class="sc">+</span></span>
-<span id="cb149-20"><a href="beta-regression.html#cb149-20" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-21"><a href="beta-regression.html#cb149-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb149-22"><a href="beta-regression.html#cb149-22" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.10</span>))<span class="sc">+</span></span>
-<span id="cb149-23"><a href="beta-regression.html#cb149-23" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 35 flores&quot;</span>)</span>
-<span id="cb149-24"><a href="beta-regression.html#cb149-24" tabindex="-1"></a></span>
-<span id="cb149-25"><a href="beta-regression.html#cb149-25" tabindex="-1"></a>tresDensidad<span class="ot">=</span><span class="fu">grid.arrange</span>(a,b,c, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="beta-regression.html#cb150-1" tabindex="-1"></a>tresDensidad</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="beta-regression.html#cb199-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
+<span id="cb199-2"><a href="beta-regression.html#cb199-2" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
+<span id="cb199-3"><a href="beta-regression.html#cb199-3" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span><span class="fl">0.5418068</span>, <span class="at">shape2 =</span><span class="fl">3.135593</span>))<span class="sc">+</span></span>
+<span id="cb199-4"><a href="beta-regression.html#cb199-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-5"><a href="beta-regression.html#cb199-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-6"><a href="beta-regression.html#cb199-6" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))<span class="sc">+</span></span>
+<span id="cb199-7"><a href="beta-regression.html#cb199-7" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 25 flores&quot;</span>)</span>
+<span id="cb199-8"><a href="beta-regression.html#cb199-8" tabindex="-1"></a></span>
+<span id="cb199-9"><a href="beta-regression.html#cb199-9" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
+<span id="cb199-10"><a href="beta-regression.html#cb199-10" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
+<span id="cb199-11"><a href="beta-regression.html#cb199-11" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">0.7549048</span>, <span class="at">shape2 =</span><span class="fl">2.949404</span>))<span class="sc">+</span></span>
+<span id="cb199-12"><a href="beta-regression.html#cb199-12" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-13"><a href="beta-regression.html#cb199-13" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-14"><a href="beta-regression.html#cb199-14" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>))<span class="sc">+</span></span>
+<span id="cb199-15"><a href="beta-regression.html#cb199-15" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 30 flores&quot;</span>)</span>
+<span id="cb199-16"><a href="beta-regression.html#cb199-16" tabindex="-1"></a></span>
+<span id="cb199-17"><a href="beta-regression.html#cb199-17" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(PropFR))<span class="sc">+</span></span>
+<span id="cb199-18"><a href="beta-regression.html#cb199-18" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> dipodium2<span class="sc">$</span>PropFR, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">n =</span> <span class="dv">62</span>,</span>
+<span id="cb199-19"><a href="beta-regression.html#cb199-19" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">1.027498</span>, <span class="at">shape2 =</span><span class="fl">2.698331</span>))<span class="sc">+</span></span>
+<span id="cb199-20"><a href="beta-regression.html#cb199-20" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Beta </span><span class="sc">\n</span><span class="st">Density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-21"><a href="beta-regression.html#cb199-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Probabilidad de tener frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-22"><a href="beta-regression.html#cb199-22" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.10</span>))<span class="sc">+</span></span>
+<span id="cb199-23"><a href="beta-regression.html#cb199-23" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Densidad beta para plantas con 35 flores&quot;</span>)</span>
+<span id="cb199-24"><a href="beta-regression.html#cb199-24" tabindex="-1"></a></span>
+<span id="cb199-25"><a href="beta-regression.html#cb199-25" tabindex="-1"></a>tresDensidad<span class="ot">=</span><span class="fu">grid.arrange</span>(a,b,c, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="beta-regression.html#cb200-1" tabindex="-1"></a>tresDensidad</span></code></pre></div>
 <pre><code>## TableGrob (3 x 1) &quot;arrange&quot;: 3 grobs
 ##   z     cells    name           grob
 ## 1 1 (1-1,1-1) arrange gtable[layout]
 ## 2 2 (2-2,1-1) arrange gtable[layout]
 ## 3 3 (3-3,1-1) arrange gtable[layout]</code></pre>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="beta-regression.html#cb152-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures/tresDensidad.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="beta-regression.html#cb202-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures/tresDensidad.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p>For an excellent new step by step use of the beta regression and why it is usefull see this website.</p>
 <p><a href="https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/" class="uri">https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/</a></p>

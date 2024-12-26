@@ -1,5 +1,18 @@
 h1:scatter-plots Scatter Plots
 h2:basic-scatter-plots Basic scatter plots
+h2:the-lm-function the lm() function
+h2:visualization-of-the-regression Visualization of the regression
+h2:the-impact-of-outliers The impact of outliers
+h2:selling-music-records Selling music records
+h2:linear-regression-assumptions Linear Regression Assumptions
+h2:cooks-distance Cook’s Distance
+h2:steps-to-do-a-linear-regression-analysis Steps to do a linear regression analysis
+h3:step-1 Step 1
+h3:step-2 Step 2
+h3:step-3 Step 3
+h3:plot-the-residuals Plot the residuals
+h3:exercise-1 Exercise 1
+h3:eexercise-2 EExercise 2
 h2:scatter-plots-with-jitter Scatter plots with jitter
 h2:scatter-plots-with-marginal-histograms Scatter plots with marginal histograms
 h2:scatter-plots-for-multiple-variables Scatter plots for multiple variables
