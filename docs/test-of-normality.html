@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-24" />
+<meta name="date" content="2024-12-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="understanding-your-data.html"/>
-<link rel="next" href="levenes-test-testing-for-assumption-of-normality-among-groups.html"/>
+<link rel="next" href="tests-of-equality-of-variances.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="test-of-normality.html"><a href="test-of-normality.html#metadata"><i class="fa fa-check"></i><b>7.0.1</b> METADATA</a></li>
 <li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
 <li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
 <li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
@@ -194,8 +193,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
 <li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
 </ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="levenes-test-testing-for-assumption-of-normality-among-groups.html"><a href="levenes-test-testing-for-assumption-of-normality-among-groups.html"><i class="fa fa-check"></i><b>8</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+<li class="chapter" data-level="8" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html"><i class="fa fa-check"></i><b>8</b> Tests of Equality of variances</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.2" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.3" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.4" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.0.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>9</b> Non-parametric test</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1</b> Altenative to non-parametric tests</a></li>
@@ -230,17 +236,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="17" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Generalized Linear Models</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.1</b> Binomial regression</a></li>
-<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.2</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.3</b> Negative binomial regression</a></li>
-<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>17.4</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>17.1</b> Linear models</a></li>
+<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>17.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.4</b> Link available</a></li>
+<li class="chapter" data-level="17.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>17.5</b> The assumptions</a></li>
+<li class="chapter" data-level="17.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="17.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.7</b> ## Binomial or Bernoulli models</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>17.4.1</b> Model</a></li>
-<li class="chapter" data-level="17.4.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>17.4.2</b> Assumptions</a></li>
-<li class="chapter" data-level="17.4.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>17.4.3</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="17.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="17.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="17.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>17.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="17.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>17.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="17.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="17.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="17.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.12</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="17.13" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>17.13</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="17.13.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>17.13.1</b> Model</a></li>
+<li class="chapter" data-level="17.13.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>17.13.2</b> Assumptions</a></li>
+<li class="chapter" data-level="17.13.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>17.13.3</b> Post estimation analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>18</b> Beta Regression</a></li>
+<li class="chapter" data-level="18" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>18</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>18.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="18.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>18.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="18.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>18.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="18.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>18.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="18.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>18.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="18.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>18.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="18.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>18.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="18.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>18.8</b> Regression model</a></li>
+<li class="chapter" data-level="18.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>18.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="18.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>18.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="18.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>18.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="18.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>18.12</b> Distribution of specific values</a></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>19</b> Auto Regressive Vectorial Analysis</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -268,7 +303,7 @@ NOTE THE NEW FUNCTION to install all packages ONLY IF Needed…..pacman::p_load(
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="test-of-normality.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="test-of-normality.html#cb1-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/DownloadFestival.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 810 Columns: 5
-## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): gender
 ## dbl (4): ticknumb, day1, day2, day3
@@ -286,8 +321,11 @@ NOTE THE NEW FUNCTION to install all packages ONLY IF Needed…..pacman::p_load(
 ## 5     2401 Female  0.88  0.08 NA   
 ## 6     2405 Male    0.85 NA    NA</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="test-of-normality.html#cb5-1" tabindex="-1"></a>dlf <span class="ot">&lt;-</span> DownloadFestival</span></code></pre></div>
-<div id="metadata" class="section level3 hasAnchor" number="7.0.1">
-<h3><span class="header-section-number">7.0.1</span> METADATA<a href="test-of-normality.html#metadata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="understanding-the-data" class="section level4 hasAnchor" number="7.0.0.1">
+<h4><span class="header-section-number">7.0.0.1</span> Understanding the data<a href="test-of-normality.html#understanding-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>METADATA</li>
+</ul>
 <p>The data is from a festival in UK. The data is about the hygiene score of the participants. The hygiene score is a score from 0 to 4.</p>
 <p>The scale is as follows:</p>
 <ul>
@@ -489,8 +527,11 @@ NOTE THE NEW FUNCTION to install all packages ONLY IF Needed…..pacman::p_load(
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="test-of-normality.html#cb44-1" tabindex="-1"></a><span class="fu">length</span>(dlf<span class="sc">$</span>day1)</span></code></pre></div>
 <pre><code>## [1] 810</code></pre>
 <p>Visualize the distribution of the data “Histogram”</p>
-<p>#Remove the outlier from the day1 hygiene score
-dlf<span class="math inline">\(day1 &lt;- ifelse(dlf\)</span>day1 &gt; 5, NA, dlf<span class="math inline">\(day1)
+</div>
+</div>
+<div id="remove-the-outlier-from-the-day1-hygiene-score" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Remove the outlier from the day1 hygiene score<a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>dlf<span class="math inline">\(day1 &lt;- ifelse(dlf\)</span>day1 &gt; 5, NA, dlf<span class="math inline">\(day1)
 df\)</span>Column = ifelse(df$column_to_be evaluated, replace_with_NA, otherwise_leave_as_before)</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="test-of-normality.html#cb46-1" tabindex="-1"></a>dlf<span class="sc">$</span>day1 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dlf<span class="sc">$</span>day1 <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="cn">NA</span>, dlf<span class="sc">$</span>day1)</span>
 <span id="cb46-2"><a href="test-of-normality.html#cb46-2" tabindex="-1"></a></span>
@@ -557,7 +598,7 @@ The variance</p>
 ## kurt.2SE     492.314 1.265 0.686
 ## normtest.W     0.654 0.908 0.908
 ## normtest.p     0.000 0.000 0.000</code></pre>
-</div>
+<hr />
 </div>
 </div>
             </section>
@@ -566,7 +607,7 @@ The variance</p>
         </div>
       </div>
 <a href="understanding-your-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="levenes-test-testing-for-assumption-of-normality-among-groups.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tests-of-equality-of-variances.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -597,7 +638,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/07_Normality_test.Rmd",
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/07_Normality_Equality_var_tests.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -605,7 +646,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/07_Normality_test.Rmd",
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/07_Normality_Equality_var_tests.Rmd",
 "text": null
 },
 "download": null,

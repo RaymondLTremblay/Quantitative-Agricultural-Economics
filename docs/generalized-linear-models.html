@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-24" />
+<meta name="date" content="2024-12-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="test-of-normality.html"><a href="test-of-normality.html#metadata"><i class="fa fa-check"></i><b>7.0.1</b> METADATA</a></li>
 <li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
 <li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
 <li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
@@ -194,8 +193,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
 <li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
 </ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="levenes-test-testing-for-assumption-of-normality-among-groups.html"><a href="levenes-test-testing-for-assumption-of-normality-among-groups.html"><i class="fa fa-check"></i><b>8</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+<li class="chapter" data-level="8" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html"><i class="fa fa-check"></i><b>8</b> Tests of Equality of variances</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.2" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.3" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="8.0.4" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.0.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>9</b> Non-parametric test</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1</b> Altenative to non-parametric tests</a></li>
@@ -230,17 +236,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="17" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Generalized Linear Models</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.1</b> Binomial regression</a></li>
-<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.2</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.3</b> Negative binomial regression</a></li>
-<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>17.4</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>17.1</b> Linear models</a></li>
+<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>17.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.4</b> Link available</a></li>
+<li class="chapter" data-level="17.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>17.5</b> The assumptions</a></li>
+<li class="chapter" data-level="17.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="17.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.7</b> ## Binomial or Bernoulli models</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>17.4.1</b> Model</a></li>
-<li class="chapter" data-level="17.4.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>17.4.2</b> Assumptions</a></li>
-<li class="chapter" data-level="17.4.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>17.4.3</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="17.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="17.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="17.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>17.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="17.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>17.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="17.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="17.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="17.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.12</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="17.13" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>17.13</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="17.13.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>17.13.1</b> Model</a></li>
+<li class="chapter" data-level="17.13.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>17.13.2</b> Assumptions</a></li>
+<li class="chapter" data-level="17.13.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>17.13.3</b> Post estimation analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>18</b> Beta Regression</a></li>
+<li class="chapter" data-level="18" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>18</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>18.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="18.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>18.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="18.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>18.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="18.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>18.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="18.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>18.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="18.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>18.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="18.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>18.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="18.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>18.8</b> Regression model</a></li>
+<li class="chapter" data-level="18.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>18.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="18.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>18.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="18.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>18.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="18.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>18.12</b> Distribution of specific values</a></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>19</b> Auto Regressive Vectorial Analysis</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -263,26 +298,280 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="generalized-linear-models" class="section level1 hasAnchor" number="17">
 <h1><span class="header-section-number">Chapter 17</span> Generalized Linear Models<a href="generalized-linear-models.html#generalized-linear-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="binomial-regression" class="section level2 hasAnchor" number="17.1">
-<h2><span class="header-section-number">17.1</span> Binomial regression<a href="generalized-linear-models.html#binomial-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="generalized-linear-models.html#cb89-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb89-2"><a href="generalized-linear-models.html#cb89-2" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,  huxtable, wakefield, SuppDists,univariateML)</span>
+<span id="cb89-3"><a href="generalized-linear-models.html#cb89-3" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="generalized-linear-models.html#cb89-4" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb89-5"><a href="generalized-linear-models.html#cb89-5" tabindex="-1"></a><span class="fu">library</span>(huxtable)</span>
+<span id="cb89-6"><a href="generalized-linear-models.html#cb89-6" tabindex="-1"></a><span class="fu">library</span>(wakefield)</span>
+<span id="cb89-7"><a href="generalized-linear-models.html#cb89-7" tabindex="-1"></a><span class="fu">library</span>(SuppDists)</span>
+<span id="cb89-8"><a href="generalized-linear-models.html#cb89-8" tabindex="-1"></a><span class="fu">library</span>(univariateML)</span></code></pre></div>
+<hr />
+<div id="linear-models" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Linear models<a href="generalized-linear-models.html#linear-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Generalized linear models, GLM, are an extension of linear models where the dependent variable has a normal distribution. We remember that in a linear regression the dependent variable follows the model <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i\)</span>, where <span class="math inline">\(\beta_0\)</span> is the intercept and the <span class="math inline">\(\beta_1\)</span> is the coefficient, that is, the slope and the <span class="math inline">\(x_i\)</span> are the values of x’s. One of the assumptions is that the variation in the values of <span class="math inline">\(\mu_i\)</span>, which are the <span class="math inline">\(y_i\)</span>, have a normal distribution in each x’s and that there is homogeneity of variance.</p>
+<p><span class="math display">\[\mu_i=\beta_0+\beta_1x_i\]</span> An important assumption is the assumption that the variation in the <span class="math inline">\(y_i\)</span> are normally distributed and that there is homogeneity of variance.</p>
+<p><span class="math display">\[y_i\sim N\left(\mu_i,\ \epsilon\right)\]</span> We can visualize it with the following figure, where the values of y’s have a normal distribution and that this distribution is homogeneous across the values of x’s.</p>
 </div>
-<div id="poisson-regression" class="section level2 hasAnchor" number="17.2">
-<h2><span class="header-section-number">17.2</span> Poisson regression<a href="generalized-linear-models.html#poisson-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com." class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “<a href="https://towardsdatascience.com" class="uri">https://towardsdatascience.com</a>”).<a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<hr />
 </div>
-<div id="negative-binomial-regression" class="section level2 hasAnchor" number="17.3">
-<h2><span class="header-section-number">17.3</span> Negative binomial regression<a href="generalized-linear-models.html#negative-binomial-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="when-the-dependent-variable-is-not-linear" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> When the dependent variable is not linear<a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The main problem for a long time has been that the dependent variable does not have a normal distribution and consequently did not meet the assumptions of linear regression. The method of linearizing the response variable was developed by Nelder and Wedderburn 1972. Information about the test and its evolution of GLM can be found at <a href="https://encyclopediaofmath.org/wiki/Generalized_linear_models" class="uri">https://encyclopediaofmath.org/wiki/Generalized_linear_models</a>. With the advancement of the use of computers in the 80s, it ended up being one of the most used statistical methods.</p>
+<p>The term GLM refers to a wide variety of regression models. The assumption in these models is that the response variable <span class="math inline">\(y_i\)</span> follows a distribution within the family of exponential distributions with an average <span class="math inline">\(\mu_i\)</span>, where a function <span class="math inline">\(\mu_i^T\beta\)</span> is assumed that is frequently non-linear . To linearize the variable it is necessary to use a “link” to convert the dependent variable, <span class="math inline">\(y_i\)</span>.</p>
+<hr />
+</div>
+<div id="link-available" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> Link available<a href="generalized-linear-models.html#link-available" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here I show a partial list of the different types of “links” for different types of data (or distributions) of the independent variable, <span class="math inline">\(y_i\)</span>. The decision of which transformation or <strong>link</strong> to use is necessary will depend on the data types and their distribution. This is only a subset of avaliable link functions.</p>
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
+<caption style="caption-side: top; text-align: center;">Common Link function in GLM.</caption><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Modelo</span></th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Variable_Dep</span></th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Link</span></th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Variables_Independiente</span></th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Linear regressionl</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Normal</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Identidy</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Continuous</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">ANOVA</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Normal</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Identity</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Categorical</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Logistic Regression</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Binomial</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Logit</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Mix</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Poisson Regression</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Poisson</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Log</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Mix</td></tr>
+</table>
+
+<p>Although the previous distributions are very common, they are not the only links available to transform the data. Here is supplementary information on some other R links that are available in certain packages.</p>
+<p><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/family" class="uri">https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/family</a></p>
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
+<caption style="caption-side: top; text-align: center;">Common link functions in GLM.</caption><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Familia</span></th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Links</span></th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Gaussian/Normal</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">identity, log, inverse</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Binomial</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">logit, probit, cauchit, log, cloglog</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Gamma</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">inverse, identity, log</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Poisson</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">log, identity, square root</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Inverse Gausian</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1/µ^2, inverse, identity, log</td></tr>
+</table>
+
+<hr />
+</div>
+<div id="the-assumptions-1" class="section level2 hasAnchor" number="17.5">
+<h2><span class="header-section-number">17.5</span> The assumptions<a href="generalized-linear-models.html#the-assumptions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>The advantage is that now the dependent variable does not have to have a normal distribution.</li>
+<li>Furthermore, untransformed data does not have to have a linear relationship. However, the data must come from a distribution of the exponential family, for example, binomial, Poisson, multinomial, normal, inverse normal, etc.<br />
+</li>
+<li>GLM does not assume a linear relationship between the dependent and independent variable, but assumes a linear relationship of the transformed dependent variable data and the independent variable. Consequently, a linear relationship is assumed between the binary variable and the explanatory variable after using the transformation with the link, <span class="math inline">\(logit\left(\pi\right)=\beta_0+\beta_1\cdot x_i\)</span>.</li>
+<li>The assumption of homogeneity of variance does not have to be taken into account.</li>
+<li>The errors have to be independent but it does not matter if they comply with a normal distribution.</li>
+</ul>
+<hr />
+</div>
+<div id="the-advantages-of-glm" class="section level2 hasAnchor" number="17.6">
+<h2><span class="header-section-number">17.6</span> The advantages of GLM<a href="generalized-linear-models.html#the-advantages-of-glm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>The parameters are estimated using likelihood (MLE = Maximum Likelihood estimators), not least squares (OLS = ordinary least square). The models are estimated via likelihood, then they optimize the estimators, <span class="math inline">\(\beta\)</span>.</li>
+<li>There is no need to transform the data of the dependent variable to normalize them.</li>
+<li>The selection of the “link” is independent of the dependent variable(s), which makes it easier to create models.</li>
+<li>Tools to evaluate inferences and models are available such as evaluating residuals, confidence intervals, deviation, likelihood ratio test among others.</li>
+</ul>
+<hr />
+</div>
+<div id="binomial-or-bernoulli-models" class="section level2 hasAnchor" number="17.7">
+<h2><span class="header-section-number">17.7</span> ## Binomial or Bernoulli models<a href="generalized-linear-models.html#binomial-or-bernoulli-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If the variable is binomial, there are only two alternatives, 0 and 1, or whether or not, dead or alive, the binomial distribution is used. The <strong>logit</strong> function is used as a link function and the binomial/Bernoulli distribution as a probability distribution, the model is called <strong>Logistic Regression</strong>.</p>
+<p><span class="math display">\[\log\frac{q_i}{1-q_i}=\beta_0+\beta_1X_i\]</span>
+where the distribution is a binomial with <span class="math inline">\(y_i\sim Binomial\left(q_i\right)\)</span>.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="generalized-linear-models.html#cb90-1" tabindex="-1"></a><span class="co">#library(wakefield)</span></span>
+<span id="cb90-2"><a href="generalized-linear-models.html#cb90-2" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">r_sample_binary</span>(<span class="dv">50</span>, <span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">prob =</span><span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.7</span>), <span class="at">name =</span> <span class="st">&quot;Binary&quot;</span>)</span>
+<span id="cb90-3"><a href="generalized-linear-models.html#cb90-3" tabindex="-1"></a><span class="co">#x</span></span>
+<span id="cb90-4"><a href="generalized-linear-models.html#cb90-4" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">as.data.frame</span>(<span class="fu">as.factor</span>(x))</span>
+<span id="cb90-5"><a href="generalized-linear-models.html#cb90-5" tabindex="-1"></a><span class="co">#df</span></span>
+<span id="cb90-6"><a href="generalized-linear-models.html#cb90-6" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x))<span class="sc">+</span></span>
+<span id="cb90-7"><a href="generalized-linear-models.html#cb90-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb90-8"><a href="generalized-linear-models.html#cb90-8" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb90-9"><a href="generalized-linear-models.html#cb90-9" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Binary Values&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<hr />
+<div id="gamma-distribution" class="section level3 hasAnchor" number="17.7.1">
+<h3><span class="header-section-number">17.7.1</span> Gamma Distribution<a href="generalized-linear-models.html#gamma-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The gamma distribution is frequently used to take into account variables that have very long and large tails (Heavy-Tailed distributions). The distribution is widely used in the area of econometrics and survival estimates.</p>
+<p>The gamma distribution can be parameterized with a “<strong>shape</strong> term <span class="math inline">\(\alpha = k\)</span> and the inverse of a scale parameter <span class="math inline">\(\beta=1/\theta\)</span> which is known as a * parameter *rate**.</p>
+<p><span class="math display">\[f\left(x\right)=\frac{\left(\beta^{\alpha}\cdot x^{\alpha-1}e^{-\beta x}\right)}{\Gamma\left(\alpha\right)}\ para\ x&gt;0,\ \ \alpha,\ \beta&gt;0\]</span></p>
+<p>where <span class="math inline">\(\Gamma\left(\alpha\right)\)</span> is the gamma function. For each integer value <span class="math inline">\(\Gamma\left(\alpha\right)=\left(\alpha-1\right)!\)</span></p>
+<p>In another word, the gamma distribution is for modeling continuous variables that are always positive and have skewed distributions.</p>
+<p>Examples where the gamma distribution is used</p>
+<ul>
+<li>the time until the moment of failure of a team</li>
+<li>the time until the death of individuals</li>
+<li>the amount of water accumulated in a lake</li>
+<li>the size of unpaid loans</li>
+</ul>
+<p>Let’s look at some gamma distributions</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="generalized-linear-models.html#cb91-1" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb91-2"><a href="generalized-linear-models.html#cb91-2" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x, <span class="at">shape=</span><span class="dv">1</span>, <span class="at">scale=</span><span class="dv">2</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">3</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-3"><a href="generalized-linear-models.html#cb91-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Examples of Gamma Distributions&quot;</span>)</span>
+<span id="cb91-4"><a href="generalized-linear-models.html#cb91-4" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x, <span class="at">shape=</span><span class="dv">2</span>, <span class="at">scale=</span><span class="dv">2</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">5</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-5"><a href="generalized-linear-models.html#cb91-5" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb91-6"><a href="generalized-linear-models.html#cb91-6" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x, <span class="at">shape=</span><span class="dv">2</span>, <span class="at">scale=</span><span class="dv">4</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">6</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-7"><a href="generalized-linear-models.html#cb91-7" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb91-8"><a href="generalized-linear-models.html#cb91-8" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x,<span class="at">shape =</span><span class="dv">5</span>, <span class="at">scale=</span><span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">7</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-9"><a href="generalized-linear-models.html#cb91-9" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb91-10"><a href="generalized-linear-models.html#cb91-10" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x, <span class="at">shape=</span><span class="dv">9</span>, <span class="at">scale=</span><span class="fl">0.5</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-11"><a href="generalized-linear-models.html#cb91-11" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb91-12"><a href="generalized-linear-models.html#cb91-12" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x, <span class="at">shape=</span><span class="fl">7.5</span>, <span class="at">scale=</span><span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="fl">0.4</span>, <span class="dv">20</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">3</span>, </span>
+<span id="cb91-13"><a href="generalized-linear-models.html#cb91-13" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb91-14"><a href="generalized-linear-models.html#cb91-14" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;k=1,theta=2&quot;</span>, <span class="st">&quot;k=2,theta=2&quot;</span>, <span class="st">&quot;k=2,theta=4&quot;</span>,<span class="st">&quot;k=5,theta=1&quot;</span>,<span class="st">&quot;k=9,theta=0.5&quot;</span>, <span class="st">&quot;k=7.5,theta=1.0&quot;</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>,<span class="dv">6</span>, <span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">inset =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+</div>
+<div id="the-basic-parameters-of-the-gamma." class="section level2 hasAnchor" number="17.8">
+<h2><span class="header-section-number">17.8</span> The basic parameters of the gamma.<a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Note: The <strong>scale</strong> is a dispersion index, and the higher the number, the longer the tail.</p>
+<p>The average is equal to the multiplication of shape=k by scale = theta, <span class="math display">\[average=k\cdot\theta\]</span>.</p>
+<p>The variance is equal to the multiplication of shape=k by scale = (theta)^2, <span class="math display">\[variance=k\cdot\theta^2\]</span></p>
+<p>You can find the formulas to calculate other parameters on the Wikipedia page.<br />
+<a href="https://en.wikipedia.org/wiki/Gamma_distribution" class="uri">https://en.wikipedia.org/wiki/Gamma_distribution</a></p>
+<hr />
+<div id="la-distribución-gaussiana-inversa" class="section level3 hasAnchor" number="17.8.1">
+<h3><span class="header-section-number">17.8.1</span> La distribución gaussiana inversa<a href="generalized-linear-models.html#la-distribución-gaussiana-inversa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En la teoría de la probabilidad, la distribución gaussiana inversa es una familia de dos parámetros de distribuciones de probabilidad continuas con apoyo en (0, ∞).</p>
+<p>La distribución sigue la siguiente forma <span class="math display">\[f\left(x;µ,\lambda\right)=\sqrt{\frac{\lambda}{2\pi x^3}}\exp\left(-\frac{\lambda\left(x-µ\right)^2}{2µ^2x}\right)\]</span></p>
+<p>donde <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(µ&gt;0\)</span>, y <span class="math inline">\(\lambda\)</span> es la forma de distribución y siempre es mayor de cero. Mayor es el <span class="math inline">\(\lambda\)</span> (el shape parameter) más simétrica es la distribución.</p>
+<p>Cuando λ tiende al infinito, la distribución gaussiana inversa se parece a una distribución normal (gaussiana). La distribución gaussiana inversa se conoce también como la distribución Wald.</p>
+<p>#La distribución se usa cuando la distribución de población donde la distribución lognormal tiene una cola derecha demasiado pesada. Cuando se refiere a cola pesadas en estadistica, se refiere a que hay más probabilidades en esta region que una distribución normal. Por consecuencia las probabilidades en esta region es mayor.</p>
+<p>La distribución es utiliza para modelar datos no negativos que son sesgados positivamente. En otra palabra todos los valores son positivos y la cola tiende a disminiur más lentamente que en una distribución normal.</p>
+<div id="historia-gausiana-inversa" class="section level4 hasAnchor" number="17.8.1.1">
+<h4><span class="header-section-number">17.8.1.1</span> Historia gausiana inversa<a href="generalized-linear-models.html#historia-gausiana-inversa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Información historica sobre la distribución gaussiana inversa es poco limitado. La distribución fue aparentemente derivada por la primera vez por Louis Bachelier en 1900, cuando el trataba de estimar el precio de la bolsa de valores para diferentes companias. Pero el nombre de “Inverse Gaussian” fue sugerido por Maurice Tweedie en 1945. Vea este enlace para más detalles.</p>
+<p><a href="https://en.wikipedia.org/wiki/Normal-inverse_Gaussian_distribution" class="uri">https://en.wikipedia.org/wiki/Normal-inverse_Gaussian_distribution</a></p>
+<p>Ejemplos que pudiese ser de este tipo de distribución</p>
+<ul>
+<li>el tiempo que toma llegar a un sitio.<br />
+</li>
+<li>la distribución de precios de casas</li>
+<li>la cantidad de hijos en una familia</li>
+<li>la supervivencia de organismos (survival data)</li>
+</ul>
+<p>Nota</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="generalized-linear-models.html#cb92-1" tabindex="-1"></a><span class="fu">library</span>(SuppDists) </span>
+<span id="cb92-2"><a href="generalized-linear-models.html#cb92-2" tabindex="-1"></a><span class="co">#dinvGauss(x, nu, lambda, log=FALSE)</span></span>
+<span id="cb92-3"><a href="generalized-linear-models.html#cb92-3" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="generalized-linear-models.html#cb92-4" tabindex="-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb92-5"><a href="generalized-linear-models.html#cb92-5" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span>.<span class="dv">7</span>, <span class="at">lambda=</span><span class="fl">0.2</span>, <span class="at">log=</span><span class="cn">FALSE</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">3</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-6"><a href="generalized-linear-models.html#cb92-6" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Gráfico distribución Gausiana Inversa&quot;</span>)</span>
+<span id="cb92-7"><a href="generalized-linear-models.html#cb92-7" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span>.<span class="dv">7</span>, <span class="at">lambda=</span><span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">5</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-8"><a href="generalized-linear-models.html#cb92-8" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-9"><a href="generalized-linear-models.html#cb92-9" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span>.<span class="dv">7</span>, <span class="at">lambda=</span><span class="dv">3</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">6</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-10"><a href="generalized-linear-models.html#cb92-10" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-11"><a href="generalized-linear-models.html#cb92-11" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span><span class="dv">2</span>, <span class="at">lambda=</span><span class="fl">0.2</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">7</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-12"><a href="generalized-linear-models.html#cb92-12" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-13"><a href="generalized-linear-models.html#cb92-13" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span><span class="dv">2</span>, <span class="at">lambda=</span><span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-14"><a href="generalized-linear-models.html#cb92-14" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-15"><a href="generalized-linear-models.html#cb92-15" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span><span class="dv">2</span>, <span class="at">lambda=</span><span class="dv">4</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-16"><a href="generalized-linear-models.html#cb92-16" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-17"><a href="generalized-linear-models.html#cb92-17" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dinvGauss</span>(x, <span class="at">nu=</span><span class="dv">1</span>, <span class="at">lambda=</span><span class="dv">40</span>), <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x;k,theta)&quot;</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">4</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb92-18"><a href="generalized-linear-models.html#cb92-18" tabindex="-1"></a>    <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-19"><a href="generalized-linear-models.html#cb92-19" tabindex="-1"></a></span>
+<span id="cb92-20"><a href="generalized-linear-models.html#cb92-20" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;nu=.7,lambda=0.2&quot;</span>, <span class="st">&quot;nu=.7,lambda=1&quot;</span>, <span class="st">&quot;nu=.7,lambda=3&quot;</span>,<span class="st">&quot;nu=2,lambda=0.2&quot;</span>,<span class="st">&quot;nu=2,lambda=1&quot;</span>, <span class="st">&quot;nu=2,lambda=4&quot;</span>,<span class="st">&quot;nu=1,lambda=40&quot;</span>), </span>
+<span id="cb92-21"><a href="generalized-linear-models.html#cb92-21" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>,<span class="dv">6</span>, <span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">inset =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="los-parámetros-de-la-distribución-inversa-de-gauss" class="section level4 hasAnchor" number="17.8.1.2">
+<h4><span class="header-section-number">17.8.1.2</span> Los parámetros de la distribución inversa de Gauss<a href="generalized-linear-models.html#los-parámetros-de-la-distribución-inversa-de-gauss" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El promedio se calcula de la siguiente forma</p>
+<p><span class="math display">\[E\left[X\right]=\frac{1}{\mu}+\frac{1}{\lambda}\]</span></p>
+<p>La varianza se calcula de la siguiente forma</p>
+<p><span class="math display">\[Var\left[X\right]=\frac{1}{\mu\lambda}+\frac{2}{\lambda^2}\]</span></p>
+<p>Para otros parámetros vean este enlace</p>
+<p><a href="https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution" class="uri">https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution</a></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="evaluando-distribuciones" class="section level2 hasAnchor" number="17.9">
+<h2><span class="header-section-number">17.9</span> Evaluando distribuciones<a href="generalized-linear-models.html#evaluando-distribuciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Evaluar un conjunto de datos para visualizar la distribución.</p>
+<p>Si necesita hacer análisis de regresión con datos que tienen una distribución gaussiana inversa el siguiente paquete esta disponible <strong>invGauss</strong> y si quiere determinar cual es la mejor distribución para sus datos con el paquete <strong>univariateML</strong> hay unas funciones para ayudar a determinar.</p>
+<p>Entre tanto que desarollo este tema más profundo le suguiero este enlace.</p>
+<p><a href="https://www.cienciadedatos.net/documentos/55_ajuste_distribuciones_con_r.html" class="uri">https://www.cienciadedatos.net/documentos/55_ajuste_distribuciones_con_r.html</a></p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="generalized-linear-models.html#cb93-1" tabindex="-1"></a><span class="fu">library</span>(invGauss)</span></code></pre></div>
+<pre><code>## Loading required package: survival</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="generalized-linear-models.html#cb95-1" tabindex="-1"></a><span class="fu">library</span>(univariateML)</span>
+<span id="cb95-2"><a href="generalized-linear-models.html#cb95-2" tabindex="-1"></a><span class="fu">data</span>(d.oropha.rec)</span>
+<span id="cb95-3"><a href="generalized-linear-models.html#cb95-3" tabindex="-1"></a><span class="co">#d.oropha.rec</span></span>
+<span id="cb95-4"><a href="generalized-linear-models.html#cb95-4" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="generalized-linear-models.html#cb95-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d.oropha.rec) <span class="sc">+</span></span>
+<span id="cb95-6"><a href="generalized-linear-models.html#cb95-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span>  <span class="fu">after_stat</span>(density)),</span>
+<span id="cb95-7"><a href="generalized-linear-models.html#cb95-7" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">40</span>,</span>
+<span id="cb95-8"><a href="generalized-linear-models.html#cb95-8" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb95-9"><a href="generalized-linear-models.html#cb95-9" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="fu">aes</span>(<span class="at">x =</span> time)) <span class="sc">+</span></span>
+<span id="cb95-10"><a href="generalized-linear-models.html#cb95-10" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(.x){<span class="fu">dml</span>(<span class="at">x =</span> .x, <span class="at">obj =</span> <span class="fu">mlnorm</span>(d.oropha.rec<span class="sc">$</span>time))},</span>
+<span id="cb95-11"><a href="generalized-linear-models.html#cb95-11" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;normal&quot;</span>),</span>
+<span id="cb95-12"><a href="generalized-linear-models.html#cb95-12" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb95-13"><a href="generalized-linear-models.html#cb95-13" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(.x){<span class="fu">dml</span>(<span class="at">x =</span> .x, <span class="at">obj =</span> <span class="fu">mlinvgauss</span>(d.oropha.rec<span class="sc">$</span>time))},</span>
+<span id="cb95-14"><a href="generalized-linear-models.html#cb95-14" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;inverse-normal&quot;</span>),</span>
+<span id="cb95-15"><a href="generalized-linear-models.html#cb95-15" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb95-16"><a href="generalized-linear-models.html#cb95-16" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span>, <span class="st">&quot;inverse-normal&quot;</span>),</span>
+<span id="cb95-17"><a href="generalized-linear-models.html#cb95-17" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;inverse-normal&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb95-18"><a href="generalized-linear-models.html#cb95-18" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución de tiempo de dessarrolo&quot;</span>,</span>
+<span id="cb95-19"><a href="generalized-linear-models.html#cb95-19" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Distribución&quot;</span>) <span class="sc">+</span></span>
+<span id="cb95-20"><a href="generalized-linear-models.html#cb95-20" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb95-21"><a href="generalized-linear-models.html#cb95-21" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in stat_function(fun = function(.x) {: All aesthetics have length 1, but the data has 192 rows.
+## ℹ Please consider using `annotate()` or provide this layer with data containing a single row.</code></pre>
+<pre><code>## Warning in stat_function(fun = function(.x) {: All aesthetics have length 1, but the data has 192 rows.
+## ℹ Please consider using `annotate()` or provide this layer with data containing a single row.</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="generalized-linear-models.html#cb98-1" tabindex="-1"></a><span class="co"># Nota que la cola de tiempo es larga un no tiene una distribución normal</span></span></code></pre></div>
+<p>Ejemplo de los precios de diamantes del paquete ggplot2</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="generalized-linear-models.html#cb99-1" tabindex="-1"></a><span class="co">#library(univariateML)</span></span>
+<span id="cb99-2"><a href="generalized-linear-models.html#cb99-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds) <span class="sc">+</span></span>
+<span id="cb99-3"><a href="generalized-linear-models.html#cb99-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span>  <span class="fu">after_stat</span>(density)),</span>
+<span id="cb99-4"><a href="generalized-linear-models.html#cb99-4" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">40</span>,</span>
+<span id="cb99-5"><a href="generalized-linear-models.html#cb99-5" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-6"><a href="generalized-linear-models.html#cb99-6" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb99-7"><a href="generalized-linear-models.html#cb99-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(.x){<span class="fu">dml</span>(<span class="at">x =</span> .x, <span class="at">obj =</span> <span class="fu">mllnorm</span>(diamonds<span class="sc">$</span>price))},</span>
+<span id="cb99-8"><a href="generalized-linear-models.html#cb99-8" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;log-normal&quot;</span>),</span>
+<span id="cb99-9"><a href="generalized-linear-models.html#cb99-9" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb99-10"><a href="generalized-linear-models.html#cb99-10" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(.x){<span class="fu">dml</span>(<span class="at">x =</span> .x, <span class="at">obj =</span> <span class="fu">mlinvgauss</span>(diamonds<span class="sc">$</span>price))},</span>
+<span id="cb99-11"><a href="generalized-linear-models.html#cb99-11" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;inverse-normal&quot;</span>),</span>
+<span id="cb99-12"><a href="generalized-linear-models.html#cb99-12" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb99-13"><a href="generalized-linear-models.html#cb99-13" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">&quot;log-normal&quot;</span>, <span class="st">&quot;inverse-normal&quot;</span>),</span>
+<span id="cb99-14"><a href="generalized-linear-models.html#cb99-14" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;log-normal&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;inverse-normal&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb99-15"><a href="generalized-linear-models.html#cb99-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución precio diamantes&quot;</span>,</span>
+<span id="cb99-16"><a href="generalized-linear-models.html#cb99-16" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Distribución&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-17"><a href="generalized-linear-models.html#cb99-17" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb99-18"><a href="generalized-linear-models.html#cb99-18" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in stat_function(fun = function(.x) {: All aesthetics have length 1, but the data has 53940 rows.
+## ℹ Please consider using `annotate()` or provide this layer with data containing a single row.</code></pre>
+<pre><code>## Warning in stat_function(fun = function(.x) {: All aesthetics have length 1, but the data has 53940 rows.
+## ℹ Please consider using `annotate()` or provide this layer with data containing a single row.</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="binomial-regression" class="section level2 hasAnchor" number="17.10">
+<h2><span class="header-section-number">17.10</span> Binomial regression<a href="generalized-linear-models.html#binomial-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="poisson-regression" class="section level2 hasAnchor" number="17.11">
+<h2><span class="header-section-number">17.11</span> Poisson regression<a href="generalized-linear-models.html#poisson-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="negative-binomial-regression" class="section level2 hasAnchor" number="17.12">
+<h2><span class="header-section-number">17.12</span> Negative binomial regression<a href="generalized-linear-models.html#negative-binomial-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
-<div id="multinomial-logit-analysis" class="section level2 hasAnchor" number="17.4">
-<h2><span class="header-section-number">17.4</span> Multinomial logit analysis<a href="generalized-linear-models.html#multinomial-logit-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="model" class="section level3 hasAnchor" number="17.4.1">
-<h3><span class="header-section-number">17.4.1</span> Model<a href="generalized-linear-models.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="multinomial-logit-analysis" class="section level2 hasAnchor" number="17.13">
+<h2><span class="header-section-number">17.13</span> Multinomial logit analysis<a href="generalized-linear-models.html#multinomial-logit-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="model" class="section level3 hasAnchor" number="17.13.1">
+<h3><span class="header-section-number">17.13.1</span> Model<a href="generalized-linear-models.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="assumptions" class="section level3 hasAnchor" number="17.4.2">
-<h3><span class="header-section-number">17.4.2</span> Assumptions<a href="generalized-linear-models.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="assumptions" class="section level3 hasAnchor" number="17.13.2">
+<h3><span class="header-section-number">17.13.2</span> Assumptions<a href="generalized-linear-models.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="post-estimation-analysis" class="section level3 hasAnchor" number="17.4.3">
-<h3><span class="header-section-number">17.4.3</span> Post estimation analysis<a href="generalized-linear-models.html#post-estimation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="post-estimation-analysis" class="section level3 hasAnchor" number="17.13.3">
+<h3><span class="header-section-number">17.13.3</span> Post estimation analysis<a href="generalized-linear-models.html#post-estimation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>

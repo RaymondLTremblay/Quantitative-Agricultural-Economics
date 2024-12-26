@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 18 Un cambio para modificar los gráficos | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 18 Un cambio para modificar los gráficos | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 18 Un cambio para modificar los gráficos | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 18 Un cambio para modificar los gráficos | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2024-12-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="beta-regression.html"/>
+<link rel="next" href="visualización-de-la-distribución.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-funcions-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding funcions in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data.html"><a href="data.html#using-the-function-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data.html"><a href="data.html#csv-file"><i class="fa fa-check"></i><b>4.2.1</b> .csv file</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data.html"><a href="data.html#excel-file"><i class="fa fa-check"></i><b>4.2.2</b> .excel file</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data.html"><a href="data.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data.html"><a href="data.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#section"><i class="fa fa-check"></i><b>4.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1</b> cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-data.html"><a href="understanding-your-data.html"><i class="fa fa-check"></i><b>6</b> Understanding your data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-data.html"><a href="understanding-your-data.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.1</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-data.html"><a href="understanding-your-data.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.2</b> dimensions of the data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-data.html"><a href="understanding-your-data.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3</b> structure of the data</a></li>
+<li class="chapter" data-level="6.4" data-path="understanding-your-data.html"><a href="understanding-your-data.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.4</b> Levels of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#cramer-von-mises-test-of-normality"><i class="fa fa-check"></i><b>7.4</b> Cramer-von Mises test of normality</a></li>
+<li class="chapter" data-level="7.5" data-path="test-of-normality.html"><a href="test-of-normality.html#lilliefors-test-of-normality"><i class="fa fa-check"></i><b>7.5</b> Lilliefors test of normality</a></li>
+<li class="chapter" data-level="7.6" data-path="test-of-normality.html"><a href="test-of-normality.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.6</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="test-of-normality.html"><a href="test-of-normality.html#qq-plot"><i class="fa fa-check"></i><b>7.6.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>7.7.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>8</b> Non-parametric test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1</b> Altenative to non-parametric tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.2</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.3</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.4</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>10</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>10.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>10.2</b> the linear model</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>10.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>10.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to pie chart)</a></li>
+<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a></li>
+<li class="chapter" data-level="13" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>13</b> Boxplots</a></li>
+<li class="chapter" data-level="14" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>14</b> Other visualizations</a></li>
+<li class="chapter" data-level="15" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>15</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>15.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="15.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>15.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="15.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>15.3</b> Visualization of the model</a></li>
+<li class="chapter" data-level="15.4" data-path="linear-regression.html"><a href="linear-regression.html#quantile-regression"><i class="fa fa-check"></i><b>15.4</b> Quantile Regression</a></li>
+<li class="chapter" data-level="15.5" data-path="linear-regression.html"><a href="linear-regression.html#the-model"><i class="fa fa-check"></i><b>15.5</b> The model</a></li>
+<li class="chapter" data-level="15.6" data-path="linear-regression.html"><a href="linear-regression.html#the-assumptions"><i class="fa fa-check"></i><b>15.6</b> The assumptions</a></li>
+<li class="chapter" data-level="15.7" data-path="linear-regression.html"><a href="linear-regression.html#visualization"><i class="fa fa-check"></i><b>15.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>16</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>16.1</b> Binomial regression</a></li>
+<li class="chapter" data-level="16.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>16.2</b> Poisson regression</a></li>
+<li class="chapter" data-level="16.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>16.3</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="16.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>16.4</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>16.4.1</b> Model</a></li>
+<li class="chapter" data-level="16.4.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>16.4.2</b> Assumptions</a></li>
+<li class="chapter" data-level="16.4.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>16.4.3</b> Post estimation analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>17</b> Beta Regression</a></li>
+<li class="chapter" data-level="18" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html"><i class="fa fa-check"></i><b>18</b> Un cambio para modificar los gráficos</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#beta-regression-1"><i class="fa fa-check"></i><b>18.1</b> Beta regression</a></li>
+<li class="chapter" data-level="18.2" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>18.2</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="18.3" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>18.3</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="18.4" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>18.4</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="18.5" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#wikipedia"><i class="fa fa-check"></i><b>18.5</b> Wikipedia</a></li>
+<li class="chapter" data-level="18.6" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#proporción-de-fumadores-por-diferentes-paises."><i class="fa fa-check"></i><b>18.6</b> Proporción de fumadores por diferentes paises.</a></li>
+<li class="chapter" data-level="18.7" data-path="un-cambio-para-modificar-los-gráficos.html"><a href="un-cambio-para-modificar-los-gráficos.html#convertir-el-promedio-y-varianza-en-shape-alpha-y-beta"><i class="fa fa-check"></i><b>18.7</b> Convertir el promedio y varianza en shape <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="visualización-de-la-distribución.html"><a href="visualización-de-la-distribución.html"><i class="fa fa-check"></i><b>19</b> Visualización de la distribución</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="visualización-de-la-distribución.html"><a href="visualización-de-la-distribución.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>19.1</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="19.2" data-path="visualización-de-la-distribución.html"><a href="visualización-de-la-distribución.html#visualizar-un-gráfico-de-regresión-beta"><i class="fa fa-check"></i><b>19.2</b> Visualizar un gráfico de regresión beta</a></li>
+<li class="chapter" data-level="19.3" data-path="visualización-de-la-distribución.html"><a href="visualización-de-la-distribución.html#comparar-el-modelo-tradicional-lineal-versus-un-modelo-beta"><i class="fa fa-check"></i><b>19.3</b> Comparar el modelo tradicional lineal versus un modelo beta</a></li>
+<li class="chapter" data-level="19.4" data-path="visualización-de-la-distribución.html"><a href="visualización-de-la-distribución.html#distribución-de-valores-especificos"><i class="fa fa-check"></i><b>19.4</b> Distribución de valores especificos</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>20</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="un-cambio-para-modificar-los-gráficos" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Chapter 18</span> Un cambio para modificar los gráficos<a href="un-cambio-para-modificar-los-gráficos.html#un-cambio-para-modificar-los-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div id="beta-regression-1" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Beta regression<a href="un-cambio-para-modificar-los-gráficos.html#beta-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The method presented here is quite innovative (2010 onwards). Unfortunately there is not much information in the literature or the web about the method. You can find supplementary information in the Vignette of the package <strong>betareg</strong>.</p>
+<p>References:</p>
+<p>Cribari-Neto, F., and Zeileis, A. (2010). Beta Regression in R. Journal of Statistical Software, 34(2), 1–24. <a href="http://www.jstatsoft.org/v34/i02/" class="uri">http://www.jstatsoft.org/v34/i02/</a>.</p>
+<p>Grün, B., Kosmidis, I., and Zeileis, A. (2012). Extended Beta Regression in R: Shaken, Stirred, Mixed, and Partitioned. Journal of Statistical Software, 48(11), 1–25. <a href="http://www.jstatsoft.org/v48/i11/" class="uri">http://www.jstatsoft.org/v48/i11/</a>.</p>
+<p>Article on the beta regression and other R packages with other functions can be found here, <a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13234">Douma and Weedon 2019</a></p>
+<hr />
+</div>
+<div id="what-is-a-beta-regression" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> What is a beta regression?<a href="un-cambio-para-modificar-los-gráficos.html#what-is-a-beta-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The beta regression is an approach under GLM “Generalized linear models”. The beta regression models dependent variables distributed with the beta distribution. Data with the beta distribution include proportions and ratios, where the values <span class="math inline">\(x\)</span> are between 0 and 1 but not inclusive (i.e. <span class="math inline">\(0 &lt; x&lt; 1\)</span>). In some packahes 0 and 1 can be part of the data set. In addition to producing a regression that maximizes the likelihood (both for the mean and the precision of a response distributed in beta), bias-corrected estimates are provided.</p>
+<p>The values of the response variable satisfy <span class="math inline">\(0 &lt; x &lt; 1\)</span>. Consequently, if the values are 0 or 1, it is necessary to change them to <span class="math inline">\(0= 0.001\)</span> and <span class="math inline">\(1 = 0.999\)</span>. <strong>The numbers cannot be 0 or 1, they must be greater than 0 and less than 1</strong>. Indeed, changing the values to <span class="math inline">\(0.001\)</span> and <span class="math inline">\(0.999\)</span> has no impact on the interpretation of the data, unless all the data are only <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, in which case this tool should not be used but a logistic regression.</p>
+<p>The <strong>betaref</strong> package is used to perform the beta regression. The package is quite powerful and provides a lot of information about the data. The package is used to calculate the mean, the variance, the precision, and the quantiles of the data. The package also provides the AIC, BIC, and the log-likelihood of the model. Note that the focus of the GLM model is to develop a regression with the response through a link function and a linear predictor. Just like normal GLM, there are numerous link functions, which can be useful such as “logit”, “probit”, “cloglog”, “cauchit”, “log”, “loglog” to linearize the data.</p>
+<p>Almosty all of the information presented here comes from Cribari-Neto and Zeileis (Beta Regression in R).</p>
+<p>Consult the pdf, <a href="https://cran.r-project.org/web/packages/betareg/betareg.pdf" class="uri">https://cran.r-project.org/web/packages/betareg/betareg.pdf</a> for a package description and more details.</p>
+<hr />
+<p>Typical analysis errors with data that are fractions.</p>
+<p>We look at an example. Here the relationship between per capita public health spending in 156 countries and the percentage of girls who are not in school.</p>
+<p>Data from the “World Development Agency”</p>
+</div>
+<div id="what-is-the-problem-with-the-data" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> What is the problem with the data?<a href="un-cambio-para-modificar-los-gráficos.html#what-is-the-problem-with-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(ggversa)</span>
+<span id="cb1-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-3" tabindex="-1"></a><span class="co">#Edu_Salud_Gastos_GDP</span></span>
+<span id="cb1-4"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-5" tabindex="-1"></a><span class="fu">ggplot</span>(Edu_Salud_Gastos_GDP, <span class="fu">aes</span>(Gasto_Salud_percapita, Porc_Ninas_no_escuela))<span class="sc">+</span></span>
+<span id="cb1-6"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb1-7"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-7" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span></span>
+<span id="cb1-8"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Per capita public health spending&quot;</span>)<span class="sc">+</span></span>
+<span id="cb1-9"><a href="un-cambio-para-modificar-los-gráficos.html#cb1-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Percentage of girls not going to school&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning: Removed 46 rows containing non-finite outside the scale range
+## (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 46 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Note:</p>
+<ul>
+<li>there are negative proportion values</li>
+<li>the confidence interval is also negative</li>
+<li>the dispersion of the data in y around the mean is not equal as public health spending per capita changes (in x).</li>
+</ul>
+<p>Models using the beta distribution solve these issues.</p>
+<hr />
+</div>
+<div id="first-step-what-is-a-beta-distribution" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> First step, what is a beta distribution?<a href="un-cambio-para-modificar-los-gráficos.html#first-step-what-is-a-beta-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The most important thing about the beta distribution is that the values <strong>NEVER</strong> are less than 0 or greater than 1 (i.e. <span class="math inline">\(0 &lt; x &lt; 1\)</span>). In addition, the confidence intervals cannot be less than 0 or greater than 1.</p>
+<p>Here are some examples of the beta distribution. The beta distribution is calculated with two parameters, <strong>shape 1 or <span class="math inline">\(\alpha\)</span></strong> and <strong>shape 2 or <span class="math inline">\(\beta\)</span></strong>. We will not go into these parameters, although you can go to the Wikipedia page for more information. Note that if the parameters are not equal (<span class="math inline">\(\alpha \neq \beta\)</span>), the distribution is not symmetrical. There is always a tail that extends to small or large values.</p>
+<p>Here a series beta distributions. We will not go into how these these parameters are calculated, although you can go to the Wikipedia page for more information. Note that if the parameters are not equal (<span class="math inline">\(\alpha \neq \beta\)</span>), the distribution is not symmetrical. There is always a tail that extends to small or large values.</p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="wikipedia" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> Wikipedia<a href="un-cambio-para-modificar-los-gráficos.html#wikipedia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>On the wikipedia page, you can see how the distribution changes when the parameters change.</p>
+<p><a title="Pabloparsil, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:PDF_of_the_Beta_distribution.gif"><img width="516" alt="PDF of the Beta distribution" src="https://upload.wikimedia.org/wikipedia/commons/7/78/PDF_of_the_Beta_distribution.gif"></a></p>
+<hr />
+</div>
+<div id="proporción-de-fumadores-por-diferentes-paises." class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">18.6</span> Proporción de fumadores por diferentes paises.<a href="un-cambio-para-modificar-los-gráficos.html#proporción-de-fumadores-por-diferentes-paises." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los datos provienen de World Bank en el siguiente enlace, <a href="https://data.worldbank.org/indicator/SH.PRV.SMOK">Smokers</a>. En el archivo se encuentra información sobre 187 pais y la proporción de población mayor de 15 años que fuman.</p>
+<p>Los datos están debajo pestaña de “Los Datos”</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb5-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb5-2" tabindex="-1"></a>Proportion_smokers_world <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/Proportion_smokers_world.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 187 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (4): Country_Name, Country_Code, Indicator_Name, Indicator_Code
+## dbl (9): Y2000, Y2005, Y2010, Y2011, Y2012, Y2013, Y2014, Y2015, Y2016
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb7-1" tabindex="-1"></a>Smokers<span class="ot">=</span>Proportion_smokers_world </span>
+<span id="cb7-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="un-cambio-para-modificar-los-gráficos.html#cb7-3" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(Smokers))</span></code></pre></div>
+<div id="cqishirzwp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cqishirzwp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#cqishirzwp thead, #cqishirzwp tbody, #cqishirzwp tfoot, #cqishirzwp tr, #cqishirzwp td, #cqishirzwp th {
+  border-style: none;
+}
+
+#cqishirzwp p {
+  margin: 0;
+  padding: 0;
+}
+
+#cqishirzwp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#cqishirzwp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cqishirzwp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cqishirzwp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cqishirzwp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cqishirzwp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cqishirzwp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cqishirzwp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cqishirzwp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#cqishirzwp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#cqishirzwp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cqishirzwp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cqishirzwp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cqishirzwp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cqishirzwp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqishirzwp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#cqishirzwp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#cqishirzwp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#cqishirzwp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqishirzwp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#cqishirzwp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqishirzwp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cqishirzwp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqishirzwp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cqishirzwp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqishirzwp .gt_left {
+  text-align: left;
+}
+
+#cqishirzwp .gt_center {
+  text-align: center;
+}
+
+#cqishirzwp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cqishirzwp .gt_font_normal {
+  font-weight: normal;
+}
+
+#cqishirzwp .gt_font_bold {
+  font-weight: bold;
+}
+
+#cqishirzwp .gt_font_italic {
+  font-style: italic;
+}
+
+#cqishirzwp .gt_super {
+  font-size: 65%;
+}
+
+#cqishirzwp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#cqishirzwp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#cqishirzwp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#cqishirzwp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#cqishirzwp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#cqishirzwp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#cqishirzwp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#cqishirzwp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#cqishirzwp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Country_Name">Country_Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Country_Code">Country_Code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Indicator_Name">Indicator_Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Indicator_Code">Indicator_Code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2000">Y2000</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2005">Y2005</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2010">Y2010</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2011">Y2011</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2012">Y2012</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2013">Y2013</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2014">Y2014</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2015">Y2015</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Y2016">Y2016</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Country_Name" class="gt_row gt_left">Honduras</td>
+<td headers="Country_Code" class="gt_row gt_left">HND</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">3.9</td>
+<td headers="Y2005" class="gt_row gt_right">3.1</td>
+<td headers="Y2010" class="gt_row gt_right">2.5</td>
+<td headers="Y2011" class="gt_row gt_right">2.4</td>
+<td headers="Y2012" class="gt_row gt_right">2.4</td>
+<td headers="Y2013" class="gt_row gt_right">2.3</td>
+<td headers="Y2014" class="gt_row gt_right">2.2</td>
+<td headers="Y2015" class="gt_row gt_right">2.1</td>
+<td headers="Y2016" class="gt_row gt_right">2.0</td></tr>
+    <tr><td headers="Country_Name" class="gt_row gt_left">Ethiopia</td>
+<td headers="Country_Code" class="gt_row gt_left">ETH</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">4.8</td>
+<td headers="Y2005" class="gt_row gt_right">4.6</td>
+<td headers="Y2010" class="gt_row gt_right">4.5</td>
+<td headers="Y2011" class="gt_row gt_right">4.4</td>
+<td headers="Y2012" class="gt_row gt_right">4.5</td>
+<td headers="Y2013" class="gt_row gt_right">4.4</td>
+<td headers="Y2014" class="gt_row gt_right">4.4</td>
+<td headers="Y2015" class="gt_row gt_right">4.4</td>
+<td headers="Y2016" class="gt_row gt_right">4.4</td></tr>
+    <tr><td headers="Country_Name" class="gt_row gt_left">Congo, Rep.</td>
+<td headers="Country_Code" class="gt_row gt_left">COG</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">5.7</td>
+<td headers="Y2005" class="gt_row gt_right">9.1</td>
+<td headers="Y2010" class="gt_row gt_right">14.7</td>
+<td headers="Y2011" class="gt_row gt_right">16.1</td>
+<td headers="Y2012" class="gt_row gt_right">17.9</td>
+<td headers="Y2013" class="gt_row gt_right">19.8</td>
+<td headers="Y2014" class="gt_row gt_right">22.0</td>
+<td headers="Y2015" class="gt_row gt_right">24.2</td>
+<td headers="Y2016" class="gt_row gt_right">26.9</td></tr>
+    <tr><td headers="Country_Name" class="gt_row gt_left">Ghana</td>
+<td headers="Country_Code" class="gt_row gt_left">GHA</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">5.9</td>
+<td headers="Y2005" class="gt_row gt_right">5.0</td>
+<td headers="Y2010" class="gt_row gt_right">4.4</td>
+<td headers="Y2011" class="gt_row gt_right">4.3</td>
+<td headers="Y2012" class="gt_row gt_right">4.3</td>
+<td headers="Y2013" class="gt_row gt_right">4.1</td>
+<td headers="Y2014" class="gt_row gt_right">4.1</td>
+<td headers="Y2015" class="gt_row gt_right">4.0</td>
+<td headers="Y2016" class="gt_row gt_right">3.9</td></tr>
+    <tr><td headers="Country_Name" class="gt_row gt_left">Niger</td>
+<td headers="Country_Code" class="gt_row gt_left">NER</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">6.4</td>
+<td headers="Y2005" class="gt_row gt_right">6.7</td>
+<td headers="Y2010" class="gt_row gt_right">7.1</td>
+<td headers="Y2011" class="gt_row gt_right">7.2</td>
+<td headers="Y2012" class="gt_row gt_right">7.3</td>
+<td headers="Y2013" class="gt_row gt_right">7.4</td>
+<td headers="Y2014" class="gt_row gt_right">7.5</td>
+<td headers="Y2015" class="gt_row gt_right">7.6</td>
+<td headers="Y2016" class="gt_row gt_right">7.7</td></tr>
+    <tr><td headers="Country_Name" class="gt_row gt_left">Nigeria</td>
+<td headers="Country_Code" class="gt_row gt_left">NGA</td>
+<td headers="Indicator_Name" class="gt_row gt_left">Smoking prevalence, total (ages 15+)</td>
+<td headers="Indicator_Code" class="gt_row gt_left">SH.PRV.SMOK</td>
+<td headers="Y2000" class="gt_row gt_right">7.7</td>
+<td headers="Y2005" class="gt_row gt_right">7.0</td>
+<td headers="Y2010" class="gt_row gt_right">6.3</td>
+<td headers="Y2011" class="gt_row gt_right">6.2</td>
+<td headers="Y2012" class="gt_row gt_right">6.1</td>
+<td headers="Y2013" class="gt_row gt_right">6.1</td>
+<td headers="Y2014" class="gt_row gt_right">5.9</td>
+<td headers="Y2015" class="gt_row gt_right">5.8</td>
+<td headers="Y2016" class="gt_row gt_right">5.8</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<hr />
+<p>Primero vamos a convertir los datos en proporción ya que el programa tiene que utilizar datos mayor de 0 y menor de 1. Seleccionamos el año 2000 y creamos un histograma de la distribución.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb8-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
+<span id="cb8-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb8-2" tabindex="-1"></a>Smokers <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Country_Name, Y2000P)</span></code></pre></div>
+<pre><code>## # A tibble: 187 × 2
+##    Country_Name Y2000P
+##    &lt;chr&gt;         &lt;dbl&gt;
+##  1 Honduras      0.039
+##  2 Ethiopia      0.048
+##  3 Congo, Rep.   0.057
+##  4 Ghana         0.059
+##  5 Niger         0.064
+##  6 Nigeria       0.077
+##  7 Oman          0.082
+##  8 Barbados      0.083
+##  9 Eritrea       0.087
+## 10 Benin         0.091
+## # ℹ 177 more rows</code></pre>
+<hr />
+</div>
+<div id="convertir-el-promedio-y-varianza-en-shape-alpha-y-beta" class="section level2 hasAnchor" number="18.7">
+<h2><span class="header-section-number">18.7</span> Convertir el promedio y varianza en shape <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span><a href="un-cambio-para-modificar-los-gráficos.html#convertir-el-promedio-y-varianza-en-shape-alpha-y-beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Convertir el promedio y la varianza de los datos en los valores del shape <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>. Se usa la siguiente para calcular los shapes. Los valores esperado y la varianza se comportan de forma distinta.</p>
+<p><span class="math display">\[E(X) = \frac{\alpha}{\alpha+\beta}\]</span></p>
+<p><span class="math display">\[V(X) = \frac{\alpha\beta}{(\alpha+\beta+1)(\alpha+\beta)^2}\]</span></p>
+<p>Usando el promedio y varianza se puede convertir en <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> con la siguiente ecuaciones</p>
+<p><span class="math display">\[\alpha = \frac{1-mu}{(var-1)/mu}*mu^2\]</span>
+<span class="math display">\[\beta = \alpha*(\frac{1}{mu}-1)\]</span>
+Aquí un script para convertir los parametros en shape</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-1" tabindex="-1"></a>estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
+<span id="cb10-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb10-3"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
+<span id="cb10-5"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-5" tabindex="-1"></a>}</span>
+<span id="cb10-6"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-6" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
+<span id="cb10-7"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-7" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
+<span id="cb10-8"><a href="un-cambio-para-modificar-los-gráficos.html#cb10-8" tabindex="-1"></a><span class="fu">estBetaParams</span>((<span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P)), (<span class="fu">var</span>(Smokers<span class="sc">$</span>Y2000P)))</span></code></pre></div>
+<pre><code>## $alpha
+## [1] 3.592488
+## 
+## $beta
+## [1] 9.181559</code></pre>
+<p>Ahora comparamos la distribución beta y normal de los datos de los fumadores de mayores de 15 años</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-1" tabindex="-1"></a>Smokers<span class="sc">$</span>Y2000P<span class="ot">=</span>(Smokers<span class="sc">$</span>Y2000)<span class="sc">/</span><span class="dv">100</span> <span class="co"># convertir en proporción</span></span>
+<span id="cb12-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">len =</span> <span class="dv">100</span>)</span>
+<span id="cb12-3"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-4" tabindex="-1"></a><span class="co">#mean(Smokers$Y2000P)</span></span>
+<span id="cb12-5"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-5" tabindex="-1"></a><span class="co">#var(Smokers$Y2000P)</span></span>
+<span id="cb12-6"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-7" tabindex="-1"></a><span class="fu">ggplot</span>(Smokers, <span class="fu">aes</span>(Y2000P))<span class="sc">+</span></span>
+<span id="cb12-8"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;grey50&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-9"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-9" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">x =</span> Smokers<span class="sc">$</span>Y2000P, <span class="at">y =</span> ..y..), <span class="at">fun =</span> dbeta, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>,</span>
+<span id="cb12-10"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-10" tabindex="-1"></a>                      <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape1 =</span> <span class="fl">3.593</span>, <span class="at">shape2 =</span> <span class="fl">9.185</span>))<span class="sc">+</span></span>
+<span id="cb12-11"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-11" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb12-12"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-12" tabindex="-1"></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb12-13"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-13" tabindex="-1"></a>                <span class="at">sd =</span> <span class="fu">sd</span>(Smokers<span class="sc">$</span>Y2000P, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), </span>
+<span id="cb12-14"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-14" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;green&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb12-15"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-15" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proporción de fumadores de mayor </span><span class="sc">\n</span><span class="st"> de 15 años por Pais&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-16"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-16" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-17"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-17" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">4.2</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Normal&quot;</span>, <span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-18"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-18" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> .<span class="dv">5</span>, <span class="at">y =</span> <span class="fl">3.7</span>, <span class="at">label =</span> <span class="st">&quot;Verde: dist Beta&quot;</span>, <span class="at">color=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-19"><a href="un-cambio-para-modificar-los-gráficos.html#cb12-19" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.9</span>)</span></code></pre></div>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+## ℹ Please use `after_stat(density)` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_bar()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<hr />
+<p>Calculando el intervalo de confianza del promedio de una distribución beta. Se necesita los siguientes paquetes <strong>simpleboot , boot</strong>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(simpleboot)</span></code></pre></div>
+<pre><code>## Simple Bootstrap Routines (1.1-8)</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(boot) <span class="co"># paquete para calcular el intervalo de confianza de una distribución beta</span></span>
+<span id="cb19-2"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-2" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">187</span> <span class="co"># El tamaño de muestra de los datos</span></span>
+<span id="cb19-3"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-3" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">3.593</span> <span class="co"># estimado de la función arriba </span></span>
+<span id="cb19-4"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-4" tabindex="-1"></a>beta <span class="ot">=</span> <span class="fl">9.185</span></span>
+<span id="cb19-5"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-5" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rbeta</span>(n, alpha, beta)</span>
+<span id="cb19-6"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-6" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-7" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-8" tabindex="-1"></a>x.boot <span class="ot">=</span> <span class="fu">one.boot</span>(x, median, <span class="at">R=</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>) <span class="co"># Aquí se usa la mediana, pq el promedio *mean* sera sesgado a la derecha.  </span></span>
+<span id="cb19-9"><a href="un-cambio-para-modificar-los-gráficos.html#cb19-9" tabindex="-1"></a><span class="fu">boot.ci</span>(x.boot, <span class="at">type=</span><span class="st">&quot;bca&quot;</span>)</span></code></pre></div>
+<pre><code>## BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+## Based on 10000 bootstrap replicates
+## 
+## CALL : 
+## boot.ci(boot.out = x.boot, type = &quot;bca&quot;)
+## 
+## Intervals : 
+## Level       BCa          
+## 95%   ( 0.2678,  0.3120 )  
+## Calculations and Intervals on Original Scale</code></pre>
+<hr />
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="beta-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualización-de-la-distribución.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/19-Beta_Regression.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/19-Beta_Regression.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

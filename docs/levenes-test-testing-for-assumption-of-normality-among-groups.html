@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-24" />
+<meta name="date" content="2024-12-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="test-of-normality.html"><a href="test-of-normality.html#metadata"><i class="fa fa-check"></i><b>7.0.1</b> METADATA</a></li>
 <li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
 <li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
 <li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
@@ -194,6 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
 <li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
 </ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="levenes-test-testing-for-assumption-of-normality-among-groups.html"><a href="levenes-test-testing-for-assumption-of-normality-among-groups.html"><i class="fa fa-check"></i><b>8</b> Levene’s Test: testing for assumption of normality among groups</a></li>
 <li class="chapter" data-level="9" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>9</b> Non-parametric test</a>
@@ -269,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb63-4"><a href="levenes-test-testing-for-assumption-of-normality-among-groups.html#cb63-4" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb63-5"><a href="levenes-test-testing-for-assumption-of-normality-among-groups.html#cb63-5" tabindex="-1"></a>RExam <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/RExam.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 100 Columns: 5
-## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## dbl (5): exam, computer, lectures, numeracy, uni
 ## 
