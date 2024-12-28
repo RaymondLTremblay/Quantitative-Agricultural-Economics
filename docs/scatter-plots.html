@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-26" />
+<meta name="date" content="2024-12-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,7 +237,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>12</b> Ring chart (alternative to pie chart)</a></li>
 <li class="chapter" data-level="13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>13</b> Histograms/Density Plots</a></li>
-<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
 <li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
 <ul>
@@ -316,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="basic-scatter-plots" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Basic scatter plots<a href="scatter-plots.html#basic-scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2024-12-26&quot;</code></pre>
+<pre><code>## [1] &quot;2024-12-28&quot;</code></pre>
 <hr />
 <p>The following command verifies that you have the necessary libraries installed and activates them if available on your system. The package <strong>pacman</strong> evaluates if you have them installed and installs them if necessary.</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="scatter-plots.html#cb90-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
@@ -328,7 +349,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb90-7"><a href="scatter-plots.html#cb90-7" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Data Visualization</span></span>
 <span id="cb90-8"><a href="scatter-plots.html#cb90-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Data Manipulation</span></span>
 <span id="cb90-9"><a href="scatter-plots.html#cb90-9" tabindex="-1"></a><span class="fu">library</span>(sjPlot) <span class="co"># Data Visualization</span></span>
-<span id="cb90-10"><a href="scatter-plots.html#cb90-10" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co"># Data Cleaning</span></span></code></pre></div>
+<span id="cb90-10"><a href="scatter-plots.html#cb90-10" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co"># Data Cleaning</span></span>
+<span id="cb90-11"><a href="scatter-plots.html#cb90-11" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb90-12"><a href="scatter-plots.html#cb90-12" tabindex="-1"></a></span>
+<span id="cb90-13"><a href="scatter-plots.html#cb90-13" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(lubridate<span class="sc">::</span>minute, lubridate<span class="sc">::</span>second, lubridate<span class="sc">::</span>month)</span></code></pre></div>
 <hr />
 <p>Linear regression is the basic model to evaluate whether there is a relationship <em>linear</em> that is, a <em>straight</em> line between two variables. This relationship between the variables can be positive or negative. There are other types of regression, which includes nonlinear regression such as quadratic <span class="math inline">\(y ~ ax^2+bx+c\)</span> or cubic <span class="math inline">\(y ~ ax^3 +bx^2+cx+d\)</span>, logarithmic <span class="math inline">\(y ~ a + b*log(x)\)</span> among many other alternatives. There are also alternatives are you will see in that are nonlinear regressions module.</p>
 <hr />
@@ -338,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="scatter-plots.html#cb91-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb91-2"><a href="scatter-plots.html#cb91-2" tabindex="-1"></a>pubs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/pubs.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 8 Columns: 2
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## dbl (2): pubs, mortality
 ## 
@@ -506,7 +530,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span id="cb103-2"><a href="scatter-plots.html#cb103-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
 <span id="cb103-3"><a href="scatter-plots.html#cb103-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="the-impact-of-outliers" class="section level2 hasAnchor" number="10.4">
@@ -641,7 +665,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="scatter-plots.html#cb110-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb110-2"><a href="scatter-plots.html#cb110-2" tabindex="-1"></a>Album_Sales_1_new <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/Album_Sales_1_new.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 200 Columns: 4
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## dbl (4): adverts, sales, airplay, attract
 ## 
@@ -798,7 +822,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>In the fourth graph, <strong>Cook’s distance</strong> evaluate if there are values that have a lot of weight if whether or not they are included in the analysis, evaluate graph #4. These are going to be identified. The values to worry about are those that are above or below the broken line. In this graph there are three values that must be evaluated (1, 42, 169), these values must be ensured to be correct. It is always good to remove the biased values and redo the analysis to observe how different the results are. Typically more data in an analysis, the less weight a biased value will have on the results, unless this value is very different from most of the data.</p></li>
 </ol>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="scatter-plots.html#cb127-1" tabindex="-1"></a><span class="fu">plot</span>(model1)  <span class="co"># Evaluate the assumptions, 1. Equality of variance, 2. Normality, 3. Students biased estimator, 4. Biased data (Cook&#39;s Distance)</span></span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-13-2.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-13-3.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-13-4.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-12-2.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-12-3.png" width="672" /><img src="bookdownproj_files/figure-html/unnamed-chunk-12-4.png" width="672" /></p>
 <hr />
 </div>
 <div id="cooks-distance" class="section level2 hasAnchor" number="10.7">

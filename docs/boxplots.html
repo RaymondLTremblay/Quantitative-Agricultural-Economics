@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-26" />
+<meta name="date" content="2024-12-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,7 +237,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>12</b> Ring chart (alternative to pie chart)</a></li>
 <li class="chapter" data-level="13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>13</b> Histograms/Density Plots</a></li>
-<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
 <li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
 <ul>
@@ -313,7 +334,1016 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="boxplots" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Chapter 14</span> Boxplots<a href="boxplots.html#boxplots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="boxplots.html#cb142-1" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb142-2"><a href="boxplots.html#cb142-2" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(lubridate<span class="sc">::</span>minute)</span></code></pre></div>
+<pre><code>## [conflicted] Removing existing preference.
+## [conflicted] Will prefer lubridate::minute over any other package.</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="boxplots.html#cb144-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)<span class="co"># Para organizar múltiples gráficos juntos</span></span>
+<span id="cb144-2"><a href="boxplots.html#cb144-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb144-3"><a href="boxplots.html#cb144-3" tabindex="-1"></a><span class="fu">library</span>(ggversa)</span></code></pre></div>
+<hr />
+<div id="boxplot-with-geom_boxplot" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Boxplot with geom_boxplot<a href="boxplots.html#boxplot-with-geom_boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For data that does not have a normal distribution, a box plot is typically used to visualize the distribution of the data. The box plot distributes the data based on the range of size order or numerical value. First, the data is ordered from smallest to largest. The values in the corresponding graph represent the 25th, 50th, and 75th quartiles. The whiskers (the lines extending from the boxes) represent 1.5 times the interquartile range (IQR), or the distance between the first quartile (25th) and the third quartile (75). Data that is outside that range is represented by dots. Charts that use notches, or <strong>notch</strong>, calculate them according to the following formula: (1.58 x IQR) / (square root of the sample). We will again use data from the <strong>Dipodium</strong> orchid in the following examples, particularly representing the number of flowers and the number of fruits.</p>
+<p>A basic boxplot is shown in the first graph below, Fig. 1 (top left). Note that the variable in the first <strong>x</strong> has a value of 1, which means there is only one group. In the second graph, Fig. 2 (top right), it is modified with the <strong>notch</strong> option. In the third graph, Figure Fig. 3 (bottom left), the color of the box, the shape or <strong>shape</strong> of the outliers**, and their size were changed. In the first three graphs, all the data are used in the same box plot. In the fourth graph, Fig. 4 (bottom right), we observe the distribution of the number of flowers by the number of fruits observed per plant. Note that for this last case in particular, there is more than one group.</p>
+<p>The notches</p>
+<p>The notches on the sides of a boxplot can be interpreted as a comparison interval around the median values. The notch height is the median <span class="math inline">\(+/- 1.57 x IQR/sqrt(n)\)</span> where IQR is the interquartile range defined by the 25th and 75th percentiles and <strong>n</strong> is the number of data points</p>
+</div>
+<div id="teoretical-boxplot" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Teoretical boxplot<a href="boxplots.html#teoretical-boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below are two theoretical boxplot, the first one is a normal boxplot and the second one is a boxplot with outliers below and above the range. While the second figure shows a boxplot with outliers, the first figure shows a typical boxplot. The data used in the first figure is a tibble with 1, 8, 9, 10, 100 to 120, 125 to 135, 150 to 160, and 200. The second figure uses the same data as the first figure, but with the addition of 800 and 1000.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="boxplots.html#cb145-1" tabindex="-1"></a>df1<span class="ot">=</span><span class="fu">as.tibble</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">100</span><span class="sc">:</span><span class="dv">120</span>, <span class="dv">125</span><span class="sc">:</span><span class="dv">135</span>,<span class="dv">150</span><span class="sc">:</span><span class="dv">160</span>, <span class="dv">200</span>))</span></code></pre></div>
+<pre><code>## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
+## ℹ Please use `as_tibble()` instead.
+## ℹ The signature and semantics have changed, see `?as_tibble`.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="boxplots.html#cb147-1" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span> </span>
+<span id="cb147-2"><a href="boxplots.html#cb147-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span> </span>
+<span id="cb147-3"><a href="boxplots.html#cb147-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/teoretical%20box%20plot-1.png" width="672" /></p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="boxplots.html#cb148-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">as.tibble</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">100</span><span class="sc">:</span><span class="dv">120</span>, <span class="dv">125</span><span class="sc">:</span><span class="dv">135</span>,<span class="dv">150</span><span class="sc">:</span><span class="dv">160</span>, <span class="dv">800</span>, <span class="dv">1000</span>))</span>
+<span id="cb148-2"><a href="boxplots.html#cb148-2" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>## # A tibble: 49 × 1
+##    value
+##    &lt;dbl&gt;
+##  1     1
+##  2     8
+##  3     9
+##  4    10
+##  5   100
+##  6   101
+##  7   102
+##  8   103
+##  9   104
+## 10   105
+## # ℹ 39 more rows</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="boxplots.html#cb150-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb150-2"><a href="boxplots.html#cb150-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span> </span>
+<span id="cb150-3"><a href="boxplots.html#cb150-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/teoretical%20box%20plot-2.png" width="672" /></p>
+<p>Here we show a boxplot for the number of fruits per plant</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="boxplots.html#cb151-1" tabindex="-1"></a><span class="co">#names(dipodium)</span></span>
+<span id="cb151-2"><a href="boxplots.html#cb151-2" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb151-3"><a href="boxplots.html#cb151-3" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb151-4"><a href="boxplots.html#cb151-4" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb151-5"><a href="boxplots.html#cb151-5" tabindex="-1"></a>dipodium<span class="ot">=</span><span class="fu">clean_names</span>(dipodium)</span>
+<span id="cb151-6"><a href="boxplots.html#cb151-6" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(dipodium))</span></code></pre></div>
+<div id="lfwkzouldr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lfwkzouldr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+#lfwkzouldr thead, #lfwkzouldr tbody, #lfwkzouldr tfoot, #lfwkzouldr tr, #lfwkzouldr td, #lfwkzouldr th {
+  border-style: none;
+}
+
+#lfwkzouldr p {
+  margin: 0;
+  padding: 0;
+}
+
+#lfwkzouldr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lfwkzouldr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lfwkzouldr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lfwkzouldr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lfwkzouldr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lfwkzouldr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lfwkzouldr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lfwkzouldr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lfwkzouldr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lfwkzouldr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lfwkzouldr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lfwkzouldr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lfwkzouldr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lfwkzouldr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lfwkzouldr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfwkzouldr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lfwkzouldr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lfwkzouldr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lfwkzouldr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfwkzouldr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lfwkzouldr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfwkzouldr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lfwkzouldr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfwkzouldr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lfwkzouldr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfwkzouldr .gt_left {
+  text-align: left;
+}
+
+#lfwkzouldr .gt_center {
+  text-align: center;
+}
+
+#lfwkzouldr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lfwkzouldr .gt_font_normal {
+  font-weight: normal;
+}
+
+#lfwkzouldr .gt_font_bold {
+  font-weight: bold;
+}
+
+#lfwkzouldr .gt_font_italic {
+  font-style: italic;
+}
+
+#lfwkzouldr .gt_super {
+  font-size: 65%;
+}
+
+#lfwkzouldr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lfwkzouldr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lfwkzouldr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lfwkzouldr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lfwkzouldr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lfwkzouldr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lfwkzouldr .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lfwkzouldr .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lfwkzouldr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="tree_number">tree_number</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="tree_species">tree_species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="dbh">dbh</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="plant_number">plant_number</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ramet_number">ramet_number</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="distance">distance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="orientation">orientation</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="number_of_flowers">number_of_flowers</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="height_inflo">height_inflo</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="herbivory">herbivory</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="row_position_nf">row_position_nf</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="number_flowers_position">number_flowers_position</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="number_of_fruits">number_of_fruits</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="perc_fr_set">perc_fr_set</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="pardalinum_or_roseum">pardalinum_or_roseum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="fruit_position_effect">fruit_position_effect</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="frutos_si_o_no">frutos_si_o_no</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="p_or_r_infl_lenght">p_or_r_infl_lenght</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="num_of_fruits">num_of_fruits</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="species_name">species_name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="cardinal_orientation">cardinal_orientation</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="tree_number" class="gt_row gt_right">1</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">75</td>
+<td headers="plant_number" class="gt_row gt_right">1</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">2.47</td>
+<td headers="orientation" class="gt_row gt_right">40</td>
+<td headers="number_of_flowers" class="gt_row gt_right">11</td>
+<td headers="height_inflo" class="gt_row gt_right">35</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">1</td>
+<td headers="number_flowers_position" class="gt_row gt_right">24</td>
+<td headers="number_of_fruits" class="gt_row gt_right">0</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.00</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">r</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">1</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">0</td>
+<td headers="species_name" class="gt_row gt_left">r</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">1</td></tr>
+    <tr><td headers="tree_number" class="gt_row gt_right">1</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">76</td>
+<td headers="plant_number" class="gt_row gt_right">2</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">1.97</td>
+<td headers="orientation" class="gt_row gt_right">50</td>
+<td headers="number_of_flowers" class="gt_row gt_right">19</td>
+<td headers="height_inflo" class="gt_row gt_right">47</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">2</td>
+<td headers="number_flowers_position" class="gt_row gt_right">23</td>
+<td headers="number_of_fruits" class="gt_row gt_right">0</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.00</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">r</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">2</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">0</td>
+<td headers="species_name" class="gt_row gt_left">r</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">2</td></tr>
+    <tr><td headers="tree_number" class="gt_row gt_right">2</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">76</td>
+<td headers="plant_number" class="gt_row gt_right">3</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">1.95</td>
+<td headers="orientation" class="gt_row gt_right">350</td>
+<td headers="number_of_flowers" class="gt_row gt_right">18</td>
+<td headers="height_inflo" class="gt_row gt_right">63</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">3</td>
+<td headers="number_flowers_position" class="gt_row gt_right">25</td>
+<td headers="number_of_fruits" class="gt_row gt_right">1</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.04</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">r</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">3</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">1</td>
+<td headers="species_name" class="gt_row gt_left">r</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">8</td></tr>
+    <tr><td headers="tree_number" class="gt_row gt_right">3</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">58</td>
+<td headers="plant_number" class="gt_row gt_right">4</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">3.24</td>
+<td headers="orientation" class="gt_row gt_right">210</td>
+<td headers="number_of_flowers" class="gt_row gt_right">24</td>
+<td headers="height_inflo" class="gt_row gt_right">47</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">4</td>
+<td headers="number_flowers_position" class="gt_row gt_right">20</td>
+<td headers="number_of_fruits" class="gt_row gt_right">5</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.25</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">r</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">4</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">5</td>
+<td headers="species_name" class="gt_row gt_left">r</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">5</td></tr>
+    <tr><td headers="tree_number" class="gt_row gt_right">4</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">NA</td>
+<td headers="plant_number" class="gt_row gt_right">5</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">0.85</td>
+<td headers="orientation" class="gt_row gt_right">80</td>
+<td headers="number_of_flowers" class="gt_row gt_right">25</td>
+<td headers="height_inflo" class="gt_row gt_right">61</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">5</td>
+<td headers="number_flowers_position" class="gt_row gt_right">13</td>
+<td headers="number_of_fruits" class="gt_row gt_right">0</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.00</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">r</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">5</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">0</td>
+<td headers="species_name" class="gt_row gt_left">r</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">2</td></tr>
+    <tr><td headers="tree_number" class="gt_row gt_right">5</td>
+<td headers="tree_species" class="gt_row gt_left">E.o</td>
+<td headers="dbh" class="gt_row gt_right">59</td>
+<td headers="plant_number" class="gt_row gt_right">6</td>
+<td headers="ramet_number" class="gt_row gt_right">1</td>
+<td headers="distance" class="gt_row gt_right">2.62</td>
+<td headers="orientation" class="gt_row gt_right">160</td>
+<td headers="number_of_flowers" class="gt_row gt_right">17</td>
+<td headers="height_inflo" class="gt_row gt_right">35</td>
+<td headers="herbivory" class="gt_row gt_left">n</td>
+<td headers="row_position_nf" class="gt_row gt_right">6</td>
+<td headers="number_flowers_position" class="gt_row gt_right">25</td>
+<td headers="number_of_fruits" class="gt_row gt_right">2</td>
+<td headers="perc_fr_set" class="gt_row gt_right">0.08</td>
+<td headers="pardalinum_or_roseum" class="gt_row gt_left">p</td>
+<td headers="fruit_position_effect" class="gt_row gt_right">6</td>
+<td headers="frutos_si_o_no" class="gt_row gt_right">0</td>
+<td headers="p_or_r_infl_lenght" class="gt_row gt_left">r</td>
+<td headers="num_of_fruits" class="gt_row gt_right">2</td>
+<td headers="species_name" class="gt_row gt_left">p</td>
+<td headers="cardinal_orientation" class="gt_row gt_right">4</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="boxplots.html#cb152-1" tabindex="-1"></a>d1<span class="ot">=</span>dipodium <span class="sc">%&gt;%</span> </span>
+<span id="cb152-2"><a href="boxplots.html#cb152-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(number_of_fruits, number_of_flowers) <span class="sc">%&gt;%</span> </span>
+<span id="cb152-3"><a href="boxplots.html#cb152-3" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb152-4"><a href="boxplots.html#cb152-4" tabindex="-1"></a><span class="co">#d1</span></span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="boxplots.html#cb153-1" tabindex="-1"></a>boxplot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d1, <span class="fu">aes</span>(number_of_fruits, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span> </span>
+<span id="cb153-2"><a href="boxplots.html#cb153-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb153-3"><a href="boxplots.html#cb153-3" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span> <span class="dv">1</span>,<span class="at">y=</span> <span class="dv">5</span>, <span class="at">label=</span><span class="st">&quot;Fig. 1&quot;</span>)<span class="sc">+</span></span>
+<span id="cb153-4"><a href="boxplots.html#cb153-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span><span class="st">&quot;Cantidad de Frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb153-5"><a href="boxplots.html#cb153-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="boxplots.html#cb154-1" tabindex="-1"></a>boxplot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d1, <span class="fu">aes</span>(number_of_fruits, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb154-2"><a href="boxplots.html#cb154-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb154-3"><a href="boxplots.html#cb154-3" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span> <span class="fl">0.7</span>,<span class="at">y=</span> <span class="dv">7</span>, <span class="at">label=</span><span class="st">&quot;Fig. 2&quot;</span>)<span class="sc">+</span></span>
+<span id="cb154-4"><a href="boxplots.html#cb154-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span><span class="st">&quot;Cantidad de Frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb154-5"><a href="boxplots.html#cb154-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="boxplots.html#cb155-1" tabindex="-1"></a>boxplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d1, <span class="fu">aes</span>(number_of_fruits, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span> </span>
+<span id="cb155-2"><a href="boxplots.html#cb155-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch=</span><span class="cn">TRUE</span>,<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb155-3"><a href="boxplots.html#cb155-3" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">outlier.shape=</span><span class="dv">18</span>,</span>
+<span id="cb155-4"><a href="boxplots.html#cb155-4" tabindex="-1"></a>           <span class="at">outlier.color=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb155-5"><a href="boxplots.html#cb155-5" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span> <span class="fl">0.7</span>,<span class="at">y=</span> <span class="dv">7</span>, <span class="at">label=</span><span class="st">&quot;Fig. 3&quot;</span>)<span class="sc">+</span></span>
+<span id="cb155-6"><a href="boxplots.html#cb155-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span><span class="st">&quot;Cantidad de Frutos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb155-7"><a href="boxplots.html#cb155-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="boxplots.html#cb156-1" tabindex="-1"></a>boxplot4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d1, <span class="fu">aes</span>(<span class="fu">factor</span>(number_of_flowers), number_of_fruits))<span class="sc">+</span> </span>
+<span id="cb156-2"><a href="boxplots.html#cb156-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb156-3"><a href="boxplots.html#cb156-3" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span> <span class="dv">2</span>,<span class="at">y=</span> <span class="dv">10</span>, <span class="at">label=</span><span class="st">&quot;Fig. 4&quot;</span>)<span class="sc">+</span></span>
+<span id="cb156-4"><a href="boxplots.html#cb156-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;Cantidad de Frutos&quot;</span>, <span class="at">x=</span><span class="st">&quot;Cantidad de Flores&quot;</span>)<span class="sc">+</span></span>
+<span id="cb156-5"><a href="boxplots.html#cb156-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb156-6"><a href="boxplots.html#cb156-6" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="boxplots.html#cb157-1" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(boxplot1,boxplot2, boxplot3, boxplot4,<span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/boxplot4-6-1.png" width="672" /></p>
+<hr />
+<div id="change-the-width-of-the-boxes" class="section level3 hasAnchor" number="14.2.1">
+<h3><span class="header-section-number">14.2.1</span> Change the width of the boxes<a href="boxplots.html#change-the-width-of-the-boxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Change the width of the boxes with <strong>varwidth</strong>. This produces a standard boxplot and defaults to FALSE; if TRUE, produces a plot where the width on the <strong>X</strong> axis is proportional to the square root of the number of observations in the groups.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="boxplots.html#cb158-1" tabindex="-1"></a>dipodium <span class="sc">%&gt;%</span> </span>
+<span id="cb158-2"><a href="boxplots.html#cb158-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(number_of_flowers, number_of_fruits) <span class="sc">%&gt;%</span> </span>
+<span id="cb158-3"><a href="boxplots.html#cb158-3" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb158-4"><a href="boxplots.html#cb158-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(number_of_flowers), number_of_fruits, </span>
+<span id="cb158-5"><a href="boxplots.html#cb158-5" tabindex="-1"></a>             <span class="at">fill=</span><span class="fu">factor</span>(number_of_flowers)))<span class="sc">+</span></span>
+<span id="cb158-6"><a href="boxplots.html#cb158-6" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">varwidth=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb158-7"><a href="boxplots.html#cb158-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb158-8"><a href="boxplots.html#cb158-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Cantidad de Flores&quot;</span>)<span class="sc">+</span></span>
+<span id="cb158-9"><a href="boxplots.html#cb158-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Cantidad de Frutos&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/boxplot_flower-1.png" width="672" /></p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="boxplots.html#cb159-1" tabindex="-1"></a><span class="co"># la función varwidth =TRUE cambia </span></span>
+<span id="cb159-2"><a href="boxplots.html#cb159-2" tabindex="-1"></a><span class="co">#el ancho de la barras basado en una formula indicado abajo. </span></span>
+<span id="cb159-3"><a href="boxplots.html#cb159-3" tabindex="-1"></a><span class="co"># Más datos más ancho la barra. </span></span></code></pre></div>
+<hr />
+<ol style="list-style-type: decimal">
+<li>Prepare a box plot or also called <strong>Box and whiskers</strong>. Uses the <strong>ElphickBirdData</strong> data in the <strong>ggversa</strong> package. It uses the <strong>AQBIRDS</strong> column, which is the number of aquatic birds sampled by Zuur, Ieno and Elphick. The bird species named = <strong>Godwit</strong> is a migratory bird that eats small mollusks on the beaches. Use the “SITE” column to create a box plot with the “notches” for each sampling site.</li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="geom_boxplot-options-and-parameters" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> <strong>geom_boxplot</strong> Options and Parameters:<a href="boxplots.html#geom_boxplot-options-and-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>ggplot(the data file, aes(the continuous variable, x=1)): use {x=1} if only one group or the name of the discrete variable if there are multiple groups</p></li>
+<li><p>geom_boxplot(stat, position, outlier.color, outlier.shape, outlier.size, notch, notchwidth, varwidth)</p>
+<ul>
+<li>stat: statistical transformation of the data; It is only needed if you want to override the default method used by geom_boxplot</li>
+<li>position: to adjust the overlap of the data</li>
+<li>outlier.color: defines the color of outliers</li>
+<li>outlier.shape: defines the shape of the outliers</li>
+<li>outlier.size: defines the size of the outliers</li>
+<li>notch: to produce the notches; is defined with the values TRUE or FALSE</li>
+<li>notchwidth: defines the width of the notches relative to the case (default is 0.5)</li>
+<li>varwidth: produces a standard boxplot and defaults to FALSE; if TRUE, produces a plot where the width on the <strong>X</strong> axis is proportional to the square root of the number of observations in the groups.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="violin-diagram-with-geom_violin" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Violin diagram with <strong>geom_violin</strong><a href="boxplots.html#violin-diagram-with-geom_violin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The violin plot is similar to the box plot, but the box is curved to give an appreciation of the density of the data. If the data distribution follows a normal curve, it will appear as a vertically oriented bell curve. For the examples below, we will use data from the Australian terrestrial orchid <em>Caladenia valida</em>.</p>
+<p>The basic model of the violin plot is shown in Figure. Note that, as with <strong>geom_boxplot</strong>, if you have only one group, you have to include <strong>x=1</strong>. What one observes is that most of the information is found close to the value 5 and 10</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="boxplots.html#cb160-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb160-2"><a href="boxplots.html#cb160-2" tabindex="-1"></a>CalVal<span class="ot">=</span>caladeniavalida </span>
+<span id="cb160-3"><a href="boxplots.html#cb160-3" tabindex="-1"></a>violinplot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(DCL, <span class="at">x=</span><span class="dv">1</span>))</span>
+<span id="cb160-4"><a href="boxplots.html#cb160-4" tabindex="-1"></a>violinplot1 <span class="sc">+</span></span>
+<span id="cb160-5"><a href="boxplots.html#cb160-5" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb160-6"><a href="boxplots.html#cb160-6" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span> <span class="fl">0.75</span>,<span class="at">y=</span> <span class="dv">19</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb160-7"><a href="boxplots.html#cb160-7" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb160-8"><a href="boxplots.html#cb160-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb160-9"><a href="boxplots.html#cb160-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;EL largo del apendizaje dorsal&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/geomviolin1-1.png" width="672" /></p>
+<hr />
+<div id="geom_violin-with-multiple-groups" class="section level3 hasAnchor" number="14.4.1">
+<h3><span class="header-section-number">14.4.1</span> <strong>Geom_violin</strong> with multiple groups<a href="boxplots.html#geom_violin-with-multiple-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Next we are going to produce the violin graph by different factors or groups according to the year, while adding blue color to the violins and changing the intensity of the color with <strong>alpha=()</strong>.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="boxplots.html#cb161-1" tabindex="-1"></a>violinplot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>LCL, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb161-2"><a href="boxplots.html#cb161-2" tabindex="-1"></a>violinplot2 <span class="sc">+</span></span>
+<span id="cb161-3"><a href="boxplots.html#cb161-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb161-4"><a href="boxplots.html#cb161-4" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">19</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb161-5"><a href="boxplots.html#cb161-5" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb161-6"><a href="boxplots.html#cb161-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;LCL&quot;</span>)<span class="sc">+</span></span>
+<span id="cb161-7"><a href="boxplots.html#cb161-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb161-8"><a href="boxplots.html#cb161-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;EL largo del apendizaje lateral&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/geomviolin2-1.png" width="672" /></p>
+<hr />
+<p>The violin plot with normal distribution</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="boxplots.html#cb162-1" tabindex="-1"></a>normal_data<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb162-2"><a href="boxplots.html#cb162-2" tabindex="-1"></a><span class="co">#normal_data</span></span>
+<span id="cb162-3"><a href="boxplots.html#cb162-3" tabindex="-1"></a>dfnorm<span class="ot">=</span><span class="fu">data.frame</span>(normal_data)</span>
+<span id="cb162-4"><a href="boxplots.html#cb162-4" tabindex="-1"></a><span class="fu">head</span>(dfnorm)</span></code></pre></div>
+<pre><code>##   normal_data
+## 1  -2.6955453
+## 2   0.8063243
+## 3  -1.6377847
+## 4  -1.9818676
+## 5  -1.9833216
+## 6  -2.7652374</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="boxplots.html#cb164-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb164-2"><a href="boxplots.html#cb164-2" tabindex="-1"></a><span class="fu">ggplot</span>(dfnorm,<span class="fu">aes</span>(normal_data, <span class="at">x=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb164-3"><a href="boxplots.html#cb164-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb164-4"><a href="boxplots.html#cb164-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb164-5"><a href="boxplots.html#cb164-5" tabindex="-1"></a><span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> .<span class="dv">1</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="geom_violin-used-with-geom_point-and-geom_jitter" class="section level3 hasAnchor" number="14.4.2">
+<h3><span class="header-section-number">14.4.2</span> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data can be added to the previous graph to better visualize the distribution. Plant height data <strong>OH</strong> were collected discretely in 5 cm units, so all similar values will appear overlapping one another. Due to this particular situation of that type of data, adding points to visualize them with the <strong>geom_point</strong> function does not really help much to understand its distribution. This is because you cannot appreciate the amount of data used to build the violins. On the other hand, one can use <strong>geom_jitter</strong> and have a better appreciation of its distribution.</p>
+<p>It is important to take into consideration that if <strong>geom_point</strong> is added before <strong>geom_violin</strong>, the points could be hidden behind the violin.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="boxplots.html#cb165-1" tabindex="-1"></a>violingp<span class="ot">=</span>violinplot3a <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))<span class="sc">+</span></span>
+<span id="cb165-2"><a href="boxplots.html#cb165-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb165-3"><a href="boxplots.html#cb165-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span>  <span class="co"># Note que los puntos serán sobrepuestos sobre el violín </span></span>
+<span id="cb165-4"><a href="boxplots.html#cb165-4" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb165-5"><a href="boxplots.html#cb165-5" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb165-6"><a href="boxplots.html#cb165-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb165-7"><a href="boxplots.html#cb165-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb165-8"><a href="boxplots.html#cb165-8" tabindex="-1"></a></span>
+<span id="cb165-9"><a href="boxplots.html#cb165-9" tabindex="-1"></a></span>
+<span id="cb165-10"><a href="boxplots.html#cb165-10" tabindex="-1"></a></span>
+<span id="cb165-11"><a href="boxplots.html#cb165-11" tabindex="-1"></a>violingv<span class="ot">=</span>violinplot3a <span class="sc">+</span></span>
+<span id="cb165-12"><a href="boxplots.html#cb165-12" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb165-13"><a href="boxplots.html#cb165-13" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> .<span class="dv">1</span>))<span class="sc">+</span> <span class="co"># Note que los puntos serán sobrepuestos sobre el violín pero no solapan uno encima del otro.    </span></span>
+<span id="cb165-14"><a href="boxplots.html#cb165-14" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb165-15"><a href="boxplots.html#cb165-15" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb165-16"><a href="boxplots.html#cb165-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb165-17"><a href="boxplots.html#cb165-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb165-18"><a href="boxplots.html#cb165-18" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Overall height, mm&quot;</span>)</span>
+<span id="cb165-19"><a href="boxplots.html#cb165-19" tabindex="-1"></a></span>
+<span id="cb165-20"><a href="boxplots.html#cb165-20" tabindex="-1"></a><span class="fu">grid.arrange</span>(violingp, violingv, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range (`stat_ydensity()`).
+## Removed 1 row containing non-finite outside the scale range (`stat_ydensity()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range (`geom_point()`).
+## Removed 1 row containing missing values or values outside the scale range (`geom_point()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="geom_jitter-and-geom-overlap" class="section level3 hasAnchor" number="14.4.3">
+<h3><span class="header-section-number">14.4.3</span> geom_jitter and <strong>geom</strong> overlap<a href="boxplots.html#geom_jitter-and-geom-overlap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the next graph, <strong>geom_jitter</strong> was called before <strong>geom_violin</strong>, but at the same time the color intensity was changed so that the points are better visible. We see that some of the points that were half hidden before and those that do not overlap the violin are better revealed.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="boxplots.html#cb170-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb170-2"><a href="boxplots.html#cb170-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb170-3"><a href="boxplots.html#cb170-3" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb170-4"><a href="boxplots.html#cb170-4" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">fill=</span><span class="st">&quot;yellow&quot;</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>, <span class="at">alpha=</span><span class="fl">0.3</span>)<span class="sc">+</span></span>
+<span id="cb170-5"><a href="boxplots.html#cb170-5" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb170-6"><a href="boxplots.html#cb170-6" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb170-7"><a href="boxplots.html#cb170-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb170-8"><a href="boxplots.html#cb170-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin4-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="quartiles-and-geom_violin" class="section level3 hasAnchor" number="14.4.4">
+<h3><span class="header-section-number">14.4.4</span> Quartiles and geom_violin<a href="boxplots.html#quartiles-and-geom_violin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The 25th quartile, median (50th), and 75th quartile are now displayed on the same violin plot with horizontal lines.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="boxplots.html#cb173-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb173-2"><a href="boxplots.html#cb173-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb173-3"><a href="boxplots.html#cb173-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.25</span>,<span class="fl">0.5</span>, <span class="fl">0.75</span>,<span class="fl">0.975</span>))<span class="sc">+</span></span>
+<span id="cb173-4"><a href="boxplots.html#cb173-4" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb173-5"><a href="boxplots.html#cb173-5" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb173-6"><a href="boxplots.html#cb173-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb173-7"><a href="boxplots.html#cb173-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin5-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="adding-color-to-the-outline-of-the-violin" class="section level3 hasAnchor" number="14.4.5">
+<h3><span class="header-section-number">14.4.5</span> Adding color to the outline of the violin<a href="boxplots.html#adding-color-to-the-outline-of-the-violin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this figure, color is added to the outline of the violins and the quartile lines.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="boxplots.html#cb175-1" tabindex="-1"></a><span class="fu">library</span>(ggversa)</span>
+<span id="cb175-2"><a href="boxplots.html#cb175-2" tabindex="-1"></a><span class="fu">names</span>(caladeniavalida)</span></code></pre></div>
+<pre><code>##  [1] &quot;Population&quot; &quot;Year&quot;       &quot;Plant_num&quot;  &quot;OH&quot;         &quot;OD&quot;        
+##  [6] &quot;OW&quot;         &quot;DSL&quot;        &quot;DCL&quot;        &quot;LSL&quot;        &quot;LCL&quot;       
+## [11] &quot;LSW&quot;        &quot;PL&quot;         &quot;LL&quot;         &quot;LW&quot;         &quot;Fruit_not&quot;</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="boxplots.html#cb177-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span>Population))</span>
+<span id="cb177-2"><a href="boxplots.html#cb177-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb177-3"><a href="boxplots.html#cb177-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">alpha=</span>.<span class="dv">2</span>, <span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))<span class="sc">+</span></span>
+<span id="cb177-4"><a href="boxplots.html#cb177-4" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb177-5"><a href="boxplots.html#cb177-5" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb177-6"><a href="boxplots.html#cb177-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb177-7"><a href="boxplots.html#cb177-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin6-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="geom_violin-by-category-or-factor" class="section level3 hasAnchor" number="14.4.6">
+<h3><span class="header-section-number">14.4.6</span> geom_violin by category or factor<a href="boxplots.html#geom_violin-by-category-or-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the Figure, the color of each group is changed, <strong>Year</strong>. To achieve this effect, another variable is added to represent the groups (or categories) by color; in this case, the distribution of plant sizes in terms of whether they produced fruit or not.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="boxplots.html#cb179-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(CalVal), <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb179-2"><a href="boxplots.html#cb179-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb179-3"><a href="boxplots.html#cb179-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">fill=</span>(<span class="fu">factor</span>(Fruit_not))),</span>
+<span id="cb179-4"><a href="boxplots.html#cb179-4" tabindex="-1"></a>              <span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))<span class="sc">+</span></span>
+<span id="cb179-5"><a href="boxplots.html#cb179-5" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">2</span>,<span class="at">y=</span> <span class="dv">20</span>, <span class="at">size=</span><span class="dv">8</span>,</span>
+<span id="cb179-6"><a href="boxplots.html#cb179-6" tabindex="-1"></a>           <span class="at">label=</span><span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb179-7"><a href="boxplots.html#cb179-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb179-8"><a href="boxplots.html#cb179-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb179-9"><a href="boxplots.html#cb179-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Altura de la planta&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/geomviolin7-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="geom_violin-in-proportion-to-sample-size" class="section level3 hasAnchor" number="14.4.7">
+<h3><span class="header-section-number">14.4.7</span> Geom_violin in proportion to sample size<a href="boxplots.html#geom_violin-in-proportion-to-sample-size" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In Figure, the same graph is modified to take into account the sample size using the <strong>scale</strong> option with the <strong>count</strong> parameter. In other words, the violins will be modified to include the sample size; that is, the maximum width scale is proportional to the size of the sample. So, in this case we see the year where there was the largest (2007) and smallest (2008) sample size according to the width shown for each violin.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="boxplots.html#cb180-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb180-2"><a href="boxplots.html#cb180-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb180-3"><a href="boxplots.html#cb180-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;count&quot;</span>,</span>
+<span id="cb180-4"><a href="boxplots.html#cb180-4" tabindex="-1"></a>              <span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))<span class="sc">+</span></span>
+<span id="cb180-5"><a href="boxplots.html#cb180-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb180-6"><a href="boxplots.html#cb180-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin8-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="geom_violin-not-in-proportion-to-sample-size" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> geom_violin not in proportion to sample size<a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the Figure the width of the violin is modified to 1 on the scale of the <strong>X</strong> axis. In other words, in this case the width <strong>width</strong> of the violin for the first year goes from 2003.5 to 2004.5, for the second violin from 2004.5 to 2005.5 and so on consecutively for the other years. This approach creates a degree of uniformity for each width. In this case the width is not related to the sample size like the previous example.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="boxplots.html#cb182-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb182-2"><a href="boxplots.html#cb182-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb182-3"><a href="boxplots.html#cb182-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;width&quot;</span>,</span>
+<span id="cb182-4"><a href="boxplots.html#cb182-4" tabindex="-1"></a>              <span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))<span class="sc">+</span></span>
+<span id="cb182-5"><a href="boxplots.html#cb182-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>, <span class="at">y=</span><span class="st">&quot;OH&quot;</span>)<span class="sc">+</span></span>
+<span id="cb182-6"><a href="boxplots.html#cb182-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin9-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="geom_violin-and-orientation-change" class="section level2 hasAnchor" number="14.6">
+<h2><span class="header-section-number">14.6</span> geom_violin and orientation change<a href="boxplots.html#geom_violin-and-orientation-change" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the Figure we change the orientation of the previous graphs using the <strong>coord_flip()</strong> option.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="boxplots.html#cb184-1" tabindex="-1"></a>violinplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(CalVal, <span class="fu">aes</span>(<span class="at">y=</span>OH, <span class="at">x=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb184-2"><a href="boxplots.html#cb184-2" tabindex="-1"></a>violinplot3 <span class="sc">+</span></span>
+<span id="cb184-3"><a href="boxplots.html#cb184-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb184-4"><a href="boxplots.html#cb184-4" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb184-5"><a href="boxplots.html#cb184-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Año&quot;</span>)<span class="sc">+</span></span>
+<span id="cb184-6"><a href="boxplots.html#cb184-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb184-7"><a href="boxplots.html#cb184-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Altura de la planta&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_ydensity()`).</code></pre>
+<p><img src="bookdownproj_files/figure-html/geomviolin10-1.png" width="672" /></p>
+<hr />
+<p>Density graphs with colors for the different quantiles</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="boxplots.html#cb186-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">data.table</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>),<span class="at">y=</span><span class="fu">rnorm</span>(<span class="dv">200</span>)) <span class="co"># Crear un distribucion de 200 datos al azar con una distribución normal</span></span>
+<span id="cb186-2"><a href="boxplots.html#cb186-2" tabindex="-1"></a>dens <span class="ot">&lt;-</span> <span class="fu">density</span>(dt<span class="sc">$</span>y) <span class="co"># calcular la densidad</span></span>
+<span id="cb186-3"><a href="boxplots.html#cb186-3" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>dens<span class="sc">$</span>x, <span class="at">y=</span>dens<span class="sc">$</span>y) <span class="co"># crear un data frame de la densidad</span></span>
+<span id="cb186-4"><a href="boxplots.html#cb186-4" tabindex="-1"></a>probs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.9</span>) <span class="co"># determinar cual cuantil quiere evaluar</span></span>
+<span id="cb186-5"><a href="boxplots.html#cb186-5" tabindex="-1"></a>quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dt<span class="sc">$</span>y, <span class="at">prob=</span>probs) <span class="co"># asignar cada valor a uno de los cuantiles</span></span>
+<span id="cb186-6"><a href="boxplots.html#cb186-6" tabindex="-1"></a>df<span class="sc">$</span>quant <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">findInterval</span>(df<span class="sc">$</span>x,quantiles)) <span class="co"># Asignar los cuantiles a factores</span></span>
+<span id="cb186-7"><a href="boxplots.html#cb186-7" tabindex="-1"></a></span>
+<span id="cb186-8"><a href="boxplots.html#cb186-8" tabindex="-1"></a></span>
+<span id="cb186-9"><a href="boxplots.html#cb186-9" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb186-10"><a href="boxplots.html#cb186-10" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span>y, <span class="at">fill=</span>quant)) <span class="sc">+</span> </span>
+<span id="cb186-11"><a href="boxplots.html#cb186-11" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span>quantiles) <span class="sc">+</span> </span>
+<span id="cb186-12"><a href="boxplots.html#cb186-12" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">guide=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="boxplots.html#cb187-1" tabindex="-1"></a>CalVal2<span class="ot">=</span></span>
+<span id="cb187-2"><a href="boxplots.html#cb187-2" tabindex="-1"></a>  CalVal <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(OH) <span class="sc">%&gt;%</span> </span>
+<span id="cb187-3"><a href="boxplots.html#cb187-3" tabindex="-1"></a>  <span class="fu">drop_na</span>()    <span class="co"># Seleccionar lo datos deseados removiendo los &quot;NA&quot;</span></span>
+<span id="cb187-4"><a href="boxplots.html#cb187-4" tabindex="-1"></a></span>
+<span id="cb187-5"><a href="boxplots.html#cb187-5" tabindex="-1"></a>dens2<span class="ot">=</span><span class="fu">density</span>(CalVal2<span class="sc">$</span>OH) </span>
+<span id="cb187-6"><a href="boxplots.html#cb187-6" tabindex="-1"></a>dens2</span></code></pre></div>
+<pre><code>## 
+## Call:
+##  density.default(x = CalVal2$OH)
+## 
+## Data: CalVal2$OH (163 obs.); Bandwidth &#39;bw&#39; = 2.94
+## 
+##        x               y            
+##  Min.   :16.18   Min.   :9.320e-06  
+##  1st Qu.:34.34   1st Qu.:8.159e-04  
+##  Median :52.50   Median :5.032e-03  
+##  Mean   :52.50   Mean   :1.374e-02  
+##  3rd Qu.:70.66   3rd Qu.:2.621e-02  
+##  Max.   :88.82   Max.   :5.660e-02</code></pre>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="boxplots.html#cb189-1" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>dens2<span class="sc">$</span>x, <span class="at">y=</span>dens2<span class="sc">$</span>y)</span>
+<span id="cb189-2"><a href="boxplots.html#cb189-2" tabindex="-1"></a><span class="fu">head</span>(df2)</span></code></pre></div>
+<pre><code>##          x            y
+## 1 16.17920 9.561940e-06
+## 2 16.32136 1.105205e-05
+## 3 16.46352 1.272153e-05
+## 4 16.60567 1.469481e-05
+## 5 16.74783 1.691094e-05
+## 6 16.88998 1.938565e-05</code></pre>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="boxplots.html#cb191-1" tabindex="-1"></a>probs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>, .<span class="dv">99</span>)</span>
+<span id="cb191-2"><a href="boxplots.html#cb191-2" tabindex="-1"></a>quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(CalVal2<span class="sc">$</span>OH, <span class="at">prob=</span>probs)</span>
+<span id="cb191-3"><a href="boxplots.html#cb191-3" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>dens2<span class="sc">$</span>x, <span class="at">y=</span>dens2<span class="sc">$</span>y)</span>
+<span id="cb191-4"><a href="boxplots.html#cb191-4" tabindex="-1"></a>df2<span class="sc">$</span>quant <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">findInterval</span>(df2<span class="sc">$</span>x,quantiles))</span>
+<span id="cb191-5"><a href="boxplots.html#cb191-5" tabindex="-1"></a><span class="fu">head</span>(df2)</span></code></pre></div>
+<pre><code>##          x            y quant
+## 1 16.17920 9.561940e-06     0
+## 2 16.32136 1.105205e-05     0
+## 3 16.46352 1.272153e-05     0
+## 4 16.60567 1.469481e-05     0
+## 5 16.74783 1.691094e-05     0
+## 6 16.88998 1.938565e-05     0</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="boxplots.html#cb193-1" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(x,y)) <span class="sc">+</span>  </span>
+<span id="cb193-2"><a href="boxplots.html#cb193-2" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span>y, <span class="at">fill=</span>quant)) <span class="sc">+</span> </span>
+<span id="cb193-3"><a href="boxplots.html#cb193-3" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span>quantiles) <span class="sc">+</span> </span>
+<span id="cb193-4"><a href="boxplots.html#cb193-4" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>,<span class="at">guide=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span>  <span class="co"># colores horribles</span></span>
+<span id="cb193-5"><a href="boxplots.html#cb193-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li>Prepare a violin chart. Uses the <strong>CypripediumA</strong> data in the <strong>ggversa</strong> package. Use the column <strong>Lip_length_mm</strong>, which is the lip length of the orchid <em>Cypripedium acaule</em>. The orchid species lives in northern Canada in forests (Forest) or swamps (Wetlands). Use the <strong>Forest_Wetland</strong> column to create a fiddle box for each sampling site. Color the two groups. Evaluating the distribution of the data on labellum size, do you believe that the size distribution is equal?</li>
+</ol>
+<hr />
+</div>
+<div id="geom_violin-options-and-parameters" class="section level2 hasAnchor" number="14.7">
+<h2><span class="header-section-number">14.7</span> <strong>geom_violin</strong> Options and Parameters:<a href="boxplots.html#geom_violin-options-and-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>ggplot(the data file, aes(the continuous variable, x=1)): {x=1} if a group or the name of the discrete variable if there are multiple groups
+<ul>
+<li><p>geom_violin(x, y, alpha, color, fill, linetype, size, weight)</p></li>
+<li><p>alpha: the intensity of the color</p></li>
+<li><p>color: the color of the line around the violin</p></li>
+<li><p>fill: the color used to fill the violin</p></li>
+<li><p>linetype: represents the line style; see section</p></li>
+<li><p>size: represents the thickness of the line</p></li>
+<li><p>scale: the scale used to produce the violin taking into account the sample size proportionally; uses <strong>count</strong> or <strong>width</strong> parameters</p></li>
+<li><p>weight: to modify the original value; then it would not be, for example, the count/sum of the values but a weighted value (weighted average).</p></li>
+</ul></li>
+</ul>
+<hr />
+
+</div>
 </div>
             </section>
 

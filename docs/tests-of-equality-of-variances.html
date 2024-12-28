@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2024-12-26" />
+<meta name="date" content="2024-12-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,7 +237,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>12</b> Ring chart (alternative to pie chart)</a></li>
 <li class="chapter" data-level="13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>13</b> Histograms/Density Plots</a></li>
-<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
 <li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
 <ul>
@@ -2016,7 +2037,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb77-4"><a href="tests-of-equality-of-variances.html#cb77-4" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb77-5"><a href="tests-of-equality-of-variances.html#cb77-5" tabindex="-1"></a>RExam <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/RExam.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 100 Columns: 5
-## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## dbl (5): exam, computer, lectures, numeracy, uni
 ## 

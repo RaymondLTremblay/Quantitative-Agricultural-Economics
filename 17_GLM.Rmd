@@ -9,6 +9,7 @@ library(huxtable)
 library(wakefield)
 library(SuppDists)
 library(univariateML)
+conflicts_prefer(lubridate::minute)
 ```
 
 ------------------------------------------------------------------------

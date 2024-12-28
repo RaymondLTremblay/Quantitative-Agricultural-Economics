@@ -3,20 +3,7 @@
 
 ## Basic scatter plots
 
-```{r, eval=TRUE, echo=FALSE}
-colorize <- function(x, color) {
-  if (knitr::is_latex_output()) {
-    sprintf("\\textcolor{%s}{%s}", color, x)
-  } else if (knitr::is_html_output()) {
-    sprintf("<span style='color: %s;'>%s</span>", color, 
-      x)
-  } else x
-}
 
-#`r colorize("some words in red", "red")`
-
-
-```
 
 Fecha de la ultima revisión
 
@@ -41,6 +28,9 @@ library(ggplot2) # Data Visualization
 library(tidyverse) # Data Manipulation
 library(sjPlot) # Data Visualization
 library(janitor) # Data Cleaning
+library(conflicted)
+
+conflicts_prefer(lubridate::minute, lubridate::second, lubridate::month)
 
 ```
 
