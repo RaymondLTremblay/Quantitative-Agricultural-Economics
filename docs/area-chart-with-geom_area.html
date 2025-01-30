@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 13 Area chart with geom_area | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 13 Area chart with geom_area | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 13 Area chart with geom_area | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 13 Area chart with geom_area | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2025-01-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="histogramsdensity-plots.html"/>
+<link rel="next" href="boxplots.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-funcions-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding funcions in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data.html"><a href="data.html#using-the-function-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data.html"><a href="data.html#csv-file"><i class="fa fa-check"></i><b>4.2.1</b> .csv file</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data.html"><a href="data.html#excel-file"><i class="fa fa-check"></i><b>4.2.2</b> .excel file</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data.html"><a href="data.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data.html"><a href="data.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#section"><i class="fa fa-check"></i><b>4.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1</b> cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-data.html"><a href="understanding-your-data.html"><i class="fa fa-check"></i><b>6</b> Understanding your data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-data.html"><a href="understanding-your-data.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.1</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-data.html"><a href="understanding-your-data.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.2</b> dimensions of the data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-data.html"><a href="understanding-your-data.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3</b> structure of the data</a></li>
+<li class="chapter" data-level="6.4" data-path="understanding-your-data.html"><a href="understanding-your-data.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.4</b> Levels of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#cramer-von-mises-test-of-normality"><i class="fa fa-check"></i><b>7.4</b> Cramer-von Mises test of normality</a></li>
+<li class="chapter" data-level="7.5" data-path="test-of-normality.html"><a href="test-of-normality.html#lilliefors-test-of-normality"><i class="fa fa-check"></i><b>7.5</b> Lilliefors test of normality</a></li>
+<li class="chapter" data-level="7.6" data-path="test-of-normality.html"><a href="test-of-normality.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.6</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="test-of-normality.html"><a href="test-of-normality.html#qq-plot"><i class="fa fa-check"></i><b>7.6.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>7.7.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>8</b> Non-parametric test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1</b> Altenative to non-parametric tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>9.2</b> the lm() function</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>9.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>9.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="9.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>9.5</b> Selling music records</a></li>
+<li class="chapter" data-level="9.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>9.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="9.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>9.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="9.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>9.8</b> Steps to do a linear regression analysis</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>9.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="9.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>9.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="9.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>9.8.3</b> Step 3</a></li>
+<li class="chapter" data-level="9.8.4" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>9.8.4</b> Plot the residuals</a></li>
+<li class="chapter" data-level="9.8.5" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>9.8.5</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.8.6" data-path="scatter-plots.html"><a href="scatter-plots.html#eexercise-2"><i class="fa fa-check"></i><b>9.8.6</b> EExercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.9</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.10</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.11</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>10</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>10.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>10.2</b> the linear model</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>10.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>10.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to the pie chart)</a>
+<ul>
+<li class="chapter" data-level="11.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>11.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="11.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>11.0.2</b> Example of why PIE chart should NOT be used</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>12.1</b> Histograms with geom_histogram</a></li>
+<li class="chapter" data-level="12.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>12.2</b> Changing bin sizes with <em>binwidth</em></a></li>
+<li class="chapter" data-level="12.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>12.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
+<li class="chapter" data-level="12.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>12.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
+<li class="chapter" data-level="12.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>12.5</b> Frequency and color intensity overlap</a></li>
+<li class="chapter" data-level="12.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>12.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
+<li class="chapter" data-level="12.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>12.7</b> Group graphics with <strong>Facet_wrap</strong></a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>12.7.1</b> Change chart colors manually</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>12.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="12.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>12.9</b> DensityPlots</a>
+<ul>
+<li class="chapter" data-level="12.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>12.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html"><i class="fa fa-check"></i><b>13</b> Area chart with <strong>geom_area</strong></a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#area-chart-section"><i class="fa fa-check"></i><b>13.1</b> Area Chart Section</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#linetype-types"><i class="fa fa-check"></i><b>13.1.1</b> <strong>linetype</strong> types</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>13.2</b> geom_area with multiple groups</a></li>
+<li class="chapter" data-level="13.3" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>13.3</b> The density function <strong>aes(y=..density..)</strong></a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>13.3.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>13.4</b> Density plot with <strong>geom_density</strong></a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#what-is-a-kernel"><i class="fa fa-check"></i><b>13.4.1</b> What is a kernel?</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>13.5</b> geom_density and simulated data</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>13.5.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>13.6</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="area-chart-with-geom_area.html"><a href="area-chart-with-geom_area.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>13.6.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
+<li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>16.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="16.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>16.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="16.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>16.3</b> Visualization of the model</a></li>
+<li class="chapter" data-level="16.4" data-path="linear-regression.html"><a href="linear-regression.html#quantile-regression"><i class="fa fa-check"></i><b>16.4</b> Quantile Regression</a></li>
+<li class="chapter" data-level="16.5" data-path="linear-regression.html"><a href="linear-regression.html#the-model"><i class="fa fa-check"></i><b>16.5</b> The model</a></li>
+<li class="chapter" data-level="16.6" data-path="linear-regression.html"><a href="linear-regression.html#the-assumptions"><i class="fa fa-check"></i><b>16.6</b> The assumptions</a></li>
+<li class="chapter" data-level="16.7" data-path="linear-regression.html"><a href="linear-regression.html#visualization"><i class="fa fa-check"></i><b>16.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>17.1</b> Linear models</a></li>
+<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>17.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.4</b> Link available</a></li>
+<li class="chapter" data-level="17.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>17.5</b> The assumptions</a></li>
+<li class="chapter" data-level="17.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="17.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.7</b> ## Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="17.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="17.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="17.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>17.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="17.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>17.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="17.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="17.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="17.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.12</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="17.13" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>17.13</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="17.13.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>17.13.1</b> Model</a></li>
+<li class="chapter" data-level="17.13.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>17.13.2</b> Assumptions</a></li>
+<li class="chapter" data-level="17.13.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>17.13.3</b> Post estimation analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>18</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>18.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="18.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>18.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="18.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>18.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="18.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>18.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="18.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>18.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="18.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>18.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="18.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>18.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="18.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>18.8</b> Regression model</a></li>
+<li class="chapter" data-level="18.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>18.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="18.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>18.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="18.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>18.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="18.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>18.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>19</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="area-chart-with-geom_area" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Area chart with <strong>geom_area</strong><a href="area-chart-with-geom_area.html#area-chart-with-geom_area" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="area-chart-section" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Area Chart Section<a href="area-chart-with-geom_area.html#area-chart-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The area chart is analogous to a histogram or bar chart. The figure below shows how the quantity in <strong>X</strong> changes in frequency with respect to <strong>Y</strong> throughout the range of the variable <strong>X</strong>. Note below that the data is not grouped into bars as when using <strong>geom_histogram</strong> but represented as a continuous area. Note that unlike a histogram, the frequency changes are smoothed and not discrete.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="area-chart-with-geom_area.html#cb30-1" tabindex="-1"></a>DW<span class="ot">=</span>dipodium</span>
+<span id="cb30-2"><a href="area-chart-with-geom_area.html#cb30-2" tabindex="-1"></a>DW<span class="ot">=</span><span class="fu">clean_names</span>(DW)</span>
+<span id="cb30-3"><a href="area-chart-with-geom_area.html#cb30-3" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(DW, <span class="fu">aes</span>(distance))</span>
+<span id="cb30-4"><a href="area-chart-with-geom_area.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="area-chart-with-geom_area.html#cb30-5" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">fill=</span><span class="st">&quot;aquamarine&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="area-chart-with-geom_area.html#cb30-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia (m) al arbol más cercano&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-7"><a href="area-chart-with-geom_area.html#cb30-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-area-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>In this following graph, the color of the line that follows the contour of the area is changed. To make this change you can identify the type of line with <strong>linetype</strong>, the color with <strong>color</strong>, the thickness of the line with <strong>size</strong> and the intensity of the color with <strong>alpha</strong>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="area-chart-with-geom_area.html#cb31-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(DW, <span class="fu">aes</span>(distance))</span>
+<span id="cb31-2"><a href="area-chart-with-geom_area.html#cb31-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">fill=</span><span class="st">&quot;steelblue1&quot;</span>,</span>
+<span id="cb31-3"><a href="area-chart-with-geom_area.html#cb31-3" tabindex="-1"></a>            <span class="at">linetype=</span><span class="st">&quot;twodash&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">size=</span><span class="fl">0.5</span>, <span class="at">alpha=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb31-4"><a href="area-chart-with-geom_area.html#cb31-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb31-5"><a href="area-chart-with-geom_area.html#cb31-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-area2-1.png" width="672" /></p>
+<hr />
+<div id="linetype-types" class="section level3 hasAnchor" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> <strong>linetype</strong> types<a href="area-chart-with-geom_area.html#linetype-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>See “linetype” alternatives at this link <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/linetype">linetype</a>. Some of these lines can be called using a name “blank”, “solid”, “dashed”, “dotted”, “dotdash”, “longdash”, “twodash”, or numbering “1F”, “F1”, “4C88C488”, “12345678.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="area-chart-with-geom_area.html#cb32-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb32-2"><a href="area-chart-with-geom_area.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="area-chart-with-geom_area.html#cb32-3" tabindex="-1"></a><span class="co"># Set up the plotting area</span></span>
+<span id="cb32-4"><a href="area-chart-with-geom_area.html#cb32-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="fl">10.5</span>, <span class="sc">-</span><span class="fl">0.5</span>),</span>
+<span id="cb32-5"><a href="area-chart-with-geom_area.html#cb32-5" tabindex="-1"></a>    <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>, <span class="at">yaxt=</span><span class="st">&quot;n&quot;</span>,</span>
+<span id="cb32-6"><a href="area-chart-with-geom_area.html#cb32-6" tabindex="-1"></a>    <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="cn">NA</span> )</span>
+<span id="cb32-7"><a href="area-chart-with-geom_area.html#cb32-7" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="area-chart-with-geom_area.html#cb32-8" tabindex="-1"></a><span class="co"># Draw the lines</span></span>
+<span id="cb32-9"><a href="area-chart-with-geom_area.html#cb32-9" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb32-10"><a href="area-chart-with-geom_area.html#cb32-10" tabindex="-1"></a>    <span class="fu">points</span>(<span class="fu">c</span>(<span class="fl">0.25</span>,<span class="dv">1</span>), <span class="fu">c</span>(i,i), <span class="at">lty=</span>i, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb32-11"><a href="area-chart-with-geom_area.html#cb32-11" tabindex="-1"></a>}</span>
+<span id="cb32-12"><a href="area-chart-with-geom_area.html#cb32-12" tabindex="-1"></a><span class="co"># Add labels</span></span>
+<span id="cb32-13"><a href="area-chart-with-geom_area.html#cb32-13" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="st">&quot;0. &#39;blank&#39;&quot;</span>   ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-14"><a href="area-chart-with-geom_area.html#cb32-14" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="st">&quot;1. &#39;solid&#39;&quot;</span>   ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-15"><a href="area-chart-with-geom_area.html#cb32-15" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="st">&quot;2. &#39;dashed&#39;&quot;</span>  ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-16"><a href="area-chart-with-geom_area.html#cb32-16" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="st">&quot;3. &#39;dotted&#39;&quot;</span>  ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-17"><a href="area-chart-with-geom_area.html#cb32-17" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="st">&quot;4. &#39;dotdash&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-18"><a href="area-chart-with-geom_area.html#cb32-18" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="st">&quot;5. &#39;longdash&#39;&quot;</span>,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-19"><a href="area-chart-with-geom_area.html#cb32-19" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="st">&quot;6. &#39;twodash&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-20"><a href="area-chart-with-geom_area.html#cb32-20" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">7</span>, <span class="st">&quot;6. &#39;1F&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-21"><a href="area-chart-with-geom_area.html#cb32-21" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="st">&quot;6. &#39;F1&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-22"><a href="area-chart-with-geom_area.html#cb32-22" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">9</span>, <span class="st">&quot;6. &#39;4C88C488&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span>
+<span id="cb32-23"><a href="area-chart-with-geom_area.html#cb32-23" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="st">&quot;6. &#39;12345678&#39;&quot;</span> ,  <span class="at">adj=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">5</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Now in the following graph, the color of the line is changed to black while the style of the line is changed with <em>linetype</em> and its thickness with <em>size</em>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="area-chart-with-geom_area.html#cb33-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(DW, <span class="fu">aes</span>(distance))</span>
+<span id="cb33-2"><a href="area-chart-with-geom_area.html#cb33-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">fill=</span><span class="st">&quot;steelblue1&quot;</span>,</span>
+<span id="cb33-3"><a href="area-chart-with-geom_area.html#cb33-3" tabindex="-1"></a>            <span class="at">linetype=</span><span class="st">&quot;4C88C488&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">size=</span>.<span class="dv">5</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb33-4"><a href="area-chart-with-geom_area.html#cb33-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-5"><a href="area-chart-with-geom_area.html#cb33-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-area3-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="geom_area-with-multiple-groups" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> geom_area with multiple groups<a href="area-chart-with-geom_area.html#geom_area-with-multiple-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Finally, the following graph shows the data on the frequency of hospital beds per 1,000 inhabitants in different years.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="area-chart-with-geom_area.html#cb34-1" tabindex="-1"></a><span class="fu">tail</span>(Camas_Hospital, <span class="at">n=</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##              Pais Year Poblacion  Camas
+## 129        Turkey 2006  68704721 2.7000
+## 130  Turkmenistan 2006   4801594 4.3331
+## 131       Ukraine 2006  46787750 8.7000
+## 132 United States 2006 298379912 3.1000
+## 133       Uruguay 2006   3331041 2.9000
+## 134   Yemen, Rep. 2006  21093973 0.7000</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="area-chart-with-geom_area.html#cb36-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(Camas_Hospital, <span class="fu">aes</span>(Camas, <span class="at">fill=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb36-2"><a href="area-chart-with-geom_area.html#cb36-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>,<span class="at">bins=</span><span class="dv">60</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb36-3"><a href="area-chart-with-geom_area.html#cb36-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Número de camas por </span><span class="sc">\n</span><span class="st"> cada 1000 habitantes&quot;</span>)<span class="sc">+</span></span>
+<span id="cb36-4"><a href="area-chart-with-geom_area.html#cb36-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb36-5"><a href="area-chart-with-geom_area.html#cb36-5" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))<span class="sc">+</span> <span class="co"># Cambio en la escala de eje</span></span>
+<span id="cb36-6"><a href="area-chart-with-geom_area.html#cb36-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">15</span>))<span class="sc">+</span></span>
+<span id="cb36-7"><a href="area-chart-with-geom_area.html#cb36-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb36-8"><a href="area-chart-with-geom_area.html#cb36-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-area4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="area-chart-with-geom_area.html#cb37-1" tabindex="-1"></a>Camas_Hospital <span class="sc">%&gt;%</span> </span>
+<span id="cb37-2"><a href="area-chart-with-geom_area.html#cb37-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-3"><a href="area-chart-with-geom_area.html#cb37-3" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+## # Groups:   Year [2]
+##    Year     n
+##   &lt;int&gt; &lt;int&gt;
+## 1  1996    67
+## 2  2006    67</code></pre>
+<hr />
+</div>
+<div id="the-density-function-aesy..density.." class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> The density function <strong>aes(y=..density..)</strong><a href="area-chart-with-geom_area.html#the-density-function-aesy..density.." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One can use the <strong>stat</strong> option while identifying the <strong>Y</strong> axis to display the density and not the frequency of the data with the following modification <strong>aes(y=..density..) </strong>. This changes the graph’s display to density in the data instead of showing the count/frequency for each group. If one compares the two previous graphs to these new graphs one observes that the density of hospital beds per 100,000 changed with the years of inhabitants, there was an increase in density (proportionally more beds in 2006 per inhabitants). Note that there is no peak near one in 1996, but in 2006 the distribution is more dispersed among the values ​​and not concentrated near one.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="area-chart-with-geom_area.html#cb39-1" tabindex="-1"></a>Camas_Hospital</span></code></pre></div>
+<pre><code>##                     Pais Year  Poblacion   Camas
+## 1                Armenia 1996    3173425  7.1300
+## 2              Australia 1996   18311000  8.5000
+## 3                Austria 1996    7959017  9.3000
+## 4             Azerbaijan 1996    7763000  9.8100
+## 5           Bahamas, The 1996     283792  3.9400
+## 6               Barbados 1996     265940  7.5600
+## 7                Belarus 1996   10160000 12.2700
+## 8                 Belize 1996     213674  2.1300
+## 9                Bolivia 1996    7717445  1.6700
+## 10              Bulgaria 1996    8362826 10.4700
+## 11          Burkina Faso 1996   10372809  1.4200
+## 12                Canada 1996   29671900  4.6000
+## 13                 Chile 1996   14396020  2.6700
+## 14                 China 1996 1217550000  2.5500
+## 15              Colombia 1996   38049040  1.4600
+## 16            Costa Rica 1996    3596733  1.7500
+## 17               Croatia 1996    4494000  6.1900
+## 18                  Cuba 1996   10955372  5.1300
+## 19      Egypt, Arab Rep. 1996   63595629  2.1000
+## 20           El Salvador 1996    5643363  1.6500
+## 21               Estonia 1996    1415594  7.9000
+## 22               Finland 1996    5124573  9.2000
+## 23                France 1996   59753098  8.8000
+## 24               Georgia 1996    4616100  5.6700
+## 25               Germany 1996   81914831  9.6000
+## 26                Greece 1996   10608800  4.9000
+## 27                Guyana 1996     730193  3.8700
+## 28               Hungary 1996   10311238  8.8000
+## 29    Iran, Islamic Rep. 1996   61306632  1.6000
+## 30               Ireland 1996    3637510  5.1000
+## 31                Israel 1996    5692000  6.0300
+## 32                 Italy 1996   56860281  6.5000
+## 33               Jamaica 1996    2509923  2.1200
+## 34                 Japan 1996  125757000 15.2000
+## 35            Kazakhstan 1996   15577894 10.3300
+## 36           Korea, Rep. 1996   45524681  4.6000
+## 37       Kyrgyz Republic 1996    4628400  8.4100
+## 38                Latvia 1996    2457222 10.4400
+## 39             Lithuania 1996    3601613 10.8800
+## 40        Macedonia, FYR 1996    1958303  5.2000
+## 41              Malaysia 1996   21260881  2.0100
+## 42                 Malta 1996     372687  5.7800
+## 43                Mexico 1996   96181710  1.2000
+## 44               Moldova 1996    3667748 12.1300
+## 45                 Nepal 1996   21902534  0.1600
+## 46             Nicaragua 1996    4700777  1.4800
+## 47                Norway 1996    4381336  4.0000
+## 48              Paraguay 1996    4870695  1.3400
+## 49                Poland 1996   38624370  5.5000
+## 50              Portugal 1996   10063945  4.0000
+## 51               Romania 1996   22619004  7.5600
+## 52    Russian Federation 1996  148160042 11.6300
+## 53       Slovak Republic 1996    5373361  8.3000
+## 54              Slovenia 1996    1988628  5.6600
+## 55                 Spain 1996   39478186  4.3000
+## 56             St. Lucia 1996     148962  3.3800
+## 57              Suriname 1996     453653  3.7400
+## 58  Syrian Arab Republic 1996   14736209  1.5000
+## 59            Tajikistan 1996    5862224  7.4700
+## 60   Trinidad and Tobago 1996    1258365  5.1100
+## 61               Tunisia 1996    9089300  2.0000
+## 62                Turkey 1996   59451488  2.5000
+## 63          Turkmenistan 1996    4267690  8.0100
+## 64               Ukraine 1996   51057189 10.8400
+## 65         United States 1996  269394000  3.9000
+## 66               Uruguay 1996    3248039  4.3900
+## 67           Yemen, Rep. 1996   15834747  0.6900
+## 68               Armenia 2006    3002161  4.4000
+## 69             Australia 2006   20697900  3.9700
+## 70               Austria 2006    8268641  7.6496
+## 71            Azerbaijan 2006    8484550  8.1000
+## 72          Bahamas, The 2006     335801  3.2000
+## 73              Barbados 2006     275040  6.6000
+## 74               Belarus 2006    9604000 11.2000
+## 75                Belize 2006     290751  1.3000
+## 76               Bolivia 2006    9283345  1.1000
+## 77              Bulgaria 2006    7699020  6.2000
+## 78          Burkina Faso 2006   13834195  0.9000
+## 79                Canada 2006   32570505  3.4000
+## 80                 Chile 2006   16279728  2.3000
+## 81                 China 2006 1311020000  2.2300
+## 82              Colombia 2006   43835744  1.0000
+## 83            Costa Rica 2006    4308790  1.3000
+## 84               Croatia 2006    4440000  5.5000
+## 85                  Cuba 2006   11275199  4.9000
+## 86      Egypt, Arab Rep. 2006   76274285  2.1020
+## 87           El Salvador 2006    5967556  0.9000
+## 88               Estonia 2006    1346810  5.6000
+## 89               Finland 2006    5266268  7.0000
+## 90                France 2006   63621376  7.2000
+## 91               Georgia 2006    4136000  3.7000
+## 92               Germany 2006   82376451  8.3000
+## 93                Greece 2006   11020362  4.8000
+## 94                Guyana 2006     743705  2.5000
+## 95               Hungary 2006   10071370  7.9000
+## 96    Iran, Islamic Rep. 2006   70923164  1.4000
+## 97               Ireland 2006    4273591  5.3000
+## 98                Israel 2006    7053700  6.0000
+## 99                 Italy 2006   58143979  3.9000
+## 100              Jamaica 2006    2653042  2.0000
+## 101                Japan 2006  127854000 13.9800
+## 102           Kazakhstan 2006   15308084  7.8000
+## 103          Korea, Rep. 2006   48371946  8.6400
+## 104      Kyrgyz Republic 2006    5218400  5.1000
+## 105               Latvia 2006    2218357  7.6000
+## 106            Lithuania 2006    3269909  8.0000
+## 107       Macedonia, FYR 2006    2047330  4.6000
+## 108             Malaysia 2006   26263048  1.9000
+## 109                Malta 2006     405308  7.6129
+## 110               Mexico 2006  111382857  1.6000
+## 111              Moldova 2006    3585209  6.3000
+## 112                Nepal 2006   25794344  5.0000
+## 113            Nicaragua 2006    5450217  1.0000
+## 114               Norway 2006    4660677  4.1000
+## 115             Paraguay 2006    5882797  1.3000
+## 116               Poland 2006   38141267  5.2000
+## 117             Portugal 2006   10522288  3.5000
+## 118              Romania 2006   21193760  6.5000
+## 119   Russian Federation 2006  143049528  9.7000
+## 120      Slovak Republic 2006    5373054  6.8100
+## 121             Slovenia 2006    2006868  4.8000
+## 122                Spain 2006   44397319  3.4000
+## 123            St. Lucia 2006     167656  2.9000
+## 124             Suriname 2006     495953  3.3000
+## 125 Syrian Arab Republic 2006   18728200  1.4000
+## 126           Tajikistan 2006    6949566  6.1000
+## 127  Trinidad and Tobago 2006    1303141  2.7000
+## 128              Tunisia 2006   10127900  1.9000
+## 129               Turkey 2006   68704721  2.7000
+## 130         Turkmenistan 2006    4801594  4.3331
+## 131              Ukraine 2006   46787750  8.7000
+## 132        United States 2006  298379912  3.1000
+## 133              Uruguay 2006    3331041  2.9000
+## 134          Yemen, Rep. 2006   21093973  0.7000</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="area-chart-with-geom_area.html#cb41-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(Camas_Hospital, <span class="fu">aes</span>(Camas, <span class="at">fill=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb41-2"><a href="area-chart-with-geom_area.html#cb41-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb41-3"><a href="area-chart-with-geom_area.html#cb41-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Número de camas por cada 1000 habitantes&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-4"><a href="area-chart-with-geom_area.html#cb41-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-5"><a href="area-chart-with-geom_area.html#cb41-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-area5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<div id="geom_area-options-and-parameters" class="section level3 hasAnchor" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> <strong>geom_area</strong> Options and Parameters:<a href="area-chart-with-geom_area.html#geom_area-options-and-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>ggplot (the data file, aes(the continuous variable))
++geom_area(stat= bin, x, y, alpha, color, fill, linetype, size)</p>
+<ul>
+<li>alpha: the intensity of the color</li>
+<li>color: the color of the line around the area</li>
+<li>fill: the color of the area</li>
+<li>linetype: represents the line style</li>
+<li>size: represents the thickness of the line
++stat: The default method is {identity}, which represents the data, or statistical transformation</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="density-plot-with-geom_density" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Density plot with <strong>geom_density</strong><a href="area-chart-with-geom_area.html#density-plot-with-geom_density" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A density plot, also known as a probability density function, <strong>pdf</strong> or <strong>probability density function</strong> in English, is used with variables that contain continuous data. The density function is continuous over the range of values, and the sum of all the probabilities is equal to one. We saw previously that you can visualize the density also with <strong>geom_area</strong> and <strong>geom_histogram</strong>. The <strong>geom_density</strong> function facilitates the production of the graph and expands the alternatives as explained shortly.</p>
+<div id="what-is-a-kernel" class="section level3 hasAnchor" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> What is a kernel?<a href="area-chart-with-geom_area.html#what-is-a-kernel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Estimating the density of data in a graph requires selecting a parameter, a <strong>kernel</strong>, to smooth the distribution. The most used is the <strong>Gaussian</strong>, which represents the normal distribution or commonly known as the bell-shaped distribution. If you do not specify which <strong>kernel</strong> to use, the normal distribution is the default; for example, when <strong>geom_density()</strong> is specified without any other options.<br />
+Another alternative is to use <strong>geom_density(kernel = c(kernel={gaussian})</strong>, or other alternatives. Other parameters for <strong>kernel</strong> are:</p>
+<ul>
+<li>rectangular,</li>
+<li>triangular,</li>
+<li>epanechnikov,</li>
+<li>biweight,</li>
+<li>cosine,</li>
+<li>optcosine,</li>
+<li>gaussian</li>
+</ul>
+<p>The <strong>kernel</strong> is a special type of probability density function that has certain specific properties, whether it is non-negative and real-valued such that the graph is symmetrical, and the sum of the integral is equal to one. Also added <em>geom_density</em> to compare the result of the two functions.</p>
+<p>Note that in the following graph the parameter <em>alpha=0.4</em> was used. This modifies the transparency of the blue color of the fill=blue parameter. The intensity of <strong>alpha=0.4</strong> can vary from 0 to 1, as explained above. The example below uses <em>Dipodium rosea</em> data again.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="area-chart-with-geom_area.html#cb42-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(DW, <span class="fu">aes</span>(distance))</span>
+<span id="cb42-2"><a href="area-chart-with-geom_area.html#cb42-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb42-3"><a href="area-chart-with-geom_area.html#cb42-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb42-4"><a href="area-chart-with-geom_area.html#cb42-4" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-5"><a href="area-chart-with-geom_area.html#cb42-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia&quot;</span>, <span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-6"><a href="area-chart-with-geom_area.html#cb42-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-densidad-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="area-chart-with-geom_area.html#cb43-1" tabindex="-1"></a><span class="co">#ggsave(&quot;Distance_to_tree.jpeg&quot;) #.tiff, .png</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="area-chart-with-geom_area.html#cb44-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">4</span>)</span>
+<span id="cb44-2"><a href="area-chart-with-geom_area.html#cb44-2" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">data_frame</span>(x)</span></code></pre></div>
+<pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## ℹ Please use `tibble()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="area-chart-with-geom_area.html#cb46-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(x, <span class="fu">aes</span>(x))</span>
+<span id="cb46-2"><a href="area-chart-with-geom_area.html#cb46-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_area</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb46-3"><a href="area-chart-with-geom_area.html#cb46-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb46-4"><a href="area-chart-with-geom_area.html#cb46-4" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb46-5"><a href="area-chart-with-geom_area.html#cb46-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;valus&quot;</span>, <span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb46-6"><a href="area-chart-with-geom_area.html#cb46-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="geom_density-and-simulated-data" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> geom_density and simulated data<a href="area-chart-with-geom_area.html#geom_density-and-simulated-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The role of <strong>geom_density</strong> can be better understood by evaluating it with simulated data. Let’s next simulate data with different sample sizes to visualize the densities. In the simulation below, 4 data frames are created with 2000, 500, 50 and 10 data respectively with the <strong>rnorm</strong> function. Naturally, what is observed is that if the data comes from a normal distribution, the more data that is included, the closer the corresponding distribution is to what a normal distribution should look like. But, the opposite is that with little data, the density is likely not to resemble the theoretical (normal) distribution.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="area-chart-with-geom_area.html#cb48-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">20000</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb48-2"><a href="area-chart-with-geom_area.html#cb48-2" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">as.data.frame</span>(a)</span>
+<span id="cb48-3"><a href="area-chart-with-geom_area.html#cb48-3" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(a, <span class="fu">aes</span>(a))<span class="sc">+</span></span>
+<span id="cb48-4"><a href="area-chart-with-geom_area.html#cb48-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb48-5"><a href="area-chart-with-geom_area.html#cb48-5" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;yellow&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-6"><a href="area-chart-with-geom_area.html#cb48-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-7"><a href="area-chart-with-geom_area.html#cb48-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb48-8"><a href="area-chart-with-geom_area.html#cb48-8" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="area-chart-with-geom_area.html#cb48-9" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="area-chart-with-geom_area.html#cb48-10" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb48-11"><a href="area-chart-with-geom_area.html#cb48-11" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">as.data.frame</span>(b)</span>
+<span id="cb48-12"><a href="area-chart-with-geom_area.html#cb48-12" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(b, <span class="fu">aes</span>(b))<span class="sc">+</span></span>
+<span id="cb48-13"><a href="area-chart-with-geom_area.html#cb48-13" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb48-14"><a href="area-chart-with-geom_area.html#cb48-14" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-15"><a href="area-chart-with-geom_area.html#cb48-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-16"><a href="area-chart-with-geom_area.html#cb48-16" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb48-17"><a href="area-chart-with-geom_area.html#cb48-17" tabindex="-1"></a></span>
+<span id="cb48-18"><a href="area-chart-with-geom_area.html#cb48-18" tabindex="-1"></a></span>
+<span id="cb48-19"><a href="area-chart-with-geom_area.html#cb48-19" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb48-20"><a href="area-chart-with-geom_area.html#cb48-20" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">as.data.frame</span>(c)</span>
+<span id="cb48-21"><a href="area-chart-with-geom_area.html#cb48-21" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">ggplot</span>(c, <span class="fu">aes</span>(c))<span class="sc">+</span></span>
+<span id="cb48-22"><a href="area-chart-with-geom_area.html#cb48-22" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb48-23"><a href="area-chart-with-geom_area.html#cb48-23" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-24"><a href="area-chart-with-geom_area.html#cb48-24" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-25"><a href="area-chart-with-geom_area.html#cb48-25" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb48-26"><a href="area-chart-with-geom_area.html#cb48-26" tabindex="-1"></a></span>
+<span id="cb48-27"><a href="area-chart-with-geom_area.html#cb48-27" tabindex="-1"></a></span>
+<span id="cb48-28"><a href="area-chart-with-geom_area.html#cb48-28" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb48-29"><a href="area-chart-with-geom_area.html#cb48-29" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">as.data.frame</span>(d)</span>
+<span id="cb48-30"><a href="area-chart-with-geom_area.html#cb48-30" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(d))<span class="sc">+</span></span>
+<span id="cb48-31"><a href="area-chart-with-geom_area.html#cb48-31" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">kernel =</span> <span class="fu">c</span>(<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>),</span>
+<span id="cb48-32"><a href="area-chart-with-geom_area.html#cb48-32" tabindex="-1"></a>               <span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">fill=</span><span class="st">&quot;grey&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-33"><a href="area-chart-with-geom_area.html#cb48-33" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-34"><a href="area-chart-with-geom_area.html#cb48-34" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/grid%20dotplot-1.png" width="672" /></p>
+<hr />
+<div id="geom_density-options-and-parameters" class="section level3 hasAnchor" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> <strong>geom_density</strong> Options and Parameters:<a href="area-chart-with-geom_area.html#geom_density-options-and-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>ggplot(the data file, aes(the continuous variable))</p>
+<ul>
+<li>geom_density(kernel= {…}), x, y, alpha, color, fill, linetype, size, weight
+<ul>
+<li>***** represents the desired parameter; e.g. gaussian, triangular, rectangular, etc.</li>
+</ul></li>
+<li>alpha: the intensity of the color</li>
+<li>fill: the color of the area</li>
+<li>color: the color of the line around the area</li>
+<li>linetype: represents the line style</li>
+<li>size: represents the thickness of the line</li>
+<li>weight: to modify the original value; then it would not be, for example, the count or sum of the values ​​but a weighted value (weighted average)</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="polygon-frequency-graph-with-geom_freqpoly" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">13.6</span> Polygon frequency graph with <strong>geom_freqpoly</strong><a href="area-chart-with-geom_area.html#polygon-frequency-graph-with-geom_freqpoly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The polygon frequency graph is similar to the area and density graph, the difference is that the area is not filled with color. You can also change the number of bins using <strong>binwidth</strong>. In the polygon plot, it is only the line that we plot and there is no <strong>fill</strong> parameter of the area below the line.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="area-chart-with-geom_area.html#cb49-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(DW, <span class="fu">aes</span>(distance))</span>
+<span id="cb49-2"><a href="area-chart-with-geom_area.html#cb49-2" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_freqpoly</span>(<span class="at">binwidth=</span>.<span class="dv">1</span>, <span class="at">color=</span><span class="st">&quot;#e3cc36&quot;</span>)<span class="sc">+</span>  <span class="co"># Nota como seleccionar el color con &quot;color picker&quot; en el web.</span></span>
+<span id="cb49-3"><a href="area-chart-with-geom_area.html#cb49-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia (m)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span> <span class="co"># labels = labs</span></span>
+<span id="cb49-4"><a href="area-chart-with-geom_area.html#cb49-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,<span class="at">face=</span><span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-poligono-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<p>Modify other options as follows: color intensity with <strong>alpha</strong>, line type with <strong>linetype</strong> and line thickness with <strong>size</strong> as shown below.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="area-chart-with-geom_area.html#cb50-1" tabindex="-1"></a>DW<span class="sc">%&gt;%</span></span>
+<span id="cb50-2"><a href="area-chart-with-geom_area.html#cb50-2" tabindex="-1"></a>  <span class="fu">drop_na</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="area-chart-with-geom_area.html#cb50-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(distance, <span class="at">colour=</span>species_name))<span class="sc">+</span></span>
+<span id="cb50-4"><a href="area-chart-with-geom_area.html#cb50-4" tabindex="-1"></a><span class="fu">geom_freqpoly</span>(<span class="at">alpha=</span><span class="fl">1.0</span>, <span class="at">size=</span><span class="fl">1.0</span>, <span class="at">binwidth=</span>.<span class="dv">1</span>, <span class="at">linetype=</span><span class="st">&quot;longdash&quot;</span>)<span class="sc">+</span></span>
+<span id="cb50-5"><a href="area-chart-with-geom_area.html#cb50-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Distancia&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb50-6"><a href="area-chart-with-geom_area.html#cb50-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/dipodium-poligono2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="area-chart-with-geom_area.html#cb51-1" tabindex="-1"></a><span class="co"># ggsave(&quot;the_name_of_my_figure.tiff&quot;) # .png, .tiff, .pdf, .jpeg</span></span>
+<span id="cb51-2"><a href="area-chart-with-geom_area.html#cb51-2" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="area-chart-with-geom_area.html#cb51-3" tabindex="-1"></a>DW</span></code></pre></div>
+<pre><code>## # A tibble: 1,363 × 21
+##    tree_number tree_species   dbh plant_number ramet_number distance orientation
+##          &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;int&gt;        &lt;int&gt;    &lt;dbl&gt;       &lt;dbl&gt;
+##  1           1 E.o           75              1            1     2.47          40
+##  2           1 E.o           76              2            1     1.97          50
+##  3           2 E.o           76              3            1     1.95         350
+##  4           3 E.o           58              4            1     3.24         210
+##  5           4 E.o           NA              5            1     0.85          80
+##  6           5 E.o           59              6            1     2.62         160
+##  7           5 E.o           59              7            1     2.82         170
+##  8           6 E.o            8              8            1     3.12         245
+##  9           7 E.o           11.5            9            1     1.12         208
+## 10           8 E.o            8.5           10            1     0.75         360
+## # ℹ 1,353 more rows
+## # ℹ 14 more variables: number_of_flowers &lt;int&gt;, height_inflo &lt;int&gt;,
+## #   herbivory &lt;chr&gt;, row_position_nf &lt;int&gt;, number_flowers_position &lt;int&gt;,
+## #   number_of_fruits &lt;int&gt;, perc_fr_set &lt;dbl&gt;, pardalinum_or_roseum &lt;chr&gt;,
+## #   fruit_position_effect &lt;int&gt;, frutos_si_o_no &lt;int&gt;,
+## #   p_or_r_infl_lenght &lt;chr&gt;, num_of_fruits &lt;int&gt;, species_name &lt;chr&gt;,
+## #   cardinal_orientation &lt;int&gt;</code></pre>
+<hr />
+<div id="opciones-y-parametros-de-geom_freqpoly" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> Opciones y Parametros de <strong>geom_freqpoly</strong><a href="area-chart-with-geom_area.html#opciones-y-parametros-de-geom_freqpoly" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>ggplot(the data file, aes(the continuous variable))</p>
+<ul>
+<li>geom_freqpoly(stat={bin}, x, y, alpha, color, linetype, size)</li>
+<li>alpha: the intensity of the color</li>
+<li>color: the color of the line around the area
++linetype: represents the line style; see section</li>
+<li>size: represents the thickness of the line</li>
+</ul></li>
+</ul>
+<hr />
+<ol style="list-style-type: decimal">
+<li>Activity
+Use the “dipodium” data set in the “ggversa” package. Presents a graph of the frequency of <strong>flowers per plant</strong> with <em>geom_freqpoly</em>.
+<ul>
+<li>Change the color of the line</li>
+<li>Change axis information for more relevant text</li>
+<li>Change the color intensity of the line</li>
+<li>Change the line type</li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="histogramsdensity-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="boxplots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/12-Histograms_Density.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/12-Histograms_Density.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

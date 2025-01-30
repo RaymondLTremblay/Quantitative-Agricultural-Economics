@@ -1,26 +1,206 @@
-# Data 
+# Data Upload
 
+
+In this chapter we will learn how to load data into R from the web, and how to add data directly to the document. We will also learn how to load data from a file, such as a .csv, .txt, .excel, or .spss file.
 
 ## Adding data directly to the document
 
-### Using the function **tibble**
+If you have a small dataset, you can add it directly to the document. This is useful for reproducibility, as it allows you to share the data along with the code. The easiest method is to use the `data.frame` or `tibble` function. For example, to create a data frame with the columns `name`, `age`, and `height`, you would run:
+  
+
+### Using the function **tibble** in the package **tibble**
+
+ - characters are in quotes
+ - numbers are not in quotes
+ - the columns are separated by commas
+
+```{r, data_1}
+library(tibble)
+
+My_data_frame <- tibble(
+  name = c("Alice", "Bob", "Charlie"),
+  age = c(25, 30, 35),
+  height = c(1.70, 1.80, 1.90)
+)
+
+My_data_frame
+```
+
+Another alternatives is using **tribble** which is a special case of tibble that makes it a bit easier to create small data frames by hand. The columns are specified by formulas, and rows by concatenation:
+
+ - note in this case the first row are the names of the columns
+ - the columns are separated by commas
+ - the rows are separated by commas
+ - characters are in quotes
+ - numbers are **not** in quotes
+
+```{r, data_2}
+library(tibble)
+
+My_data_frame1=tribble(~name, ~age, ~height,
+                       "Alice", 25, 1.70,
+                       "Bob", 30, 1.80,
+                       "Charlie", 35, 1.90)
+```
+
 
 
 ## Loading data from a file
 
-### .csv file
+If the data is static, in other words it does not change, you can load it from a file and download this to your computer. There are many file formats that R can read, including .csv, .excel, .txt, and .spss files. To load a file, you can use the `read.csv`, `read_excel`, `read.table`, or `read.spss` functions, respectively. For example, to load a .csv file, you would run.
 
-### .excel file
+Downloading to your computer will work if the file is not enormous.  However, if it has less than 10^6 lines it should be okay. If the file is larger than that, you may need to use a different method to load the data.  
+
+  - Note:
+  
+  - the file name is in quotes
+  - you can set the header to TRUE or FALSE (depending if the file has a header or not)
+  - you can set the column names using the `colnames` function
+
+### .csv file uplaod
+
+Here is a file for the population size of the Dominican Republic from 1960 to 2020. The file is in the Data folder and is called DominicanRepublic.csv. The file has the following columns: year, population, and value= population size. To load the file, you would run:
+
+ - note the .csv file is in the **Data** folder on my computer in the RStudio project
+ - the package required is **library(readr)**
+ - the file is read using the function **read_csv**
+
+```{r, data_3}
+library(readr)
+DominicanRepublic <- read_csv("Data/DominicanRepublic.csv")
+
+head(DominicanRepublic)
+
+```
+
+
+
+
+### Excel file upload
+
+To read a Excel file you will need
+
+ - the package **library(readxl)**
+ - the file is read using the function **read_excel**
+ - the sheet is specified using the argument **sheet**, You need to specify which tab to read. The first tab is 1, the second tab is 2, etc or the names of the tab. 
+
+
+```{r, data_4}
+library(readxl)
+melocactus <- read_excel("Data/melocactus.xlsx", 
+    sheet = "datos")
+
+head(melocactus) # data from the melocactus in Puerto Rico, note the data is in Spanish and that the sheet called "datos" is read, this is the 3rd sheet in the excel file.  
+```
+
 
 ### .txt file
 
+To read data that are tab delinited you need to use the function **read_table**. The file is read using the function **read_table**. 
+
+ - the package required is **library(data.table)**
+ - the file is read using the function **read_table**
+ - the file is in the same folder as the Rmd file (IMPORTANT: not in the DATA folder)
+
+
+```{r, data_5}
+library(data.table)
+
+Titanic=read_table(list.files(".", "Titanic.txt")[1]) # Note that .txt files CANNOT be read from within a folder (thus you cannot have it in the DATA folder) .txt file is a really old format and it is not recommended to use it, you should convert it to a .csv file.
+
+head(Titanic)
+
+list.files() # this will list the files in the folder
+
+```
+
+
+ 
+
 ### .spss file
+
+To loas an SPSS file you will need the install and load package **haven**. The function to read the file is **read_sav**. 
+
+ - the package required is **library(haven)**
+ - the file is read using the function **read_sav**
+
+ 
+ 
+```{r, data_6}
+library(haven)
+
+library(haven)
+Lelto_George <- read_sav("Data/Lelto-George .sav")
+
+head(Lelto_George)
+
+```
+
+### read a Stata file
+
+- To read data that are saved in Stata software format, you can use the `read_dta` function from the `haven` package. For example, to read the `auto.dta` file, you would run:
+
+```{r, eval=FALSE, data_7}
+library(haven)
+auto <- read_dta("auto.dta") # name of file is auto.dta
+
+
+```
+
+
+
+### Read a SAS file
+
+
+_ To read data that are saved in SAS format, `read_sas` function from the `haven` package. For example, to read the `auto.sas7bdat` file, you would run:
+
+```{r, eval=FALSE, data_8}
+library(haven)
+
+auto <- read_sas("auto.sas7bdat") # name of file is auto.sas7bdat
+
+```
+
+
+In the following file you will find other examples of how to read files in different formats. 
+
+https://www.geeksforgeeks.org/reading-files-in-r-programming/
+
+
 
 
 
 
 ## Loading data from the web
 
+To load data from the web, yu will need to have the URL of the data. For example, to load the iris dataset from the UCI Machine Learning Repository, you would run:
+
+  - Note, 
+  - the html address is in quotes
+  - yuo need to add the information in which format the data is (csv, txt, etc) *read.csv*
+  - the header is set to FALSE because the data does not have a header
+  - you can set the column names using the `colnames` function
 
 
-## 
+```{r, data_9}
+iris <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header = FALSE)
+colnames(iris) <- c("sepal_length", "sepal_width", "petal_length", "petal_width", "species")
+head(iris)
+```
+
+
+An example of dowloading data from the web is the following code with header:
+
+!!!! Find a page with data and copy the URL. For example, the following URL contains data on the number of COVID-19 cases in the US:
+
+```{r, data_10}
+# Load the data from the web
+
+
+data2= read.csv("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", header = TRUE)
+
+names(data2) # names of the columns/variables
+```
+
+
+

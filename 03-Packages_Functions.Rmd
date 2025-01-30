@@ -1,10 +1,91 @@
 # Packages and Functions in R
 
-## What is an R package 
+## What is an R package? 
 
-## Understanding funcions in R
+An R package is a collection of functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages. Others are available for download and installation. Once installed, they have to be loaded into the session to be used using the function **library(name of package)**. Packages are created by the R community and can be found in the Comprehensive R Archive Network (CRAN) or in other repositories, such as Github and Bioconductor.  All R packages are free and open source.
 
+## Understanding packages in R
+
+There are two basic types of R packages, the simpliest one are does that have collections of data sets such as **ggversa** and **datasets**. The other type of packages which are the most common are collections of functions such as **dplyr** and **ggplot2**.
+
+
+ - dplyr : A fast, consistent tool for working with data frame like objects, both in memory and out of memory.
+ - ggplot2 : A system for 'declaratively' creating graphics, based on "The Grammar of Graphics".
+ -gt : An R package "that makes it easy to extract, combine and arrange data to prepare it for analysis."Grammar of Tables" to create nice tables
+ - normtest : A collection of normality tests for univariate and multivariate data.
+ - tidyverse : this a special type of package which installs a collection of packages that work together to make data science faster, easier, and more fun!
+ 
+ There are > 21 000 packages on CRAN as of January 2025, and many more on GitHub and Bioconductor.
+ 
+ If someone wrote a statistical test, a data manipulation function, or a visualization tool, there is a good chance that it is already available in an R package.
+ 
 ## Installing and loading packages
+
+In the console:
+
+To install a package, you can use the `install.packages()` function. For example, to install the `dplyr` package, you would run:
+
+or use the following code:
+
+```R
+install.packages("dplyr", dependencies = TRUE) # remove the hashtag to install the package, dependencies = TRUE will install all the dependencies of the package
+
+```
+
+In RStudio
+
+To download and install the package from Rstudio use the "Packages" tab and click on "Install" and type the name of the package you want to install. You much be connected to the internet to install the packages.
 
 
 ## Surfing the web for packages and functions
+
+
+The best way to find packages is to use the CRAN Task Views. These are curated lists of packages grouped by topic. You can find them at https://cran.r-project.org/web/views/
+
+Another alternative is in your browser, you can use the search engine of your choice and type "R package for [insert what you want to do]". For example, if you want to do a quantile regression, you can type "R package for quantile regression" and you will find the package `quantreg`.
+
+and subsequently intall it from the CRAN repository.
+
+
+## Installing packages from github
+
+To install a package from github you can use the `devtools` package. This package is not included in the base R installation, so you will need to install it first. You can do this by running the following code:
+
+Here is an example of to install the package "raretrans" which is NOT available on CRAN but on github. this package has functions to calculate rare events from a multinomial distribution using the dirichlet function. This was developped as a tool to maximize population dynamics studies of rare species. 
+
+
+The site of the package is:
+https://github.com/atyre2/raretrans
+
+
+
+```{r, function_1}
+
+#install.packages("devtools")
+
+library(devtools)
+
+#devtools::install_github("atyre2/raretrans") # remove the hashtag to install the package
+
+```
+
+
+
+## Installing packages from Bioconductor
+
+To install from bioconductor you can use the following code:
+  
+  Here is a package from Martin Morgan called "DirichletMultinomial" which is available on Bioconductor. This package has funciton to fit Dirichlet-multinomial distribution to metagenomic data.
+
+The site for the package is: 
+https://www.bioconductor.org/packages/release/bioc/html/DirichletMultinomial.html
+
+
+```{r, function_2}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# BiocManager::install("DirichletMultinomial") # remove the hashtag to install the package
+
+```
+

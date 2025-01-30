@@ -5,63 +5,72 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Daily Activities
 
 
-Día 1: Introducción a RStudio y paquetes disponibles
+***
 
-  •⁠  ⁠Interacción con la Plataforma (Chapter 2)
-  
-  •⁠  ⁠¿Cómo buscar y bajar los paquetes estadísticos?(CHapter3)
-  
-•⁠  ⁠¿Cómo entender las programaciones predeterminadas de los paquetes estadísticos?
+Day 1: Introduction to RStudio and available packages
 
-•⁠  ⁠¿Cómo buscar ayuda?
+•⁠ ⁠Interaction with the Platform (Chapter 2)
 
-•⁠  ⁠¿Como subir los datos, hacer cambio de nombre de variables, eliminar datos, encontrar missing values, ver estadística descriptiva, ver tipo de variables, etc.)
+•⁠ ⁠How to search and download statistical packages? (Chapter3)
 
-•⁠  ⁠Prueba Shapito-Wilk
+•⁠ ⁠How to understand the default programming of statistical packages?
 
-•⁠  ⁠Prueba T
+•⁠ ⁠How to find help?
 
-•⁠  ⁠Prueba
+•⁠ ⁠How to upload data, rename variables, delete data, find missing values, view descriptive statistics, view variable types, etc.)
 
-•⁠  ⁠Prueba Kruskal Wallis
+•⁠ ⁠Shapito-Wilk test
 
+•⁠ ⁠T test
+
+•⁠ ⁠Test
+
+•⁠ ⁠Kruskal Wallis tests
+
+
+***
  
-Día 2: Visualización de datos - gráficas
+Day 2: Data visualization - graphs
 
-•⁠  ⁠Scatter plot (simple y con multiples variables)
+•⁠ ⁠Scatter plot (simple and with multiple variables)
 
-•⁠  ⁠Scatter plot matrix
+•⁠ ⁠Scatter plot matrix
 
-•⁠  ⁠Gráfica linear (simple y con dos variables)
+•⁠ ⁠Linear graph (simple and with two variables)
 
-•⁠  ⁠Pie chart
+•⁠ ⁠Pie chart
 
-•⁠  ⁠Histogramas (simple y con múltiples variables
+•⁠ ⁠Histograms (simple and with multiple variables
 )
-•⁠  ⁠Kernel density
+•⁠ ⁠Kernel density
 
-•⁠  ⁠Box plot
+•⁠ ⁠Box plot
 
-•⁠  ⁠Otras gáficas
+•⁠ ⁠Other gsph
+
+
+***
  
-Día 3: Modelos econométricos y suposiciones
+Day 3: Econometric models and assumptions
 
-•⁠  ⁠Regresión por mínimos cuadrados ordinarios
+•⁠ ⁠Ordinary least squares regression
 
-•⁠  ⁠Verificación de supuestos
+•⁠ ⁠Assumption checking
 
-•⁠  ⁠Regresión cuantílica
+•⁠ ⁠Quantile regression
 
-•⁠  ⁠Regresión logit y pruebas/verificaciones postestimación (% de predicciones correctas, efectos marginales, goodness of fit, descripción de los datos utilizados, etc.)
- 
-Día 4: Modelos econométricos y suposiciones
-
-•⁠  ⁠Regresión logit multinomial y pruebas/verificaciones postestimación
-
-•⁠  ⁠Regresión beta
+•⁠ ⁠Logit regression and post-estimation tests/checks (% correct predictions, marginal effects, goodness of fit, description of data used, etc.)
 
 
-•⁠  ⁠Modelos VAR (Modelos vectoriales autoregresivos)
+***
+
+Day 4: Econometric models and assumptions
+
+•⁠ ⁠Multinomial logit regression and post-estimation tests/checks
+
+•⁠ ⁠Beta regression
+
+•⁠ ⁠VAR models (Vector autoregressive models)

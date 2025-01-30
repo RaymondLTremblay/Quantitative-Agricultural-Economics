@@ -1,15 +1,20 @@
 # Generalized Linear Models
 
-```{r}
+```{r, GLM_1, echo=FALSE, message=FALSE, warning=FALSE}
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse,  huxtable, wakefield, SuppDists,univariateML)
+pacman::p_load(tidyverse,  huxtable,  SuppDists, univariateML, invgamma)
 
-library(tidyverse)
-library(huxtable)
-library(wakefield)
-library(SuppDists)
-library(univariateML)
-conflicts_prefer(lubridate::minute)
+
+#detach("package::lubridate", unload=TRUE)
+library(tidyverse) # this is a package that includes dplyr, ggplot2, tidyr, readr, purrr, tibble, stringr, forcats
+library(huxtable) # this is a package to create tables
+#library(wakefield) # this is a package to create random data
+library(SuppDists) # this is a package to create distributions
+library(univariateML) # this is a package to create distributions
+library(invgamma) # this is a package to create distributions
+#library(conflicted) # this is a package to solve conflicts in functions
+#conflict_prefer("lubridate")
+#conflicts_prefer(lubridate::hour) # this is state that if there is a conflict in function to use this package
 ```
 
 ------------------------------------------------------------------------
@@ -53,7 +58,7 @@ Here I show a partial list of the different types of "links" for different types
 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, GLM_2, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(huxtable)
 
@@ -79,7 +84,7 @@ Although the previous distributions are very common, they are not the only links
 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, GLM_3, echo=FALSE, message=FALSE, warning=FALSE}
 Family<-tribble(
   ~Familia, ~Links, 
   "Gaussian/Normal", "identity, log, inverse", 
@@ -119,7 +124,7 @@ set_caption("Common link functions in GLM.")
 
 ------------------------------------------------------------------------
 
-## ## Binomial or Bernoulli models
+## Binomial or Bernoulli models
 
 If the variable is binomial, there are only two alternatives, 0 and 1, or whether or not, dead or alive, the binomial distribution is used. The **logit** function is used as a link function and the binomial/Bernoulli distribution as a probability distribution, the model is called **Logistic Regression**.
 
@@ -128,7 +133,7 @@ where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$.
 
 ```{r, warning=FALSE, message=FALSE}
 #library(wakefield)
-x=r_sample_binary(50, x = 0:1, prob =c(0.3, 0.7), name = "Binary")
+x=wakefield::r_sample_binary(50, x = 0:1, prob =c(0.3, 0.7), name = "Binary")
 #x
 df=as.data.frame(as.factor(x))
 #df
@@ -165,7 +170,7 @@ Let's look at some gamma distributions
 
 
 
-```{r}
+```{r, GLM_4}
 
 x = 0:20
 curve(dgamma(x, shape=1, scale=2), xlab = "x", ylab = "f(x;k,theta)", 0.4, 20, col = 3, lwd = 3, 
@@ -226,7 +231,7 @@ Ejemplos que pudiese ser de este tipo de distribución
 
 Nota
 
-```{r}
+```{r, GLM_5}
 library(SuppDists) 
 #dinvGauss(x, nu, lambda, log=FALSE)
 
@@ -276,7 +281,7 @@ Entre tanto que desarollo este tema más profundo le suguiero este enlace.
 
 <https://www.cienciadedatos.net/documentos/55_ajuste_distribuciones_con_r.html>
 
-```{r}
+```{r, GLM_6}
 library(invGauss)
 library(univariateML)
 data(d.oropha.rec)
@@ -306,7 +311,7 @@ ggplot(data = d.oropha.rec) +
 
 Ejemplo de los precios de diamantes del paquete ggplot2
 
-```{r}
+```{r, GLM_7}
 #library(univariateML)
 ggplot(data = diamonds) +
   geom_histogram(aes(x = price, y =  after_stat(density)),

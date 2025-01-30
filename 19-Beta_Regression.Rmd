@@ -7,12 +7,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
-#knitr::include_graphics(c("Figures/Analitica.png", "Graficos/UPR_IPERT_logo.png"))
-```
 
 
-```{r include=FALSE}
+
+```{r, beta_1, include=FALSE}
 library(ggplot2)
 library(conflicted)
 conflicts_prefer(lubridate::minute, lubridate::second)
@@ -78,7 +76,7 @@ Data from the "World Development Agency"
 
 
 
-```{r}
+```{r, beta_2}
 library(ggversa)
 
 #Edu_Salud_Gastos_GDP
@@ -112,7 +110,7 @@ The most important thing about the beta distribution is that the values **NEVER*
 
 
 
-```{r include=FALSE}
+```{r, beta_3, include=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(betareg)
@@ -125,7 +123,7 @@ Here are some examples of the beta distribution. The beta distribution is calcul
 
 
 
-```{r, echo=FALSE}
+```{r, beta_4, echo=FALSE}
 b1 <- seq(0, 1, by = 0.01)    
 
 by2_5 <- dbeta(b1, shape1 = 2, shape2 = 5) 
@@ -163,7 +161,7 @@ Here a series beta distributions. We will not go into how these these parameters
 
 
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, beta_5, warning=FALSE, echo=FALSE}
 library(ggplot2)
 
 ggplot(betadj, aes(b1, cases, colour=beta_shapes))+
@@ -194,7 +192,7 @@ The data comes from the World Bank at the following link, [Smokers](https://data
 
 
 
-```{r}
+```{r, beta_6}
 library(readr)
 Proportion_smokers_world <- read_csv("Data/Proportion_smokers_world.csv")
 
@@ -209,7 +207,7 @@ First convert the data in proportions since the program has to use data greater 
 
 
 
-```{r}
+```{r, beta_7}
 Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
 Smokers %>% dplyr::select(Country_Name, Y2000P)
 ```
@@ -240,7 +238,7 @@ $$\beta = \alpha*(\frac{1}{mu}-1)$$
 Here is the script to convert the parameters into shape.
 
 
-```{r}
+```{r, beta_8}
 
 estBetaParams <- function(mu, var) {
   alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
@@ -258,7 +256,7 @@ Now visualize de distibution of the proportion of smokers
   - Green line is the normal distribution
   - Red line is the beta distribution
 
-```{r}
+```{r, beta_9}
 Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
 x <- seq(0, 1, len = 100)
 
@@ -290,7 +288,7 @@ Calculate the confidence interval of the average of a beta distribution. The fol
 
 
 
-```{r}
+```{r, beta_10}
 library(simpleboot)
 library(boot) # package to calculate the confidence interval of a beta distribution
 
@@ -314,7 +312,7 @@ Overlay the confidence interval of the median on the beta distribution. The conf
 
 
 
-```{r}
+```{r, beta_11}
 ggplot(Smokers, aes(Y2000P))+
   geom_histogram(aes(y=..density..), bins=20, colour="white", fill="grey50")+
   stat_function(aes(x = Smokers$Y2000P, y = ..y..), fun = dbeta, colour="red", n = 100,
@@ -335,7 +333,7 @@ Now let us view an example using regression model, where the response is a propo
 
 
 
-```{r}
+```{r, beta_12}
 library(betareg) # El paquete para hacer regresión beta
 library(ggversa) # paquete para los datos
 attach(dipodium)
@@ -347,9 +345,7 @@ head(dipodium, n=4)
 
 ## Regresión beta, proporción de frutos por cantidad de flores
 
-```{r, out.width="150",   fig.cap ="from this webpage: https://binalongbungalows.wordpress.com/tasmanian-orchids/dipodium-roseum-rosy-hyacinth-orchid-0615-web/",echo=FALSE, out.extra='style="float:right; padding:10px"', fig}
-#knitr::include_graphics("Graficos/dipodium_roseum.jpg")
-```
+
 
 
 Now we will do the first regression analysis where our answer is a proportion.
@@ -366,22 +362,22 @@ The data comes from an Australian orchid species, *Dipodium roseum*, collected b
 
 
 
-```{r beta regression}
+```{r beta_14}
 #head(dipodium)
 library(tidyverse)
-dipodium$propfr=dipodium$perc_fr_set+0.0001 # solucionar para remover los cero
-#dipodium$PropFR
-dipodium2=dipodium %>% 
-  dplyr::select(propfr, number_of_flowers,height_inflo, distance) %>% 
-  dplyr::filter(complete.cases(propfr, number_of_flowers,height_inflo, distance))
-#dipodium2
-write.csv(x=dipodium2, file="dipodium2.csv")
+library(janitor)
+
+dipodium_clean_names=clean_names(dipodium) # clean the names of the variables
+
+dipodium2= dipodium_clean_names |> 
+  dplyr::select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+  mutate(propfr=perc_fr_set+0.0001) |> 
+  drop_na()# solucionar para remover los cero
 
 
-library(readr)
-dipodium2 <- read_csv("Data/dipodium2.csv")
+head(dipodium2)
 
-modelpropFr=betareg(PropFR~Number_of_Flowers+Height_Inflo+Distance, data =na.omit(dipodium2))
+modelpropFr=betareg(propfr~number_of_flowers+height_inflo+distance, data =dipodium2)
 summary(modelpropFr)
 
 ```
@@ -393,12 +389,12 @@ summary(modelpropFr)
 
 
 
-```{r beta regression plot preparation}
-dipodiumbeta=dipodium2[,c("Number_of_Flowers","PropFR")] # Create a df with only the variables of interest
+```{r beta_15}
+dipodiumbeta=dipodium2[,c("number_of_flowers","propfr")] # Create a df with only the variables of interest
 
  dp2=dipodiumbeta[complete.cases(dipodiumbeta),] # remove all "NA" 
  
-modelpropFr=betareg(PropFR~Number_of_Flowers, data=dp2) # The beta model using **betareg**
+modelpropFr=betareg(propfr~number_of_flowers, data=dp2) # The beta model using **betareg**
 summary(modelpropFr)
 
 predict(modelpropFr, type = "response") # calculate the predicted values
@@ -440,9 +436,9 @@ Evaluate the following figure at each through regression.
 
  
 
-```{r beta reg graph}
+```{r beta_16}
 library(ggplot2)
-ggplot(dp2, aes(x=Number_of_Flowers, y=PropFR))+
+ggplot(dp2, aes(x=number_of_flowers, y=propfr))+
   geom_point()+
   geom_line(aes(y=quantile_.05), linetype="twodash", colour="blue")+
   geom_line(aes(y=quantile_.25),linetype=2, colour="green")+
@@ -478,11 +474,11 @@ To compare the effectiveness of the models we use the Akaike Information Criteri
 
 
 
-```{r}
+```{r, beta_17}
 #AIC(modelpropFr) # modelo beta
 
 
-modelpropFr_lm=lm(PropFR~Number_of_Flowers, data=dp2)
+modelpropFr_lm=lm(propfr~number_of_flowers, data=dp2)
 
 AIC(modelpropFr,modelpropFr_lm)
 
@@ -505,12 +501,12 @@ Specific values are selected to display the distribution, plants that have 25, 3
 
 
    
-```{r}
+```{r, beta_18}
 dpQ=dp2 %>% 
   dplyr::select(c(1, 6:26))
 
 dpQ2=dpQ%>% 
-  dplyr::filter(Number_of_Flowers== 35) %>% 
+  dplyr::filter(number_of_flowers== 35) %>% 
   dplyr::select(c(2:22))%>% 
   t %>% 
   as.data.frame
@@ -534,7 +530,7 @@ Using the variance calculated in the previous chunk, the $\alpha$ and $\beta$ ca
 
 
 
-```{r}
+```{r, beta_19}
 
 estBetaParams <- function(mu, var) {
   alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
@@ -553,26 +549,26 @@ Graphics production. It is observed that for plants that have 25 and 30 flowers 
 
 
 
-```{r}
+```{r, beta_20}
 library(gridExtra)
-a=ggplot(dipodium2, aes(PropFR))+
-stat_function(aes(x = dipodium2$PropFR, y = ..y..), fun = dbeta, colour="red", n = 62,
+a=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="red", n = 62,
                       args = list(shape1 =0.5418068, shape2 =3.135593))+
   ylab("Beta \nDensity")+
   xlab("Probabilidad de tener frutos")+
   coord_cartesian(xlim=c(0,0.05))+
   ggtitle("Densidad beta para plantas con 25 flores")
 
-b=ggplot(dipodium2, aes(PropFR))+
-stat_function(aes(x = dipodium2$PropFR, y = ..y..), fun = dbeta, colour="blue", n = 62,
+b=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="blue", n = 62,
                       args = list(shape1 = 0.7549048, shape2 =2.949404))+
   ylab("Beta \nDensity")+
   xlab("Probabilidad de tener frutos")+
   coord_cartesian(xlim=c(0,0.1))+
   ggtitle("Densidad beta para plantas con 30 flores")
 
-c=ggplot(dipodium2, aes(PropFR))+
-stat_function(aes(x = dipodium2$PropFR, y = ..y..), fun = dbeta, colour="black", n = 62,
+c=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="black", n = 62,
                       args = list(shape1 = 1.027498, shape2 =2.698331))+
   ylab("Beta \nDensity")+
   xlab("Probabilidad de tener frutos")+
@@ -596,8 +592,5 @@ https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/
 
 
 
-> “Activities reported in this website was supported by the National Institute of General Medical Sciences of the National Institutes of Health under Award Number R25GM121270. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.”
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "100%", fig.align = "default"}
-#knitr::include_graphics(c("Figures/UPR_logos.png"))
-```
+

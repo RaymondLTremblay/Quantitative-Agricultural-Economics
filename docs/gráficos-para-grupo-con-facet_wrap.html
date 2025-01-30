@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 18 Gráficos para grupo con Facet_wrap | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 18 Gráficos para grupo con Facet_wrap | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 18 Gráficos para grupo con Facet_wrap | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 18 Gráficos para grupo con Facet_wrap | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2025-01-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="posicionar-las-barras-uno-al-lado-del-otro-con-la-función-dodge.html"/>
+<link rel="next" href="opciones-y-parametros-de-geom_histogram.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-funcions-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding funcions in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data.html"><a href="data.html#using-the-function-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data.html"><a href="data.html#csv-file"><i class="fa fa-check"></i><b>4.2.1</b> .csv file</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data.html"><a href="data.html#excel-file"><i class="fa fa-check"></i><b>4.2.2</b> .excel file</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data.html"><a href="data.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data.html"><a href="data.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#section"><i class="fa fa-check"></i><b>4.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1</b> cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-data.html"><a href="understanding-your-data.html"><i class="fa fa-check"></i><b>6</b> Understanding your data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-data.html"><a href="understanding-your-data.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.1</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-data.html"><a href="understanding-your-data.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.2</b> dimensions of the data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-data.html"><a href="understanding-your-data.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3</b> structure of the data</a></li>
+<li class="chapter" data-level="6.4" data-path="understanding-your-data.html"><a href="understanding-your-data.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.4</b> Levels of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="test-of-normality.html"><a href="test-of-normality.html"><i class="fa fa-check"></i><b>7</b> Test of normality</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#cramer-von-mises-test-of-normality"><i class="fa fa-check"></i><b>7.4</b> Cramer-von Mises test of normality</a></li>
+<li class="chapter" data-level="7.5" data-path="test-of-normality.html"><a href="test-of-normality.html#lilliefors-test-of-normality"><i class="fa fa-check"></i><b>7.5</b> Lilliefors test of normality</a></li>
+<li class="chapter" data-level="7.6" data-path="test-of-normality.html"><a href="test-of-normality.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.6</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="test-of-normality.html"><a href="test-of-normality.html#qq-plot"><i class="fa fa-check"></i><b>7.6.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="test-of-normality.html"><a href="test-of-normality.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.6.3" data-path="test-of-normality.html"><a href="test-of-normality.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="test-of-normality.html"><a href="test-of-normality.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="test-of-normality.html"><a href="test-of-normality.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.2" data-path="test-of-normality.html"><a href="test-of-normality.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.3" data-path="test-of-normality.html"><a href="test-of-normality.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.7.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="7.7.4" data-path="test-of-normality.html"><a href="test-of-normality.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>7.7.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>8</b> Non-parametric test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1</b> Altenative to non-parametric tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>9.2</b> the lm() function</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>9.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>9.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="9.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>9.5</b> Selling music records</a></li>
+<li class="chapter" data-level="9.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>9.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="9.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>9.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="9.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>9.8</b> Steps to do a linear regression analysis</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>9.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="9.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>9.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="9.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>9.8.3</b> Step 3</a></li>
+<li class="chapter" data-level="9.8.4" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>9.8.4</b> Plot the residuals</a></li>
+<li class="chapter" data-level="9.8.5" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>9.8.5</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.8.6" data-path="scatter-plots.html"><a href="scatter-plots.html#eexercise-2"><i class="fa fa-check"></i><b>9.8.6</b> EExercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.9</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.10</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.11</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>10</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>10.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>10.2</b> the linear model</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>10.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>10.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to pie chart)</a>
+<ul>
+<li class="chapter" data-level="11.0.1" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>11.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="11.0.2" data-path="ring-chart-alternative-to-pie-chart.html"><a href="ring-chart-alternative-to-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>11.0.2</b> Example of why PIE chart should NOT be used</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a></li>
+<li class="chapter" data-level="13" data-path="histogramas-con-geom_histogram.html"><a href="histogramas-con-geom_histogram.html"><i class="fa fa-check"></i><b>13</b> Histogramas con geom_histogram</a></li>
+<li class="chapter" data-level="14" data-path="cambio-del-tamaño-de-los-compartimiento-con-binwidth.html"><a href="cambio-del-tamaño-de-los-compartimiento-con-binwidth.html"><i class="fa fa-check"></i><b>14</b> Cambio del tamaño de los compartimiento con <em>binwidth</em></a></li>
+<li class="chapter" data-level="15" data-path="números-de-camas-en-hospitales-por-1000-habitantes-en-diferenctes-paises.html"><a href="números-de-camas-en-hospitales-por-1000-habitantes-en-diferenctes-paises.html"><i class="fa fa-check"></i><b>15</b> Números de camas en hospitales por 1000 habitantes en diferenctes paises</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="números-de-camas-en-hospitales-por-1000-habitantes-en-diferenctes-paises.html"><a href="números-de-camas-en-hospitales-por-1000-habitantes-en-diferenctes-paises.html#modificando-las-escalas-continuas-con-scale_y_continuous-y-scale_x_continuous"><i class="fa fa-check"></i><b>15.1</b> Modificando las escalas continuas con scale_y_continuous y scale_x_continuous</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="solapamiento-de-frecuencia-y-intensidad-de-color.html"><a href="solapamiento-de-frecuencia-y-intensidad-de-color.html"><i class="fa fa-check"></i><b>16</b> Solapamiento de frecuencia y intensidad de color</a></li>
+<li class="chapter" data-level="17" data-path="posicionar-las-barras-uno-al-lado-del-otro-con-la-función-dodge.html"><a href="posicionar-las-barras-uno-al-lado-del-otro-con-la-función-dodge.html"><i class="fa fa-check"></i><b>17</b> Posicionar las barras uno al lado del otro con la función <strong>dodge</strong></a></li>
+<li class="chapter" data-level="18" data-path="gráficos-para-grupo-con-facet_wrap.html"><a href="gráficos-para-grupo-con-facet_wrap.html"><i class="fa fa-check"></i><b>18</b> Gráficos para grupo con <strong>Facet_wrap</strong></a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="gráficos-para-grupo-con-facet_wrap.html"><a href="gráficos-para-grupo-con-facet_wrap.html#cambio-de-colores-del-gráfico-manualmente"><i class="fa fa-check"></i><b>18.1</b> Cambio de colores del gráfico manualmente</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="opciones-y-parametros-de-geom_histogram.html"><a href="opciones-y-parametros-de-geom_histogram.html"><i class="fa fa-check"></i><b>19</b> Opciones y Parametros de <strong>geom_histogram</strong>:</a></li>
+<li class="chapter" data-level="20" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>20</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>20.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="20.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>20.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>20.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>20.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="20.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>20.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>20.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="20.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>20.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="20.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>20.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="20.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>20.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="20.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>20.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="20.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>20.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="20.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>20.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>20.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="20.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>20.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="20.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>20.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>21</b> Other visualizations</a></li>
+<li class="chapter" data-level="22" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>22</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>22.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="22.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>22.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="22.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>22.3</b> Visualization of the model</a></li>
+<li class="chapter" data-level="22.4" data-path="linear-regression.html"><a href="linear-regression.html#quantile-regression"><i class="fa fa-check"></i><b>22.4</b> Quantile Regression</a></li>
+<li class="chapter" data-level="22.5" data-path="linear-regression.html"><a href="linear-regression.html#the-model"><i class="fa fa-check"></i><b>22.5</b> The model</a></li>
+<li class="chapter" data-level="22.6" data-path="linear-regression.html"><a href="linear-regression.html#the-assumptions"><i class="fa fa-check"></i><b>22.6</b> The assumptions</a></li>
+<li class="chapter" data-level="22.7" data-path="linear-regression.html"><a href="linear-regression.html#visualization"><i class="fa fa-check"></i><b>22.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>23</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>23.1</b> Linear models</a></li>
+<li class="chapter" data-level="23.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>23.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="23.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>23.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="23.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>23.4</b> Link available</a></li>
+<li class="chapter" data-level="23.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>23.5</b> The assumptions</a></li>
+<li class="chapter" data-level="23.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>23.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="23.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>23.7</b> ## Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="23.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>23.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="23.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>23.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="23.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>23.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="23.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>23.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="23.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>23.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="23.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>23.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="23.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>23.12</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="23.13" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#multinomial-logit-analysis"><i class="fa fa-check"></i><b>23.13</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="23.13.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#model"><i class="fa fa-check"></i><b>23.13.1</b> Model</a></li>
+<li class="chapter" data-level="23.13.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#assumptions"><i class="fa fa-check"></i><b>23.13.2</b> Assumptions</a></li>
+<li class="chapter" data-level="23.13.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#post-estimation-analysis"><i class="fa fa-check"></i><b>23.13.3</b> Post estimation analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>24</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>24.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="24.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>24.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="24.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>24.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="24.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>24.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="24.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>24.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="24.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>24.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="24.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>24.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="24.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>24.8</b> Regression model</a></li>
+<li class="chapter" data-level="24.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>24.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="24.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>24.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="24.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>24.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="24.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>24.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>25</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="gráficos-para-grupo-con-facet_wrap" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Chapter 18</span> Gráficos para grupo con <strong>Facet_wrap</strong><a href="gráficos-para-grupo-con-facet_wrap.html#gráficos-para-grupo-con-facet_wrap" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cambio-de-colores-del-gráfico-manualmente" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Cambio de colores del gráfico manualmente<a href="gráficos-para-grupo-con-facet_wrap.html#cambio-de-colores-del-gráfico-manualmente" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Otra alternativa es usar dos gráficos para cada año; o sea, uno por cada grupo. En tal caso usaremos la opción <strong>facet_wrap</strong>. <strong>facet_wrap</strong> se explican con más detalle más adelante. Podemos cambiar el color de las barras usando <strong>scale_fill_manual</strong>; en nuestro caso, <strong>cyan4</strong> para el 1996 y <strong>darkorange</strong> para el 2006. Además, note que con <strong>scale_color_manual</strong> podemos cambiar la línea alrededor de las barras; en nuestro caso la cambiamos a negro o <strong>black</strong>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(Camas_Hospital, <span class="fu">aes</span>(Camas, <span class="at">fill=</span><span class="fu">factor</span>(Year),</span>
+<span id="cb22-2"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-2" tabindex="-1"></a>                             <span class="at">color=</span><span class="fu">factor</span>(Year)))</span>
+<span id="cb22-3"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-3" tabindex="-1"></a>a<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb22-4"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Número de camas </span><span class="sc">\n</span><span class="st"> por cada 1000 habitantes&quot;</span>)<span class="sc">+</span></span>
+<span id="cb22-5"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb22-6"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-6" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;cyan4&quot;</span>, <span class="st">&quot;darkorange&quot;</span>))<span class="sc">+</span></span>
+<span id="cb22-7"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&quot;Times&quot;</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">face=</span><span class="st">&quot;italic&quot;</span>, <span class="at">colour=</span><span class="st">&quot;#4ea7ad&quot;</span>))<span class="sc">+</span></span>
+<span id="cb22-8"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year)<span class="sc">+</span></span>
+<span id="cb22-9"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-9" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>))<span class="sc">+</span></span>
+<span id="cb22-10"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-10" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>))<span class="sc">+</span></span>
+<span id="cb22-11"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-11" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))<span class="sc">+</span></span>
+<span id="cb22-12"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x=</span><span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">10</span>))<span class="sc">+</span>  <span class="co"># </span><span class="al">NOTE</span><span class="co"> the x legend text </span></span>
+<span id="cb22-13"><a href="gráficos-para-grupo-con-facet_wrap.html#cb22-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>, <span class="at">angle=</span><span class="dv">45</span>))</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="bookdownproj_files/figure-html/dipodium-histogram3-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="posicionar-las-barras-uno-al-lado-del-otro-con-la-función-dodge.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="opciones-y-parametros-de-geom_histogram.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/12-Histograms_Density.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/12-Histograms_Density.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

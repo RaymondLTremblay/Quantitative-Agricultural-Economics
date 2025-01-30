@@ -1,11 +1,11 @@
-# Test of normality
+# Tests of Normality and Equality of Variance
 
 
 
 Add and activate packages.
 NOTE THE NEW FUNCTION to install all packages ONLY IF Needed.....pacman::p_load(car, pastecs, psych, ggplot2)
 
-```{r packages, include=FALSE}
+```{r, Norm_1, include=FALSE}
 #----Install and Load Packages-----
 #install.packages("car", dependencies = TRUE)
 #install.packages("ggplot2")
@@ -25,7 +25,7 @@ library(nortest) # Package for normality test
 
 
 
-```{r histogram}
+```{r, norm_2}
 
 library(readr)
 DownloadFestival <- read_csv("Data/DownloadFestival.csv")
@@ -52,7 +52,7 @@ The scale is as follows:
 
 Multiple variables
 
-```{r multiple variables}
+```{r, norm_3}
 #Two alternative ways to describe multiple variables.
 psych::describe(cbind(dlf$day1, dlf$day2, dlf$day3))
 psych::describe(dlf[,c("day1", "day2", "day3")])
@@ -66,13 +66,13 @@ Test of normality, Shapiro Wilks Test is a test of normality in frequentist stat
 
 
 
-```{r test of normality}
+```{r , norm_4}
 
 library(pastecs)
 stat.desc(dlf$day3, basic = FALSE, norm = TRUE) # "norm=TRUE"" is to calculate the Shapiro Wilk Test
 ```
 
-```{r description by variable}
+```{r norm_5}
 stat.desc(cbind(dlf$day1, dlf$day2, dlf$day3), basic = FALSE, norm = TRUE)
 ```
 
@@ -84,7 +84,7 @@ Royston, P. (1993): A pocket-calculator algorithm for the Shapiro-Francia test f
 
 Thode Jr., H.C. (2002): Testing for Normality. Marcel Dekker, New York.
 
-```{r}
+```{r, norm_6}
 sf <- sf.test(dlf$day3)
 sf 
 
@@ -101,7 +101,7 @@ Stephens, M.A. (1986): Tests based on EDF statistics. In: D'Agostino, R.B. and S
 Thode Jr., H.C. (2002): Testing for Normality. Marcel Dekker, New York.
 
 
-```{r}
+```{r, norm_7}
 ad.test(dlf$day1)
 ```
 
@@ -114,7 +114,7 @@ Stephens, M.A. (1986): Tests based on EDF statistics. In: D'Agostino, R.B. and S
 
 Thode Jr., H.C. (2002): Testing for Normality. Marcel Dekker, New York.
 
-```{r}
+```{r, norm_8}
 cvm.test(dlf$day1)
 ```
 
@@ -128,7 +128,7 @@ Stephens, M.A. (1974): EDF statistics for goodness of fit and some comparisons. 
 
 Thode Jr., H.C. (2002): Testing for Normality. Marcel Dekker, New York.
 
-```{r}
+```{r, norm_9}
 lillie.test(dlf$day1)
 ```
 
@@ -140,7 +140,7 @@ lillie.test(dlf$day1)
 ### qq-plot
 
 Add a straight line on the qqplot
-```{r qqplot and line}
+```{r norm_10}
 
 # This function is to add a straight line through the qqplot
 qqplot.data <- function (vec) # argument: vector of numbers
@@ -168,7 +168,7 @@ ggsave("qqplot.png")
 
 ### Histogram
 
-```{r}
+```{r, norm_11}
 
 
 dlf=subset(DownloadFestival)
@@ -205,7 +205,7 @@ https://en.wikipedia.org/wiki/Normal_distribution
 
 
 
-```{r adding the normal curve}
+```{r norm_12}
 # Ahora añadir la linea de distribución normal
 
 hist.day1 + 
@@ -242,7 +242,7 @@ dlf$day1 <- ifelse(dlf$day1 > 5, NA, dlf$day1)
 df$Column = ifelse(df$column_to_be evaluated, replace_with_NA, otherwise_leave_as_before)
 
 
-```{r remove outlier}
+```{r norm_13}
 dlf$day1 <- ifelse(dlf$day1 > 5, NA, dlf$day1)
 
 
@@ -267,7 +267,7 @@ hist.day1
 
 
 
-```{r quantifying normality}
+```{r norm_14}
 
 dlf=DownloadFestival
 #Quantifying normality with numbers
@@ -298,9 +298,12 @@ $$s=\sqrt { s^{ 2 } } $$
 
 
 
-Dicover the Mode. La moda en R
+Discover the Mode. The mode is the value that appears most frequently in a data set. A set of data may have one mode, more than one mode, or no mode at all. The mode is one of the measures of CENTRAL TENDENCIES.  
 
-```{r mode}
+The package modeest has many functions to evaluate modes. Note that in this case when there are no SINGLE most common values, then it result that is return is NA. 
+
+
+```{r norm_15}
 # the mode
 library(modeest)
 
@@ -317,7 +320,7 @@ mfv(dlf$day3, method="mfv")
 
 Test of normality, Shapiro Wilks Test
 
-```{r test of normality SW}
+```{r norm_16}
 
 library(pastecs)
 stat.desc(dlf$day3, basic = FALSE, norm = TRUE) # "norm=TRUE"" is to calculate the Shapiro Wilk Test
@@ -325,7 +328,7 @@ stat.desc(dlf$day3, basic = FALSE, norm = TRUE) # "norm=TRUE"" is to calculate t
 
 
 
-```{r rounding}
+```{r norm_17}
 round(stat.desc(dlf[, c("day1", "day2", "day3")], basic = FALSE, norm = TRUE), digits = 3)
 
 ```
@@ -353,7 +356,7 @@ Sokal, R. R., Rohlf, F. J. (1995). Biometry: The Principles and Practice of Stat
  
   $$F=s_x^2/s_y^2$$, where $s_x^2$ and $s_y^2$ are the variances of the two groups, and x is the variance of the group with the larger variance.
   
-```{r}
+```{r, norm_18}
 var.test(dlf$day1, dlf$day2)
 ```
 
@@ -369,7 +372,7 @@ Bartlett, M. S. (1937). Properties of sufficiency and statistical tests. Proceed
 Note: that the data needs to be manipulated so it appear in in the long form
 
 
-```{r}
+```{r, norm_19}
 
 subset(dlf, select = c("day1", "day2")) -> dlfsub # create a subset of the data you need
 
@@ -395,7 +398,7 @@ Dag, O., Dolgun, A., Konar, N.M. (2018). onewaytests: An R Package for One-Way T
 
 
 
-```{r}
+```{r, norm_20}
 library(onewaytests) # install and activate the package
 
 bf.test(values~ind, data=dlfsub1)
@@ -410,7 +413,7 @@ bf.test(values~ind, data=dlfsub1)
 Levene's test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group means. The test is considered to be robust against departures from normality, but it is sensitive to the presence of outliers.
 
 
-```{r}
+```{r, norm_21}
 leveneTest(dlf$day1, dlf$day2)
 
 
@@ -419,7 +422,7 @@ leveneTest(dlf$day1, dlf$day2)
 
 ANOTHER alternative Levene's test
 
-```{r levene test}
+```{r norm_22}
 #Levene's test for comparison of variances of exam scores in the two universities.
 library(ggplot2)
 library(car)

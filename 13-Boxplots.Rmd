@@ -21,7 +21,7 @@ colorize <- function(x, color) {
 
 
 
-```{r, packages2}
+```{r, boxplot2, echo=TRUE}
 library(conflicted)
 conflicts_prefer(lubridate::minute)
 library(gridExtra)# Para organizar múltiples gráficos juntos
@@ -52,7 +52,7 @@ The notches on the sides of a boxplot can be interpreted as a comparison interva
 Below are two theoretical boxplot, the first one is a normal boxplot and the second one is a boxplot with outliers below and above the range. While the second figure shows a boxplot with outliers, the first figure shows a typical boxplot. The data used in the first figure is a tibble with 1, 8, 9, 10, 100 to 120, 125 to 135, 150 to 160, and 200. The second figure uses the same data as the first figure, but with the addition of 800 and 1000. 
  
 
-```{r teoretical box plot, echo=TRUE}
+```{r boxplot3, echo=TRUE}
 
 df1=as.tibble(c(1,8:10, 100:120, 125:135,150:160, 200))
 df1 %>% 
@@ -71,7 +71,7 @@ Here we show a boxplot for the number of fruits per plant
 
 
 
-```{r boxplot_4_1, echo=TRUE}
+```{r boxplot_4, echo=TRUE}
 #names(dipodium)
 library(conflicted)
 library(janitor)
@@ -86,7 +86,7 @@ d1=dipodium %>%
 
 ```
 
-```{r, boxplot4-2}
+```{r, boxplot5}
 boxplot1 <- ggplot(d1, aes(number_of_fruits, x=1))+ 
   geom_boxplot()+
            annotate("text", x= 1,y= 5, label="Fig. 1")+
@@ -94,7 +94,7 @@ boxplot1 <- ggplot(d1, aes(number_of_fruits, x=1))+
   theme(axis.title=element_text(size=10,face="bold"))
 ```
 
-```{r, boxplot4_3}
+```{r, boxplot6}
 boxplot2 <- ggplot(d1, aes(number_of_fruits, x=1))+
   geom_boxplot(notch=TRUE) +
            annotate("text", x= 0.7,y= 7, label="Fig. 2")+
@@ -102,7 +102,7 @@ boxplot2 <- ggplot(d1, aes(number_of_fruits, x=1))+
   theme(axis.title=element_text(size=10,face="bold"))
 ```
 
-```{r, boxplot4-4}
+```{r, boxplot7}
 boxplot3 <- ggplot(d1, aes(number_of_fruits, x=1))+ 
   geom_boxplot(notch=TRUE,colour="blue",
            fill="orange", alpha=0.7, outlier.shape=18,
@@ -112,7 +112,7 @@ boxplot3 <- ggplot(d1, aes(number_of_fruits, x=1))+
   theme(axis.title=element_text(size=10,face="bold"))
 ```
 
-```{r, boxplot4-5}
+```{r, boxplot8}
 boxplot4 <- ggplot(d1, aes(factor(number_of_flowers), number_of_fruits))+ 
   geom_boxplot(notch=FALSE)+
            annotate("text", x= 2,y= 10, label="Fig. 4")+
@@ -121,7 +121,7 @@ boxplot4 <- ggplot(d1, aes(factor(number_of_flowers), number_of_fruits))+
    theme(axis.text.x = element_text(angle = 90))
 ```
 
-```{r, boxplot4-6}
+```{r, boxplot9}
 
 gridExtra::grid.arrange(boxplot1,boxplot2, boxplot3, boxplot4,ncol=2)
 
@@ -135,7 +135,7 @@ Change the width of the boxes with **varwidth**. This produces a standard boxplo
 
 
 
-```{r, boxplot_flower}
+```{r, boxplot_10}
 dipodium %>% 
   dplyr::select(number_of_flowers, number_of_fruits) %>% 
   drop_na() %>% 
@@ -159,7 +159,7 @@ dipodium %>%
 
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, boxplot_11, echo=FALSE, eval=FALSE}
 library(ggversa)
 library(ggplot2)
 ggplot(ElphickBirdData, aes(y=AQBIRDS, fill=SITE))+
@@ -197,7 +197,7 @@ The violin plot is similar to the box plot, but the box is curved to give an app
 The basic model of the violin plot is shown in Figure. Note that, as with **geom_boxplot**, if you have only one group, you have to include **x=1**. What one observes is that most of the information is found close to the value 5 and 10
 
 
-```{r geomviolin1, echo=TRUE}
+```{r boxplot12, echo=TRUE}
 library(ggplot2)
 CalVal=caladeniavalida 
 violinplot1 <- ggplot(CalVal, aes(DCL, x=1))
@@ -217,7 +217,7 @@ Next we are going to produce the violin graph by different factors or groups acc
 
 
 
-```{r geomviolin2}
+```{r boxplot13, echo=TRUE}
 violinplot2 <- ggplot(CalVal, aes(y=LCL, x=factor(Year)))
 violinplot2 +
   geom_violin(fill="blue", alpha=0.5)+
@@ -233,7 +233,7 @@ violinplot2 +
 The violin plot with normal distribution
 
 
-```{r}
+```{r, boxplot14}
 normal_data=rnorm(1000, 0, 4)
 #normal_data
 dfnorm=data.frame(normal_data)
@@ -258,7 +258,7 @@ It is important to take into consideration that if **geom_point** is added befor
 
 
 
-```{r geomviolin3}
+```{r , boxplot15}
 
 violingp=violinplot3a <- ggplot(CalVal, aes(y=OH, x=factor(Year)))+
   geom_violin()+
@@ -291,7 +291,7 @@ In the next graph, **geom_jitter** was called before **geom_violin**, but at the
 
 
 
-```{r geomviolin4}
+```{r boxplot16, echo=TRUE}
 
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -310,7 +310,7 @@ violinplot3 +
 The 25th quartile, median (50th), and 75th quartile are now displayed on the same violin plot with horizontal lines.
 
 
-```{r geomviolin5}
+```{r boxplot17, echo=TRUE}
 
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -326,7 +326,7 @@ violinplot3 +
 
 In this figure, color is added to the outline of the violins and the quartile lines.
 
-```{r geomviolin6}
+```{r boxplot18, echo=TRUE}
 library(ggversa)
 names(caladeniavalida)
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=Population))
@@ -344,7 +344,7 @@ violinplot3 +
 
 In the Figure, the color of each group is changed, **Year**. To achieve this effect, another variable is added to represent the groups (or categories) by color; in this case, the distribution of plant sizes in terms of whether they produced fruit or not.
 
-```{r geomviolin7}
+```{r boxplot19, echo=TRUE}
 
 violinplot3 <- ggplot(na.omit(CalVal), aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -364,7 +364,7 @@ violinplot3 +
 In Figure, the same graph is modified to take into account the sample size using the **scale** option with the **count** parameter. In other words, the violins will be modified to include the sample size; that is, the maximum width scale is proportional to the size of the sample.  So, in this case we see the year where there was the largest (2007) and smallest (2008) sample size according to the width shown for each violin.
 
 
-```{r geomviolin8}
+```{r boxplot20, echo=TRUE}
 
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -383,7 +383,7 @@ In the Figure the width of the violin is modified to 1 on the scale of the **X**
 
  
 
-```{r geomviolin9}
+```{r boxplot21, echo=TRUE}
 
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -400,7 +400,7 @@ violinplot3 +
 In the Figure we change the orientation of the previous graphs using the **coord_flip()** option.
 
 
-```{r geomviolin10}
+```{r boxplot22, echo=TRUE}
 
 violinplot3 <- ggplot(CalVal, aes(y=OH, x=factor(Year)))
 violinplot3 +
@@ -419,7 +419,7 @@ Density graphs with colors for the different quantiles
 
 
 
-```{r}
+```{r, boxplot23}
 
 dt <- data.table::data.table(x=c(1:200),y=rnorm(200)) # Crear un distribucion de 200 datos al azar con una distribución normal
 dens <- density(dt$y) # calcular la densidad
@@ -436,7 +436,7 @@ ggplot(df, aes(x,y)) + geom_line() +
 ```
 
 
-```{r}
+```{r, boxplot24}
 CalVal2=
   CalVal %>% dplyr::select(OH) %>% 
   drop_na()    # Seleccionar lo datos deseados removiendo los "NA"
@@ -475,7 +475,7 @@ ggplot(df2, aes(x,y)) +
 
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, boxplot25 ,echo=FALSE, eval=FALSE}
 library(ggversa)
 library(ggplot2)
 ggplot(CypripediumA, aes(y=Lip_length_mm, x=factor(Forest_Wetland), fill=Forest_Wetland))+

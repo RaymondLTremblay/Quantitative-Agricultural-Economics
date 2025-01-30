@@ -5,7 +5,7 @@
 
 
 
-Fecha de la ultima revisión
+Last Revision
 
 ```{r echo=FALSE}
 
@@ -16,7 +16,7 @@ Sys.Date()
 
 The following command verifies that you have the necessary libraries installed and activates them if available on your system. The package **pacman** evaluates if you have them installed and installs them if necessary.
 
-```{r libraries, message=FALSE}
+```{r scatter_1, message=FALSE, warning=FALSE}
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(QuantPsyc, car, ggplot2, tidyverse, sjPlot, janitor)
@@ -48,7 +48,7 @@ We see a fictitious example
 
 The data is from some neighborhoods of Macondo where the numbers of bars in a neighborhood and the number of homicides in that neighborhood. The data you will find the data section below
 
-```{r data}
+```{r scatter_2}
 library(readr)
 pubs <- read_csv("Data/pubs.csv")
 
@@ -82,7 +82,7 @@ Note that the coefficients of the line are $y=3352+14.3*x$. Then the intercept a
 Now to determine if these values are significant, we must evaluate the value of **p** in each line. The null hypothesis of the intercept has a value of p =0.005, which suggests that the hypothesis should be rejected null, and consequently we accept the alternative hypothesis, that the intercept is not equal to zero. The slope has a value of p=0.015 and the null hypothesis is also rejected, this suggests that as increases the number of bars increases the number of fatalities, for example for each additional bar we expect 14.3 additional fatalities.
 
 
-```{r linear model, fig.align='center'}
+```{r scatter_3}
 pubReg <- lm(mortality~pubs, data = pubs) 
 
 summary(pubReg) # The summary of the regression
@@ -109,7 +109,7 @@ tab_model(
 
 It is observed that there is an increase in fatalities with an increase in the number of bars. But notice the value on the right that seems to be very atypical compared to the others.
 
-```{r}
+```{r, scatter_4}
 ggplot(pubs, aes(x=pubs, y=mortality))+
   geom_smooth(method = lm)+ # modelo lineal
   geom_point()
@@ -124,7 +124,7 @@ On certain occasions, values outside the normal range can make great changes in 
 What is the effect of the large value? We remove that value from the file data and re-evaluate the model (linear regression). Note that now the
 model is extremely different $y=-163.7+103.2*x$. Are the two hypotheses?
 
-```{r remover valores}
+```{r scatter_5}
 
 pubsnew <- pubs[ which(pubs$pubs<80), ]  # remove the outlier
 
@@ -161,7 +161,7 @@ We now evaluate a similar more complex and more realistic data set those one wou
 The data represents the amount of money dedicated to the promotion of different CD's from a music company and the number of CD's
 (CD/downloads) sold. In the first line we see the amount of pounds sterling, **£** (UK) dedicated to the promotion of the album music, in the first line we see that he spent £10,256, and then the number of CDs sold was 330. We have information about 200 albums different.
 
-```{r advertizing and sales}
+```{r scatter_6}
 library(readr)
 Album_Sales_1_new <- read_csv("Data/Album_Sales_1_new.csv")
 head(Album_Sales_1_new)
@@ -183,7 +183,7 @@ means that the method of constructing the line will use linear regression. It is
 $$Y_{ i }=\beta _{ 0 }+\beta _{ 1 }X_{ i }+\epsilon _{ i }$$ Remember that $\beta _{ 0 }$ is the intercept and the $\beta _{ 1 }x_{ i }$ is the
 earring. The shaded area is the area of 95% interval of trust. This means that the best line, intercept and slope could vary in this range if we repeat the experiment. Note here all the alternatives, I added the two extreme slopes, with a slope major (red) and a minor (violet). Each point represents the sale of a CD with its corresponding amount dedicated to the promotion. The $epsilon$ would be the difference between the best line and the original value.  This is also called the residuals.
 
-```{r avertizing graph}
+```{r scatter_7}
 library(ggplot2)
 ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
   geom_smooth(method=lm, se = TRUE)+
@@ -194,7 +194,7 @@ ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
 
 The linear model with the **lm()** function. How do you interpret the coefficients and if these are significant? Are the null hypotheses rejected? 
 
-```{r, sales model, }
+```{r, scatter_8}
 library(sjPlot)
 model1=lm(sales~adverts, Album_Sales_1_new)
 
@@ -229,7 +229,7 @@ ggplot(Album_Sales_1_new, aes(x=adverts, y=sales))+
 
 4. In the fourth graph, **Cook's distance** evaluate if there are values that have a lot of weight if whether or not they are included in the analysis, evaluate graph \#4. These are going to be identified. The values to worry about are those that are above or below the broken line. In this graph there are three values that must be evaluated (1, 42, 169), these values must be ensured to be correct. It is always good to remove the biased values and redo the analysis to observe how different the results are. Typically more data in an analysis, the less weight a biased value will have on the results, unless this value is very different from most of the data.
 
-```{r}
+```{r, scatter_9}
 plot(model1)  # Evaluate the assumptions, 1. Equality of variance, 2. Normality, 3. Students biased estimator, 4. Biased data (Cook's Distance)
 ```
 
@@ -252,7 +252,7 @@ Below is how to add the values of Cook's distance to the data file, add a sequen
 - Create a graph of Cook's distance. 
 - Determine if there are values of Cook's $D_i$ greater than 1, or 4/n.
 
-```{r Cook distance}
+```{r, scatter_10}
 4/length(Album_Sales_1_new$adverts)
 
 Album_Sales_1_new$cooks.distance<-cooks.distance(model1)
@@ -297,7 +297,7 @@ The result: The coefficient (intercept) and slope of the *model*
 
 
 
-```{r linear model2}
+```{r scatter_11}
 advertizingReg <- lm(sales~adverts, data = Album_Sales_1_new)
 summary(advertizingReg)
 
@@ -314,14 +314,14 @@ tab_model(
 
 ------------------------------------------------------------------------
 
-##Alternative to Graph the Residuals
+## Alternative to Graph the Residuals
 
 ### Plot the residuals
 
 If the assumption of equality of variance is met, what we will observe that the distribution of the residuals looks more or less uniform
 around the average of the residuals (zero). There are approximately equal number of values greater than zero (above the blue line) and less than zero (below the blue line) that are distributed to through the variable on the **X** axis, or estimated values. In addition that the residuals (negative or positive) are not limited to sub groups of the estimated values (in the **X**).
 
-```{r evaluate the residuals}
+```{r scatter_12}
 # "model1", nota que este no es un data frame pero un modelo
 
 # La figura principal
@@ -356,14 +356,14 @@ expectancy", and evaluates if there is a relationship between the two variables.
 
 - Determines whether the assumptions of the linear regression are met.
 
-```{r}
+```{r, scatter_13}
 library(datasets)
 state.x77=as.data.frame(state.x77) # convert the data into a data frame       
 state.x77=janitor::clean_names(state.x77) # clean the names of the variables
 head(state.x77)
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, scatter_14, eval=FALSE, echo=FALSE}
 Illitmodel=lm(life_exp~illiteracy, data=state.x77)
 summary(Illitmodel)
 
@@ -372,20 +372,20 @@ plot(Illitmodel)
 
 ------------------------------------------------------------------------
 
-### EExercise 2
+### Exercise 2
 
 The **ToothGrowth** data set in the **datasets** package contains the result of an experiment that studies the effect of vitamin C on the growth of teeth in 60 guinea pigs. each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) by one of two methods of administration (orange juice or ascorbic acid (a form of vitamin C and coded as VC).
 
 Using the following data do a complete regression analysis linear.
 
-```{r}
+```{r, scatter_15}
 library(datasets)
 
 head(ToothGrowth)
 
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, scatter_16, eval=FALSE, echo=FALSE}
 model2=lm(len~dose, data=ToothGrowth)
 summary(model2)
 

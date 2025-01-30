@@ -1,20 +1,190 @@
 # Data wrangling
 
-## cleaning the names of the variables with **janitor**
+
+A major component of data analysis is data wrangling. This is the process of cleaning and transforming raw data into a usable format. This is a critical step in the data analysis process, as the quality of the data will directly impact the quality of the analysis. In this section, we will cover some common data wrangling tasks in R, including cleaning data, transforming data, and handling missing values.
+
+In general this will be the most time consuming period of your analysis, cleaning the names of the variables, deleting variables, changing names of levels/factors, finding missing values, etc. A major issue will always be the missing values, and how to deal with them in addition to resolving the issues of the data such as outliers and non sensical data. In almost all project data wrangling will incolve more than 80% of your time and that data anlysis usually less than 20% of your time.
+
+## Cleaning column names
+
+### Cleaning the names of the variables with **janitor**
+
+The easiest part is likely to clean the names of the variables. This can be done with the `janitor` package. This package has a function called `clean_names` that will organize the names of the variables in a data frame with specific charatceristics. This function will convert the names to lowercase, remove special characters, and replace spaces with underscores. This will make the names of the variables more consistent and easier to work with. Sometime older functions in R will not work with variables that have spaces or special characters, such as (é, ü, &, %, ect).
+
+Let us start with a dirty data frame with the following problems:
+
+ - the names of the variables are in uppercase
+ - the names of the variables have spaces
+ - the names of the variables have special characters
+ - the names of the variables are too long
+ - the names of the variables are not consistent
+ - the names of the variables are not informative
 
 
-## Changing the names to variables
+```{r, wrangling_1, message=FALSE, warning=FALSE, }
+library(tibble)
+
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth", ~"Place of Birth",
+                   "Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+                   "Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles",
+                   "Charlie", 35, NA, .90, "1987-01-01", NA)
+ 
+Dirty_data                  
+```
+
+
+### Now let us clean the names of the variables
+
+ Note the following changes
+ 
+  - all are in lowercase
+  - the spaces are replaced by underscores
+  - the special characters are removed and even given new names
+  - the names are more informative
+  - the names are more consistent
+
+
+```{r, wrangling_2, warning=FALSE, message=FALSE}
+library(janitor)
+
+Clean_df_clean=clean_names(Dirty_data)
+
+Clean_df= Clean_df_clean
+```
+
+
+## Changing the names to variables 
+
+To change the names of the variables in a data frame, you can use the `rename` function from the `dplyr` package. This function allows you to specify the new names of the variables using the `new_name = old_name` syntax. For example, to change the name of the `name` variable to `first_name` in a data frame called `df`, you would run:
+
+Changing the names of the variables is a common data wrangling task that can help make your data more readable and easier to work with. By using the `rename` function, you can quickly and easily change the names of the variables in a data frame to better reflect the data they contain.
+
+
+We will replace the name of the variable `name` to `full_name` in the data frame `Clean_df`.
+
+```{r}
+library(dplyr)
+
+Clean_df <- Clean_df %>% rename(first_name = name)
+
+Clean_df # observe the change in the name of the variable
+
+
+```
+
+
 
 
 
 
 ## Deleting variables
 
+We can delete variables from a data frame using the `select` function from the `dplyr` package. This function allows you to select a subset of variables from a data frame by specifying the variables you want to keep. To delete a variable from a data frame, you can simply exclude it from the list of variables you want to keep. For example, to delete the `age_2` variable from a data frame called `df`, you would run:
 
-## changing names of levels/factors
+```{r}
+library(dplyr)
+
+Clean_df <- Clean_df %>% select(-age_2)
+
+Clean_df # observe the change in the data frame, now the column is removed
+```
+
+
+## Changing names of levels/factors
+
+We can change the names of the levels or factors in variable using the `fct_recode` function from the `forcats` package. Let us recode the name of the cities. 
+
+
+
+```{r}
+library(forcats)
+
+Clean_df$place_of_birth <- fct_recode(Clean_df$place_of_birth,
+                                      "NY" = "New York City Manhathan",
+                                      "LA" = "Los Angeles")
+
+Clean_df # observe the change in the data frame, now the names of the cities are recoded
+```
 
 
 
 ## Finding missing values
+
+One of the challenges is detecting missing value in large data sets. The `is.na` function can be used to detect missing values in a data frame. This function returns a logical vector that indicates whether each element in the data frame is missing or not. For example, to find missing values in a data frame called `df`, you would run:
+
+Note that when there is missing data, the function will return a logical vector with `TRUE` for missing values and `FALSE` for non-missing values.
+
+```{r}
+is.na(Clean_df) # this will return a logical vector indicating whether each element in the data frame is missing or not
+```
+
+The following code is acceptible for small data set, but for large data sets it is better to use the `summary` function. This function will return a summary of the data frame, including the number of missing values in each variable. For example, to get a summary of the missing values in a data frame called `df`, you would run:
+
+Note here that the place of birth for Charlie is missing, it has an NA value in addition to the height_m of an individual.
+```{r}
+summary(Clean_df) # this will return a summary of the data frame, including the number of missing values in each variable
+```
+
+## 
+
+Subset all rows with missing values in the variables. This will result in a rwo that will include only Charlie. 
+
+Subset all rows with missing values in the variables. This will result in a rwo that will include only Charlie. NOTE the the command is the **!** symbol before the `complete.cases` function. This will return all rows with missing values in the data frame.
+
+```{r}
+
+Clean_df[!complete.cases(Clean_df), ] # this will return all rows with missing values in the data frame
+
+
+```
+
+Note if you want subset all rows with NO missing values in the variables. This will result in a two rows that will include only Alice and Bob. 
+
+
+```{r}
+Clean_df[complete.cases(Clean_df), ] # this will return all rows with NO missing values in the data frame
+```
+
+
+
+
+
+
+## Subsetting data set
+
+The function to subset a data frame is `filter`. This function is used to extract rows from a data frame that meet a certain condition. The syntax for the `filter` function is as follows:
+
+
+```{r, wrangling_3, warning=FALSE, message=FALSE}
+library(dplyr)
+
+Clean_df_clean %>% filter(age_2 > 29) # this will return all rows where the age is greater than 29
+
+
+
+
+```
+
+## Titanic data set
+
+```{r}
+library(readr)
+Titanic <- read_csv("Data/ Titanic.csv") # The data is in the "DATA" folder
+
+Titanic = clean_names(Titanic) # this will clean the names of the variables in the data frame
+names(Titanic) # this will return the names of the variables in the data frame
+```
+
+
+
+Let us now select all rows with females, and that are in the first class and age less than 20. 
+
+From 1,309 passengers we 16 females with the above characteristics.
+
+```{r}
+Titanic %>% filter(sex=="female" & pclass==1 & age<20) # this will return
+```
+
+
 
 
