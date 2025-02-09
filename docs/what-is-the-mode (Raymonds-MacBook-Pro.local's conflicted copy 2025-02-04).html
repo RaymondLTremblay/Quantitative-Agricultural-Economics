@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 What is the mode? | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 8 What is the mode? | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 What is the mode? | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 What is the mode? | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2025-02-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tests-of-normality-and-equality-of-variance.html"/>
+<link rel="next" href="non-parametric-tests.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Daily Activities</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-rstudio"><i class="fa fa-check"></i><b>2.2</b> What is RStudio?</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#getting-started-with-rstudio"><i class="fa fa-check"></i><b>2.4</b> Getting started with RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-rmarkdown"><i class="fa fa-check"></i><b>2.5</b> What is RMarkdown?</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#creating-an-rstudio-project"><i class="fa fa-check"></i><b>2.6</b> Creating an RStudio project</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#getting-help-with-r"><i class="fa fa-check"></i><b>2.7</b> Getting help with R</a></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#conclusion"><i class="fa fa-check"></i><b>2.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package?</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-packages-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding packages in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+<li class="chapter" data-level="3.5" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-packages-from-github"><i class="fa fa-check"></i><b>3.5</b> Installing packages from github</a></li>
+<li class="chapter" data-level="3.6" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-packages-from-bioconductor"><i class="fa fa-check"></i><b>3.6</b> Installing packages from Bioconductor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-upload.html"><a href="data-upload.html"><i class="fa fa-check"></i><b>4</b> Data Upload</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-upload.html"><a href="data-upload.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-upload.html"><a href="data-upload.html#using-the-function-tibble-in-the-package-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong> in the package <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-upload.html"><a href="data-upload.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-upload.html"><a href="data-upload.html#csv-file-uplaod"><i class="fa fa-check"></i><b>4.2.1</b> .csv file uplaod</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-upload.html"><a href="data-upload.html#excel-file-upload"><i class="fa fa-check"></i><b>4.2.2</b> Excel file upload</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-upload.html"><a href="data-upload.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data-upload.html"><a href="data-upload.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+<li class="chapter" data-level="4.2.5" data-path="data-upload.html"><a href="data-upload.html#read-a-stata-file"><i class="fa fa-check"></i><b>4.2.5</b> read a Stata file</a></li>
+<li class="chapter" data-level="4.2.6" data-path="data-upload.html"><a href="data-upload.html#read-a-sas-file"><i class="fa fa-check"></i><b>4.2.6</b> Read a SAS file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-upload.html"><a href="data-upload.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-column-names"><i class="fa fa-check"></i><b>5.1</b> Cleaning column names</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1.1</b> Cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-wrangling.html"><a href="data-wrangling.html#now-let-us-clean-the-names-of-the-variables"><i class="fa fa-check"></i><b>5.1.2</b> Now let us clean the names of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> Changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+<li class="chapter" data-level="5.6" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>5.6</b> </a></li>
+<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.7</b> Subsetting data set</a></li>
+<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.8</b> Titanic data set</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html"><i class="fa fa-check"></i><b>6</b> Understanding your file data strutcture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.2</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#example"><i class="fa fa-check"></i><b>6.3</b> Example</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions of the data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3.2</b> Structure of the data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#recoding-variables"><i class="fa fa-check"></i><b>6.3.3</b> Recoding variables</a></li>
+<li class="chapter" data-level="6.3.4" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.3.4</b> Levels of the variables</a></li>
+<li class="chapter" data-level="6.3.5" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#summary-of-the-data"><i class="fa fa-check"></i><b>6.3.5</b> Summary of the data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-lat-rows-few-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and lat rows few rows of the data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html"><i class="fa fa-check"></i><b>7</b> Tests of Normality and Equality of Variance</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#cramer-von-mises-test-of-normality"><i class="fa fa-check"></i><b>7.4</b> Cramer-von Mises test of normality</a></li>
+<li class="chapter" data-level="7.5" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#lilliefors-test-of-normality"><i class="fa fa-check"></i><b>7.5</b> Lilliefors test of normality</a></li>
+<li class="chapter" data-level="7.6" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.6</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#qq-plot"><i class="fa fa-check"></i><b>7.6.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.6.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-variance"><i class="fa fa-check"></i><b>7.7.1</b> What is the variance?</a></li>
+<li class="chapter" data-level="7.7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-standard-deviation"><i class="fa fa-check"></i><b>7.7.2</b> What is the standard deviation?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html"><i class="fa fa-check"></i><b>8</b> What is the mode?</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>8.1</b> Test of normality, Shapiro Wilks Test</a></li>
+<li class="chapter" data-level="8.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>8.2</b> Tests of Equality of variances</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.3" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.4" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.2.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>9</b> Non-parametric tests</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.0.1</b> Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="9.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>9.0.2</b> Mann-Whitney U test</a></li>
+<li class="chapter" data-level="9.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>9.0.3</b> Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="9.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>9.0.4</b> Friedman test</a></li>
+<li class="chapter" data-level="9.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>9.0.5</b> Spearman’s rank correlation</a></li>
+<li class="chapter" data-level="9.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>9.0.6</b> Kendall’s tau</a></li>
+<li class="chapter" data-level="9.0.7" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests-see-the-following"><i class="fa fa-check"></i><b>9.0.7</b> Altenative to non-parametric tests, see the following:</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>10.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>10.2</b> the lm() function</a></li>
+<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>10.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>10.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="10.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>10.5</b> Selling music records</a></li>
+<li class="chapter" data-level="10.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>10.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="10.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>10.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="10.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>10.8</b> Steps to do a linear regression analysis</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="10.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="10.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>10.9</b> Alternative to Graph the Residuals</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>10.9.1</b> Plot the residuals</a></li>
+<li class="chapter" data-level="10.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>10.9.2</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>10.9.3</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.10</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="10.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.11</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="10.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.12</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>11</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>11.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>11.2</b> the linear model</a></li>
+<li class="chapter" data-level="11.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>11.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="11.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>11.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>12</b> Ring chart (alternative to the pie chart)</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>12.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="12.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>12.0.2</b> Example of why PIE chart should NOT be used</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>13</b> Histograms/Density Plots</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>13.1</b> Histograms with geom_histogram</a></li>
+<li class="chapter" data-level="13.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>13.2</b> Changing bin sizes with <em>binwidth</em></a></li>
+<li class="chapter" data-level="13.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>13.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
+<li class="chapter" data-level="13.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>13.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
+<li class="chapter" data-level="13.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>13.5</b> Frequency and color intensity overlap</a></li>
+<li class="chapter" data-level="13.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>13.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
+<li class="chapter" data-level="13.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>13.7</b> Group graphics with <strong>Facet_wrap</strong></a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>13.7.1</b> Change chart colors manually</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>13.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="13.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>13.9</b> DensityPlots</a>
+<ul>
+<li class="chapter" data-level="13.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>13.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="13.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>13.10</b> Area chart with <strong>geom_area</strong></a>
+<ul>
+<li class="chapter" data-level="13.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>13.10.1</b> Area Chart Section</a></li>
+<li class="chapter" data-level="13.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>13.10.2</b> <strong>linetype</strong> types</a></li>
+</ul></li>
+<li class="chapter" data-level="13.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>13.11</b> geom_area with multiple groups</a></li>
+<li class="chapter" data-level="13.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>13.12</b> The density function <strong>aes(y=..density..)</strong></a>
+<ul>
+<li class="chapter" data-level="13.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>13.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>13.13</b> Density plot with <strong>geom_density</strong></a>
+<ul>
+<li class="chapter" data-level="13.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>13.13.1</b> What is a kernel?</a></li>
+</ul></li>
+<li class="chapter" data-level="13.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>13.14</b> geom_density and simulated data</a>
+<ul>
+<li class="chapter" data-level="13.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>13.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>13.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
+<ul>
+<li class="chapter" data-level="13.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>13.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
+<li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>16.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="16.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>16.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="16.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>16.3</b> Visualization of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>17</b> Quantile Regression</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>17.1</b> The model</a></li>
+<li class="chapter" data-level="17.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions"><i class="fa fa-check"></i><b>17.2</b> The assumptions</a></li>
+<li class="chapter" data-level="17.3" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>17.3</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>18</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>18.1</b> Linear models</a></li>
+<li class="chapter" data-level="18.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>18.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="18.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>18.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="18.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>18.4</b> Link available</a></li>
+<li class="chapter" data-level="18.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>18.5</b> The assumptions</a></li>
+<li class="chapter" data-level="18.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>18.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="18.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>18.7</b> Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>18.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>18.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="18.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>18.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="18.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>18.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="18.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>18.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="18.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>18.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="18.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>18.12</b> Negative binomial regression</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>19</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="19.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>19.0.1</b> Model</a></li>
+<li class="chapter" data-level="19.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>19.0.2</b> Assumptions</a></li>
+<li class="chapter" data-level="19.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>19.0.3</b> Post estimation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>20</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>20.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="20.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>20.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="20.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>20.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="20.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>20.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="20.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>20.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="20.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>20.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="20.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>20.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="20.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>20.8</b> Regression model</a></li>
+<li class="chapter" data-level="20.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>20.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="20.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>20.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="20.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>20.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="20.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>20.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>21</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-is-the-mode" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> What is the mode?<a href="what-is-the-mode.html#what-is-the-mode" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The mode is the value that appears most frequently in a data set. A set of data may have one mode, more than one mode, or no mode at all. The mode is one of the measures of CENTRAL TENDENCIES.</p>
+<p>The package <strong>modeest</strong> has many functions to evaluate modes.</p>
+<p>Note that in two of the data sets there are no SINGLE most common values, then it result that is return is NA.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="what-is-the-mode.html#cb137-1" tabindex="-1"></a><span class="co"># the mode</span></span>
+<span id="cb137-2"><a href="what-is-the-mode.html#cb137-2" tabindex="-1"></a><span class="fu">library</span>(modeest)</span></code></pre></div>
+<pre><code>## Registered S3 method overwritten by &#39;rmutil&#39;:
+##   method         from 
+##   plot.residuals psych</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="what-is-the-mode.html#cb139-1" tabindex="-1"></a><span class="fu">mfv</span>(dlf<span class="sc">$</span>day1, <span class="at">method=</span><span class="st">&quot;mfv&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="what-is-the-mode.html#cb141-1" tabindex="-1"></a><span class="fu">mfv</span>(dlf<span class="sc">$</span>day2, <span class="at">method=</span><span class="st">&quot;mfv&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="what-is-the-mode.html#cb143-1" tabindex="-1"></a><span class="fu">mfv</span>(dlf<span class="sc">$</span>day3, <span class="at">method=</span><span class="st">&quot;mfv&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div id="test-of-normality-shapiro-wilks-test" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Test of normality, Shapiro Wilks Test<a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="what-is-the-mode.html#cb145-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb145-2"><a href="what-is-the-mode.html#cb145-2" tabindex="-1"></a><span class="fu">stat.desc</span>(dlf<span class="sc">$</span>day3, <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>) <span class="co"># &quot;norm=TRUE&quot;&quot; is to calculate the Shapiro Wilk Test</span></span></code></pre></div>
+<pre><code>##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+## 7.600000e-01 9.765041e-01 6.404352e-02 1.267805e-01 5.044934e-01 7.102770e-01 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+## 7.273672e-01 1.007813e+00 2.309035e+00 5.945454e-01 6.862946e-01 9.077516e-01 
+##   normtest.p 
+## 3.804486e-07</code></pre>
+<p>We can evaluate the normality of multiple variables at the same time using the following code:</p>
+<p>Note here we use [,], where the inside the square brackets we specify the variables we want to evaluate. Before the comma, we specify the rows we want to evaluate and after the comma, we specify the columns we want to evaluate.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="what-is-the-mode.html#cb147-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">stat.desc</span>(dlf[, <span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>, <span class="st">&quot;day2&quot;</span>, <span class="st">&quot;day3&quot;</span>)], <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>), <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>##                  day1   day2   day3
+## median         1.7900 0.7900 0.7600
+## mean           1.7934 0.9609 0.9765
+## SE.mean        0.0332 0.0444 0.0640
+## CI.mean.0.95   0.0651 0.0873 0.1268
+## var            0.8921 0.5195 0.5045
+## std.dev        0.9445 0.7208 0.7103
+## coef.var       0.5267 0.7501 0.7274
+## skewness       8.8325 1.0828 1.0078
+## skew.2SE      51.4071 3.6116 2.3090
+## kurtosis     168.9671 0.7555 0.5945
+## kurt.2SE     492.3139 1.2645 0.6863
+## normtest.W     0.6539 0.9083 0.9078
+## normtest.p     0.0000 0.0000 0.0000</code></pre>
+<hr />
+</div>
+<div id="tests-of-equality-of-variances" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Tests of Equality of variances<a href="what-is-the-mode.html#tests-of-equality-of-variances" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Most parametric test require that when testing differences among groups, these have more or less the same variance around the mean.</p>
+<p>The Levene’s test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group means. The test is considered to be robust against departures from normality, but it is sensitive to the presence of outliers.</p>
+<div id="the-f-test-of-equality-of-variance" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> The F-test of equality of variance<a href="what-is-the-mode.html#the-f-test-of-equality-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The F-test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the ratio of the variances in the different groups. This test is <strong>EXTREMELY</strong> sensitive to non-normality and outliers. Consequently the F-test is considered to be less robust than the Levene’s test, Bartlett’s test or the Brown-Forsythe test. It is NOT recommended to use the F-test for testing the equality of variances.</p>
+<p>Sokal, R. R., Rohlf, F. J. (1995). Biometry: The Principles and Practice of Statistics in Biological Research. W. H. Freeman and Company</p>
+<p><span class="math display">\[F=s_x^2/s_y^2\]</span>, where <span class="math inline">\(s_x^2\)</span> and <span class="math inline">\(s_y^2\)</span> are the variances of the two groups, and x is the variance of the group with the larger variance.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="what-is-the-mode.html#cb149-1" tabindex="-1"></a><span class="fu">var.test</span>(dlf<span class="sc">$</span>day1, dlf<span class="sc">$</span>day2)</span></code></pre></div>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  dlf$day1 and dlf$day2
+## F = 1.7171, num df = 809, denom df = 263, p-value = 3.23e-07
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  1.402898 2.080705
+## sample estimates:
+## ratio of variances 
+##           1.717092</code></pre>
+</div>
+<div id="bartletts-test-of-equality-of-variance" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Bartlett’s test of equality of variance<a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bartlett’s test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group means. The test is considered to be robust against departures from normality, but it is sensitive to the presence of outliers.</p>
+<p>Bartlett, M. S. (1937). Properties of sufficiency and statistical tests. Proceedings of the Royal Society of London Series A 160, 268–282. <a href="doi:10.1098/rspa.1937.0109" class="uri">doi:10.1098/rspa.1937.0109</a>.</p>
+<p>Note: that the data needs to be manipulated so it appear in the long form</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="what-is-the-mode.html#cb151-1" tabindex="-1"></a><span class="fu">subset</span>(dlf, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>, <span class="st">&quot;day2&quot;</span>)) <span class="ot">-&gt;</span> dlfsub <span class="co"># create a subset of the data</span></span>
+<span id="cb151-2"><a href="what-is-the-mode.html#cb151-2" tabindex="-1"></a></span>
+<span id="cb151-3"><a href="what-is-the-mode.html#cb151-3" tabindex="-1"></a></span>
+<span id="cb151-4"><a href="what-is-the-mode.html#cb151-4" tabindex="-1"></a></span>
+<span id="cb151-5"><a href="what-is-the-mode.html#cb151-5" tabindex="-1"></a>dlfsub1 <span class="ot">&lt;-</span> <span class="fu">stack</span>(dlfsub)  <span class="co"># reorganize the data in the long form</span></span>
+<span id="cb151-6"><a href="what-is-the-mode.html#cb151-6" tabindex="-1"></a></span>
+<span id="cb151-7"><a href="what-is-the-mode.html#cb151-7" tabindex="-1"></a>dlfsub1 <span class="co"># the data is now in the long form</span></span></code></pre></div>
+<pre><code>##      values  ind
+## 1      2.64 day1
+## 2      0.97 day1
+## 3      0.84 day1
+## 4      3.03 day1
+## 5      0.88 day1
+## 6      0.85 day1
+## 7      1.56 day1
+## 8      3.02 day1
+## 9      2.29 day1
+## 10     1.11 day1
+## 11     2.17 day1
+## 12     0.82 day1
+## 13     1.41 day1
+## 14     1.76 day1
+## 15     1.38 day1
+## 16     2.79 day1
+## 17     1.50 day1
+## 18     1.91 day1
+## 19     2.32 day1
+## 20     2.05 day1
+## 21     2.17 day1
+## 22     2.05 day1
+## 23     1.61 day1
+## 24     1.66 day1
+## 25     2.30 day1
+## 26     2.76 day1
+## 27     1.44 day1
+## 28     1.06 day1
+## 29     3.23 day1
+## 30     0.97 day1
+## 31     2.57 day1
+## 32     0.26 day1
+## 33     0.47 day1
+## 34     1.73 day1
+## 35     1.94 day1
+## 36     1.91 day1
+## 37     2.08 day1
+## 38     1.91 day1
+## 39     1.42 day1
+## 40     1.50 day1
+## 41     0.11 day1
+## 42     1.67 day1
+## 43     2.08 day1
+## 44     2.05 day1
+## 45     2.00 day1
+## 46     1.52 day1
+## 47     1.58 day1
+## 48     1.28 day1
+## 49     1.88 day1
+## 50     1.32 day1
+## 51     2.09 day1
+## 52     2.00 day1
+## 53     2.64 day1
+## 54     0.85 day1
+## 55     2.47 day1
+## 56     1.79 day1
+## 57     1.64 day1
+## 58     1.32 day1
+## 59     2.97 day1
+## 60     1.44 day1
+## 61     2.02 day1
+## 62     1.79 day1
+## 63     1.34 day1
+## 64     2.29 day1
+## 65     1.66 day1
+## 66     0.60 day1
+## 67     1.76 day1
+## 68     1.50 day1
+## 69     2.08 day1
+## 70     1.00 day1
+## 71     1.73 day1
+## 72     1.05 day1
+## 73     2.81 day1
+## 74     1.52 day1
+## 75     1.47 day1
+## 76     2.64 day1
+## 77     2.20 day1
+## 78     0.55 day1
+## 79     2.29 day1
+## 80     2.00 day1
+## 81     2.23 day1
+## 82     2.45 day1
+## 83     1.20 day1
+## 84     2.91 day1
+## 85     1.14 day1
+## 86     1.88 day1
+## 87     0.94 day1
+## 88     1.85 day1
+## 89     2.58 day1
+## 90     0.61 day1
+## 91     0.70 day1
+## 92     1.38 day1
+## 93     1.94 day1
+## 94     2.29 day1
+## 95     1.59 day1
+## 96     2.46 day1
+## 97     1.67 day1
+## 98     2.02 day1
+## 99     1.50 day1
+## 100    2.70 day1
+## 101    1.61 day1
+## 102    2.29 day1
+## 103    0.97 day1
+## 104    1.85 day1
+## 105    2.76 day1
+## 106    1.64 day1
+## 107    1.17 day1
+## 108    1.57 day1
+## 109    2.23 day1
+## 110    2.05 day1
+## 111    2.05 day1
+## 112    2.94 day1
+## 113    2.39 day1
+## 114    1.94 day1
+## 115    2.12 day1
+## 116    1.11 day1
+## 117    0.97 day1
+## 118    1.35 day1
+## 119    2.81 day1
+## 120    2.50 day1
+## 121    1.87 day1
+## 122    1.33 day1
+## 123    1.26 day1
+## 124    1.44 day1
+## 125    0.55 day1
+## 126    1.75 day1
+## 127    2.08 day1
+## 128    0.85 day1
+## 129    2.52 day1
+## 130    3.00 day1
+## 131    1.41 day1
+## 132    1.08 day1
+## 133    1.20 day1
+## 134    1.94 day1
+## 135    2.26 day1
+## 136    1.41 day1
+## 137    2.50 day1
+## 138    2.17 day1
+## 139    1.82 day1
+## 140    1.44 day1
+## 141    1.66 day1
+## 142    1.82 day1
+## 143    1.26 day1
+## 144    2.67 day1
+## 145    1.47 day1
+## 146    1.84 day1
+## 147    2.58 day1
+## 148    1.73 day1
+## 149    1.23 day1
+## 150    2.32 day1
+## 151    2.67 day1
+## 152    1.02 day1
+## 153    1.66 day1
+## 154    1.88 day1
+## 155    1.91 day1
+## 156    1.64 day1
+## 157    1.34 day1
+## 158    1.85 day1
+## 159    2.08 day1
+## 160    1.02 day1
+## 161    1.79 day1
+## 162    1.94 day1
+## 163    3.26 day1
+## 164    1.14 day1
+## 165    1.50 day1
+## 166    2.03 day1
+## 167    2.24 day1
+## 168    1.11 day1
+## 169    2.21 day1
+## 170    1.94 day1
+## 171    2.41 day1
+## 172    0.88 day1
+## 173    1.17 day1
+## 174    2.23 day1
+## 175    1.64 day1
+## 176    2.14 day1
+## 177    0.11 day1
+## 178    2.17 day1
+## 179    1.67 day1
+## 180    1.00 day1
+## 181    0.88 day1
+## 182    2.20 day1
+## 183    2.17 day1
+## 184    2.32 day1
+## 185    1.64 day1
+## 186    3.00 day1
+## 187    2.38 day1
+## 188    1.60 day1
+## 189    1.58 day1
+## 190    2.61 day1
+## 191    1.44 day1
+## 192    1.57 day1
+## 193    2.32 day1
+## 194    1.14 day1
+## 195    1.93 day1
+## 196    2.47 day1
+## 197    2.29 day1
+## 198    1.00 day1
+## 199    1.58 day1
+## 200    2.44 day1
+## 201    0.83 day1
+## 202    2.71 day1
+## 203    1.73 day1
+## 204    1.58 day1
+## 205    1.50 day1
+## 206    1.05 day1
+## 207    2.05 day1
+## 208    2.63 day1
+## 209    2.55 day1
+## 210    2.00 day1
+## 211    2.00 day1
+## 212    1.32 day1
+## 213    3.14 day1
+## 214    1.44 day1
+## 215    1.85 day1
+## 216    1.41 day1
+## 217    1.94 day1
+## 218    2.91 day1
+## 219    1.85 day1
+## 220    1.70 day1
+## 221    2.23 day1
+## 222    1.11 day1
+## 223    1.47 day1
+## 224    2.20 day1
+## 225    1.82 day1
+## 226    1.42 day1
+## 227    2.44 day1
+## 228    2.66 day1
+## 229    1.52 day1
+## 230    1.35 day1
+## 231    1.29 day1
+## 232    2.32 day1
+## 233    0.78 day1
+## 234    2.84 day1
+## 235    0.97 day1
+## 236    1.52 day1
+## 237    1.70 day1
+## 238    0.94 day1
+## 239    1.41 day1
+## 240    1.79 day1
+## 241    1.08 day1
+## 242    1.47 day1
+## 243    1.79 day1
+## 244    2.00 day1
+## 245    0.76 day1
+## 246    2.20 day1
+## 247    0.94 day1
+## 248    1.38 day1
+## 249    1.38 day1
+## 250    0.32 day1
+## 251    2.58 day1
+## 252    0.51 day1
+## 253    0.32 day1
+## 254    0.91 day1
+## 255    1.51 day1
+## 256    1.47 day1
+## 257    2.50 day1
+## 258    2.26 day1
+## 259    2.81 day1
+## 260    1.87 day1
+## 261    2.00 day1
+## 262    2.23 day1
+## 263    2.00 day1
+## 264    1.41 day1
+## 265    1.64 day1
+## 266    1.64 day1
+## 267    1.26 day1
+## 268    1.52 day1
+## 269    2.44 day1
+## 270    2.18 day1
+## 271    3.02 day1
+## 272    1.02 day1
+## 273    2.88 day1
+## 274    1.54 day1
+## 275    1.64 day1
+## 276    2.44 day1
+## 277    1.29 day1
+## 278    1.61 day1
+## 279    1.77 day1
+## 280    0.91 day1
+## 281    0.85 day1
+## 282    0.85 day1
+## 283    1.50 day1
+## 284    1.05 day1
+## 285    3.38 day1
+## 286    1.42 day1
+## 287    1.85 day1
+## 288    1.91 day1
+## 289    0.82 day1
+## 290    1.32 day1
+## 291    2.23 day1
+## 292    1.47 day1
+## 293    2.70 day1
+## 294    1.58 day1
+## 295    1.00 day1
+## 296    1.44 day1
+## 297    2.00 day1
+## 298    1.60 day1
+## 299    2.32 day1
+## 300    3.41 day1
+## 301    2.02 day1
+## 302    0.64 day1
+## 303    3.58 day1
+## 304    1.50 day1
+## 305    1.08 day1
+## 306    1.52 day1
+## 307    1.26 day1
+## 308    1.68 day1
+## 309    1.47 day1
+## 310    1.47 day1
+## 311    1.67 day1
+## 312    2.47 day1
+## 313    1.82 day1
+## 314    2.17 day1
+## 315    3.21 day1
+## 316    1.60 day1
+## 317    0.32 day1
+## 318    0.55 day1
+## 319    1.42 day1
+## 320    1.14 day1
+## 321    2.64 day1
+## 322    2.58 day1
+## 323    2.02 day1
+## 324    2.00 day1
+## 325    2.90 day1
+## 326    1.82 day1
+## 327    0.50 day1
+## 328    1.53 day1
+## 329    2.48 day1
+## 330    2.05 day1
+## 331    2.52 day1
+## 332    1.88 day1
+## 333    2.73 day1
+## 334    2.88 day1
+## 335    1.67 day1
+## 336    1.93 day1
+## 337    1.67 day1
+## 338    1.20 day1
+## 339    2.75 day1
+## 340    1.94 day1
+## 341    0.59 day1
+## 342    1.50 day1
+## 343    1.58 day1
+## 344    2.23 day1
+## 345    2.35 day1
+## 346    2.55 day1
+## 347    1.55 day1
+## 348    2.31 day1
+## 349    2.23 day1
+## 350    0.67 day1
+## 351    2.51 day1
+## 352    1.08 day1
+## 353    2.44 day1
+## 354    0.23 day1
+## 355    2.17 day1
+## 356    1.90 day1
+## 357    1.67 day1
+## 358    2.00 day1
+## 359    2.44 day1
+## 360    1.44 day1
+## 361    0.82 day1
+## 362    2.50 day1
+## 363    1.82 day1
+## 364    1.97 day1
+## 365    2.52 day1
+## 366    0.05 day1
+## 367    2.08 day1
+## 368    2.39 day1
+## 369    1.45 day1
+## 370    2.58 day1
+## 371    2.12 day1
+## 372    2.02 day1
+## 373    1.78 day1
+## 374    0.73 day1
+## 375    2.26 day1
+## 376    2.79 day1
+## 377    0.43 day1
+## 378    0.52 day1
+## 379    2.32 day1
+## 380    2.22 day1
+## 381    0.58 day1
+## 382    2.00 day1
+## 383    0.70 day1
+## 384    1.00 day1
+## 385    0.30 day1
+## 386    1.52 day1
+## 387    1.58 day1
+## 388    2.34 day1
+## 389    0.79 day1
+## 390    2.26 day1
+## 391    2.35 day1
+## 392    1.70 day1
+## 393    3.09 day1
+## 394    1.52 day1
+## 395    0.35 day1
+## 396    2.70 day1
+## 397    1.64 day1
+## 398    0.82 day1
+## 399    2.73 day1
+## 400    2.23 day1
+## 401    1.06 day1
+## 402    2.05 day1
+## 403    1.73 day1
+## 404    0.93 day1
+## 405    2.50 day1
+## 406    1.44 day1
+## 407    2.88 day1
+## 408    0.67 day1
+## 409    1.85 day1
+## 410    1.21 day1
+## 411    1.06 day1
+## 412    0.61 day1
+## 413    2.00 day1
+## 414    1.17 day1
+## 415    1.48 day1
+## 416    1.55 day1
+## 417    3.29 day1
+## 418    1.47 day1
+## 419    0.96 day1
+## 420    1.00 day1
+## 421    1.47 day1
+## 422    2.55 day1
+## 423    0.44 day1
+## 424    2.35 day1
+## 425    1.71 day1
+## 426    1.84 day1
+## 427    1.11 day1
+## 428    1.38 day1
+## 429    0.88 day1
+## 430    0.94 day1
+## 431    1.91 day1
+## 432    2.76 day1
+## 433    1.55 day1
+## 434    2.67 day1
+## 435    1.03 day1
+## 436    2.50 day1
+## 437    1.64 day1
+## 438    2.26 day1
+## 439    2.14 day1
+## 440    0.52 day1
+## 441    1.08 day1
+## 442    1.69 day1
+## 443    2.73 day1
+## 444    1.91 day1
+## 445    1.73 day1
+## 446    3.21 day1
+## 447    2.11 day1
+## 448    2.05 day1
+## 449    2.17 day1
+## 450    2.17 day1
+## 451    2.30 day1
+## 452    2.56 day1
+## 453    2.11 day1
+## 454    1.70 day1
+## 455    1.23 day1
+## 456    3.20 day1
+## 457    2.02 day1
+## 458    2.64 day1
+## 459    2.52 day1
+## 460    1.61 day1
+## 461    1.50 day1
+## 462    1.15 day1
+## 463    1.82 day1
+## 464    1.50 day1
+## 465    2.32 day1
+## 466    2.92 day1
+## 467    1.41 day1
+## 468    1.35 day1
+## 469    0.61 day1
+## 470    0.73 day1
+## 471    2.23 day1
+## 472    1.32 day1
+## 473    2.94 day1
+## 474    1.61 day1
+## 475    1.00 day1
+## 476    3.15 day1
+## 477    2.88 day1
+## 478    2.09 day1
+## 479    1.32 day1
+## 480    1.47 day1
+## 481    1.61 day1
+## 482    2.20 day1
+## 483    2.78 day1
+## 484    2.06 day1
+## 485    0.47 day1
+## 486    2.87 day1
+## 487    1.14 day1
+## 488    3.32 day1
+## 489    2.08 day1
+## 490    2.38 day1
+## 491    2.08 day1
+## 492    1.85 day1
+## 493    1.38 day1
+## 494    1.14 day1
+## 495    1.58 day1
+## 496    1.23 day1
+## 497    2.53 day1
+## 498    0.67 day1
+## 499    0.73 day1
+## 500    1.34 day1
+## 501    2.14 day1
+## 502    1.00 day1
+## 503    1.35 day1
+## 504    1.94 day1
+## 505    0.50 day1
+## 506    3.08 day1
+## 507    2.88 day1
+## 508    1.91 day1
+## 509    1.41 day1
+## 510    2.02 day1
+## 511    0.76 day1
+## 512    1.94 day1
+## 513    0.67 day1
+## 514    2.41 day1
+## 515    2.17 day1
+## 516    2.67 day1
+## 517    1.94 day1
+## 518    2.05 day1
+## 519    2.17 day1
+## 520    0.47 day1
+## 521    0.62 day1
+## 522    2.00 day1
+## 523    0.45 day1
+## 524    2.29 day1
+## 525    2.55 day1
+## 526    0.82 day1
+## 527    3.12 day1
+## 528    2.50 day1
+## 529    1.79 day1
+## 530    2.28 day1
+## 531    0.58 day1
+## 532    2.50 day1
+## 533    1.41 day1
+## 534    2.14 day1
+## 535    0.76 day1
+## 536    1.79 day1
+## 537    1.02 day1
+## 538    2.62 day1
+## 539    0.88 day1
+## 540    1.58 day1
+## 541    2.20 day1
+## 542    1.14 day1
+## 543    1.47 day1
+## 544    1.41 day1
+## 545    1.44 day1
+## 546    1.23 day1
+## 547    1.82 day1
+## 548    2.44 day1
+## 549    1.94 day1
+## 550    2.41 day1
+## 551    2.27 day1
+## 552    1.79 day1
+## 553    1.88 day1
+## 554    1.85 day1
+## 555    2.21 day1
+## 556    1.97 day1
+## 557    2.51 day1
+## 558    2.05 day1
+## 559    1.29 day1
+## 560    2.05 day1
+## 561    2.23 day1
+## 562    1.76 day1
+## 563    1.05 day1
+## 564    1.79 day1
+## 565    1.02 day1
+## 566    2.76 day1
+## 567    1.67 day1
+## 568    2.85 day1
+## 569    0.23 day1
+## 570    1.90 day1
+## 571    1.23 day1
+## 572    1.97 day1
+## 573    1.50 day1
+## 574    3.69 day1
+## 575    0.50 day1
+## 576    2.18 day1
+## 577    2.17 day1
+## 578    1.58 day1
+## 579    2.88 day1
+## 580    2.52 day1
+## 581    2.20 day1
+## 582    1.73 day1
+## 583    2.23 day1
+## 584    1.97 day1
+## 585    1.20 day1
+## 586    2.00 day1
+## 587    1.91 day1
+## 588    0.81 day1
+## 589    1.31 day1
+## 590    0.38 day1
+## 591    1.97 day1
+## 592    0.38 day1
+## 593    2.11 day1
+## 594    3.20 day1
+## 595    0.02 day1
+## 596    2.56 day1
+## 597    2.02 day1
+## 598    2.30 day1
+## 599    2.02 day1
+## 600    2.05 day1
+## 601    1.70 day1
+## 602    1.61 day1
+## 603    0.73 day1
+## 604    2.50 day1
+## 605    2.18 day1
+## 606    2.46 day1
+## 607    1.50 day1
+## 608    1.73 day1
+## 609    1.44 day1
+## 610    1.64 day1
+## 611   20.02 day1
+## 612    1.20 day1
+## 613    0.38 day1
+## 614    1.58 day1
+## 615    1.67 day1
+## 616    1.00 day1
+## 617    2.58 day1
+## 618    2.82 day1
+## 619    2.29 day1
+## 620    1.14 day1
+## 621    1.64 day1
+## 622    1.82 day1
+## 623    3.32 day1
+## 624    3.32 day1
+## 625    1.85 day1
+## 626    2.29 day1
+## 627    1.47 day1
+## 628    2.08 day1
+## 629    2.20 day1
+## 630    1.06 day1
+## 631    0.97 day1
+## 632    2.00 day1
+## 633    1.67 day1
+## 634    2.94 day1
+## 635    1.55 day1
+## 636    0.88 day1
+## 637    1.35 day1
+## 638    0.61 day1
+## 639    1.00 day1
+## 640    1.52 day1
+## 641    1.00 day1
+## 642    1.76 day1
+## 643    2.52 day1
+## 644    2.00 day1
+## 645    2.63 day1
+## 646    0.73 day1
+## 647    1.58 day1
+## 648    0.58 day1
+## 649    1.67 day1
+## 650    1.47 day1
+## 651    1.81 day1
+## 652    1.91 day1
+## 653    1.06 day1
+## 654    1.47 day1
+## 655    2.52 day1
+## 656    1.85 day1
+## 657    3.44 day1
+## 658    1.55 day1
+## 659    2.29 day1
+## 660    1.76 day1
+## 661    1.90 day1
+## 662    2.52 day1
+## 663    2.52 day1
+## 664    2.82 day1
+## 665    2.02 day1
+## 666    1.29 day1
+## 667    1.26 day1
+## 668    0.94 day1
+## 669    2.00 day1
+## 670    0.73 day1
+## 671    2.26 day1
+## 672    2.23 day1
+## 673    2.35 day1
+## 674    0.55 day1
+## 675    1.85 day1
+## 676    0.67 day1
+## 677    1.85 day1
+## 678    1.23 day1
+## 679    2.35 day1
+## 680    1.35 day1
+## 681    1.94 day1
+## 682    1.55 day1
+## 683    1.29 day1
+## 684    2.17 day1
+## 685    1.91 day1
+## 686    2.88 day1
+## 687    2.36 day1
+## 688    2.36 day1
+## 689    2.20 day1
+## 690    2.17 day1
+## 691    0.52 day1
+## 692    0.32 day1
+## 693    1.52 day1
+## 694    2.00 day1
+## 695    1.32 day1
+## 696    2.05 day1
+## 697    1.73 day1
+## 698    1.94 day1
+## 699    1.81 day1
+## 700    0.90 day1
+## 701    1.58 day1
+## 702    2.29 day1
+## 703    2.57 day1
+## 704    1.58 day1
+## 705    2.33 day1
+## 706    3.15 day1
+## 707    2.29 day1
+## 708    0.82 day1
+## 709    1.93 day1
+## 710    1.82 day1
+## 711    1.96 day1
+## 712    1.32 day1
+## 713    1.02 day1
+## 714    1.14 day1
+## 715    2.32 day1
+## 716    2.16 day1
+## 717    2.42 day1
+## 718    1.14 day1
+## 719    1.55 day1
+## 720    1.17 day1
+## 721    1.00 day1
+## 722    1.05 day1
+## 723    1.38 day1
+## 724    1.93 day1
+## 725    2.73 day1
+## 726    2.02 day1
+## 727    2.81 day1
+## 728    2.47 day1
+## 729    1.35 day1
+## 730    2.08 day1
+## 731    2.50 day1
+## 732    2.45 day1
+## 733    2.17 day1
+## 734    1.70 day1
+## 735    0.70 day1
+## 736    1.51 day1
+## 737    1.23 day1
+## 738    2.14 day1
+## 739    1.14 day1
+## 740    0.96 day1
+## 741    1.52 day1
+## 742    0.52 day1
+## 743    1.56 day1
+## 744    3.29 day1
+## 745    0.45 day1
+## 746    2.63 day1
+## 747    1.70 day1
+## 748    3.11 day1
+## 749    1.82 day1
+## 750    1.58 day1
+## 751    2.73 day1
+## 752    1.50 day1
+## 753    1.78 day1
+## 754    2.02 day1
+## 755    0.67 day1
+## 756    1.41 day1
+## 757    0.90 day1
+## 758    1.23 day1
+## 759    2.70 day1
+## 760    1.97 day1
+## 761    0.84 day1
+## 762    1.79 day1
+## 763    2.84 day1
+## 764    2.02 day1
+## 765    1.64 day1
+## 766    1.08 day1
+## 767    2.97 day1
+## 768    0.94 day1
+## 769    2.97 day1
+## 770    0.97 day1
+## 771    1.47 day1
+## 772    2.61 day1
+## 773    1.73 day1
+## 774    3.38 day1
+## 775    3.17 day1
+## 776    2.20 day1
+## 777    2.14 day1
+## 778    1.29 day1
+## 779    3.21 day1
+## 780    2.67 day1
+## 781    1.85 day1
+## 782    1.35 day1
+## 783    2.14 day1
+## 784    1.24 day1
+## 785    2.02 day1
+## 786    2.32 day1
+## 787    1.08 day1
+## 788    1.14 day1
+## 789    2.14 day1
+## 790    2.88 day1
+## 791    1.35 day1
+## 792    1.00 day1
+## 793    2.02 day1
+## 794    0.64 day1
+## 795    0.29 day1
+## 796    1.73 day1
+## 797    1.82 day1
+## 798    2.11 day1
+## 799    1.23 day1
+## 800    0.64 day1
+## 801    2.23 day1
+## 802    2.44 day1
+## 803    1.17 day1
+## 804    0.61 day1
+## 805    0.52 day1
+## 806    2.91 day1
+## 807    2.61 day1
+## 808    1.47 day1
+## 809    1.28 day1
+## 810    1.26 day1
+## 811    1.35 day2
+## 812    1.41 day2
+## 813      NA day2
+## 814      NA day2
+## 815    0.08 day2
+## 816      NA day2
+## 817      NA day2
+## 818      NA day2
+## 819      NA day2
+## 820    0.44 day2
+## 821      NA day2
+## 822    0.20 day2
+## 823      NA day2
+## 824    1.64 day2
+## 825    0.02 day2
+## 826      NA day2
+## 827      NA day2
+## 828    2.05 day2
+## 829      NA day2
+## 830      NA day2
+## 831    0.70 day2
+## 832      NA day2
+## 833      NA day2
+## 834    0.85 day2
+## 835      NA day2
+## 836      NA day2
+## 837      NA day2
+## 838      NA day2
+## 839      NA day2
+## 840    0.38 day2
+## 841    0.11 day2
+## 842      NA day2
+## 843      NA day2
+## 844      NA day2
+## 845    0.82 day2
+## 846      NA day2
+## 847    0.91 day2
+## 848      NA day2
+## 849      NA day2
+## 850      NA day2
+## 851      NA day2
+## 852      NA day2
+## 853      NA day2
+## 854      NA day2
+## 855      NA day2
+## 856      NA day2
+## 857      NA day2
+## 858    0.38 day2
+## 859      NA day2
+## 860      NA day2
+## 861      NA day2
+## 862      NA day2
+## 863      NA day2
+## 864    0.32 day2
+## 865    0.23 day2
+## 866      NA day2
+## 867      NA day2
+## 868      NA day2
+## 869      NA day2
+## 870    0.14 day2
+## 871      NA day2
+## 872      NA day2
+## 873      NA day2
+## 874    1.90 day2
+## 875      NA day2
+## 876      NA day2
+## 877    0.76 day2
+## 878      NA day2
+## 879    0.70 day2
+## 880    0.55 day2
+## 881      NA day2
+## 882    0.38 day2
+## 883      NA day2
+## 884      NA day2
+## 885      NA day2
+## 886      NA day2
+## 887    1.18 day2
+## 888    0.79 day2
+## 889      NA day2
+## 890      NA day2
+## 891      NA day2
+## 892      NA day2
+## 893      NA day2
+## 894    2.08 day2
+## 895    1.00 day2
+## 896      NA day2
+## 897      NA day2
+## 898      NA day2
+## 899      NA day2
+## 900      NA day2
+## 901      NA day2
+## 902      NA day2
+## 903      NA day2
+## 904      NA day2
+## 905      NA day2
+## 906      NA day2
+## 907    0.14 day2
+## 908    0.58 day2
+## 909      NA day2
+## 910    1.70 day2
+## 911      NA day2
+## 912      NA day2
+## 913    1.06 day2
+## 914      NA day2
+## 915      NA day2
+## 916      NA day2
+## 917      NA day2
+## 918      NA day2
+## 919      NA day2
+## 920    1.58 day2
+## 921      NA day2
+## 922      NA day2
+## 923      NA day2
+## 924      NA day2
+## 925      NA day2
+## 926      NA day2
+## 927      NA day2
+## 928      NA day2
+## 929    2.08 day2
+## 930      NA day2
+## 931      NA day2
+## 932      NA day2
+## 933      NA day2
+## 934      NA day2
+## 935      NA day2
+## 936      NA day2
+## 937      NA day2
+## 938      NA day2
+## 939      NA day2
+## 940      NA day2
+## 941      NA day2
+## 942      NA day2
+## 943    1.38 day2
+## 944    1.44 day2
+## 945    1.73 day2
+## 946      NA day2
+## 947      NA day2
+## 948      NA day2
+## 949    1.11 day2
+## 950    1.14 day2
+## 951      NA day2
+## 952      NA day2
+## 953      NA day2
+## 954      NA day2
+## 955      NA day2
+## 956      NA day2
+## 957      NA day2
+## 958      NA day2
+## 959      NA day2
+## 960      NA day2
+## 961      NA day2
+## 962      NA day2
+## 963    2.12 day2
+## 964      NA day2
+## 965      NA day2
+## 966      NA day2
+## 967      NA day2
+## 968      NA day2
+## 969      NA day2
+## 970      NA day2
+## 971      NA day2
+## 972      NA day2
+## 973    1.97 day2
+## 974    0.58 day2
+## 975    0.70 day2
+## 976      NA day2
+## 977      NA day2
+## 978      NA day2
+## 979      NA day2
+## 980      NA day2
+## 981      NA day2
+## 982      NA day2
+## 983    1.35 day2
+## 984      NA day2
+## 985      NA day2
+## 986      NA day2
+## 987    0.29 day2
+## 988      NA day2
+## 989      NA day2
+## 990      NA day2
+## 991      NA day2
+## 992      NA day2
+## 993      NA day2
+## 994      NA day2
+## 995      NA day2
+## 996      NA day2
+## 997    0.85 day2
+## 998    1.02 day2
+## 999      NA day2
+## 1000     NA day2
+## 1001   0.05 day2
+## 1002     NA day2
+## 1003     NA day2
+## 1004     NA day2
+## 1005     NA day2
+## 1006     NA day2
+## 1007     NA day2
+## 1008     NA day2
+## 1009     NA day2
+## 1010     NA day2
+## 1011     NA day2
+## 1012   0.78 day2
+## 1013     NA day2
+## 1014     NA day2
+## 1015     NA day2
+## 1016     NA day2
+## 1017     NA day2
+## 1018     NA day2
+## 1019   2.29 day2
+## 1020     NA day2
+## 1021     NA day2
+## 1022     NA day2
+## 1023     NA day2
+## 1024     NA day2
+## 1025   0.23 day2
+## 1026   0.44 day2
+## 1027     NA day2
+## 1028     NA day2
+## 1029     NA day2
+## 1030     NA day2
+## 1031     NA day2
+## 1032     NA day2
+## 1033     NA day2
+## 1034     NA day2
+## 1035     NA day2
+## 1036     NA day2
+## 1037     NA day2
+## 1038     NA day2
+## 1039     NA day2
+## 1040   0.47 day2
+## 1041     NA day2
+## 1042     NA day2
+## 1043     NA day2
+## 1044     NA day2
+## 1045     NA day2
+## 1046     NA day2
+## 1047     NA day2
+## 1048   1.17 day2
+## 1049     NA day2
+## 1050     NA day2
+## 1051   0.44 day2
+## 1052     NA day2
+## 1053   0.47 day2
+## 1054     NA day2
+## 1055     NA day2
+## 1056     NA day2
+## 1057   0.17 day2
+## 1058     NA day2
+## 1059   0.85 day2
+## 1060     NA day2
+## 1061     NA day2
+## 1062     NA day2
+## 1063     NA day2
+## 1064   1.11 day2
+## 1065     NA day2
+## 1066     NA day2
+## 1067     NA day2
+## 1068     NA day2
+## 1069     NA day2
+## 1070     NA day2
+## 1071     NA day2
+## 1072   0.41 day2
+## 1073   0.76 day2
+## 1074     NA day2
+## 1075     NA day2
+## 1076     NA day2
+## 1077     NA day2
+## 1078   0.55 day2
+## 1079   1.02 day2
+## 1080     NA day2
+## 1081     NA day2
+## 1082     NA day2
+## 1083     NA day2
+## 1084     NA day2
+## 1085     NA day2
+## 1086   2.50 day2
+## 1087     NA day2
+## 1088   0.32 day2
+## 1089     NA day2
+## 1090   0.17 day2
+## 1091   0.20 day2
+## 1092   0.52 day2
+## 1093     NA day2
+## 1094   0.23 day2
+## 1095     NA day2
+## 1096   0.52 day2
+## 1097     NA day2
+## 1098   0.84 day2
+## 1099   0.26 day2
+## 1100   0.76 day2
+## 1101   0.85 day2
+## 1102   1.52 day2
+## 1103     NA day2
+## 1104     NA day2
+## 1105     NA day2
+## 1106     NA day2
+## 1107     NA day2
+## 1108     NA day2
+## 1109   2.53 day2
+## 1110     NA day2
+## 1111     NA day2
+## 1112   0.52 day2
+## 1113   3.35 day2
+## 1114     NA day2
+## 1115     NA day2
+## 1116     NA day2
+## 1117     NA day2
+## 1118     NA day2
+## 1119   1.08 day2
+## 1120     NA day2
+## 1121   1.55 day2
+## 1122   1.97 day2
+## 1123     NA day2
+## 1124     NA day2
+## 1125     NA day2
+## 1126   1.38 day2
+## 1127     NA day2
+## 1128     NA day2
+## 1129     NA day2
+## 1130     NA day2
+## 1131     NA day2
+## 1132     NA day2
+## 1133     NA day2
+## 1134     NA day2
+## 1135     NA day2
+## 1136     NA day2
+## 1137     NA day2
+## 1138     NA day2
+## 1139     NA day2
+## 1140     NA day2
+## 1141     NA day2
+## 1142     NA day2
+## 1143     NA day2
+## 1144     NA day2
+## 1145     NA day2
+## 1146     NA day2
+## 1147     NA day2
+## 1148     NA day2
+## 1149     NA day2
+## 1150   0.97 day2
+## 1151     NA day2
+## 1152     NA day2
+## 1153   0.94 day2
+## 1154   0.11 day2
+## 1155     NA day2
+## 1156   0.82 day2
+## 1157     NA day2
+## 1158     NA day2
+## 1159     NA day2
+## 1160   0.50 day2
+## 1161     NA day2
+## 1162   0.58 day2
+## 1163     NA day2
+## 1164   0.14 day2
+## 1165     NA day2
+## 1166   1.17 day2
+## 1167   0.44 day2
+## 1168   0.58 day2
+## 1169     NA day2
+## 1170     NA day2
+## 1171     NA day2
+## 1172     NA day2
+## 1173     NA day2
+## 1174     NA day2
+## 1175     NA day2
+## 1176     NA day2
+## 1177     NA day2
+## 1178     NA day2
+## 1179   0.82 day2
+## 1180     NA day2
+## 1181     NA day2
+## 1182   0.76 day2
+## 1183   1.14 day2
+## 1184   0.17 day2
+## 1185   0.90 day2
+## 1186     NA day2
+## 1187   0.67 day2
+## 1188   0.38 day2
+## 1189     NA day2
+## 1190     NA day2
+## 1191     NA day2
+## 1192     NA day2
+## 1193     NA day2
+## 1194     NA day2
+## 1195     NA day2
+## 1196     NA day2
+## 1197   0.35 day2
+## 1198     NA day2
+## 1199     NA day2
+## 1200     NA day2
+## 1201     NA day2
+## 1202     NA day2
+## 1203     NA day2
+## 1204     NA day2
+## 1205     NA day2
+## 1206     NA day2
+## 1207     NA day2
+## 1208     NA day2
+## 1209     NA day2
+## 1210     NA day2
+## 1211     NA day2
+## 1212   0.20 day2
+## 1213   1.44 day2
+## 1214   0.91 day2
+## 1215   2.44 day2
+## 1216     NA day2
+## 1217     NA day2
+## 1218   0.23 day2
+## 1219   0.35 day2
+## 1220   0.79 day2
+## 1221   0.76 day2
+## 1222   0.26 day2
+## 1223     NA day2
+## 1224   0.73 day2
+## 1225   0.79 day2
+## 1226     NA day2
+## 1227     NA day2
+## 1228     NA day2
+## 1229     NA day2
+## 1230   1.11 day2
+## 1231     NA day2
+## 1232   2.38 day2
+## 1233   0.06 day2
+## 1234   2.41 day2
+## 1235   0.85 day2
+## 1236   0.58 day2
+## 1237   0.23 day2
+## 1238     NA day2
+## 1239     NA day2
+## 1240     NA day2
+## 1241     NA day2
+## 1242     NA day2
+## 1243   0.32 day2
+## 1244     NA day2
+## 1245   0.29 day2
+## 1246     NA day2
+## 1247     NA day2
+## 1248     NA day2
+## 1249     NA day2
+## 1250     NA day2
+## 1251     NA day2
+## 1252     NA day2
+## 1253     NA day2
+## 1254     NA day2
+## 1255     NA day2
+## 1256     NA day2
+## 1257     NA day2
+## 1258     NA day2
+## 1259     NA day2
+## 1260     NA day2
+## 1261     NA day2
+## 1262     NA day2
+## 1263   0.41 day2
+## 1264     NA day2
+## 1265     NA day2
+## 1266     NA day2
+## 1267     NA day2
+## 1268     NA day2
+## 1269   0.14 day2
+## 1270     NA day2
+## 1271   1.20 day2
+## 1272   0.45 day2
+## 1273     NA day2
+## 1274     NA day2
+## 1275     NA day2
+## 1276     NA day2
+## 1277     NA day2
+## 1278     NA day2
+## 1279   0.14 day2
+## 1280     NA day2
+## 1281   1.88 day2
+## 1282   0.91 day2
+## 1283   1.79 day2
+## 1284     NA day2
+## 1285     NA day2
+## 1286   3.00 day2
+## 1287     NA day2
+## 1288   1.21 day2
+## 1289   1.70 day2
+## 1290   0.35 day2
+## 1291     NA day2
+## 1292   1.50 day2
+## 1293     NA day2
+## 1294     NA day2
+## 1295     NA day2
+## 1296     NA day2
+## 1297     NA day2
+## 1298   3.21 day2
+## 1299   1.38 day2
+## 1300   2.50 day2
+## 1301     NA day2
+## 1302     NA day2
+## 1303     NA day2
+## 1304     NA day2
+## 1305     NA day2
+## 1306   0.70 day2
+## 1307     NA day2
+## 1308     NA day2
+## 1309     NA day2
+## 1310     NA day2
+## 1311   0.70 day2
+## 1312     NA day2
+## 1313     NA day2
+## 1314   0.79 day2
+## 1315     NA day2
+## 1316     NA day2
+## 1317     NA day2
+## 1318     NA day2
+## 1319     NA day2
+## 1320     NA day2
+## 1321     NA day2
+## 1322     NA day2
+## 1323   0.28 day2
+## 1324     NA day2
+## 1325     NA day2
+## 1326   0.41 day2
+## 1327   0.64 day2
+## 1328   0.85 day2
+## 1329     NA day2
+## 1330     NA day2
+## 1331   0.76 day2
+## 1332     NA day2
+## 1333     NA day2
+## 1334   0.91 day2
+## 1335     NA day2
+## 1336     NA day2
+## 1337   2.20 day2
+## 1338   2.23 day2
+## 1339     NA day2
+## 1340     NA day2
+## 1341   1.05 day2
+## 1342   1.29 day2
+## 1343     NA day2
+## 1344     NA day2
+## 1345   0.26 day2
+## 1346   1.11 day2
+## 1347   0.35 day2
+## 1348     NA day2
+## 1349     NA day2
+## 1350   0.20 day2
+## 1351     NA day2
+## 1352     NA day2
+## 1353   0.52 day2
+## 1354   0.23 day2
+## 1355   1.76 day2
+## 1356   1.17 day2
+## 1357     NA day2
+## 1358     NA day2
+## 1359   1.20 day2
+## 1360     NA day2
+## 1361     NA day2
+## 1362   0.23 day2
+## 1363     NA day2
+## 1364   0.64 day2
+## 1365     NA day2
+## 1366   1.94 day2
+## 1367     NA day2
+## 1368     NA day2
+## 1369   1.00 day2
+## 1370     NA day2
+## 1371     NA day2
+## 1372     NA day2
+## 1373     NA day2
+## 1374     NA day2
+## 1375   0.73 day2
+## 1376   1.58 day2
+## 1377   0.55 day2
+## 1378     NA day2
+## 1379   0.84 day2
+## 1380     NA day2
+## 1381   0.52 day2
+## 1382     NA day2
+## 1383     NA day2
+## 1384     NA day2
+## 1385     NA day2
+## 1386     NA day2
+## 1387     NA day2
+## 1388     NA day2
+## 1389     NA day2
+## 1390     NA day2
+## 1391     NA day2
+## 1392     NA day2
+## 1393     NA day2
+## 1394     NA day2
+## 1395   0.67 day2
+## 1396     NA day2
+## 1397     NA day2
+## 1398     NA day2
+## 1399     NA day2
+## 1400     NA day2
+## 1401     NA day2
+## 1402     NA day2
+## 1403   0.76 day2
+## 1404     NA day2
+## 1405     NA day2
+## 1406     NA day2
+## 1407     NA day2
+## 1408     NA day2
+## 1409     NA day2
+## 1410     NA day2
+## 1411     NA day2
+## 1412     NA day2
+## 1413     NA day2
+## 1414   1.64 day2
+## 1415   1.75 day2
+## 1416   1.08 day2
+## 1417   0.91 day2
+## 1418   0.94 day2
+## 1419     NA day2
+## 1420   0.32 day2
+## 1421   2.44 day2
+## 1422   0.17 day2
+## 1423   0.02 day2
+## 1424   1.54 day2
+## 1425   0.50 day2
+## 1426   0.48 day2
+## 1427   1.35 day2
+## 1428   2.61 day2
+## 1429   2.05 day2
+## 1430     NA day2
+## 1431   0.76 day2
+## 1432   0.08 day2
+## 1433   2.91 day2
+## 1434     NA day2
+## 1435   1.00 day2
+## 1436     NA day2
+## 1437   0.47 day2
+## 1438   0.70 day2
+## 1439     NA day2
+## 1440   1.45 day2
+## 1441   0.14 day2
+## 1442     NA day2
+## 1443   0.38 day2
+## 1444     NA day2
+## 1445     NA day2
+## 1446   0.26 day2
+## 1447   2.32 day2
+## 1448   0.20 day2
+## 1449     NA day2
+## 1450   2.72 day2
+## 1451     NA day2
+## 1452   0.41 day2
+## 1453     NA day2
+## 1454   0.88 day2
+## 1455     NA day2
+## 1456   0.85 day2
+## 1457   0.23 day2
+## 1458     NA day2
+## 1459     NA day2
+## 1460     NA day2
+## 1461     NA day2
+## 1462     NA day2
+## 1463     NA day2
+## 1464   1.23 day2
+## 1465     NA day2
+## 1466   0.20 day2
+## 1467     NA day2
+## 1468   1.32 day2
+## 1469   2.70 day2
+## 1470     NA day2
+## 1471     NA day2
+## 1472   2.55 day2
+## 1473     NA day2
+## 1474   0.17 day2
+## 1475     NA day2
+## 1476     NA day2
+## 1477     NA day2
+## 1478     NA day2
+## 1479   1.13 day2
+## 1480     NA day2
+## 1481   0.79 day2
+## 1482     NA day2
+## 1483     NA day2
+## 1484   0.38 day2
+## 1485     NA day2
+## 1486     NA day2
+## 1487   1.00 day2
+## 1488   0.20 day2
+## 1489     NA day2
+## 1490     NA day2
+## 1491     NA day2
+## 1492     NA day2
+## 1493     NA day2
+## 1494     NA day2
+## 1495     NA day2
+## 1496     NA day2
+## 1497     NA day2
+## 1498     NA day2
+## 1499     NA day2
+## 1500   0.47 day2
+## 1501     NA day2
+## 1502     NA day2
+## 1503   0.55 day2
+## 1504   0.94 day2
+## 1505   1.02 day2
+## 1506     NA day2
+## 1507     NA day2
+## 1508     NA day2
+## 1509     NA day2
+## 1510   0.64 day2
+## 1511   0.67 day2
+## 1512   1.87 day2
+## 1513     NA day2
+## 1514     NA day2
+## 1515   0.82 day2
+## 1516     NA day2
+## 1517     NA day2
+## 1518     NA day2
+## 1519     NA day2
+## 1520     NA day2
+## 1521     NA day2
+## 1522   0.64 day2
+## 1523     NA day2
+## 1524     NA day2
+## 1525     NA day2
+## 1526     NA day2
+## 1527   1.70 day2
+## 1528     NA day2
+## 1529   0.79 day2
+## 1530     NA day2
+## 1531   0.58 day2
+## 1532   0.11 day2
+## 1533     NA day2
+## 1534   2.42 day2
+## 1535     NA day2
+## 1536     NA day2
+## 1537     NA day2
+## 1538     NA day2
+## 1539     NA day2
+## 1540     NA day2
+## 1541     NA day2
+## 1542     NA day2
+## 1543     NA day2
+## 1544   0.00 day2
+## 1545   0.23 day2
+## 1546     NA day2
+## 1547     NA day2
+## 1548   0.85 day2
+## 1549   1.14 day2
+## 1550     NA day2
+## 1551   1.14 day2
+## 1552     NA day2
+## 1553     NA day2
+## 1554   0.26 day2
+## 1555     NA day2
+## 1556     NA day2
+## 1557     NA day2
+## 1558     NA day2
+## 1559     NA day2
+## 1560   0.14 day2
+## 1561     NA day2
+## 1562   1.14 day2
+## 1563   1.02 day2
+## 1564     NA day2
+## 1565   0.94 day2
+## 1566   0.55 day2
+## 1567     NA day2
+## 1568   1.11 day2
+## 1569     NA day2
+## 1570     NA day2
+## 1571     NA day2
+## 1572     NA day2
+## 1573     NA day2
+## 1574     NA day2
+## 1575   0.70 day2
+## 1576     NA day2
+## 1577     NA day2
+## 1578     NA day2
+## 1579   1.94 day2
+## 1580     NA day2
+## 1581     NA day2
+## 1582     NA day2
+## 1583   0.20 day2
+## 1584   3.44 day2
+## 1585   1.00 day2
+## 1586   0.91 day2
+## 1587     NA day2
+## 1588   1.58 day2
+## 1589   2.85 day2
+## 1590     NA day2
+## 1591   0.79 day2
+## 1592     NA day2
+## 1593   0.76 day2
+## 1594   0.56 day2
+## 1595   1.78 day2
+## 1596     NA day2
+## 1597   0.23 day2
+## 1598   1.35 day2
+## 1599   1.82 day2
+## 1600     NA day2
+## 1601   0.17 day2
+## 1602   1.70 day2
+## 1603     NA day2
+## 1604   1.32 day2
+## 1605   0.14 day2
+## 1606   0.94 day2
+## 1607   1.52 day2
+## 1608     NA day2
+## 1609     NA day2
+## 1610     NA day2
+## 1611   1.41 day2
+## 1612   0.32 day2
+## 1613   0.58 day2
+## 1614   0.44 day2
+## 1615     NA day2
+## 1616   0.94 day2
+## 1617   1.44 day2
+## 1618     NA day2
+## 1619     NA day2
+## 1620     NA day2</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="what-is-the-mode.html#cb153-1" tabindex="-1"></a><span class="fu">bartlett.test</span>(values<span class="sc">~</span>ind, <span class="at">data=</span>dlfsub1)</span></code></pre></div>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  values by ind
+## Bartlett&#39;s K-squared = 26.273, df = 1, p-value = 2.964e-07</code></pre>
+</div>
+<div id="brown-forsythe-test-of-equality-of-variance" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Brown-Forsythe test of equality of variance<a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Brown-Forsythe test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group medians. The test is considered to be robust against departures from normality and outliers.</p>
+<p>Brown, M. B., Forsythe. A. B. (1974a). The small sample behavior of some statistics which test the equality of several means. Technometrics, 16, 129-132.</p>
+<p>Dag, O., Dolgun, A., Konar, N.M. (2018). onewaytests: An R Package for One-Way Tests in Independent Groups Designs. The R Journal, 10:1, 175-199.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="what-is-the-mode.html#cb155-1" tabindex="-1"></a><span class="fu">library</span>(onewaytests) <span class="co"># install and activate the package</span></span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;onewaytests&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:psych&#39;:
+## 
+##     describe</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="what-is-the-mode.html#cb158-1" tabindex="-1"></a><span class="fu">bf.test</span>(values<span class="sc">~</span>ind, <span class="at">data=</span>dlfsub1)</span></code></pre></div>
+<pre><code>## 
+##   Brown-Forsythe Test (alpha = 0.05) 
+## ------------------------------------------------------------- 
+##   data : values and ind 
+## 
+##   statistic  : 225.7812 
+##   num df     : 1 
+##   denom df   : 580.6262 
+##   p.value    : 2.392677e-43 
+## 
+##   Result     : Difference is statistically significant. 
+## -------------------------------------------------------------</code></pre>
+</div>
+<div id="levenes-test-testing-for-assumption-of-normality-among-groups" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Levene’s Test: testing for assumption of normality among groups<a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Levene’s test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group means. The test is considered to be robust against departures from normality, but it is sensitive to the presence of outliers.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="what-is-the-mode.html#cb160-1" tabindex="-1"></a><span class="fu">leveneTest</span>(dlf<span class="sc">$</span>day1, dlf<span class="sc">$</span>day2)</span></code></pre></div>
+<pre><code>## Warning in leveneTest.default(dlf$day1, dlf$day2): dlf$day2 coerced to factor.</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
+##        Df F value    Pr(&gt;F)    
+## group 101  11.661 &lt; 2.2e-16 ***
+##       162                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>ANOTHER alternative Levene’s test</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="what-is-the-mode.html#cb163-1" tabindex="-1"></a><span class="co">#Levene&#39;s test for comparison of variances of exam scores in the two universities.</span></span>
+<span id="cb163-2"><a href="what-is-the-mode.html#cb163-2" tabindex="-1"></a></span>
+<span id="cb163-3"><a href="what-is-the-mode.html#cb163-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb163-4"><a href="what-is-the-mode.html#cb163-4" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb163-5"><a href="what-is-the-mode.html#cb163-5" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb163-6"><a href="what-is-the-mode.html#cb163-6" tabindex="-1"></a>RExam <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/RExam.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 100 Columns: 5
+## ── Column specification ──────────────────────────────────
+## Delimiter: &quot;,&quot;
+## dbl (5): exam, computer, lectures, numeracy, uni
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="what-is-the-mode.html#cb165-1" tabindex="-1"></a>rexam<span class="ot">=</span>RExam</span>
+<span id="cb165-2"><a href="what-is-the-mode.html#cb165-2" tabindex="-1"></a><span class="fu">head</span>(rexam)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##    exam computer lectures numeracy   uni
+##   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+## 1    18       54     75          7     0
+## 2    30       47      8.5        1     0
+## 3    40       58     69.5        6     0
+## 4    30       37     67          6     0
+## 5    40       53     44.5        2     0
+## 6    15       48     76.5        8     0</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="what-is-the-mode.html#cb167-1" tabindex="-1"></a><span class="fu">ggplot</span>(rexam, <span class="fu">aes</span>(numeracy, <span class="at">fill=</span><span class="fu">as.factor</span>(uni)))<span class="sc">+</span></span>
+<span id="cb167-2"><a href="what-is-the-mode.html#cb167-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
+<span id="cb167-3"><a href="what-is-the-mode.html#cb167-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>uni)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
+## `binwidth`.</code></pre>
+<p><img src="bookdownproj_files/figure-html/norm_22-1.png" width="672" /></p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="what-is-the-mode.html#cb169-1" tabindex="-1"></a><span class="fu">leveneTest</span>(rexam<span class="sc">$</span>lectures, rexam<span class="sc">$</span>uni, <span class="at">center=</span>median) <span class="co"># using the median as the center</span></span></code></pre></div>
+<pre><code>## Warning in leveneTest.default(rexam$lectures, rexam$uni, center = median):
+## rexam$uni coerced to factor.</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
+##       Df F value Pr(&gt;F)
+## group  1  1.4222 0.2359
+##       98</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="what-is-the-mode.html#cb172-1" tabindex="-1"></a><span class="fu">leveneTest</span>(rexam<span class="sc">$</span>lectures, rexam<span class="sc">$</span>uni, <span class="at">center =</span> mean) <span class="co"># using the mean as the center</span></span></code></pre></div>
+<pre><code>## Warning in leveneTest.default(rexam$lectures, rexam$uni, center = mean):
+## rexam$uni coerced to factor.</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = mean)
+##       Df F value Pr(&gt;F)
+## group  1  1.7306 0.1914
+##       98</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tests-of-normality-and-equality-of-variance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="non-parametric-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/07_Normality_Equality_var_tests.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/07_Normality_Equality_var_tests.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

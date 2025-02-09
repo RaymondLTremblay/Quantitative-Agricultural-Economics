@@ -1,12 +1,179 @@
-# Non-parametric test
+# Non-parametric tests
+
+What is a non-parametric test?
+
+Non-parametric tests are used when the assumptions of the parametric tests are violated. The assumptions of the parametric tests are:
+
+- The data is normally distributed
+- The variances of the groups are equal
+- The data is homoscedastic
+- The data is continuous
+- The data is independent (this should be part of all experimental design unless it is a repreated measures analysis)
+
+If the data does not meet these assumptions, then non-parametric tests should be used.
+
+The most common non-parametric tests are:
+
+- Wilcoxon signed-rank test (which is the non-parametric equivalent of the paired t-test)
+- Mann-Whitney U test (which is the non-parametric equivalent of the independent t-test)
+- Kruskal-Wallis test (which is the non-parametric equivalent of the one-way ANOVA; there is not non-parametric equivalent of the two-way ANOVA as far as I know). 
+- Friedman test (which is the non-parametric equivalent of the repeated measures ANOVA)
+- Spearman's rank correlation (which is the non-parametric equivalent of the Pearson's correlation)
+- Kendall's tau (which is another non-parametric correlation test)
+- Chi-square test (which is the non-parametric for count data)
+
+A common confusion when using non-parametric is that I see in many publications is that the authors use the mean and some measure of dispersion based on normality, such as mean, variance, standard deviation or standar error. This is not correct. If the data is normally distributed, then the parametric parameters should NOT be used. Instead, the median and the interquartile range should be used.
+
+The typical non-parametric test converts the data into ranks and then compares the ranks. Thus the original data is not used, but the ranks of the data. The ranks are used to compare the groups. 
+
+
+### Wilcoxon signed-rank test
+
+The Wilcoxon signed-rank test is the non-parametric equivalent of the paired t-test. It is used when the data is not normally distributed and the variances are not equal.
+
+The Wilcoxon signed-rank test is used to compare the median of two related groups. The null hypothesis is that the median of the two groups are equal. The alternative hypothesis is that the median of the two groups are not equal. These are individuals that were **RESAMPLED**. Thus 2 information from the same individual is compared.
+
+
+Let's compare the cleansiness of participants who participated at a Festival in the UKL, data on the first day and third day the festival.
+
+
+```{r}
+library(readr)
+DownloadFestival <- read_csv("Data/DownloadFestival.csv")
+
+Festival=DownloadFestival
+```
+
+active packages
+
+```{r}
+library(tidyverse)
+```
+
+First let use select the data for the first and third day of the festival and then remove all rows which have missing data. The data come from Field, Miles and Field (2012) "Discovering Statistics Using R".
+
+ - `day1`: Cleanliness of the festival on the first day
+ - `day3`: Cleanliness of the festival on the third day
+ 
+ The range of the data is from 0 to 4, where 0 is smells like dead corps and 4 you smell like roses.
+ 
+ Each row represents data from the SAME individual on the first and third day of the festival.
+
+
+```{r}
+Festival1=Festival %>% 
+  select(day1, day3) %>% 
+  na.omit()
+
+str(Festival1) # Observe the data
+
+summary(Festival1) # Observe the summary statistics
+```
+Now for the Wilcoxon signed-rank test, we can use the `wilcox.test()` function. The first argument is the first day of the festival, the second argument is the third day of the festival, and the `paired=TRUE` argument indicates that the data is paired.
+
+
+```{r}
+wilcox.test(Festival1$day1, Festival1$day3, paired=TRUE)
+```
+
+The p-value is 0.0001, which is less than 0.05, so we reject the null hypothesis that the median of the two groups are equal. Thus, the cleanliness of the festival on the first day is different from the cleanliness of the festival on the third day. 
+
+***
+
+
+### Mann-Whitney U test
+
+The Mann-Whitney U test is the non-parametric equivalent of the independent t-test. It is used when the data is not normally distributed and the variances are not equal.
+
+The Mann-Whitney U test is used to compare the median of two independent groups. The null hypothesis is that the median of the two groups are equal. The alternative hypothesis is that the median of the two groups are not equal. NOTE here no individual was resampled, but two different groups were compared and the data are independent.
+
+
+We can use the same function as above but **without** the `paired=TRUE` argument.
+```{r}
+wilcox.test(Festival1$day1, Festival1$day3)
+```
+Note that in this case it would be innapropriate to use this test as the data are not indpendent in this data set.  
+
+***
+
+### Kruskal-Wallis test
+
+The Kruskal-Wallis test is the non-parametric equivalent of the one-way ANOVA. It is used when the data is not normally distributed and the variances are not equal.  The Kruskal-Wallis test is used to compare the median of three or more independent groups. The null hypothesis is that the median of the three groups are equal. The alternative hypothesis is that the median of the three groups are not equal.
+
+
+Let's compare the seed production of Sorghum plants that were treated with different **Rust**. The data is from the file `Sorghum_2017_2018_Diseaase_traits.csv`. the variable needed are 
+
+ - Seedwt: Seed weight
+ - Rust: Rust treatment
+
+```{r}
+library(readr)
+Sorghum_2017_2018_Diseaase_traits <- read_csv("Data/Sorghum_2017_2018_Diseaase_traits.csv")
+
+Sorghum=Sorghum_2017_2018_Diseaase_traits
+
+Sorghum$Rust=as.factor(Sorghum$Rust) # convert "Rust" to a factor variable
+
+
+```
 
 
 
+The function kruskal.test() is used to perform the Kruskal-Wallis test. The first argument is the dependent variable, the second argument is the independent variable, and the data argument is the data frame.
+
+```{r}
+kruskal.test(Seedwt ~ Rust, data=Sorghum)
+```
 
 
-## Altenative to non-parametric tests
+***
 
-A very short intro to GLM (Generalized Linear Models) in R
+### Friedman test
+
+This test is the non-parametric equivalent of the repeated measures ANOVA.  The Friedman test is used to compare the median of three or more related groups. The null hypothesis is that the median of the three groups are equal. 
+
+FIND a Dataset
+
+
+***
+
+### Spearman's rank correlation
+
+The Spearman's rank correlation is the non-parametric equivalent of the Pearson's correlation. It is used when the data is not normally distributed and the variances are not equal. The Spearman's rank correlation is used to determine the strength and direction of the relationship between two variables. The null hypothesis is that there is no relationship between the two variables. The alternative hypothesis is that there is a relationship between the two variables.
+
+
+Using the Sorghum data, let's compare the relationship between the seed weight and the panicle Length.
+
+```{r}
+names(Sorghum)
+
+cor.test(Sorghum$Seedwt, Sorghum$'Pani Length', method="spearman")
+```
+
+
+***
+
+### Kendall's tau
+
+The Kendall's tau is another non-parametric correlation test. The Kendall's tau is used to determine the strength and direction of the relationship between two variables. Kendall's correlation is often used when sample size are small and appears to be robust under that situation where here are outliers and many tied ranks.
+
+
+```{r}
+cor.test(Sorghum$Seedwt, Sorghum$'Pani Length', method="kendall")
+```
+
+## Spearman vs Kendall correlations comparison 
+
+
+The difference between the Spearman's rank correlation and the Kendall's tau is that the Kendall's tau is based on the number of concordant and discordant pairs, while the Spearman's rank correlation is based on the difference between the ranks of the two variables. The Kendall's tau is more robust to outliers and tied ranks than the Spearman's rank correlation. While the Spearman's rank correlation is likely to give larger coefficients but easier to calculates.
+
+
+
+### Altenative to non-parametric tests
+
+It is important to note that uch of the statistical literature to deal with non-parametric data and the development of Non-parametric statistics was prior to the time of computers.  Now with comptuters many other approaches have been devlopped that can deal with non-parametric data and are usuallu more robust alternatives than non-parametric statistical apporaches.  
+
+See the following for a short intro to GLM (Generalized Linear Models) in R
 
 
 

@@ -147,9 +147,6 @@ Clean_df[complete.cases(Clean_df), ] # this will return all rows with NO missing
 
 
 
-
-
-
 ## Subsetting data set
 
 The function to subset a data frame is `filter`. This function is used to extract rows from a data frame that meet a certain condition. The syntax for the `filter` function is as follows:

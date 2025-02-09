@@ -206,7 +206,7 @@ https://en.wikipedia.org/wiki/Normal_distribution
 
 
 ```{r norm_12}
-# Ahora añadir la linea de distribución normal
+# Add a line to represent the normal distrubution
 
 hist.day1 + 
   stat_function(fun = dnorm, 
@@ -225,15 +225,7 @@ length(dlf$day1)
 
 
 
-
-
-
-
 Visualize the distribution of the data "Histogram"
-
-
-
-
 
 
 
@@ -246,7 +238,7 @@ df$Column = ifelse(df$column_to_be evaluated, replace_with_NA, otherwise_leave_a
 dlf$day1 <- ifelse(dlf$day1 > 5, NA, dlf$day1)
 
 
-# Note here that we use ..density..  # CUAL ES LA DIFERENCIA entre densidad y frecuencia?  
+# Note here that we use ..density..  # What is the difference between ..density.. and frequency?
 
 hist.day1 <- ggplot(dlf, aes(day1)) + 
   theme(legend.position = "none") + 
@@ -277,33 +269,34 @@ library(psych)		#load the "psych" library, if you haven't already, for the descr
 psych::describe(dlf$day2)
 
 ```
-Que es la varianza?
-The variance
+
+
+
+### What is the variance? 
+
+The variance is a measure of dispersion
 
 $$s^{ 2 }=\frac { \sum _{ i=1 }^{ n }{ (x_{ i }-\bar { x } ) } ^{ 2 } }{ n-1 } $$
 
-Que es la desviación estandard
+### What is the standard deviation?
 
-The standard deviation of the mean
+The standard deviation of the mean is a measure of the dispersion of the mean of the data. It is the square root of the variance.
+
 
 $$s=\sqrt { s^{ 2 } } $$
 
 
+# What is the mode?
 
 
+The mode is the value that appears most frequently in a data set. A set of data may have one mode, more than one mode, or no mode at all. The mode is one of the measures of CENTRAL TENDENCIES.  
+
+The package **modeest** has many functions to evaluate modes. 
+
+Note that in two of the data sets there are no SINGLE most common values, then it result that is return is NA. 
 
 
-
-
-
-
-
-Discover the Mode. The mode is the value that appears most frequently in a data set. A set of data may have one mode, more than one mode, or no mode at all. The mode is one of the measures of CENTRAL TENDENCIES.  
-
-The package modeest has many functions to evaluate modes. Note that in this case when there are no SINGLE most common values, then it result that is return is NA. 
-
-
-```{r norm_15}
+```{r norm_15, warning=FALSE}
 # the mode
 library(modeest)
 
@@ -318,18 +311,20 @@ mfv(dlf$day3, method="mfv")
 
 
 
-Test of normality, Shapiro Wilks Test
+## Test of normality, Shapiro Wilks Test
 
 ```{r norm_16}
 
 library(pastecs)
 stat.desc(dlf$day3, basic = FALSE, norm = TRUE) # "norm=TRUE"" is to calculate the Shapiro Wilk Test
 ```
+We can evaluate the normality of multiple variables at the same time using the following code:
 
+Note here we use [,], where the inside the square brackets we specify the variables we want to evaluate. Before the comma, we specify the rows we want to evaluate and after the comma, we specify the columns we want to evaluate.
 
 
 ```{r norm_17}
-round(stat.desc(dlf[, c("day1", "day2", "day3")], basic = FALSE, norm = TRUE), digits = 3)
+round(stat.desc(dlf[, c("day1", "day2", "day3")], basic = FALSE, norm = TRUE), digits = 4)
 
 ```
 
@@ -337,7 +332,7 @@ round(stat.desc(dlf[, c("day1", "day2", "day3")], basic = FALSE, norm = TRUE), d
 
 
 
-# Tests of Equality of variances
+## Tests of Equality of variances
 
 
 
@@ -347,7 +342,7 @@ The Levene's test is a test of the null hypothesis that the variances in the dif
 
 ### The F-test of equality of variance
 
-The F-test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the ratio of the variances in the different groups. This test is EXTREMELY sensitive to non-normality and outliers. Consequently the F-test is considered to be less robust than the Levene's test, Bartlett's test or the Brown-Forsythe test .
+The F-test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the ratio of the variances in the different groups. This test is **EXTREMELY** sensitive to non-normality and outliers. Consequently the F-test is considered to be less robust than the Levene's test, Bartlett's test or the Brown-Forsythe test. It is NOT recommended to use the F-test for testing the equality of variances.
 
 
 
@@ -369,12 +364,12 @@ Bartlett, M. S. (1937). Properties of sufficiency and statistical tests. Proceed
 
 
 
-Note: that the data needs to be manipulated so it appear in in the long form
+Note: that the data needs to be manipulated so it appear in the long form
 
 
 ```{r, norm_19}
 
-subset(dlf, select = c("day1", "day2")) -> dlfsub # create a subset of the data you need
+subset(dlf, select = c("day1", "day2")) -> dlfsub # create a subset of the data
 
 
 
@@ -424,6 +419,7 @@ ANOTHER alternative Levene's test
 
 ```{r norm_22}
 #Levene's test for comparison of variances of exam scores in the two universities.
+
 library(ggplot2)
 library(car)
 library(readr)

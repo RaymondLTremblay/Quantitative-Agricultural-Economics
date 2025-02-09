@@ -1,16 +1,153 @@
-# Understanding your data
+# Understanding your file data strutcture
 
+## Introduction
+
+Every data analysis project starts with understanding the data. This includes understanding the dimensions of the data, the structure of the data, the levels of the variables, and the relationships between the variables. In this chapter, we will learn how to evaluate the data and understand the data.
 
 ## Functions to evaluate your data
 
+The following functions can be used to evaluate the data:
 
-## dimensions of the data
+- `dim()`: This function returns the dimensions of the data.
+- `str()`: This function returns the structure of the data.
+- `levels()`: This function returns the levels of the variables.
+- `summary()`: This function returns the summary of the data.
+- `head()`: This function returns the first 6 rows of the data.
+- `tail()`: This function returns the last f6 rows of the data.
+
+## Example
+
+Let us look at an example to understand the data.
 
 
-## structure of the data
+https://catalog.data.gov/dataset/data-from-correlations-among-agronomic-traits-obtained-from-sorghum-accessions-planted-in-
+
+Data based on a total of 179 sorghum accessions from Ethiopia, Gambia, and Senegal maintained by the USDA-ARS, Plant Genetic Resources Conservation Unit, Griffin, Georgia, USA, and planted in replicated plots in Isabela, Puerto Rico. Data for anthracnose, grain mold and rust infections with various agronomic traits such as anthracnose, grain mold, rust, seed weight, percent germination rate, and grain yield, seed weight, panicle height, panicle length, and flowering time were collected in 2017 and 2018 by L. K. Prom, H. Cuevas, E. Ahn, T. S. Isakeit, and C. W. Magill. The disease rating was based on previously published scale of 1 to 5. Seed weight in grams was based on the weight of 100 randomly selected seeds from each replication. Percent germination based on the number of seeds that germinated out of 100 seeds placed on germination paper. At maturity, plant height was measured from the soil to the top of the plant in centimeters, and panicle length was measured from the first branch with racemes to the top of the panicle. Grain yield in grams was based on three harvested panicles per accession, and each panicle was threshed and weighed in grams. The flowering date was based on Julian days. (this section was copied from DATA.gov, the above link).
 
 
-## Levels of the variables
+Load the data
+
+```{r}
+library(readr)
+Sorghum_2017_2018_Diseaase_traits <- read_csv("Data/Sorghum_2017_2018_Diseaase_traits.csv")
+
+Sorghum=Sorghum_2017_2018_Diseaase_traits
+```
+
+### Dimensions of the data
+
+```{r}
+dim(Sorghum) # number of rows (2412) and number of columns (10)
+```
+
+### Structure of the data
+
+Note here we are using the `str()` function to understand the structure of the data. This function provides the structure of the data, including the variables and their types.
+
+- `int`: Integer
+- `dbl`: Double
+- `chr`: Character
+- `fct`: Factor
+- `dttm`: Date time
+- `lgl`: Logical
+- `date`: Date
+- `time`: Time
+- `hms`: Hours, minutes, seconds
+ - and others
+ 
+ Using str() function to understand the structure of the data, you will see the first data points for each variable, and the type of the variable.
+
+
+```{r}
+str(Sorghum)
+```
+
+
+### Recoding variables
+
+The variable is mis coded as a numeric variable where **Rust** represent different types of **Rust**, thus this variable should be recoded as a factor variable. 
+
+```{r}
+Sorghum$Rust=as.factor(Sorghum$Rust)
+
+str(Sorghum) # note now the variable **Rust** is a factor variable.
+```
+ 
+
+
+
+### Levels of the variables
+
+
+The levels of variables refer to the unique values of the variables. The `levels()` function can be used to get the levels of the variables.
+
+For example the levels of the variable `Cultivar` can be obtained as follows:
+
+```{r}
+levels(Sorghum$Rust) # since the variable Rust is a factor variable, we can get the levels of the variable Rust.
+
+# However if the variable is not a factor variable, we can convert it to a factor variable and then get the levels of the variable.
+
+Sorghum$Cultivar=as.factor(Sorghum$Cultivar)
+
+head(levels(Sorghum$Cultivar)) # levels of the variable Cultivar, showing only the first six levels
+```
+
+
+
+
+Another miss coded variable is the variable is the **Julain days**, however, but the information is not the **Julian days** which would be the number of days that have passed since the first day since January 1, 4713 BC. What the authors have in the number of the consecutive days since the 1st January of that year.
+
+ Thus we need to do the follwoing two steps:
+ 
+ - change the name to `Consecutive_days`
+ - change the `Consecutive_days` to be more informative by converting it to a date variable.
+ 
+```{r}
+Sorghum$Consecutive_days=Sorghum$"Julian days"
+
+Sorghum$Consecutive_days=as.Date("2017-01-01")+ Sorghum$Consecutive_days-1
+
+
+str(Sorghum) # note now the variable **Consecutive_days** is a date variable.
+```
+ 
+
+
+
+
+### Summary of the data
+
+The function `summary()` can be used to get a synopsis of the description of each variable.
+
+The summary function includes the following output
+
+- `Min`: Minimum value
+- `1st Qu`: First quartile
+- `Median`: Median value
+- `Mean`: Mean value
+- `3rd Qu`: Third quartile
+- `Max`: Maximum value
+- `NA's`: Number of missing values
+
+
+```{r}
+summary(Sorghum)
+```
+
+
+
+
+### First and lat rows few rows of the data
+
+```{r}
+head(Sorghum) # first few rows of the data
+
+tail(Sorghum) # last few rows of the data
+
+head(Sorghum, 10) # first 10 rows of the data, you change the output to any number of rows you want to see.
+```
+
 
 
 

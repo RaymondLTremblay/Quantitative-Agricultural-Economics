@@ -1,0 +1,512 @@
+head(dipodium, n=4)
+#head(dipodium)
+library(tidyverse)
+dipodium3= dipodium |>
+select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+mutate(propfr=perc_fr_set+0.0001) |>
+drop_na()# solucionar para remover los cero
+dipodium_clean_names=clean_names(dipodium) # clean the names of the variables
+library(janitor)
+dipodium_clean_names=clean_names(dipodium) # clean the names of the variables
+dipodium_clean_names
+dipodium_clean_names |>
+select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+mutate(propfr=perc_fr_set+0.0001) |>
+drop_na()
+dipodium2= dipodium_clean_names |>
+select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+mutate(propfr=perc_fr_set+0.0001) |>
+drop_na()# solucionar para remover los cero
+head(dipodium2)
+modelpropFr=betareg(propfr~number_of_flowers+height_inflo+distance, data =dipodium2)
+summary(modelpropFr)
+dipodium_clean_names
+head(dipodium2)
+library(betareg) # El paquete para hacer regresión beta
+library(ggversa) # paquete para los datos
+attach(dipodium)
+head(dipodium, n=4)
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(conflicted)
+conflicts_prefer(lubridate::minute, lubridate::second)
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+axis.text.x = element_text(colour="grey20",size=15, face="bold"),
+axis.text.y = element_text(colour="grey20",size=15,face="bold"),
+axis.title.x = element_text(colour="grey20",size=15,face="bold"))+
+theme_bw()
+library(ggversa)
+#Edu_Salud_Gastos_GDP
+ggplot(Edu_Salud_Gastos_GDP, aes(Gasto_Salud_percapita, Porc_Ninas_no_escuela))+
+geom_point()+
+geom_smooth(method = lm)+
+xlab("Per capita public health spending")+
+ylab("Percentage of girls not going to school")
+library(tidyverse)
+library(ggplot2)
+library(betareg)
+library(gt)
+b1 <- seq(0, 1, by = 0.01)
+by2_5 <- dbeta(b1, shape1 = 2, shape2 = 5)
+#by2_5
+by8_1_5 <- dbeta(b1, shape1 = 8, shape2 = 1.5)
+#by5_1
+by_5 <- dbeta(b1, shape1 = .5, shape2 = .5)
+#by_5
+by_2_2 <- dbeta(b1, shape1 = 2, shape2 = 2)
+#by_2_2
+betad=cbind(b1, by8_1_5, by2_5, by_5, by_2_2) # join the data
+betad=as_tibble(betad) # convert the data to a tibble for easier manipulation
+#gt(head(betad))
+betadj=gather(betad, "by2_5", "by8_1_5", "by_5", "by_2_2" ,key="beta_shapes", value="cases") # convert the data to long format
+#betadj
+#plot(by_5)
+library(ggplot2)
+ggplot(betadj, aes(b1, cases, colour=beta_shapes))+
+geom_line()+
+ylim(0, 5)+
+scale_colour_discrete(name = "Beta_Shapes", labels = c("Shape 2 y 2", "Shape .5 y .5", "Shape 2 y 5", "Shape 8 y 1.5"))
+library(readr)
+Proportion_smokers_world <- read_csv("Data/Proportion_smokers_world.csv")
+Smokers=Proportion_smokers_world
+gt(head(Smokers))
+Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
+Smokers %>% dplyr::select(Country_Name, Y2000P)
+estBetaParams <- function(mu, var) {
+alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+beta <- alpha * (1 / mu - 1)
+return(params = list(alpha = alpha, beta = beta))
+}
+#mean(Smokers$Y2000P)
+#var(Smokers$Y2000P)
+estBetaParams((mean(Smokers$Y2000P)), (var(Smokers$Y2000P)))
+Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
+x <- seq(0, 1, len = 100)
+#mean(Smokers$Y2000P)
+#var(Smokers$Y2000P)
+ggplot(Smokers, aes(Y2000P))+
+geom_histogram(aes(y=..density..), colour="white", fill="grey50")+
+stat_function(aes(x = Smokers$Y2000P, y = ..y..), fun = dbeta, colour="red", n = 100,
+args = list(shape1 = 3.593, shape2 = 9.185))+
+stat_function(fun = dnorm,
+args = list(mean = mean(Smokers$Y2000P, na.rm = TRUE),
+sd = sd(Smokers$Y2000P, na.rm = TRUE)),
+colour = "green", size = 1)+
+xlab("Proporción de fumadores de mayor \n de 15 años por Pais")+
+ylab("Densidad")+
+annotate("text", x = .5, y = 4.2, label = "Verde: dist Normal", color="darkgreen")+
+annotate("text", x = .5, y = 3.7, label = "Verde: dist Beta", color="red")+
+xlim(-0.1, 0.9)
+library(simpleboot)
+library(boot) # package to calculate the confidence interval of a beta distribution
+n=187 # The smaple size of the data set.
+alpha = 3.593 # The alpha parameter
+beta = 9.185 # the beta parameter
+x = rbeta(n, alpha, beta)
+x.boot = one.boot(x, median, R=10^4) # Here we use the median as the central tendency because the *mean* is bias to the right
+boot.ci(x.boot, type="bca")
+ggplot(Smokers, aes(Y2000P))+
+geom_histogram(aes(y=..density..), bins=20, colour="white", fill="grey50")+
+stat_function(aes(x = Smokers$Y2000P, y = ..y..), fun = dbeta, colour="red", n = 100,
+args = list(shape1 = 3.593, shape2 = 9.185))+
+geom_vline(xintercept =0.2320, colour="blue")+ # the confidence interval, lower limit
+geom_vline(xintercept =0.2768, colour="blue")+ # the confidence interval, upper limit
+rlt_theme+
+xlab("Proportion of smokers over 15 years old by country")
+library(betareg) # El paquete para hacer regresión beta
+library(ggversa) # paquete para los datos
+attach(dipodium)
+head(dipodium, n=4)
+#head(dipodium)
+library(tidyverse)
+library(janitor)
+dipodium_clean_names=clean_names(dipodium) # clean the names of the variables
+dipodium2= dipodium_clean_names |>
+select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+mutate(propfr=perc_fr_set+0.0001) |>
+drop_na()# solucionar para remover los cero
+head(dipodium2)
+modelpropFr=betareg(propfr~number_of_flowers+height_inflo+distance, data =dipodium2)
+summary(modelpropFr)
+dipodiumbeta=dipodium2[,c("Number_of_Flowers","PropFR")] # Create a df with only the variables of interest
+dipodiumbeta=dipodium2[,c("number_of_flowers","propfr")] # Create a df with only the variables of interest
+dp2=dipodiumbeta[complete.cases(dipodiumbeta),] # remove all "NA"
+modelpropFr=betareg(propfr~number_of_flowers, data=dp2) # The beta model using **betareg**
+summary(modelpropFr)
+predict(modelpropFr, type = "response") # calculate the predicted values
+dp2$response=predict(modelpropFr, type = "response")
+dp2$precision=predict(modelpropFr, type = "precision")
+dp2$variance=predict(modelpropFr, type = "variance")
+dp2$quantile_.01=predict(modelpropFr, type = "quantile", at = c(0.01)) # calculate the quantiles of 1%
+dp2$quantile_.05=predict(modelpropFr, type = "quantile", at = c(0.05))
+dp2$quantile_.10=predict(modelpropFr, type = "quantile", at = c(0.10)) # calculate the quantiles of 10%
+dp2$quantile_.15=predict(modelpropFr, type = "quantile", at = c(0.15))
+dp2$quantile_.20=predict(modelpropFr, type = "quantile", at = c(0.20))
+dp2$quantile_.25=predict(modelpropFr, type = "quantile", at = c(0.25))
+dp2$quantile_.30=predict(modelpropFr, type = "quantile", at = c(0.30))
+dp2$quantile_.35=predict(modelpropFr, type = "quantile", at = c(0.35))
+dp2$quantile_.40=predict(modelpropFr, type = "quantile", at = c(0.40))
+dp2$quantile_.45=predict(modelpropFr, type = "quantile", at = c(0.45))
+dp2$quantile_.50=predict(modelpropFr, type = "quantile", at = c(0.50)) # calculate the quantiles of 50% (the median)
+dp2$quantile_.55=predict(modelpropFr, type = "quantile", at = c(0.55))
+dp2$quantile_.60=predict(modelpropFr, type = "quantile", at = c(0.60))
+dp2$quantile_.65=predict(modelpropFr, type = "quantile", at = c(0.65))
+dp2$quantile_.70=predict(modelpropFr, type = "quantile", at = c(0.70))
+dp2$quantile_.75=predict(modelpropFr, type = "quantile", at = c(0.75))
+dp2$quantile_.80=predict(modelpropFr, type = "quantile", at = c(0.80))
+dp2$quantile_.85=predict(modelpropFr, type = "quantile", at = c(0.85))
+dp2$quantile_.90=predict(modelpropFr, type = "quantile", at = c(0.90)) # calculate the quantiles of 90%
+dp2$quantile_.95=predict(modelpropFr, type = "quantile", at = c(0.95))
+dp2$quantile_.99=predict(modelpropFr, type = "quantile", at = c(0.99)) # calculate the quantiles of 99%
+dp2
+library(ggplot2)
+ggplot(dp2, aes(x=number_of_flowers, y=propfr))+
+geom_point()+
+geom_line(aes(y=quantile_.05), linetype="twodash", colour="blue")+
+geom_line(aes(y=quantile_.25),linetype=2, colour="green")+
+geom_line(aes(y=quantile_.50), colour="red")+
+geom_line(aes(y=quantile_.75), linetype=2, colour="green")+
+geom_line(aes(y=quantile_.95), linetype="twodash", colour="blue")+
+ylab("Predicción de la proporción de frutos")+
+xlab("Números de Flores")+
+annotate("text", x=25, y=0.50, label="95th quartile", fontface="italic")+
+annotate("text", x=32, y=0.39, label="75th quartile", fontface="italic")+
+annotate("text", x=33, y=0.14, label="25th quartile", fontface="italic")+
+annotate("text", x=33, y=0.27, label="Median", fontface="italic")+
+annotate("text", x=35, y=-0.02, label="5th quartile", fontface="italic")+
+theme(axis.title.y = element_text(colour="grey20",size=20,face="bold"),
+axis.text.x = element_text(colour="grey20",size=20,face="bold"),
+axis.text.y = element_text(colour="grey20",size=20,face="bold"),
+axis.title.x = element_text(colour="grey20",size=20,face="bold"))+
+theme(legend.position="none")+
+rlt_theme
+ggsave("Figures/Beta_number_flowers.png")
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(conflicted)
+conflicts_prefer(lubridate::minute, lubridate::second)
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+axis.text.x = element_text(colour="grey20",size=15, face="bold"),
+axis.text.y = element_text(colour="grey20",size=15,face="bold"),
+axis.title.x = element_text(colour="grey20",size=15,face="bold"))+
+theme_bw()
+library(ggversa)
+#Edu_Salud_Gastos_GDP
+ggplot(Edu_Salud_Gastos_GDP, aes(Gasto_Salud_percapita, Porc_Ninas_no_escuela))+
+geom_point()+
+geom_smooth(method = lm)+
+xlab("Per capita public health spending")+
+ylab("Percentage of girls not going to school")
+library(tidyverse)
+library(ggplot2)
+library(betareg)
+library(gt)
+b1 <- seq(0, 1, by = 0.01)
+by2_5 <- dbeta(b1, shape1 = 2, shape2 = 5)
+#by2_5
+by8_1_5 <- dbeta(b1, shape1 = 8, shape2 = 1.5)
+#by5_1
+by_5 <- dbeta(b1, shape1 = .5, shape2 = .5)
+#by_5
+by_2_2 <- dbeta(b1, shape1 = 2, shape2 = 2)
+#by_2_2
+betad=cbind(b1, by8_1_5, by2_5, by_5, by_2_2) # join the data
+betad=as_tibble(betad) # convert the data to a tibble for easier manipulation
+#gt(head(betad))
+betadj=gather(betad, "by2_5", "by8_1_5", "by_5", "by_2_2" ,key="beta_shapes", value="cases") # convert the data to long format
+#betadj
+#plot(by_5)
+library(ggplot2)
+ggplot(betadj, aes(b1, cases, colour=beta_shapes))+
+geom_line()+
+ylim(0, 5)+
+scale_colour_discrete(name = "Beta_Shapes", labels = c("Shape 2 y 2", "Shape .5 y .5", "Shape 2 y 5", "Shape 8 y 1.5"))
+library(readr)
+Proportion_smokers_world <- read_csv("Data/Proportion_smokers_world.csv")
+Smokers=Proportion_smokers_world
+gt(head(Smokers))
+Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
+Smokers %>% dplyr::select(Country_Name, Y2000P)
+estBetaParams <- function(mu, var) {
+alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+beta <- alpha * (1 / mu - 1)
+return(params = list(alpha = alpha, beta = beta))
+}
+#mean(Smokers$Y2000P)
+#var(Smokers$Y2000P)
+estBetaParams((mean(Smokers$Y2000P)), (var(Smokers$Y2000P)))
+Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
+x <- seq(0, 1, len = 100)
+#mean(Smokers$Y2000P)
+#var(Smokers$Y2000P)
+ggplot(Smokers, aes(Y2000P))+
+geom_histogram(aes(y=..density..), colour="white", fill="grey50")+
+stat_function(aes(x = Smokers$Y2000P, y = ..y..), fun = dbeta, colour="red", n = 100,
+args = list(shape1 = 3.593, shape2 = 9.185))+
+stat_function(fun = dnorm,
+args = list(mean = mean(Smokers$Y2000P, na.rm = TRUE),
+sd = sd(Smokers$Y2000P, na.rm = TRUE)),
+colour = "green", size = 1)+
+xlab("Proporción de fumadores de mayor \n de 15 años por Pais")+
+ylab("Densidad")+
+annotate("text", x = .5, y = 4.2, label = "Verde: dist Normal", color="darkgreen")+
+annotate("text", x = .5, y = 3.7, label = "Verde: dist Beta", color="red")+
+xlim(-0.1, 0.9)
+library(simpleboot)
+library(boot) # package to calculate the confidence interval of a beta distribution
+n=187 # The smaple size of the data set.
+alpha = 3.593 # The alpha parameter
+beta = 9.185 # the beta parameter
+x = rbeta(n, alpha, beta)
+x.boot = one.boot(x, median, R=10^4) # Here we use the median as the central tendency because the *mean* is bias to the right
+boot.ci(x.boot, type="bca")
+ggplot(Smokers, aes(Y2000P))+
+geom_histogram(aes(y=..density..), bins=20, colour="white", fill="grey50")+
+stat_function(aes(x = Smokers$Y2000P, y = ..y..), fun = dbeta, colour="red", n = 100,
+args = list(shape1 = 3.593, shape2 = 9.185))+
+geom_vline(xintercept =0.2320, colour="blue")+ # the confidence interval, lower limit
+geom_vline(xintercept =0.2768, colour="blue")+ # the confidence interval, upper limit
+rlt_theme+
+xlab("Proportion of smokers over 15 years old by country")
+library(betareg) # El paquete para hacer regresión beta
+library(ggversa) # paquete para los datos
+attach(dipodium)
+head(dipodium, n=4)
+#head(dipodium)
+library(tidyverse)
+library(janitor)
+dipodium_clean_names=clean_names(dipodium) # clean the names of the variables
+dipodium2= dipodium_clean_names |>
+select(perc_fr_set, number_of_flowers, height_inflo, distance) |>
+mutate(propfr=perc_fr_set+0.0001) |>
+drop_na()# solucionar para remover los cero
+head(dipodium2)
+modelpropFr=betareg(propfr~number_of_flowers+height_inflo+distance, data =dipodium2)
+summary(modelpropFr)
+dipodiumbeta=dipodium2[,c("number_of_flowers","propfr")] # Create a df with only the variables of interest
+dp2=dipodiumbeta[complete.cases(dipodiumbeta),] # remove all "NA"
+modelpropFr=betareg(propfr~number_of_flowers, data=dp2) # The beta model using **betareg**
+summary(modelpropFr)
+predict(modelpropFr, type = "response") # calculate the predicted values
+dp2$response=predict(modelpropFr, type = "response")
+dp2$precision=predict(modelpropFr, type = "precision")
+dp2$variance=predict(modelpropFr, type = "variance")
+dp2$quantile_.01=predict(modelpropFr, type = "quantile", at = c(0.01)) # calculate the quantiles of 1%
+dp2$quantile_.05=predict(modelpropFr, type = "quantile", at = c(0.05))
+dp2$quantile_.10=predict(modelpropFr, type = "quantile", at = c(0.10)) # calculate the quantiles of 10%
+dp2$quantile_.15=predict(modelpropFr, type = "quantile", at = c(0.15))
+dp2$quantile_.20=predict(modelpropFr, type = "quantile", at = c(0.20))
+dp2$quantile_.25=predict(modelpropFr, type = "quantile", at = c(0.25))
+dp2$quantile_.30=predict(modelpropFr, type = "quantile", at = c(0.30))
+dp2$quantile_.35=predict(modelpropFr, type = "quantile", at = c(0.35))
+dp2$quantile_.40=predict(modelpropFr, type = "quantile", at = c(0.40))
+dp2$quantile_.45=predict(modelpropFr, type = "quantile", at = c(0.45))
+dp2$quantile_.50=predict(modelpropFr, type = "quantile", at = c(0.50)) # calculate the quantiles of 50% (the median)
+dp2$quantile_.55=predict(modelpropFr, type = "quantile", at = c(0.55))
+dp2$quantile_.60=predict(modelpropFr, type = "quantile", at = c(0.60))
+dp2$quantile_.65=predict(modelpropFr, type = "quantile", at = c(0.65))
+dp2$quantile_.70=predict(modelpropFr, type = "quantile", at = c(0.70))
+dp2$quantile_.75=predict(modelpropFr, type = "quantile", at = c(0.75))
+dp2$quantile_.80=predict(modelpropFr, type = "quantile", at = c(0.80))
+dp2$quantile_.85=predict(modelpropFr, type = "quantile", at = c(0.85))
+dp2$quantile_.90=predict(modelpropFr, type = "quantile", at = c(0.90)) # calculate the quantiles of 90%
+dp2$quantile_.95=predict(modelpropFr, type = "quantile", at = c(0.95))
+dp2$quantile_.99=predict(modelpropFr, type = "quantile", at = c(0.99)) # calculate the quantiles of 99%
+dp2
+library(ggplot2)
+ggplot(dp2, aes(x=number_of_flowers, y=propfr))+
+geom_point()+
+geom_line(aes(y=quantile_.05), linetype="twodash", colour="blue")+
+geom_line(aes(y=quantile_.25),linetype=2, colour="green")+
+geom_line(aes(y=quantile_.50), colour="red")+
+geom_line(aes(y=quantile_.75), linetype=2, colour="green")+
+geom_line(aes(y=quantile_.95), linetype="twodash", colour="blue")+
+ylab("Predicción de la proporción de frutos")+
+xlab("Números de Flores")+
+annotate("text", x=25, y=0.50, label="95th quartile", fontface="italic")+
+annotate("text", x=32, y=0.39, label="75th quartile", fontface="italic")+
+annotate("text", x=33, y=0.14, label="25th quartile", fontface="italic")+
+annotate("text", x=33, y=0.27, label="Median", fontface="italic")+
+annotate("text", x=35, y=-0.02, label="5th quartile", fontface="italic")+
+theme(axis.title.y = element_text(colour="grey20",size=20,face="bold"),
+axis.text.x = element_text(colour="grey20",size=20,face="bold"),
+axis.text.y = element_text(colour="grey20",size=20,face="bold"),
+axis.title.x = element_text(colour="grey20",size=20,face="bold"))+
+theme(legend.position="none")+
+rlt_theme
+ggsave("Figures/Beta_number_flowers.png")
+#AIC(modelpropFr) # modelo beta
+modelpropFr_lm=lm(propfr~number_of_flowers, data=dp2)
+AIC(modelpropFr,modelpropFr_lm)
+dpQ=dp2 %>%
+dplyr::select(c(1, 6:26))
+dpQ2=dpQ%>%
+dplyr::filter(number_of_flowers== 35) %>%
+dplyr::select(c(2:22))%>%
+t %>%
+as.data.frame
+dpQ2$Quartiles=c(.01, 0.05, .1, .15, .2, .25, .30, .35, .4, .45, .5, .55, .6, .65,  .7,.75, .8, .85, .9, .95, .99 )
+mean(dpQ2$V1, na.rm=FALSE)
+var(dpQ2$V1, na.rm=FALSE)
+#dpQ2
+ggplot(dpQ2, aes(Quartiles, V1))+
+geom_line()
+estBetaParams <- function(mu, var) {
+alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+beta <- alpha * (1 / mu - 1)
+return(params = list(alpha = alpha, beta = beta))
+}
+#mean(Smokers$Y2000P)
+#var(Smokers$Y2000P)
+estBetaParams(0.2757771,0.04226223)
+library(gridExtra)
+a=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="red", n = 62,
+args = list(shape1 =0.5418068, shape2 =3.135593))+
+ylab("Beta \nDensity")+
+xlab("Probabilidad de tener frutos")+
+coord_cartesian(xlim=c(0,0.05))+
+ggtitle("Densidad beta para plantas con 25 flores")
+b=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="blue", n = 62,
+args = list(shape1 = 0.7549048, shape2 =2.949404))+
+ylab("Beta \nDensity")+
+xlab("Probabilidad de tener frutos")+
+coord_cartesian(xlim=c(0,0.1))+
+ggtitle("Densidad beta para plantas con 30 flores")
+c=ggplot(dipodium2, aes(propfr))+
+stat_function(aes(x = dipodium2$propfr, y = ..y..), fun = dbeta, colour="black", n = 62,
+args = list(shape1 = 1.027498, shape2 =2.698331))+
+ylab("Beta \nDensity")+
+xlab("Probabilidad de tener frutos")+
+coord_cartesian(xlim=c(0,0.10))+
+ggtitle("Densidad beta para plantas con 35 flores")
+tresDensidad=grid.arrange(a,b,c, ncol=1)
+tresDensidad
+ggsave("Figures/tresDensidad.png")
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse,  huxtable, wakefield, SuppDists,univariateML, invgamma, conflicted)
+detach("package:conflicted", unload=TRUE)
+detach("package:data.table", unload=TRUE)
+detach("package:wakefield", unload = TRUE)
+detach("package:lubridate", unload = TRUE)
+library(readr)
+DominicanRepublic <- read_csv("Data/DominicanRepublic.csv")
+head(DominicanRepublic)
+library(readxl)
+melocactus <- read_excel("Data/melocactus.xlsx",
+sheet = "datos")
+head(melocactus) # data from the melocactus in Puerto Rico, note the data is in Spanish and that the sheet called "datos" is read, this is the 3rd sheet in the excel file.
+library(data.table)
+Titanic=read_table(list.files(".", "Titanic.txt")[1]) # Note that .txt files CANNOT be read from within a folder (thus you cannot have it in the DATA folder) .txt file is a really old format and it is not recommended to use it, you should convert it to a .csv file.
+head(Titanic)
+list.files() # this will list the files in the folder
+library(haven)
+library(haven)
+Lelto_George <- read_sav("Data/Lelto-George .sav")
+head(Lelto_George)
+library(tibble)
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth", ~"Place of Birth",
+"Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+"Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles")
+Dirty_data
+library(tibble)
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth of the Individual", ~"Place of Birth",
+"Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+"Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles")
+Dirty_data
+library(janitor)
+Clean_df=clean_names(Dirty_data)
+Clean_df
+library(tibble)
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth", ~"Place of Birth",
+"Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+"Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles")
+Dirty_data
+library(janitor)
+Clean_df=clean_names(Dirty_data)
+Clean_df
+library(dplyr)
+Clean_df <- Clean_df %>% rename(first_name = name)
+Clean_df
+library(dplyr)
+clean_df <- clean_df %>% select(-age)
+library(dplyr)
+Clean_df <- Clean_df %>% select(-age)
+Clean_df <- Clean_df %>% select(-age_2)
+Clean_df # observe the change in the data frame
+library(forcats)
+library(forcats)
+Clean_df$place_of_birth <- fct_recode(Clean_df$place_of_birth,
+"NY" = "New York City Manhathan",
+"LA" = "Los Angeles")
+Clean_df # observe the change in the data frame, now the names of the cities are recoded
+library(tibble)
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth", ~"Place of Birth",
+"Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+"Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles",
+"Charlie", 35, 1.90, .90, "1987-01-01", NA)
+Dirty_data
+library(janitor)
+Clean_df=clean_names(Dirty_data)
+Clean_df
+library(dplyr)
+Clean_df <- Clean_df %>% rename(first_name = name)
+Clean_df # observe the change in the name of the variable
+library(dplyr)
+Clean_df <- Clean_df %>% select(-age_2)
+Clean_df # observe the change in the data frame, now the column is removed
+library(forcats)
+Clean_df$place_of_birth <- fct_recode(Clean_df$place_of_birth,
+"NY" = "New York City Manhathan",
+"LA" = "Los Angeles")
+Clean_df # observe the change in the data frame, now the names of the cities are recoded
+is.na(Clean_df) # this will return a logical vector indicating whether each element in the data frame is missing or not
+summary(Clean_df) # this will return a summary of the data frame, including the number of missing values in each variable
+library(tibble)
+Dirty_data=tribble(~"Name", ~"Age ^2", ~"Height (m)", ~"% of value", ~"Date of Birth", ~"Place of Birth",
+"Alice", 25, 1.70, .70, "1997-01-01", "New York City Manhathan",
+"Bob", 30, 1.80, .80, "1992-01-01", "Los Angeles",
+"Charlie", 35, NA, .90, "1987-01-01", NA)
+Dirty_data
+library(janitor)
+Clean_df=clean_names(Dirty_data)
+Clean_df
+library(dplyr)
+Clean_df <- Clean_df %>% rename(first_name = name)
+Clean_df # observe the change in the name of the variable
+library(dplyr)
+Clean_df <- Clean_df %>% select(-age_2)
+Clean_df # observe the change in the data frame, now the column is removed
+library(forcats)
+Clean_df$place_of_birth <- fct_recode(Clean_df$place_of_birth,
+"NY" = "New York City Manhathan",
+"LA" = "Los Angeles")
+Clean_df # observe the change in the data frame, now the names of the cities are recoded
+is.na(Clean_df) # this will return a logical vector indicating whether each element in the data frame is missing or not
+summary(Clean_df) # this will return a summary of the data frame, including the number of missing values in each variable
+Clean_df[complete.cases(Clean_df), ] # this will return all rows with missing values in the data frame
+Clean_df[-complete.cases(Clean_df), ] # this will return all rows with missing values in the data frame
+Clean_df[!complete.cases(Clean_df), ] # this will return all rows with missing values in the data frame
+Clean_df[complete.cases(Clean_df), ] # this will return all rows with NO missing values in the data frame
+Clean_df <- Clean_df %>% filter(age < 30)
+library(janitor)
+Clean_df_clean=clean_names(Dirty_data)
+Clean_df= Clean_df_clean
+library(dplyr)
+Clean_df_clean %>% filter(age < 30)
+Clean_df_clean %>% filter(age_2 < 30)
+Clean_df_clean %>% filter(age_2 > 30)
+Clean_df_clean %>% filter(age_2 > 29)
+library(titanic)
+library(readr)
+Titanic <- read_csv("Data/ Titanic.csv") # The data is in the "DATA" folder
+names(Titanic) # this will return the names of the variables in the data frame
+Titanic
+Titanic = clean_names(Titanic) # this will clean the names of the variables in the data frame
+names(Titanic) # this will return the names of the variables in the data frame
+Titanic %>% filter(sex=="female")
+Titanic %>% filter(sex=="female" & pclass==1 & age<20) # this will return
+Titanic
+Titanic %>% filter(sex=="female" & pclass==1 & age<20) # this will return
+install.packages(c("bayestestR", "broom.helpers", "bslib", "chromote", "clock", "curl", "dbscan", "DescTools", "doBy", "Ecfun", "emmeans", "epiR", "ftsa", "ggeffects", "gld", "graphlayouts", "hardhat", "httr2", "igraph", "ivreg", "locfit", "marginaleffects", "Matrix", "metafor", "metaplus", "multcomp", "nanoparquet", "nlme", "odbc", "openssl", "openxlsx", "parallelly", "party", "plm", "quantreg", "qvcalc", "RcppParallel", "renv", "rgl", "rlang", "rms", "RRPP", "rsconnect", "see", "sp", "spam", "spdep", "systemfonts", "terra", "textshaping", "TH.data", "tidyterra", "tinytable", "V8", "vegan", "yulab.utils", "zip"))

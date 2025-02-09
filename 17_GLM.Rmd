@@ -1,5 +1,8 @@
 # Generalized Linear Models
 
+
+Test
+
 ```{r, GLM_1, echo=FALSE, message=FALSE, warning=FALSE}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse,  huxtable,  SuppDists, univariateML, invgamma)
@@ -120,7 +123,7 @@ set_caption("Common link functions in GLM.")
   - The parameters are estimated using likelihood (MLE = Maximum Likelihood estimators), not least squares (OLS = ordinary least square). The models are estimated via likelihood, then they optimize the estimators, $\beta$.
   - There is no need to transform the data of the dependent variable to normalize them.
   - The selection of the "link" is independent of the dependent variable(s), which makes it easier to create models.
-  - Tools to evaluate inferences and models are available such as evaluating residuals, confidence intervals, deviation, likelihood ratio test among others.
+  - Tools to evaluate inferences and models are available such as evaluating residuals, confidence intervals, deviation, likelihood ratio test and Akaike Information Criterio index among others.
 
 ------------------------------------------------------------------------
 
@@ -202,34 +205,36 @@ You can find the formulas to calculate other parameters on the Wikipedia page.\
 
 ------------------------------------------------------------------------
 
-### La distribución gaussiana inversa
+### LThe inverse Gaussian distribution
 
-En la teoría de la probabilidad, la distribución gaussiana inversa es una familia de dos parámetros de distribuciones de probabilidad continuas con apoyo en (0, ∞).
+In probability theory, the inverse Gaussian distribution is a two-parameter family of continuous probability distributions with support at (0, ∞).
 
-La distribución sigue la siguiente forma $$f\left(x;µ,\lambda\right)=\sqrt{\frac{\lambda}{2\pi x^3}}\exp\left(-\frac{\lambda\left(x-µ\right)^2}{2µ^2x}\right)$$
+The distribution follows the following form $$f\left(x;µ,\lambda\right)=\sqrt{\frac{\lambda}{2\pi x^3}}\exp\left(-\frac{\lambda\left(x-µ\right)^2}{2µ^2x}\right)$$
 
-donde $x>0$, $µ>0$, y $\lambda$ es la forma de distribución y siempre es mayor de cero. Mayor es el $\lambda$ (el shape parameter) más simétrica es la distribución.
+where $x>0$, $µ>0$, and $\lambda$ It is the form of distribution and is always greater than zero. The larger the $\lambda$ (the shape parameter) the more symmetrical the distribution.
 
-Cuando λ tiende al infinito, la distribución gaussiana inversa se parece a una distribución normal (gaussiana). La distribución gaussiana inversa se conoce también como la distribución Wald.
+As λ tends to infinity, the inverse Gaussian distribution looks like a normal (Gaussian) distribution. The inverse Gaussian distribution is also known as the Wald distribution.
 
-#La distribución se usa cuando la distribución de población donde la distribución lognormal tiene una cola derecha demasiado pesada. Cuando se refiere a cola pesadas en estadistica, se refiere a que hay más probabilidades en esta region que una distribución normal. Por consecuencia las probabilidades en esta region es mayor.
+The distribution is used when the population distribution where the lognormal distribution has too heavy a right tail. When referring to heavy tails in statistics, it means that there are more probabilities in this region than a normal distribution. Consequently, the probabilities in this region are greater.
 
-La distribución es utiliza para modelar datos no negativos que son sesgados positivamente. En otra palabra todos los valores son positivos y la cola tiende a disminiur más lentamente que en una distribución normal.
+The distribution is used to model non-negative data that is positively skewed. In other words, all values are positive and the tail tends to decrease more slowly than in a normal distribution.
 
-#### Historia gausiana inversa
 
-Información historica sobre la distribución gaussiana inversa es poco limitado. La distribución fue aparentemente derivada por la primera vez por Louis Bachelier en 1900, cuando el trataba de estimar el precio de la bolsa de valores para diferentes companias. Pero el nombre de "Inverse Gaussian" fue sugerido por Maurice Tweedie en 1945. Vea este enlace para más detalles.
+
+#### Reverse Gaussian history
+
+Historical information on the inverse Gaussian distribution is somewhat limited. The distribution was apparently first derived by Louis Bachelier in 1900, when he was trying to estimate the stock market price for different companies. But the name "Inverse Gaussian" was suggested by Maurice Tweedie in 1945. See this link for more details.
 
 <https://en.wikipedia.org/wiki/Normal-inverse_Gaussian_distribution>
 
-Ejemplos que pudiese ser de este tipo de distribución
+Examples that could be of this type of distribution
 
--   el tiempo que toma llegar a un sitio.\
--   la distribución de precios de casas
--   la cantidad de hijos en una familia
--   la supervivencia de organismos (survival data)
+- the time it takes to get to a place.
+- the distribution of house prices
+- the number of children in a family
+- the survival of organisms (survival data)
 
-Nota
+Note that the distribution is not symmetrical, and the larger the $\lambda$ the more symmetrical the distribution.
 
 ```{r, GLM_5}
 library(SuppDists) 
@@ -255,33 +260,33 @@ legend("topright", c("nu=.7,lambda=0.2", "nu=.7,lambda=1", "nu=.7,lambda=3","nu=
        col = c(3, 5,6, 7,1,2,4), lwd = 3, inset = 0.05)
 ```
 
-#### Los parámetros de la distribución inversa de Gauss
+#### The parameters of the inverse Gaussian distribution
 
-El promedio se calcula de la siguiente forma
+The average is calculated as follows
 
 $$E\left[X\right]=\frac{1}{\mu}+\frac{1}{\lambda}$$
 
-La varianza se calcula de la siguiente forma
+The variance is calculated in the following way
 
 $$Var\left[X\right]=\frac{1}{\mu\lambda}+\frac{2}{\lambda^2}$$
 
-Para otros parámetros vean este enlace
+For other parameters see this link
 
 <https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution>
 
 ------------------------------------------------------------------------
 
-## Evaluando distribuciones
+## Evaluating distributions
 
-Evaluar un conjunto de datos para visualizar la distribución.
+Evaluate a data set to visualize the distribution.
 
-Si necesita hacer análisis de regresión con datos que tienen una distribución gaussiana inversa el siguiente paquete esta disponible **invGauss** y si quiere determinar cual es la mejor distribución para sus datos con el paquete **univariateML** hay unas funciones para ayudar a determinar.
+If you need to do regression analysis with data that has an inverse Gaussian distribution the following package is available **invGauss** and if you want to determine which is the best distribution for your data with the package **univariateML** there are some functions to help you determine the type of distribution of your data.
 
-Entre tanto que desarollo este tema más profundo le suguiero este enlace.
+I suggest this link.
 
 <https://www.cienciadedatos.net/documentos/55_ajuste_distribuciones_con_r.html>
 
-```{r, GLM_6}
+```{r, GLM_6, warning=FALSE, message=FALSE}
 library(invGauss)
 library(univariateML)
 data(d.oropha.rec)
@@ -300,18 +305,16 @@ ggplot(data = d.oropha.rec) +
                 size = 1) +
   scale_color_manual(breaks = c("normal", "inverse-normal"),
                      values = c("normal" = "red", "inverse-normal" = "blue")) +
-  labs(title = "Distribución de tiempo de dessarrolo",
+  labs(title = "Distribution of time of development",
        color = "Distribución") +
   theme_bw() +
   theme(legend.position = "bottom")
 
 
-# Nota que la cola de tiempo es larga un no tiene una distribución normal
 ```
+Example of diamond prices from the ggplot2 package
 
-Ejemplo de los precios de diamantes del paquete ggplot2
-
-```{r, GLM_7}
+```{r, GLM_7, warning=FALSE, message=FALSE}
 #library(univariateML)
 ggplot(data = diamonds) +
   geom_histogram(aes(x = price, y =  after_stat(density)),
@@ -326,14 +329,183 @@ ggplot(data = diamonds) +
                 size = 1) +
   scale_color_manual(breaks = c("log-normal", "inverse-normal"),
                      values = c("log-normal" = "red", "inverse-normal" = "blue")) +
-  labs(title = "Distribución precio diamantes",
-       color = "Distribución") +
+  labs(title = "Distribution of diamond prices",
+       color = "Distribution") +
   theme_bw() +
   theme(legend.position = "bottom")
 ```
 
+***
+
+
 ## Binomial regression
+
+The binomial regression is used when the dependent variable is binary, that is, it has two possible outcomes, 0 or 1, dead or alive, success or failure, etc. The binomial distribution is used as a probability distribution and the **logit** function is used as a link function. The model is called **Logistic Regression**.
+
+$$\log\frac{q_i}{1-q_i}=\beta_0+\beta_1X_i$$
+where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$.
+
+Here let use the data from Karn and Penrose of the survival or death on infants and birth weight.
+
+ - Survival:  1 = Infant survived, 0 = the Infant died
+ - Weigth_lb = The weigth of the infant in pounds at birth.
+ 
+ 
+```{r, GLM_8, warning=FALSE, message=FALSE}
+library(readr)
+Karn_Penrose_infant_survivorship <- read_csv("Data/Karn_Penrose_infant_survivorship.csv")
+
+Infant= Karn_Penrose_infant_survivorship
+
+head(Infant)
+
+```
+
+Visualize the data
+
+- The data is not normally distributed.
+- The data is binary, 0 or 1.
+- The regression line is not linear and is probability
+- The 95% confidence interval is shown in the graph.
+
+
+
+
+```{r, GLM_9, warning=FALSE, message=FALSE}
+ggplot(Infant, aes(x=Weigth_lb, y=Survival))+
+  geom_jitter(width=0.1, height = 0.1)+ # point represents an infants outcome
+  geom_smooth(method="glm", method.args=list(family="binomial"), se=T)+ 
+    xlab("Weight in pounds")+
+  ylab("Probability of Survival")+
+  scale_x_continuous(breaks = seq(0, 14, by = 1))
+
+
+```
+
+Creating the binomial model
+
+
+```{r, GLM_10, warning=FALSE, message=FALSE}
+Infant_model=glm(Survival ~ Weigth_lb, data=Infant, family=binomial)
+
+summary(Infant_model)
+```
+
+****
+
 
 ## Poisson regression
 
+A poisson regression is used when the dependent variable is a count variable, that is, the number of events that occur in a fixed period of time. The Poisson distribution is used as a probability distribution and the **log** function is used as a link function. The model is called **Poisson Regression**.
+
+$$\log\left(\lambda_i\right)=\beta_0+\beta_1X_i$$
+where the distribution is a Poisson with $y_i\sim Poisson\left(\lambda_i\right)$.
+
+Here let use the data from the number of accidents in a city and the number of cars in the city.
+
+ - Brooklyn_Bridge:  The number cyclist on the Brooklyn Bridge on each day.
+ - Precipitation = The precipitation in inches on that day
+ 
+ 
+```{r, GLM_11, warning=FALSE, message=FALSE}
+library(readr)
+NY_CITY_CYCLIST <- read_csv("Data/NY_CITY_CYCLIST.csv")
+
+NY=NY_CITY_CYCLIST
+
+head(NY)
+```
+ 
+ 
+Visualize the data
+
+- The data is not normally distributed.
+- The data is a count variable.
+- The regression line is not linear and is count (number of cylcist)
+- The 95% confidence interval is shown in the graph.
+
+
+```{r, warning=FALSE, message=FALSE}
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+ # point represents a count of number of cyclist for a specific day
+  geom_smooth(method="glm", method.args=list(family="poisson"), se=T)+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+```
+
+Creating the Poisson model
+
+
+```{r, GLM_12, warning=FALSE, message=FALSE}
+NY_model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
+summary(NY_model)
+```
+
+****
+
 ## Negative binomial regression
+
+A negative binomial regression is used when the dependent variable is a count variable and that the data suggests overdipersion.  Overdispersion is when the variance is greater than the mean. The Poisson distribution is used as a probability distribution and the **log** function is used as a link function. The model is called **Negative Binomial Regression**.
+
+$$\log\left(\lambda_i\right)=\beta_0+\beta_1X_i$$
+where the distribution is a negative binomial with $y_i\sim NegBinomial\left(\lambda_i\right)$.
+
+We will start by calculating the mean and vaiance of the above data set and detemrine if there is overdisperion
+
+The function requiered **dispersiontest** is available in the package **AER**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
+
+
+```{r, GLM_13, warning=FALSE, message=FALSE}
+library(AER)
+model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
+
+disp=dispersiontest(model, trafo=1)
+
+```
+
+Note that the alpha is very large and the p-value is less than 0.05, which indicates that there is overdispersion. We will now create the negative binomial model. We will use the MASS library and the function **glm.nb** to create the model. The function is used to create a negative binomial model. The function is used in the same way as the glm function, but the family is set to negative binomial.
+
+
+```{r, GLM_14, warning=FALSE, message=FALSE}
+library(MASS)
+
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+
+  geom_smooth(method="glm.nb", se=T)+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+
+NY_model_nb=MASS::glm.nb(Brooklyn_Bridge ~ Precipitation, data=NY)
+
+summary(NY_model_nb)
+```
+
+We interpret the results as follows
+
+- The precipitation has a negative effect on the number of cyclist (negative sign). With precipitation (exp(coef) = -0.53) which states that there is 47% decrease in the number of cyclist for **each inch of precipitation**. 
+
+We can reconvert the coefficient to a positive value by taking the exponential of the coefficient. 
+
+```{r, GLM_15, warning=FALSE, message=FALSE}
+exp(coef(model))
+```
+
+
+
+Overlaying the Poisson and the negative binomial models
+
+NEED To FIND a better example
+
+
+```{r, GLM_16, warning=FALSE, message=FALSE}
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+
+  geom_smooth(method="glm", method.args=list(family="poisson"), se=T, color="red")+ 
+  geom_smooth(method="glm.nb", se=T, color="blue")+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+```
+

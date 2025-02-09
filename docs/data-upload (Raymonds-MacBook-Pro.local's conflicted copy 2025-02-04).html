@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Data Upload | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 4 Data Upload | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Data Upload | Quantitative Agricultural Economics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Data Upload | Quantitative Agricultural Economics" />
+  
+  
+  
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<meta name="date" content="2025-02-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="packages-and-functions-in-r.html"/>
+<link rel="next" href="data-wrangling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QAE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Daily Activities</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and POSIT (RStudio)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-rstudio"><i class="fa fa-check"></i><b>2.2</b> What is RStudio?</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#getting-started-with-rstudio"><i class="fa fa-check"></i><b>2.4</b> Getting started with RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#what-is-rmarkdown"><i class="fa fa-check"></i><b>2.5</b> What is RMarkdown?</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#creating-an-rstudio-project"><i class="fa fa-check"></i><b>2.6</b> Creating an RStudio project</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#getting-help-with-r"><i class="fa fa-check"></i><b>2.7</b> Getting help with R</a></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-r-and-posit-rstudio.html"><a href="introduction-to-r-and-posit-rstudio.html#conclusion"><i class="fa fa-check"></i><b>2.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html"><i class="fa fa-check"></i><b>3</b> Packages and Functions in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#what-is-an-r-package"><i class="fa fa-check"></i><b>3.1</b> What is an R package?</a></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#understanding-packages-in-r"><i class="fa fa-check"></i><b>3.2</b> Understanding packages in R</a></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.3</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.4" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#surfing-the-web-for-packages-and-functions"><i class="fa fa-check"></i><b>3.4</b> Surfing the web for packages and functions</a></li>
+<li class="chapter" data-level="3.5" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-packages-from-github"><i class="fa fa-check"></i><b>3.5</b> Installing packages from github</a></li>
+<li class="chapter" data-level="3.6" data-path="packages-and-functions-in-r.html"><a href="packages-and-functions-in-r.html#installing-packages-from-bioconductor"><i class="fa fa-check"></i><b>3.6</b> Installing packages from Bioconductor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-upload.html"><a href="data-upload.html"><i class="fa fa-check"></i><b>4</b> Data Upload</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-upload.html"><a href="data-upload.html#adding-data-directly-to-the-document"><i class="fa fa-check"></i><b>4.1</b> Adding data directly to the document</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-upload.html"><a href="data-upload.html#using-the-function-tibble-in-the-package-tibble"><i class="fa fa-check"></i><b>4.1.1</b> Using the function <strong>tibble</strong> in the package <strong>tibble</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-upload.html"><a href="data-upload.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>4.2</b> Loading data from a file</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-upload.html"><a href="data-upload.html#csv-file-uplaod"><i class="fa fa-check"></i><b>4.2.1</b> .csv file uplaod</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-upload.html"><a href="data-upload.html#excel-file-upload"><i class="fa fa-check"></i><b>4.2.2</b> Excel file upload</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-upload.html"><a href="data-upload.html#txt-file"><i class="fa fa-check"></i><b>4.2.3</b> .txt file</a></li>
+<li class="chapter" data-level="4.2.4" data-path="data-upload.html"><a href="data-upload.html#spss-file"><i class="fa fa-check"></i><b>4.2.4</b> .spss file</a></li>
+<li class="chapter" data-level="4.2.5" data-path="data-upload.html"><a href="data-upload.html#read-a-stata-file"><i class="fa fa-check"></i><b>4.2.5</b> read a Stata file</a></li>
+<li class="chapter" data-level="4.2.6" data-path="data-upload.html"><a href="data-upload.html#read-a-sas-file"><i class="fa fa-check"></i><b>4.2.6</b> Read a SAS file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-upload.html"><a href="data-upload.html#loading-data-from-the-web"><i class="fa fa-check"></i><b>4.3</b> Loading data from the web</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> Data wrangling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-column-names"><i class="fa fa-check"></i><b>5.1</b> Cleaning column names</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor"><i class="fa fa-check"></i><b>5.1.1</b> Cleaning the names of the variables with <strong>janitor</strong></a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-wrangling.html"><a href="data-wrangling.html#now-let-us-clean-the-names-of-the-variables"><i class="fa fa-check"></i><b>5.1.2</b> Now let us clean the names of the variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-the-names-to-variables"><i class="fa fa-check"></i><b>5.2</b> Changing the names to variables</a></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#deleting-variables"><i class="fa fa-check"></i><b>5.3</b> Deleting variables</a></li>
+<li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> Changing names of levels/factors</a></li>
+<li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
+<li class="chapter" data-level="5.6" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>5.6</b> </a></li>
+<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.7</b> Subsetting data set</a></li>
+<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.8</b> Titanic data set</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html"><i class="fa fa-check"></i><b>6</b> Understanding your file data strutcture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.2</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#example"><i class="fa fa-check"></i><b>6.3</b> Example</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions of the data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3.2</b> Structure of the data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#recoding-variables"><i class="fa fa-check"></i><b>6.3.3</b> Recoding variables</a></li>
+<li class="chapter" data-level="6.3.4" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.3.4</b> Levels of the variables</a></li>
+<li class="chapter" data-level="6.3.5" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#summary-of-the-data"><i class="fa fa-check"></i><b>6.3.5</b> Summary of the data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-lat-rows-few-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and lat rows few rows of the data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html"><i class="fa fa-check"></i><b>7</b> Tests of Normality and Equality of Variance</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#shapiro-wilk-normality-test"><i class="fa fa-check"></i><b>7.1</b> Shapiro-Wilk normality test</a></li>
+<li class="chapter" data-level="7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#the-shapiro-francia-normality-test"><i class="fa fa-check"></i><b>7.2</b> The shapiro-Francia normality test</a></li>
+<li class="chapter" data-level="7.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#anderson-darling-normality-test"><i class="fa fa-check"></i><b>7.3</b> Anderson-Darling normality test</a></li>
+<li class="chapter" data-level="7.4" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#cramer-von-mises-test-of-normality"><i class="fa fa-check"></i><b>7.4</b> Cramer-von Mises test of normality</a></li>
+<li class="chapter" data-level="7.5" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#lilliefors-test-of-normality"><i class="fa fa-check"></i><b>7.5</b> Lilliefors test of normality</a></li>
+<li class="chapter" data-level="7.6" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#visualizing-the-data"><i class="fa fa-check"></i><b>7.6</b> Visualizing the data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#qq-plot"><i class="fa fa-check"></i><b>7.6.1</b> qq-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
+<li class="chapter" data-level="7.6.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-variance"><i class="fa fa-check"></i><b>7.7.1</b> What is the variance?</a></li>
+<li class="chapter" data-level="7.7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-standard-deviation"><i class="fa fa-check"></i><b>7.7.2</b> What is the standard deviation?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html"><i class="fa fa-check"></i><b>8</b> What is the mode?</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>8.1</b> Test of normality, Shapiro Wilks Test</a></li>
+<li class="chapter" data-level="8.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>8.2</b> Tests of Equality of variances</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.3" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.4" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.2.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>9</b> Non-parametric tests</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.0.1</b> Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="9.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>9.0.2</b> Mann-Whitney U test</a></li>
+<li class="chapter" data-level="9.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>9.0.3</b> Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="9.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>9.0.4</b> Friedman test</a></li>
+<li class="chapter" data-level="9.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>9.0.5</b> Spearman’s rank correlation</a></li>
+<li class="chapter" data-level="9.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>9.0.6</b> Kendall’s tau</a></li>
+<li class="chapter" data-level="9.0.7" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests-see-the-following"><i class="fa fa-check"></i><b>9.0.7</b> Altenative to non-parametric tests, see the following:</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>10.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>10.2</b> the lm() function</a></li>
+<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>10.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>10.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="10.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>10.5</b> Selling music records</a></li>
+<li class="chapter" data-level="10.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>10.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="10.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>10.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="10.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>10.8</b> Steps to do a linear regression analysis</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="10.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="10.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>10.9</b> Alternative to Graph the Residuals</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>10.9.1</b> Plot the residuals</a></li>
+<li class="chapter" data-level="10.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>10.9.2</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>10.9.3</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.10</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="10.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.11</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="10.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.12</b> Scatter plots for multiple variables</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-regression-model.html"><a href="linear-regression-model.html"><i class="fa fa-check"></i><b>11</b> Linear regression model</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-regression-model.html"><a href="linear-regression-model.html#visualize-the-model-with-ggplot2"><i class="fa fa-check"></i><b>11.1</b> Visualize the model with ggplot2</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-linear-model"><i class="fa fa-check"></i><b>11.2</b> the linear model</a></li>
+<li class="chapter" data-level="11.3" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-summary-of-the-model"><i class="fa fa-check"></i><b>11.3</b> the summary of the model</a></li>
+<li class="chapter" data-level="11.4" data-path="linear-regression-model.html"><a href="linear-regression-model.html#the-assumptions-of-the-model"><i class="fa fa-check"></i><b>11.4</b> the assumptions of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>12</b> Ring chart (alternative to the pie chart)</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>12.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="12.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>12.0.2</b> Example of why PIE chart should NOT be used</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>13</b> Histograms/Density Plots</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>13.1</b> Histograms with geom_histogram</a></li>
+<li class="chapter" data-level="13.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>13.2</b> Changing bin sizes with <em>binwidth</em></a></li>
+<li class="chapter" data-level="13.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>13.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
+<li class="chapter" data-level="13.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>13.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
+<li class="chapter" data-level="13.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>13.5</b> Frequency and color intensity overlap</a></li>
+<li class="chapter" data-level="13.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>13.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
+<li class="chapter" data-level="13.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>13.7</b> Group graphics with <strong>Facet_wrap</strong></a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>13.7.1</b> Change chart colors manually</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>13.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="13.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>13.9</b> DensityPlots</a>
+<ul>
+<li class="chapter" data-level="13.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>13.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="13.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>13.10</b> Area chart with <strong>geom_area</strong></a>
+<ul>
+<li class="chapter" data-level="13.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>13.10.1</b> Area Chart Section</a></li>
+<li class="chapter" data-level="13.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>13.10.2</b> <strong>linetype</strong> types</a></li>
+</ul></li>
+<li class="chapter" data-level="13.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>13.11</b> geom_area with multiple groups</a></li>
+<li class="chapter" data-level="13.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>13.12</b> The density function <strong>aes(y=..density..)</strong></a>
+<ul>
+<li class="chapter" data-level="13.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>13.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>13.13</b> Density plot with <strong>geom_density</strong></a>
+<ul>
+<li class="chapter" data-level="13.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>13.13.1</b> What is a kernel?</a></li>
+</ul></li>
+<li class="chapter" data-level="13.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>13.14</b> geom_density and simulated data</a>
+<ul>
+<li class="chapter" data-level="13.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>13.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>13.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
+<ul>
+<li class="chapter" data-level="13.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>13.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>14</b> Boxplots</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>14.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="14.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>14.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>14.2.1</b> Change the width of the boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>14.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="14.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>14.4</b> Violin diagram with <strong>geom_violin</strong></a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>14.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="14.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>14.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="14.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>14.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="14.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>14.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="14.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>14.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="14.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>14.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="14.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.4.7</b> Geom_violin in proportion to sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>14.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="14.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>14.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="14.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>14.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>15</b> Other visualizations</a></li>
+<li class="chapter" data-level="16" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>16</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>16.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="16.2" data-path="linear-regression.html"><a href="linear-regression.html#assumption-of-linear-regression"><i class="fa fa-check"></i><b>16.2</b> Assumption of linear regression</a></li>
+<li class="chapter" data-level="16.3" data-path="linear-regression.html"><a href="linear-regression.html#visualization-of-the-model"><i class="fa fa-check"></i><b>16.3</b> Visualization of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>17</b> Quantile Regression</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>17.1</b> The model</a></li>
+<li class="chapter" data-level="17.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions"><i class="fa fa-check"></i><b>17.2</b> The assumptions</a></li>
+<li class="chapter" data-level="17.3" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>17.3</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>18</b> Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>18.1</b> Linear models</a></li>
+<li class="chapter" data-level="18.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>18.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
+<li class="chapter" data-level="18.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>18.3</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="18.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>18.4</b> Link available</a></li>
+<li class="chapter" data-level="18.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions-1"><i class="fa fa-check"></i><b>18.5</b> The assumptions</a></li>
+<li class="chapter" data-level="18.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>18.6</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="18.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>18.7</b> Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>18.7.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>18.8</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="18.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>18.8.1</b> La distribución gaussiana inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="18.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>18.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="18.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>18.10</b> Binomial regression</a></li>
+<li class="chapter" data-level="18.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>18.11</b> Poisson regression</a></li>
+<li class="chapter" data-level="18.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>18.12</b> Negative binomial regression</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>19</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="19.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>19.0.1</b> Model</a></li>
+<li class="chapter" data-level="19.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>19.0.2</b> Assumptions</a></li>
+<li class="chapter" data-level="19.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>19.0.3</b> Post estimation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>20</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>20.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="20.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>20.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="20.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>20.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="20.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>20.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="20.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>20.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="20.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>20.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="20.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>20.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="20.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>20.8</b> Regression model</a></li>
+<li class="chapter" data-level="20.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>20.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="20.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>20.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="20.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>20.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="20.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>20.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>21</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Agricultural Economics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-upload" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Data Upload<a href="data-upload.html#data-upload" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter we will learn how to load data into R from the web, and how to add data directly to the document. We will also learn how to load data from a file, such as a .csv, .txt, .excel, or .spss file.</p>
+<div id="adding-data-directly-to-the-document" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Adding data directly to the document<a href="data-upload.html#adding-data-directly-to-the-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have a small dataset, you can add it directly to the document. This is useful for reproducibility, as it allows you to share the data along with the code. The easiest method is to use the <code>data.frame</code> or <code>tibble</code> function. For example, to create a data frame with the columns <code>name</code>, <code>age</code>, and <code>height</code>, you would run:</p>
+<div id="using-the-function-tibble-in-the-package-tibble" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Using the function <strong>tibble</strong> in the package <strong>tibble</strong><a href="data-upload.html#using-the-function-tibble-in-the-package-tibble" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>characters are in quotes</li>
+<li>numbers are not in quotes</li>
+<li>the columns are separated by commas</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-upload.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb10-2"><a href="data-upload.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="data-upload.html#cb10-3" tabindex="-1"></a>My_data_frame <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-4"><a href="data-upload.html#cb10-4" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>),</span>
+<span id="cb10-5"><a href="data-upload.html#cb10-5" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb10-6"><a href="data-upload.html#cb10-6" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">c</span>(<span class="fl">1.70</span>, <span class="fl">1.80</span>, <span class="fl">1.90</span>)</span>
+<span id="cb10-7"><a href="data-upload.html#cb10-7" tabindex="-1"></a>)</span>
+<span id="cb10-8"><a href="data-upload.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="data-upload.html#cb10-9" tabindex="-1"></a>My_data_frame</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   name      age height
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Alice      25    1.7
+## 2 Bob        30    1.8
+## 3 Charlie    35    1.9</code></pre>
+<p>Another alternatives is using <strong>tribble</strong> which is a special case of tibble that makes it a bit easier to create small data frames by hand. The columns are specified by formulas, and rows by concatenation:</p>
+<ul>
+<li>note in this case the first row are the names of the columns</li>
+<li>the columns are separated by commas</li>
+<li>the rows are separated by commas</li>
+<li>characters are in quotes</li>
+<li>numbers are <strong>not</strong> in quotes</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-upload.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb12-2"><a href="data-upload.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="data-upload.html#cb12-3" tabindex="-1"></a>My_data_frame1<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>name, <span class="sc">~</span>age, <span class="sc">~</span>height,</span>
+<span id="cb12-4"><a href="data-upload.html#cb12-4" tabindex="-1"></a>                       <span class="st">&quot;Alice&quot;</span>, <span class="dv">25</span>, <span class="fl">1.70</span>,</span>
+<span id="cb12-5"><a href="data-upload.html#cb12-5" tabindex="-1"></a>                       <span class="st">&quot;Bob&quot;</span>, <span class="dv">30</span>, <span class="fl">1.80</span>,</span>
+<span id="cb12-6"><a href="data-upload.html#cb12-6" tabindex="-1"></a>                       <span class="st">&quot;Charlie&quot;</span>, <span class="dv">35</span>, <span class="fl">1.90</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="loading-data-from-a-file" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Loading data from a file<a href="data-upload.html#loading-data-from-a-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If the data is static, in other words it does not change, you can load it from a file and download this to your computer. There are many file formats that R can read, including .csv, .excel, .txt, and .spss files. To load a file, you can use the <code>read.csv</code>, <code>read_excel</code>, <code>read.table</code>, or <code>read.spss</code> functions, respectively. For example, to load a .csv file, you would run.</p>
+<p>Downloading to your computer will work if the file is not enormous. However, if it has less than 10^6 lines it should be okay. If the file is larger than that, you may need to use a different method to load the data.</p>
+<ul>
+<li><p>Note:</p></li>
+<li><p>the file name is in quotes</p></li>
+<li><p>you can set the header to TRUE or FALSE (depending if the file has a header or not)</p></li>
+<li><p>you can set the column names using the <code>colnames</code> function</p></li>
+</ul>
+<div id="csv-file-uplaod" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> .csv file uplaod<a href="data-upload.html#csv-file-uplaod" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here is a file for the population size of the Dominican Republic from 1960 to 2020. The file is in the Data folder and is called DominicanRepublic.csv. The file has the following columns: year, population, and value= population size. To load the file, you would run:</p>
+<ul>
+<li>note the .csv file is in the <strong>Data</strong> folder on my computer in the RStudio project</li>
+<li>the package required is <strong>library(readr)</strong></li>
+<li>the file is read using the function <strong>read_csv</strong></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-upload.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb13-2"><a href="data-upload.html#cb13-2" tabindex="-1"></a>DominicanRepublic <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/DominicanRepublic.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 5022 Columns: 10
+## ── Column specification ──────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (6): Country or Area, Area, Sex, Age, Record Type, Reliability
+## dbl (3): Year, Source Year, Value
+## lgl (1): Value Footnotes
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-upload.html#cb15-1" tabindex="-1"></a><span class="fu">head</span>(DominicanRepublic)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 10
+##   `Country or Area`   Year Area  Sex        Age   `Record Type`      Reliability
+##   &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;              &lt;chr&gt;      
+## 1 Dominican Republic  1950 Total Both Sexes 0     Census - de jure … Final figu…
+## 2 Dominican Republic  1950 Urban Both Sexes 0     Census - de jure … Final figu…
+## 3 Dominican Republic  1950 Rural Both Sexes 0     Census - de jure … Final figu…
+## 4 Dominican Republic  1950 Total Both Sexes 1     Census - de jure … Final figu…
+## 5 Dominican Republic  1950 Total Both Sexes 2     Census - de jure … Final figu…
+## 6 Dominican Republic  1950 Total Both Sexes 3     Census - de jure … Final figu…
+## # ℹ 3 more variables: `Source Year` &lt;dbl&gt;, Value &lt;dbl&gt;, `Value Footnotes` &lt;lgl&gt;</code></pre>
+</div>
+<div id="excel-file-upload" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Excel file upload<a href="data-upload.html#excel-file-upload" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To read a Excel file you will need</p>
+<ul>
+<li>the package <strong>library(readxl)</strong></li>
+<li>the file is read using the function <strong>read_excel</strong></li>
+<li>the sheet is specified using the argument <strong>sheet</strong>, You need to specify which tab to read. The first tab is 1, the second tab is 2, etc or the names of the tab.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-upload.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb17-2"><a href="data-upload.html#cb17-2" tabindex="-1"></a>melocactus <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data/melocactus.xlsx&quot;</span>, </span>
+<span id="cb17-3"><a href="data-upload.html#cb17-3" tabindex="-1"></a>    <span class="at">sheet =</span> <span class="st">&quot;datos&quot;</span>)</span>
+<span id="cb17-4"><a href="data-upload.html#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="data-upload.html#cb17-5" tabindex="-1"></a><span class="fu">head</span>(melocactus) <span class="co"># data from the melocactus in Puerto Rico, note the data is in Spanish and that the sheet called &quot;datos&quot; is read, this is the 3rd sheet in the excel file.  </span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   azimuto distancia alturatotal longinflo estado
+##     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt; 
+## 1       0     12.0           20         5 S     
+## 2       0     11.6           47        10 S     
+## 3       0     17.8           27        16 X     
+## 4       2      2.75          48        29 S     
+## 5       3      2.71          23         0 S     
+## 6       3      2.71          16         0 S</code></pre>
+</div>
+<div id="txt-file" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> .txt file<a href="data-upload.html#txt-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To read data that are tab delinited you need to use the function <strong>read_table</strong>. The file is read using the function <strong>read_table</strong>.</p>
+<ul>
+<li>the package required is <strong>library(data.table)</strong></li>
+<li>the file is read using the function <strong>read_table</strong></li>
+<li>the file is in the same folder as the Rmd file (IMPORTANT: not in the DATA folder)</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-upload.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb19-2"><a href="data-upload.html#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="data-upload.html#cb19-3" tabindex="-1"></a>Titanic<span class="ot">=</span><span class="fu">read_table</span>(<span class="fu">list.files</span>(<span class="st">&quot;.&quot;</span>, <span class="st">&quot;Titanic.txt&quot;</span>)[<span class="dv">1</span>]) <span class="co"># Note that .txt files CANNOT be read from within a folder (thus you cannot have it in the DATA folder) .txt file is a really old format and it is not recommended to use it, you should convert it to a .csv file.</span></span></code></pre></div>
+<pre><code>## 
+## ── Column specification ──────────────────────────────────
+## cols(
+##   PassengerId = col_double(),
+##   Survived = col_double(),
+##   Pclass = col_double(),
+##   Name = col_character(),
+##   Sex = col_character(),
+##   Age = col_character(),
+##   SibSp = col_character(),
+##   Parch = col_character(),
+##   Ticket = col_character(),
+##   Fare = col_character(),
+##   Cabin = col_character(),
+##   Embarked = col_character()
+## )</code></pre>
+<pre><code>## Warning: 1197 parsing failures.
+## row col   expected     actual           file
+##   1  -- 12 columns 15 columns &#39; Titanic.txt&#39;
+##   2  -- 12 columns 19 columns &#39; Titanic.txt&#39;
+##   3  -- 12 columns 14 columns &#39; Titanic.txt&#39;
+##   4  -- 12 columns 18 columns &#39; Titanic.txt&#39;
+##   5  -- 12 columns 14 columns &#39; Titanic.txt&#39;
+## ... ... .......... .......... ..............
+## See problems(...) for more details.</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-upload.html#cb22-1" tabindex="-1"></a><span class="fu">head</span>(Titanic)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 12
+##   PassengerId Survived Pclass Name    Sex   Age   SibSp Parch Ticket Fare  Cabin
+##         &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;
+## 1           1        0      3 &quot;\&quot;Bra… Mr.   &quot;Owe… &quot;Har… male  22     &quot;1&quot;   0    
+## 2           2        1      1 &quot;\&quot;Cum… Mrs.  &quot;Joh… &quot;Bra… (Flo… Briggs &quot;Tha… fema…
+## 3           3        1      3 &quot;\&quot;Hei… Miss. &quot;Lai… &quot;fem… 26    0      &quot;0&quot;   STON…
+## 4           4        1      1 &quot;\&quot;Fut… Mrs.  &quot;Jac… &quot;Hea… (Lily May    &quot;Pee… fema…
+## 5           5        0      3 &quot;\&quot;All… Mr.   &quot;Wil… &quot;Hen… male  35     &quot;0&quot;   0    
+## 6           6        0      3 &quot;\&quot;Mor… Mr.   &quot;Jam… &quot;mal… 0     0      &quot;330… 8.45…
+## # ℹ 1 more variable: Embarked &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-upload.html#cb24-1" tabindex="-1"></a><span class="fu">list.files</span>() <span class="co"># this will list the files in the folder</span></span></code></pre></div>
+<pre><code>##  [1] &quot; Titanic.txt&quot;                             
+##  [2] &quot;_bookdown_files&quot;                          
+##  [3] &quot;_bookdown.yml&quot;                            
+##  [4] &quot;_output.yml&quot;                              
+##  [5] &quot;02-Intro_R_RStudio.Rmd&quot;                   
+##  [6] &quot;03-Packages_Functions.Rmd&quot;                
+##  [7] &quot;04-Data.Rmd&quot;                              
+##  [8] &quot;05-Data_Wrangling.Rmd&quot;                    
+##  [9] &quot;06-Undestanding_data.Rmd&quot;                 
+## [10] &quot;07_Normality_Equality_var_tests.Rmd&quot;      
+## [11] &quot;08-Non-Parametric_tests.Rmd&quot;              
+## [12] &quot;09_Scatterplots.Rmd&quot;                      
+## [13] &quot;10-Linear_Regression.Rmd&quot;                 
+## [14] &quot;11-Ring_chart.Rmd&quot;                        
+## [15] &quot;12-Histograms_Density.Rmd&quot;                
+## [16] &quot;13-Boxplots.Rmd&quot;                          
+## [17] &quot;14-Other_Visualization.Rmd&quot;               
+## [18] &quot;15-Linear_Regression.Rmd&quot;                 
+## [19] &quot;16-Quantile_Regression.Rmd&quot;               
+## [20] &quot;17_GLM.Rmd&quot;                               
+## [21] &quot;18-Multinomial_logit_analysis.Rmd&quot;        
+## [22] &quot;19-Beta_Regression.Rmd&quot;                   
+## [23] &quot;20_Auto_Regressive_Vectorial_Analysis.Rmd&quot;
+## [24] &quot;bookdownproj_files&quot;                       
+## [25] &quot;bookdownproj.Rmd&quot;                         
+## [26] &quot;Data&quot;                                     
+## [27] &quot;dipodium2.csv&quot;                            
+## [28] &quot;docs&quot;                                     
+## [29] &quot;Figures&quot;                                  
+## [30] &quot;histogram_festival_hygiene.pdf&quot;           
+## [31] &quot;index.Rmd&quot;                                
+## [32] &quot;LICENSE&quot;                                  
+## [33] &quot;qqplot.png&quot;                               
+## [34] &quot;Quantitative_Agricultural_Economics.Rproj&quot;
+## [35] &quot;README.md&quot;                                
+## [36] &quot;style.css&quot;                                
+## [37] &quot;tutorial.css&quot;</code></pre>
+</div>
+<div id="spss-file" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> .spss file<a href="data-upload.html#spss-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To loas an SPSS file you will need the install and load package <strong>haven</strong>. The function to read the file is <strong>read_sav</strong>.</p>
+<ul>
+<li>the package required is <strong>library(haven)</strong></li>
+<li>the file is read using the function <strong>read_sav</strong></li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-upload.html#cb26-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb26-2"><a href="data-upload.html#cb26-2" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="data-upload.html#cb26-3" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb26-4"><a href="data-upload.html#cb26-4" tabindex="-1"></a>Lelto_George <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">&quot;Data/Lelto-George .sav&quot;</span>)</span>
+<span id="cb26-5"><a href="data-upload.html#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="data-upload.html#cb26-6" tabindex="-1"></a><span class="fu">head</span>(Lelto_George)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 94
+##   POPNUM OCCUPIED REMOVED     IND.NUM1 NUM.LEA1 NUM.INF1 NUM.FL1 NUM.FR1 NUM.PR1
+##    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1    209 Ocupado  No removido       67        2        0       0       0       0
+## 2    209 Ocupado  No removido       68        3        1       1       0       0
+## 3    209 Ocupado  No removido       69        2        1       0       0       0
+## 4    209 Ocupado  No removido       70        2        0       0       0       0
+## 5    209 Ocupado  No removido       71        5        0       0       0       0
+## 6    209 Ocupado  No removido       72        2        1       1       0       0
+## # ℹ 85 more variables: STAGE1 &lt;chr+lbl&gt;, POPNUM2 &lt;dbl&gt;, IND.NUM2 &lt;dbl&gt;,
+## #   NUM.LEA2 &lt;dbl&gt;, NUM.INF2 &lt;dbl&gt;, NUM.FL2 &lt;dbl&gt;, NUM.FR2 &lt;dbl&gt;,
+## #   NUM.PR2 &lt;dbl&gt;, STAGE2 &lt;chr+lbl&gt;, POPNUM3 &lt;dbl&gt;, IND.NUM3 &lt;dbl&gt;,
+## #   NUM.LEA3 &lt;dbl&gt;, NUM.INF3 &lt;dbl&gt;, NUM.FL3 &lt;dbl&gt;, NUM.FR3 &lt;dbl&gt;,
+## #   NUM.PR3 &lt;dbl&gt;, STAGE3 &lt;chr&gt;, POPNUM4 &lt;dbl&gt;, IND.NUM4 &lt;dbl&gt;, NUM.LEA4 &lt;dbl&gt;,
+## #   NUM.INF4 &lt;dbl&gt;, NUM.FL4 &lt;dbl&gt;, NUM.FR4 &lt;dbl&gt;, NUM.PR4 &lt;dbl&gt;, STAGE4 &lt;chr&gt;,
+## #   NUM.LEA5 &lt;dbl&gt;, NUM.INF5 &lt;dbl&gt;, NUM.FL5 &lt;dbl&gt;, NUM.FR5 &lt;dbl&gt;, …</code></pre>
+</div>
+<div id="read-a-stata-file" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> read a Stata file<a href="data-upload.html#read-a-stata-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>To read data that are saved in Stata software format, you can use the <code>read_dta</code> function from the <code>haven</code> package. For example, to read the <code>auto.dta</code> file, you would run:</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-upload.html#cb28-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb28-2"><a href="data-upload.html#cb28-2" tabindex="-1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;auto.dta&quot;</span>) <span class="co"># name of file is auto.dta</span></span></code></pre></div>
+</div>
+<div id="read-a-sas-file" class="section level3 hasAnchor" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Read a SAS file<a href="data-upload.html#read-a-sas-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>_ To read data that are saved in SAS format, <code>read_sas</code> function from the <code>haven</code> package. For example, to read the <code>auto.sas7bdat</code> file, you would run:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-upload.html#cb29-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb29-2"><a href="data-upload.html#cb29-2" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="data-upload.html#cb29-3" tabindex="-1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">&quot;auto.sas7bdat&quot;</span>) <span class="co"># name of file is auto.sas7bdat</span></span></code></pre></div>
+<p>In the following file you will find other examples of how to read files in different formats.</p>
+<p><a href="https://www.geeksforgeeks.org/reading-files-in-r-programming/" class="uri">https://www.geeksforgeeks.org/reading-files-in-r-programming/</a></p>
+</div>
+</div>
+<div id="loading-data-from-the-web" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Loading data from the web<a href="data-upload.html#loading-data-from-the-web" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To load data from the web, yu will need to have the URL of the data. For example, to load the iris dataset from the UCI Machine Learning Repository, you would run:</p>
+<ul>
+<li>Note,</li>
+<li>the html address is in quotes</li>
+<li>yuo need to add the information in which format the data is (csv, txt, etc) <em>read.csv</em></li>
+<li>the header is set to FALSE because the data does not have a header</li>
+<li>you can set the column names using the <code>colnames</code> function</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-upload.html#cb30-1" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-2"><a href="data-upload.html#cb30-2" tabindex="-1"></a><span class="fu">colnames</span>(iris) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sepal_length&quot;</span>, <span class="st">&quot;sepal_width&quot;</span>, <span class="st">&quot;petal_length&quot;</span>, <span class="st">&quot;petal_width&quot;</span>, <span class="st">&quot;species&quot;</span>)</span>
+<span id="cb30-3"><a href="data-upload.html#cb30-3" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<pre><code>##   sepal_length sepal_width petal_length petal_width     species
+## 1          5.1         3.5          1.4         0.2 Iris-setosa
+## 2          4.9         3.0          1.4         0.2 Iris-setosa
+## 3          4.7         3.2          1.3         0.2 Iris-setosa
+## 4          4.6         3.1          1.5         0.2 Iris-setosa
+## 5          5.0         3.6          1.4         0.2 Iris-setosa
+## 6          5.4         3.9          1.7         0.4 Iris-setosa</code></pre>
+<p>An example of dowloading data from the web is the following code with header:</p>
+<p>!!!! Find a page with data and copy the URL. For example, the following URL contains data on the number of COVID-19 cases in the US:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-upload.html#cb32-1" tabindex="-1"></a><span class="co"># Load the data from the web</span></span>
+<span id="cb32-2"><a href="data-upload.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="data-upload.html#cb32-3" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="data-upload.html#cb32-4" tabindex="-1"></a>data2<span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-5"><a href="data-upload.html#cb32-5" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="data-upload.html#cb32-6" tabindex="-1"></a><span class="fu">names</span>(data2) <span class="co"># names of the columns/variables</span></span></code></pre></div>
+<pre><code>##   [1] &quot;RT&quot;       &quot;SERIALNO&quot; &quot;DIVISION&quot; &quot;PUMA&quot;     &quot;REGION&quot;   &quot;ST&quot;      
+##   [7] &quot;ADJUST&quot;   &quot;WGTP&quot;     &quot;NP&quot;       &quot;TYPE&quot;     &quot;ACR&quot;      &quot;AGS&quot;     
+##  [13] &quot;BDS&quot;      &quot;BLD&quot;      &quot;BUS&quot;      &quot;CONP&quot;     &quot;ELEP&quot;     &quot;FS&quot;      
+##  [19] &quot;FULP&quot;     &quot;GASP&quot;     &quot;HFL&quot;      &quot;INSP&quot;     &quot;KIT&quot;      &quot;MHP&quot;     
+##  [25] &quot;MRGI&quot;     &quot;MRGP&quot;     &quot;MRGT&quot;     &quot;MRGX&quot;     &quot;PLM&quot;      &quot;RMS&quot;     
+##  [31] &quot;RNTM&quot;     &quot;RNTP&quot;     &quot;SMP&quot;      &quot;TEL&quot;      &quot;TEN&quot;      &quot;VACS&quot;    
+##  [37] &quot;VAL&quot;      &quot;VEH&quot;      &quot;WATP&quot;     &quot;YBL&quot;      &quot;FES&quot;      &quot;FINCP&quot;   
+##  [43] &quot;FPARC&quot;    &quot;GRNTP&quot;    &quot;GRPIP&quot;    &quot;HHL&quot;      &quot;HHT&quot;      &quot;HINCP&quot;   
+##  [49] &quot;HUGCL&quot;    &quot;HUPAC&quot;    &quot;HUPAOC&quot;   &quot;HUPARC&quot;   &quot;LNGI&quot;     &quot;MV&quot;      
+##  [55] &quot;NOC&quot;      &quot;NPF&quot;      &quot;NPP&quot;      &quot;NR&quot;       &quot;NRC&quot;      &quot;OCPIP&quot;   
+##  [61] &quot;PARTNER&quot;  &quot;PSF&quot;      &quot;R18&quot;      &quot;R60&quot;      &quot;R65&quot;      &quot;RESMODE&quot; 
+##  [67] &quot;SMOCP&quot;    &quot;SMX&quot;      &quot;SRNT&quot;     &quot;SVAL&quot;     &quot;TAXP&quot;     &quot;WIF&quot;     
+##  [73] &quot;WKEXREL&quot;  &quot;WORKSTAT&quot; &quot;FACRP&quot;    &quot;FAGSP&quot;    &quot;FBDSP&quot;    &quot;FBLDP&quot;   
+##  [79] &quot;FBUSP&quot;    &quot;FCONP&quot;    &quot;FELEP&quot;    &quot;FFSP&quot;     &quot;FFULP&quot;    &quot;FGASP&quot;   
+##  [85] &quot;FHFLP&quot;    &quot;FINSP&quot;    &quot;FKITP&quot;    &quot;FMHP&quot;     &quot;FMRGIP&quot;   &quot;FMRGP&quot;   
+##  [91] &quot;FMRGTP&quot;   &quot;FMRGXP&quot;   &quot;FMVYP&quot;    &quot;FPLMP&quot;    &quot;FRMSP&quot;    &quot;FRNTMP&quot;  
+##  [97] &quot;FRNTP&quot;    &quot;FSMP&quot;     &quot;FSMXHP&quot;   &quot;FSMXSP&quot;   &quot;FTAXP&quot;    &quot;FTELP&quot;   
+## [103] &quot;FTENP&quot;    &quot;FVACSP&quot;   &quot;FVALP&quot;    &quot;FVEHP&quot;    &quot;FWATP&quot;    &quot;FYBLP&quot;   
+## [109] &quot;wgtp1&quot;    &quot;wgtp2&quot;    &quot;wgtp3&quot;    &quot;wgtp4&quot;    &quot;wgtp5&quot;    &quot;wgtp6&quot;   
+## [115] &quot;wgtp7&quot;    &quot;wgtp8&quot;    &quot;wgtp9&quot;    &quot;wgtp10&quot;   &quot;wgtp11&quot;   &quot;wgtp12&quot;  
+## [121] &quot;wgtp13&quot;   &quot;wgtp14&quot;   &quot;wgtp15&quot;   &quot;wgtp16&quot;   &quot;wgtp17&quot;   &quot;wgtp18&quot;  
+## [127] &quot;wgtp19&quot;   &quot;wgtp20&quot;   &quot;wgtp21&quot;   &quot;wgtp22&quot;   &quot;wgtp23&quot;   &quot;wgtp24&quot;  
+## [133] &quot;wgtp25&quot;   &quot;wgtp26&quot;   &quot;wgtp27&quot;   &quot;wgtp28&quot;   &quot;wgtp29&quot;   &quot;wgtp30&quot;  
+## [139] &quot;wgtp31&quot;   &quot;wgtp32&quot;   &quot;wgtp33&quot;   &quot;wgtp34&quot;   &quot;wgtp35&quot;   &quot;wgtp36&quot;  
+## [145] &quot;wgtp37&quot;   &quot;wgtp38&quot;   &quot;wgtp39&quot;   &quot;wgtp40&quot;   &quot;wgtp41&quot;   &quot;wgtp42&quot;  
+## [151] &quot;wgtp43&quot;   &quot;wgtp44&quot;   &quot;wgtp45&quot;   &quot;wgtp46&quot;   &quot;wgtp47&quot;   &quot;wgtp48&quot;  
+## [157] &quot;wgtp49&quot;   &quot;wgtp50&quot;   &quot;wgtp51&quot;   &quot;wgtp52&quot;   &quot;wgtp53&quot;   &quot;wgtp54&quot;  
+## [163] &quot;wgtp55&quot;   &quot;wgtp56&quot;   &quot;wgtp57&quot;   &quot;wgtp58&quot;   &quot;wgtp59&quot;   &quot;wgtp60&quot;  
+## [169] &quot;wgtp61&quot;   &quot;wgtp62&quot;   &quot;wgtp63&quot;   &quot;wgtp64&quot;   &quot;wgtp65&quot;   &quot;wgtp66&quot;  
+## [175] &quot;wgtp67&quot;   &quot;wgtp68&quot;   &quot;wgtp69&quot;   &quot;wgtp70&quot;   &quot;wgtp71&quot;   &quot;wgtp72&quot;  
+## [181] &quot;wgtp73&quot;   &quot;wgtp74&quot;   &quot;wgtp75&quot;   &quot;wgtp76&quot;   &quot;wgtp77&quot;   &quot;wgtp78&quot;  
+## [187] &quot;wgtp79&quot;   &quot;wgtp80&quot;</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="packages-and-functions-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/04-Data.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/04-Data.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

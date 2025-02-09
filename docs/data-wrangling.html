@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2025-01-29" />
+<meta name="date" content="2025-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="data-upload.html"/>
-<link rel="next" href="understanding-your-data.html"/>
+<link rel="next" href="understanding-your-file-data-strutcture.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -193,12 +193,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.7</b> Subsetting data set</a></li>
 <li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.8</b> Titanic data set</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="understanding-your-data.html"><a href="understanding-your-data.html"><i class="fa fa-check"></i><b>6</b> Understanding your data</a>
+<li class="chapter" data-level="6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html"><i class="fa fa-check"></i><b>6</b> Understanding your file data strutcture</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="understanding-your-data.html"><a href="understanding-your-data.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.1</b> Functions to evaluate your data</a></li>
-<li class="chapter" data-level="6.2" data-path="understanding-your-data.html"><a href="understanding-your-data.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.2</b> dimensions of the data</a></li>
-<li class="chapter" data-level="6.3" data-path="understanding-your-data.html"><a href="understanding-your-data.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3</b> structure of the data</a></li>
-<li class="chapter" data-level="6.4" data-path="understanding-your-data.html"><a href="understanding-your-data.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.4</b> Levels of the variables</a></li>
+<li class="chapter" data-level="6.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#functions-to-evaluate-your-data"><i class="fa fa-check"></i><b>6.2</b> Functions to evaluate your data</a></li>
+<li class="chapter" data-level="6.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#example"><i class="fa fa-check"></i><b>6.3</b> Example</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#dimensions-of-the-data"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions of the data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#structure-of-the-data"><i class="fa fa-check"></i><b>6.3.2</b> Structure of the data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#recoding-variables"><i class="fa fa-check"></i><b>6.3.3</b> Recoding variables</a></li>
+<li class="chapter" data-level="6.3.4" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.3.4</b> Levels of the variables</a></li>
+<li class="chapter" data-level="6.3.5" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#summary-of-the-data"><i class="fa fa-check"></i><b>6.3.5</b> Summary of the data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-lat-rows-few-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and lat rows few rows of the data</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html"><i class="fa fa-check"></i><b>7</b> Tests of Normality and Equality of Variance</a>
 <ul>
@@ -213,18 +220,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#histogram"><i class="fa fa-check"></i><b>7.6.2</b> Histogram</a></li>
 <li class="chapter" data-level="7.6.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#density-plot"><i class="fa fa-check"></i><b>7.6.3</b> Density plot</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html"><i class="fa fa-check"></i><b>8</b> Tests of Equality of variances</a>
+<li class="chapter" data-level="7.7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#remove-the-outlier-from-the-day1-hygiene-score"><i class="fa fa-check"></i><b>7.7</b> Remove the outlier from the day1 hygiene score</a>
 <ul>
-<li class="chapter" data-level="8.0.1" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.1</b> The F-test of equality of variance</a></li>
-<li class="chapter" data-level="8.0.2" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.2</b> Bartlett’s test of equality of variance</a></li>
-<li class="chapter" data-level="8.0.3" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.0.3</b> Brown-Forsythe test of equality of variance</a></li>
-<li class="chapter" data-level="8.0.4" data-path="tests-of-equality-of-variances.html"><a href="tests-of-equality-of-variances.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.0.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+<li class="chapter" data-level="7.7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-variance"><i class="fa fa-check"></i><b>7.7.1</b> What is the variance?</a></li>
+<li class="chapter" data-level="7.7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-standard-deviation"><i class="fa fa-check"></i><b>7.7.2</b> What is the standard deviation?</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="non-parametric-test.html"><a href="non-parametric-test.html"><i class="fa fa-check"></i><b>9</b> Non-parametric test</a>
+</ul></li>
+<li class="chapter" data-level="8" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html"><i class="fa fa-check"></i><b>8</b> What is the mode?</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="non-parametric-test.html"><a href="non-parametric-test.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1</b> Altenative to non-parametric tests</a></li>
+<li class="chapter" data-level="8.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>8.1</b> Test of normality, Shapiro Wilks Test</a></li>
+<li class="chapter" data-level="8.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>8.2</b> Tests of Equality of variances</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.3" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="8.2.4" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.2.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>9</b> Non-parametric tests</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.0.1</b> Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="9.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>9.0.2</b> Mann-Whitney U test</a></li>
+<li class="chapter" data-level="9.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>9.0.3</b> Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="9.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>9.0.4</b> Friedman test</a></li>
+<li class="chapter" data-level="9.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>9.0.5</b> Spearman’s rank correlation</a></li>
+<li class="chapter" data-level="9.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>9.0.6</b> Kendall’s tau</a></li>
+<li class="chapter" data-level="9.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearman-vs-kendall-correlations-comparison"><i class="fa fa-check"></i><b>9.1</b> Spearman vs Kendall correlations comparison</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1.1</b> Altenative to non-parametric tests</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
 <ul>
@@ -352,9 +376,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="18.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>18.8</b> The basic parameters of the gamma.</a>
 <ul>
-<li class="chapter" data-level="18.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#la-distribución-gaussiana-inversa"><i class="fa fa-check"></i><b>18.8.1</b> La distribución gaussiana inversa</a></li>
+<li class="chapter" data-level="18.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#lthe-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>18.8.1</b> LThe inverse Gaussian distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="18.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluando-distribuciones"><i class="fa fa-check"></i><b>18.9</b> Evaluando distribuciones</a></li>
+<li class="chapter" data-level="18.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>18.9</b> Evaluating distributions</a></li>
 <li class="chapter" data-level="18.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>18.10</b> Binomial regression</a></li>
 <li class="chapter" data-level="18.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>18.11</b> Poisson regression</a></li>
 <li class="chapter" data-level="18.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>18.12</b> Negative binomial regression</a></li>
@@ -572,7 +596,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-wrangling.html#cb58-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb58-2"><a href="data-wrangling.html#cb58-2" tabindex="-1"></a>Titanic <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/ Titanic.csv&quot;</span>) <span class="co"># The data is in the &quot;DATA&quot; folder</span></span></code></pre></div>
 <pre><code>## Rows: 1309 Columns: 12
-## ── Column specification ──────────────────────────────────
+## ── Column specification ────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (5): Name, Sex, Ticket, Cabin, Embarked
 ## dbl (7): PassengerId, Survived, Pclass, Age, SibSp, Parch, Fare
@@ -616,7 +640,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="data-upload.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="understanding-your-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="understanding-your-file-data-strutcture.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
