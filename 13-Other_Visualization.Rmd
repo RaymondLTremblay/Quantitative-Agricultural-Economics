@@ -1,0 +1,140 @@
+# Other visualizations
+
+
+
+## Barplot
+
+Barplot is a common way to visualize the distribution of a categorical variable. In this example, we will use the `ggplot2` package to create a barplot. 
+
+This should be used when you have count data and want to compare the counts of different categories. Bar are not used to show mean or median values, but to show the frequency of the data.
+
+
+```{r}
+library(ggplot2)
+
+# Load the Anolis dataset from the ggversa package
+library(ggversa)
+```
+
+
+#Create a bar plot of number of male, female and juvenile Anolis lizards in the SEX_AGE variable
+
+```{r}
+ggplot(Anolis, aes(x = SEX_AGE)) +
+  geom_bar()
+
+```
+
+
+
+## Line chart
+
+Line charts are used to show trends over time or other continuous variables. In this example, we will use the `ggplot2` package to create a line chart of the `death rate caused by Tiroide cancer ` variable in the `Tiroide` dataset in the library(ggversa).
+
+
+```{r}
+library(ggversa)
+
+ggplot(Tiroide, aes(x = Year, y = Rate, colour=Cases, group = Cases)) +
+  geom_line()
+
+```
+
+
+## Heat map
+
+Heat map are an effective visualization technique for showing patterns in large datasets. In this example, we will use the `ggplot2` package to create a heat map of the `SparrowElphick` dataset in the `ggversa` library.
+
+
+Let select a subset of the variables in the SparrowElphick dataset to create a heat map. We will use the `dplyr` package to select the variables `flatwing`. `tarsus`, `head`, `culmen` and `wt`. the variables definition are lenght of the wing when expanded, the length of the tarsus, the length of the head, the length of the culmen and the weight of the bird respectively.
+
+```{r}
+head(SparrowsElphick)
+
+Sparrow<- dplyr::select(SparrowsElphick, flatwing, tarsus, head, culmen, wt)
+
+```
+
+
+Now let us calculate the Kendall correlation between the variables in the Sparrow dataset. The Kendall correlation is a non-parametric measure of association between two variables. It is used to measure the strength and direction of the relationship between two variables. The Kendall correlation ranges from -1 to 1, where -1 indicates a perfect negative relationship, 0 indicates no relationship, and 1 indicates a perfect positive relationship.
+
+We will round the values to 3 significant figures.
+
+
+
+```{r}
+round(cor(Sparrow, method = "kendall", use="pairwise.complete.obs"), digits = 3)
+
+
+```
+
+The next step is creating a data frame from the correlation matrix.
+
+Note here we reshape the data frame to a long format using the `melt` function from the `reshape2` package. This is because the `ggplot2` package requires data in a long format to create a heat map. 
+
+```{r}
+melted_cor <- reshape2::melt(cor(Sparrow, method = "kendall", use="pairwise.complete.obs"))
+
+melted_cor
+```
+
+Now let us create a heat map of the correlation matrix using the `ggplot2` package.
+
+The blue color indicates a negative correlation, the red color indicates a positive correlation, and the white color indicates no correlation. In this case there are no negative correlation, but there are a range of positive correlation values. 
+
+
+```{r}
+
+ggplot(melted_cor, aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", high = "red") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+
+There is an alternative to the above heat map, using the package `GGally`. This package provides a function called `ggcorr` that creates a correlation matrix plot. The `ggcorr` function creates a heat map of the correlation matrix with the correlation values displayed in the cells. 
+
+Note now we are facilitating the visualization of the data and only add one line of code to create the heat map. To observe the correlation values, we can use the `label = TRUE` argument. To change the number of decimal places, we can use the `label_round` argument.
+
+
+```{r}
+library(GGally)
+
+ggcorr(Sparrow, label_round=3,label = TRUE)
+
+```
+
+
+
+## Plot of mean and confidence intervals
+
+
+In this example, we will use the `ggplot2` package to create a plot of the mean and confidence intervals of the `weight` variable in the `SparrowsElphick` dataset in the `ggversa` library. We will use the `stat_summary` function to calculate the mean and confidence intervals of the `weight` variable and the `geom_errorbar` function to plot the confidence intervals. We calculates the mean and confidence intervals using the `mean_cl_normal` for each of the species in the dataset (note the species are coded 1, 2 and 3, these were changed to factors) .
+
+```{r}
+ggplot(SparrowsElphick, aes(x = as.factor(SpeciesCode), y = wt)) +
+  stat_summary(fun.data = mean_cl_normal, geom = "point") +
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", width = 0.2)+
+  ylab("Mean and CI of the weight variable")
+
+```
+
+## MAJOR error: CAUTION
+
+In many papers the to show the mean the authors draw a barplot and then they and the CI. This is a major error. The barplot is used to show the frequency of the data, not the mean. The mean should be shown with a point and the CI with a line.
+
+**SO THE figure below should NEVER be used to show the mean and CI of the data**.
+
+Compare the two figures and you will see that the previous figure with a point and a line is the correct way to show the mean and CI of the data as it better reflects the data.
+
+```{r}
+ggplot(SparrowsElphick, aes(x = as.factor(SpeciesCode), y = wt)) +
+  stat_summary(fun.data = mean_cl_normal, geom = "bar") +
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", width = 0.2)+
+  ylab("Mean and CI of the weight variable")
+
+```
+
+

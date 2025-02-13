@@ -1,0 +1,248 @@
+# Quantile Regression
+
+Quantile regression is a specialized regression technique that estimates the conditional median or other quantiles of a response variable. It is particularly useful when the response variable is not normally distributed or when the relationship between the response variable and the predictor variables is not linear or there is heteroscedasticity.
+
+Quantile regression was first developed by Koenker and Bassett (1978) and Bassett and Koenker (1978) and has since been widely used in a variety of fields, including economics, finance, and epidemiology. This approach is particularly useful when the conditional distribution of the response variable is asymmetric or when the relationship between the response variable and the predictor variables varies across different quantiles. In other words it is a robust regression technique that is not sensitive to outliers and can provide a more complete picture of the relationship between the response variable and the predictor variables.
+
+In this chapter, we will provide an overview of quantile regression, discuss its advantages and disadvantages, and demonstrate how to perform quantile regression in R using the `quantreg` package.
+
+## Overview
+
+Quantile regression is a regression technique that estimates the conditional quantiles of a response variable given a set of predictor variables. Unlike ordinary least squares (OLS) regression, which estimates the conditional mean of the response variable, quantile regression estimates the conditional quantiles, such as the median, 25th percentile, or 75th percentile.
+
+Quantile regression is particularly useful when the response variable is not normally distributed or when the relationship between the response variable and the predictor variables is not linear. By estimating the conditional quantiles, quantile regression provides a more complete picture of the relationship between the response variable and the predictor variables, allowing for a more nuanced analysis of the data.
+
+
+## The model
+
+The quantile regression model can be written as:
+
+\[Q_{\tau}(Y|X) = X\beta_{\tau}\]
+
+where:
+
+- \(Q_{\tau}(Y|X)\) is the \(\tau\)-th quantile of the response variable \(Y\) given the predictor variables \(X\),
+- \(\beta_{\tau}\) is the vector of coefficients for the predictor variables,
+- \(\tau\) is the quantile level, which ranges from 0 to 1.
+
+The goal of quantile regression is to estimate the coefficients \(\beta_{\tau}\) that minimize the sum of the absolute deviations between the observed values of the response variable and the estimated quantiles.
+
+Quantile regression can be performed for multiple quantile levels, allowing for a more comprehensive analysis of the relationship between the response variable and the predictor variables.
+
+
+## The assumptions of quantile regression
+
+Quantile regression does not make the same assumptions as OLS regression, such as linearity, homoscedasticity, and normality of residuals. Instead, quantile regression estimates the conditional quantiles of the response variable directly, making it more robust to violations of these assumptions.
+
+However, quantile regression does assume that the errors are independent and identically distributed (i.i.d.), which is a common assumption in regression analysis.
+
+
+
+## Visualization
+
+To visualize the results of quantile regression, we can create quantile regression plots, which show the estimated quantiles of the response variable as a function of the predictor variables. These plots provide a visual representation of the relationship between the response variable and the predictor variables at different quantile levels.
+
+In the following example, we will demonstrate how to perform quantile regression in R using the `quantreg` package and create quantile regression plots to visualize the results.
+
+## Example: Quantile regression in R
+
+In this example, we will use the `quantreg` package to perform quantile regression on the `mtcars` dataset, which contains information about various car models. We will estimate the conditional quantiles of the miles per gallon (mpg) variable given the weight (wt) variable.
+
+First, we will load the `quantreg` package and the `mtcars` dataset:
+
+
+https://ggplot2.tidyverse.org/reference/geom_quantile.html
+
+Usamos un conjunto de datos de ejemplo llamado mtcars, que contiene información sobre diferentes modelos de automóviles. En particular, nos interesa la relación entre el desplasamiento (displ) del motor en litros y la cantidad de milas por galon . Para visualizar esta relación, ajustaremos un modelo de regresión cuantílica y trazaremos las estimaciones de los cuantiles condicionales de mpg en función de wt. El data frame mpg contiene se encuentra el el paquete ggplot2 las siguientes variables: 
+
+
+```{r, qr_1}
+library(tidyverse)
+library(quantreg)
+data(mpg)
+
+
+
+head(mpg) #visualizar las primeras filas del data frame
+
+
+```
+
+Nota que el patron de dispersion aumenta a medida que el desplasamiento del motor aumenta. Esto sugiere que la relación entre el desplasamiento y la cantidad de millas por galon no es lineal y que la varianza de mpg aumenta con el desplasamiento del motor. Para capturar esta relación no lineal y heterocedasticidad, ajustaremos un modelo de regresión cuantílica y trazaremos las estimaciones de los cuantiles condicionales de mpg en función de wt.
+
+Sobrepuse la regressión lineal con si intervalo de confianza (en rojo) y los cuantiles de la regresión cuantílica (en azul). Note que la regresión cuantílica captura la relación no lineal entre displ y mpg y la heterocedasticidad en los errores, mientras que la regresión lineal no lo hace.
+
+
+
+```{r, qr_2}
+ggplot(mpg, aes(x = displ, y = 1/hwy)) +
+  geom_point() +
+  geom_quantile()+
+  geom_smooth(method = "lm", se = TRUE, color="red")
+
+```
+
+Adding quantiles to the plot
+
+in this figure we add only the quantile 0.5, which corresponds to the median of the conditional distribution of mpg given wt.
+
+
+
+
+```{r, qr_3}
+ggplot(mpg, aes(x = displ, y = 1/hwy)) +
+  geom_point() +
+  geom_quantile(quantiles = 0.5, color = "blue")
+
+```
+
+Adding multiples quantiles
+
+Using multiple quantiles one clearly see the relationship between the predictor and the response variable and the quantiles are not equally dispersed.  The median quantile is in blue, while the 25th and 75th are in red
+
+```{r, qr_4, message=FALSE, warning=FALSE}
+
+q10 <- seq(0.05, 0.95, by=0.05) #cuantiles del 5% al 95% en incrementos del 5%
+ggplot(mpg, aes(x = displ, y = 1/hwy)) +
+  geom_point() +
+  geom_quantile(quantiles = q10, colour = "grey")+
+  geom_quantile(quantiles = 0.5, color = "blue")+
+  geom_quantile(quantiles = 0.25, color = "red")+
+  geom_quantile(quantiles = 0.75, color = "red")
+
+```
+
+
+## The quantile regression model, `rq()`
+
+To ajust a quantile regression model, we use the `rq()` function from the `quantreg` package. The `rq()` function takes two main arguments: the formula that specifies the model and the data frame that contains the data. In this case, we will fit a quantile regression model to estimate the median of mpg given wt.
+
+tau = 0.5 specifies the quantile we want to estimate, in this case, the median of the conditional distribution of mpg given wt.
+
+The interpretation of the quantile regression model is similar to that of a linear regression model, but instead of estimating the conditional mean of the response variable, we estimate the specified conditional quantile.
+
+In this case, the quantile regression model estimates the median of mpg given wt has a coefficient of 0.0076, which suggests that for every one-unit increase in displ, the median of 1/hwy increases by 0.0076. The p-value associated with the coefficient is less than 0.05, indicating that the coefficient is significantly different from zero.
+
+The summary of the quantile regression model also provides the standard error, t-value, and p-value for the coefficient, as well as the residual standard error and the number of observations used in the model.
+
+ 
+
+```{r, qr_5}
+# djusting a quantile regression model
+
+model <- rq(1/hwy ~ displ, data = mpg, tau = 0.5)
+summary(model)
+```
+
+****
+
+
+
+## nlrq
+
+to model with this function, you need to install the `quantreg` package and load it into the R session.
+
+
+nlrq() is a function that fits a non-linear quantile regression model. This function takes two main arguments: the formula that specifies the model and the data frame that contains the data. In this case, we will fit a non-linear quantile regression model to estimate the median of mpg given wt.
+
+
+
+Nice pattern, but not realistic of a biological data set.  
+
+SSlogis = Self-Starting Nls Logistic Model
+
+This is used to fit a logistic curve to data. The curve is defined as:
+
+\[f(x) = \frac{Asym}{1 + exp((x-mid)/scal)}\]
+
+where:
+
+- Asym is the asymptote of the curve,
+- mid is the x-value at the inflection point of the curve,
+- scal is a scaling parameter that determines the steepness of the curve.
+
+In this example, we will use the SSlogis function to generate a logistic curve with Asym = 10, mid = 12, and scal = 2, and add some random noise to the data. We will then fit a non-linear least squares regression to the data using the nls function, and compare the results to a quantile regression using the nlrq function.
+
+
+
+```{r}
+Dat <- NULL; Dat$x <- rep(1:25, 20)
+set.seed(1)
+Dat$y <- SSlogis(Dat$x, 10, 12, 2)*rnorm(500, 1, 0.1)
+plot(Dat)
+# fit first a nonlinear least-square regression
+Dat.nls <- nls(y ~ SSlogis(x, Asym, mid, scal), data=Dat); Dat.nls
+lines(1:25, predict(Dat.nls, newdata=list(x=1:25)), col=1)
+# then fit the median using nlrq
+Dat.nlrq <- nlrq(y ~ SSlogis(x, Asym, mid, scal), data=Dat, tau=0.5, trace=TRUE)
+lines(1:25, predict(Dat.nlrq, newdata=list(x=1:25)), col=2)
+# the 1st and 3rd quartiles regressions
+Dat.nlrq <- nlrq(y ~ SSlogis(x, Asym, mid, scal), data=Dat, tau=0.25, trace=TRUE)
+lines(1:25, predict(Dat.nlrq, newdata=list(x=1:25)), col=3)
+Dat.nlrq <- nlrq(y ~ SSlogis(x, Asym, mid, scal), data=Dat, tau=0.75, trace=TRUE)
+lines(1:25, predict(Dat.nlrq, newdata=list(x=1:25)), col=3)
+# and finally "external envelopes" holding 95 percent of the data
+Dat.nlrq <- nlrq(y ~ SSlogis(x, Asym, mid, scal), data=Dat, tau=0.025, trace=TRUE)
+lines(1:25, predict(Dat.nlrq, newdata=list(x=1:25)), col=4)
+Dat.nlrq <- nlrq(y ~ SSlogis(x, Asym, mid, scal), data=Dat, tau=0.975, trace=TRUE)
+lines(1:25, predict(Dat.nlrq, newdata=list(x=1:25)), col=4)
+leg <- c("least squares","median (0.5)","quartiles (0.25/0.75)",".95 band (0.025/0.975)")
+legend(1, 12.5, legend=leg, lty=1, col=1:4)
+```
+
+https://stackoverflow.com/questions/51223379/how-get-plot-from-nlrq-in-r
+
+Need a better data set.  
+
+To adjust a non-linear quantile regression model, we use the `nlrq()` function from the `quantreg` package. The `nlrq()` function takes two main arguments: the formula that specifies the model and the data frame that contains the data. In this case, we will fit a non-linear quantile regression model to estimate the median of mpg given wt.
+
+The formula specifies the model, which in this case is a non-linear model that estimates the conditional median of mpg given wt using the SSlogis function. The SSlogis function is a self-starting logistic model that defines a logistic curve with three parameters: Asym, mid, and scal.
+
+The `tau` argument specifies the quantile level we want to estimate, in this case, the median of the conditional distribution of mpg given wt.
+
+ - `Asym` refers to the asymptote of the curve, 
+ - `mid` is the x-value at the inflection point of the curve,
+ - `scal` is a scaling parameter that determines the steepness of the curve.
+
+The summary of the non-linear quantile regression model provides the estimated coefficients for the parameters Asym, mid, and scal, as well as the standard errors, t-values, and p-values for the coefficients. The residual standard error and the number of observations used in the model are also provided.
+
+
+```{r}
+# Adjusting a non-linear quantile regression model
+
+model_nlrq <- nlrq(1/hwy ~ SSlogis(displ, Asym, mid, scal), data = mpg, tau=0.5)
+
+summary(model_nlrq)
+
+plot(1/hwy ~ displ, mpg)
+lines(fitted(model_nlrq) ~ displ, mpg)
+
+
+```
+
+
+
+https://www.rdocumentation.org/packages/ggstatsplot/versions/0.6.5
+
+See also
+
+https://broom.tidymodels.org/reference/augment.nlrq.html
+
+
+```{r}
+
+library(quantreg)
+library(ggstatsplot)
+# model
+mod <- quantreg::rq(formula = mpg ~ am * cyl, data = mtcars)
+
+# plot
+ggstatsplot::ggcoefstats(mod)
+```
+
+
+References:
+
+Koenker, Roger, and Gilbert Bassett Jr. "Regression quantiles." Econometrica: journal of the Econometric Society (1978): 33-50.
+
+Bassett, G., & Koenker, R. (1978). Asymptotic Theory of Least Absolute Error Regression. Journal of the American Statistical Association, 73(363), 618–622. https://doi.org/10.1080/01621459.1978.10480065

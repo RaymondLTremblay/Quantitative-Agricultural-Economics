@@ -1,0 +1,338 @@
+# Linear Regression
+
+A linear regression model is a linear approach to modeling the relationship between a scalar response (or dependent variable) and one or more explanatory variables (or independent variables). The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression. This term is distinct from multivariate linear regression, where multiple correlated dependent variables are predicted, rather than a single scalar variable.
+
+The linear regression model is represented by the equation:
+
+\[Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n + \epsilon\]
+
+where:
+
+- \(Y\) is the dependent variable
+- \(\beta_0\) is the intercept
+- \(\beta_1, \beta_2, ... , \beta_n\) are the coefficients
+- \(X_1, X_2, ... , X_n\) are the independent variables
+- \(\epsilon\) is the error term
+
+The coefficients \(\beta_0, \beta_1, \beta_2, ... , \beta_n\) are estimated using the least squares method, which minimizes the sum of the squared differences between the observed values of the dependent variable and the values predicted by the model.
+
+In this section, we will explore the linear regression model using the `lm` function in R and visualize the model using the `ggplot2` package.
+
+
+
+## Model of linear regression
+
+
+
+------------------------------------------------------------------------
+Load packages
+
+```{r libraries, message=FALSE}
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(QuantPsyc, car, ggplot2, tidyverse, sjPlot, janitor)
+
+
+library(QuantPsyc)
+library(car)
+library(ggplot2)
+library(tidyverse)
+library(sjPlot)
+library(janitor)
+
+```
+
+
+------------------------------------------------------------------------
+We will be evaluating only linear regression
+
+We see a fictitious example of one explanatory variable and one dependent variable, each from a normal distribution. The ramdon data is generated using the `rnorm` function. rnorm(n=sample size, mean, sd). The `set.seed` function is used to ensure reproducibility of the results.
+
+```{r}
+set.seed(123)
+
+response= rnorm(1000, mean=100, sd=1) # for example number of seeds per plant 
+explanatory= rnorm(1000, mean= 40, sd=5) # height of the plant
+
+data=data.frame(response, explanatory) # join the two variables in a data frame
+
+head(data) # show the data frame
+
+```
+
+
+Visualize the data using a scatter plot
+
+- Note that cloud of data points is scattered and is distributed more or less equally across the distrbution.
+
+
+
+
+```{r}
+ggplot(data, aes(x=explanatory, y=response))+
+  geom_point()
+
+```
+
+We can show the distriution of the data using the package `ggside` and the function `geom_ysidedensity` and `geom_xsidedensity`. This function shows the distribution of the data on the `y` and `x` axis.
+
+
+```{r}
+library(ggside)
+
+ggplot(data, aes(x=explanatory, y=response))+
+  geom_point()+
+  geom_ysidedensity()+
+  geom_xsidedensity()
+
+```
+
+We can add the linear regression model to the plot using the `geom_smooth` function with the argument `method=lm` to indicate that we want to use a linear model. The shaded area represents the 95% confidence interval of the model. we use the function geom_smooth(method=lm) to add the linear regression line to the plot.
+
+
+
+```{r}
+ggplot(data, aes(x=explanatory, y=response))+
+  geom_smooth(method=lm)+
+  geom_point()
+
+```
+
+We observe from the model that the linear regression line is a good fit for the data, as the data points are distributed around the line. The shaded area represents the 95% confidence interval of the model. The linear regression model is represented by the equation:
+
+\[Y = 100.01 + 0.01X + \epsilon\]
+
+where:
+
+  
+- \(Y\) is the dependent variable (response)
+- \(X\) is the independent variable (explanatory)
+- \(\epsilon\) is the error term
+
+
+
+```{r}
+# The linear regression model
+
+model=lm(response~explanatory, data=data) # the model
+
+summary(model)
+```
+
+## Assumption of linear regression
+
+There are multiple assumption of the linear regression model that need to be evaluated before interpreting the results. These assumptions include:
+
+1. Linearity: The relationship between the dependent and independent variables is linear.
+2. Independence: The residuals are independent of each other.
+3. Homoscedasticity: The residuals have constant variance.
+4. Normality: The residuals are normally distributed.
+5. No multicollinearity: The independent variables are not highly correlated with each other (if you have multiple explanatory variables).
+
+We can evaluate these assumptions using the `plot` function in R. The `plot` function creates a series of diagnostic plots to evaluate the assumptions of the linear regression model. The plots include:
+
+1. Residuals vs Fitted: This plot evaluates the linearity assumption. The residuals should be randomly distributed around the line y=0.
+2. Normal Q-Q: This plot evaluates the normality assumption. The residuals should follow a straight line.
+3. Scale-Location: This plot evaluates the homoscedasticity assumption. The residuals should be equally spread along the range of fitted values.
+4. Residuals vs Leverage: This plot evaluates the influence of each data point on the regression model. Points that are outliers or have high leverage are identified.
+
+The first figure shows the residuals vs fitted values. The residuals should be randomly distributed around the line y=0. Note that any data points which appear to be outliers or have a pattern in the residuals may indicate a violation of the linearity assumption. These values are noted in the figure. In this case no large deviations are observed.
+
+The second figure shows the normal Q-Q plot. The residuals should follow a straight line. 
+
+
+The third figure shows the scale-location plot. The residuals should be equally spread along the range of fitted values. 
+
+
+The fourth figure shows the residuals vs leverage plot. Points that are outliers or have high leverage are identified. Cook's distance is a measure of the influence of each data point on the regression model. Points with high Cook's distance are considered influential points. In this case, no points have a Cook's distance greater than 1, which indicates that there are no influential points in the model. (However see below). 
+
+
+```{r}
+
+plot(model)
+
+```
+
+
+
+Cook's distance is a measure of the influence of each data point on the regression model. Points with high Cook's distance are considered influential points. Cook's distance is calculated as:
+
+\[D_i = \frac{r_i^2}{p(1-r_i^2)}\]
+
+where:
+
+- \(D_i\) is the Cook's distance for data point \(i\)
+- \(r_i\) is the residual for data point \(i\)
+- \(p\) is the number of parameters in the model
+
+A common rule of thumb is that data points with a Cook's distance greater than 1 are considered influential points. In this case, no points have a Cook's distance greater than 1, which indicates that there are no influential points in the model. However, it is always a good idea to evaluate the influence of each data point on the regression model. However, there is alternative interpretation for determining if specific data points have large influence ont he results based on the cutoff value of 4/n, where n is the number of observations. In this case, we have 1000 observations, so the cutoff value would be 0.004.  Thus in case large Cook's are not those larger than 1, but larger than 0.004. 
+ 
+
+
+
+
+
+
+```{r linear model, fig.align='center'}
+
+
+ head(model$residuals)  # to see the residuals
+ head(cooks.distance(model)) # to see the Cook's distance
+ 
+ # function in the package sjPlot to visualize the model
+tab_model(
+  model,show.df = TRUE,
+  CSS = list(
+    css.depvarhead = 'color: red;',
+    css.centeralign = 'text-align: left;', 
+    css.firsttablecol = 'font-weight: bold;', 
+    css.summary = 'color: blue;'
+  )
+)
+```
+
+
+
+
+------------------------------------------------------------------------
+
+## Selling music records
+
+We now evaluate a similar more complex and more realistic data set
+those one would encounter in a study in medicine, sociology or
+ecological.
+
+The data represents the amount of money dedicated to the promotion of
+different CD's from a music company and the number of CD's
+(CD/downloads) sold. In the first line we see the amount of
+pounds sterling, **£** (UK) dedicated to the promotion of the album
+music, in the first line we see that he spent £10,256, and then the
+number of CDs sold was 330. We have information about 200 albums
+different.
+
+```{r advertizing and sales}
+library(readr)
+Album_Sales_1_new <- read_csv("Data/Album_Sales_1_new.csv")
+head(Album_Sales_1_new)
+
+
+length(Album_Sales_1_new$adverts)  # how many rows of data. 
+
+shapiro.test(Album_Sales_1_new$adverts)
+
+
+#Anderson-Darling  test for normality
+
+library(nortest)
+ad.test(Album_Sales_1_new$adverts)
+
+```
+
+We begin by graphing the relationship between the two variables. Note that in
+the **geom\_smooth()** part, has to include **method=lm**, this means that the method we are constructing the line will use linear regression. It is added to the linear function $\epsilon$ that represents the errors of the values when comparing with the line that represents the best model.
+
+$$Y_{ i }=\beta _{ 0 }+\beta _{ 1 }X_{ i }+\epsilon _{ i }$$ Remember
+that $\beta _{ 0 }$ is the intercept and the $\beta _{ 1 }x_{ i }$ is the
+earring. The shaded area is the area of 95% interval of
+trust. This means that the best line, intercept and slope
+could vary in this range if we repeat the experiment. Note here all
+alternatives, I added the two extreme slopes, with a slope
+major (red) and a minor (violet). Each point represents the sale of a
+CD with its corresponding amount dedicated to the promotion. The
+$epsilon$ would be the difference between the best line and the original value,
+This is also called the residuals.
+
+```{r avertizing graph, warning=FALSE, message=FALSE}
+
+ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
+  geom_smooth(method=lm, se = TRUE)+
+  geom_point(sd=TRUE)
+```
+
+The model 
+
+```{r, sales model, }
+
+model1=lm(sales~adverts, Album_Sales_1_new)
+
+#summary(model1)
+
+tab_model(
+  model1,show.df = TRUE,
+  CSS = list(
+    css.depvarhead = 'color: red;',
+    css.centeralign = 'text-align: left;', 
+    css.firsttablecol = 'font-weight: bold;', 
+    css.summary = 'color: blue;'
+  )
+)
+
+```
+
+------------------------------------------------------------------------
+
+
+
+
+
+## Cook's Distance
+
+Continuing with the theme of evaluating whether there are values that could
+influence the analysis a lot, we can use one of the tools
+to evaluate the weight of each value on a linear regression based on
+least squares methods, called **Cook's Distance**. This
+analysis was developed by R. Dennis Cook in 1977 and has as its
+objective to evaluate each value in the data matrix and the weight it has
+about the result (when it is included or not in the analysis).
+Produces an index for each of the values on the result
+based on the residual values is called Cook's Distance.
+Therefore, this analysis evaluates the relative impact of each value
+about the index. Unfortunately it is not clear what the value is
+critical; That is, what value can tell us that we are overweight?
+about the results. The two main suggestions are: **Distance
+of Cook**, Di, is greater than 1 (suggested by R. Dennis Cook Cook himself in
+1982); and that **Di \> 4/n**, where **n** is the number of observations
+(Bollen *et al*. 1990).
+
+To illustrate, we will continue with the model **model1** using the values calculated in the previous model. The graph is will be constructed using the **seq\_along** option, so that the values in the **X** axis are based on the sequence of data in the file and the values on the **Y** axis are based on the values of the **Distance of
+Cook**. In this case, we see that all the values are well below of 1, suggesting that none of the individual values would greatly influence the results even if they were excluded. If we use the second alternative of **Di \> 4/n**, then we need to evaluate the 6 Di values that are greater than 4/200=0.02, these should be of concern,
+where 200 is the amount of data in the file. If you consider this second alternative, it would be necessary to evaluate 6 values in the table of
+data that could be suspicious (values above the line red). Note that it's not that they are **incorrect**; rather, this result is only a tool to evaluate values that
+They **appear** to have a considerable impact on the results.
+
+Below is how to add
+
+- the "cook.distance" values to your file
+- Add a "sequence" column to the data
+- Create a graph of Cook's distance.\
+- Determine if there are values of Cook's $D_i$ greater than 1, or 4/n.
+
+```{r Cook distance}
+library(gghighlight) # package to highlight values in the graph
+
+4/length(Album_Sales_1_new$adverts)
+
+
+
+Album_Sales_1_new$cooks.distance<-cooks.distance(model1)
+
+
+Album_Sales_1_new$sequence=c(1:200)
+
+
+ggplot(Album_Sales_1_new, aes(sequence, cooks.distance))+
+  geom_point()+
+  geom_hline(aes(yintercept=4/length(Album_Sales_1_new$adverts)))+
+  gghighlight(cooks.distance > 0.02)+
+  geom_label(aes(label=sequence), vjust=1, hjust=1, size=2) # function to label values
+
+```
+
+------------------------------------------------------------------------
+
+
+
+
+
+
+

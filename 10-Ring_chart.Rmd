@@ -3,6 +3,11 @@
 
 An alternative method of naming ring chart are "Donut chart" or "Circle chart". It is a circular statistical graphic which is divided into slices to illustrate numerical proportion. The ring chart is a variation of the pie chart, with a hole in the center. The ring chart allows for a better visual comparison of the proportions of the data.
 
+The ring chart is a good way to represent data when the number of slices is small. When the number of slices. Pie chart should be avoided in all cicumstances because it is difficult to compare the size of the slices. The human eye is not good at comparing angles. The ring chart is an alternative to the pie chart. 
+
+
+
+
 
 ```{r, ring_1}
 # load library
