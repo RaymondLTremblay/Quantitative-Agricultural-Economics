@@ -1,0 +1,185 @@
+# Binomial_Regression
+
+```{r, BR_1, echo=FALSE, message=FALSE, warning=FALSE}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse,  huxtable,  SuppDists, univariateML, invgamma)
+
+
+#detach("package::lubridate", unload=TRUE)
+library(tidyverse) # this is a package that includes dplyr, ggplot2, tidyr, readr, purrr, tibble, stringr, forcats
+library(huxtable) # this is a package to create tables
+library(SuppDists) # this is a package to create distributions
+library(univariateML) # this is a package to create distributions
+library(invgamma) # this is a package to create distributions
+
+# library(wakefield) # this is a package to create random data: (DO NOT activate it as there multiple conflicts wit other packages), Use is this alternative wakefield::r_sample_binary(50, x = 0:1, prob =c(0.3, 0.7), name = "Binary")
+
+```
+
+
+
+## Binomial regression
+
+The binomial regression is used when the dependent variable is binary, that is, it has two possible outcomes, 0 or 1, dead or alive, success or failure, etc. The binomial distribution is used as a probability distribution and the **logit** function is used as a link function. The model is called **Logistic Regression**.
+
+$$\log\frac{q_i}{1-q_i}=\beta_0+\beta_1X_i$$
+where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$.
+
+Here let use the data from Karn and Penrose of the survival or death on infants and birth weight.
+
+ - Survival:  1 = Infant survived, 0 = the Infant died
+ - Weigth_lb = The weigth of the infant in pounds at birth.
+ 
+ 
+```{r, BR_2, warning=FALSE, message=FALSE}
+library(readr)
+Karn_Penrose_infant_survivorship <- read_csv("Data/Karn_Penrose_infant_survivorship.csv")
+
+Infant= Karn_Penrose_infant_survivorship
+
+head(Infant)
+
+```
+
+Visualize the data
+
+- The data is not normally distributed.
+- The data is binary, 0 or 1.
+- The regression line is not linear and is probability
+- The 95% confidence interval is shown in the graph.
+
+
+
+
+```{r, BR_3, warning=FALSE, message=FALSE}
+ggplot(Infant, aes(x=Weigth_lb, y=Survival))+
+  geom_jitter(width=0.1, height = 0.1)+ # point represents an infants outcome
+  geom_smooth(method="glm", method.args=list(family="binomial"), se=T)+ 
+    xlab("Weight in pounds")+
+  ylab("Probability of Survival")+
+  scale_x_continuous(breaks = seq(0, 14, by = 1))
+
+
+```
+
+Creating the binomial model
+
+
+```{r, BR_4, warning=FALSE, message=FALSE}
+Infant_model=glm(Survival ~ Weigth_lb, data=Infant, family=binomial)
+
+summary(Infant_model)
+```
+
+**** 
+
+Second example of logistic regression
+
+Explanatory variables 
+
+- age= 201 particpants and their age
+- sex:0 = female 1= male
+- num_dependents: number of dependents
+- income: income in categories
+- descriminatory buyer: a person who regularly searches for differentiated products at grocery stores
+- Edu_none: 1 = less or equal to junior school and 0 = otherwise
+- Edu_high: 1 = has a high school degree, 0 = has less than high school
+- edu_bach: 1 = has a bachellor degree, 0= has less than a bachellor degree
+
+Response variable
+
+- milk_local: ready to buy local milk? 0 = no, 1 = yes
+
+
+
+```{r, BR_5}
+library(readxl)
+Milk_probit_logit <- read_excel("Data/Milk_probit_logit.xlsx")
+
+names(Milk_probit_logit)
+```
+
+```{r, BR_6}
+
+milk_model_logit=glm(milk_local~age+sex+num_dependents+ descriminatory_buyer+
+                          income+ Edu_none+ Educ_high+ Educ_bach, family=binomial(link=logit), data=Milk_probit_logit)
+
+summary(milk_model_logit)
+
+
+```
+
+The same model with a "probit" link function
+
+
+```{r, BR_7}
+milk_model_probit=glm(milk_local~age+sex+num_dependents+ descriminatory_buyer+
+                          income+ Edu_none+ Educ_high+ Educ_bach, family=binomial(link=probit), data=Milk_probit_logit)
+
+summary(milk_model_probit)
+
+```
+
+Evaluating assumptions of the binomial model
+
+You need to check for linearity, independence of errors, homoscedasticity, overdispersion and normality of residuals.
+
+- The response variable is binary
+- Check for the homoscedasticity of the residuals
+- Check for overdispersion
+
+In this first figure we have the Cook's distance, an index of outliers and influential points.  The values are in the order of the data set, thus a point a position 100, is the 100th point in the data set. The values are the Cook's distance, the larger the value the more influential the point is. The red line is the threshold value of 4/n, where n is the number of observations. Points above the line are influential points.
+
+Good news, the values are not extremely high, thus there are no influential points.
+
+
+```{r, BR_8}
+library(ggResidpanel) # a package to look at residuals
+resid_panel(milk_model_logit, plots = "cookd")
+```
+
+
+The easiest way to check dispersion in a model is to calculate the ratio of the residual deviance to the residual degrees of freedom.
+
+Going back to the original output of the model, we can calculate the dispersion as follows
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)          -0.918174   0.878275  -1.045  0.29582   
+age                   0.025989   0.009741   2.668  0.00763 **
+sex                   0.662518   0.339971   1.949  0.05133 . 
+num_dependents        0.260138   0.131064   1.985  0.04716 * 
+descriminatory_buyer -0.817777   0.328015  -2.493  0.01266 * 
+income               -0.450150   0.150804  -2.985  0.00284 **
+Edu_none              0.027829   1.090379   0.026  0.97964   
+Educ_high             0.663716   0.589243   1.126  0.26000   
+Educ_bacj             1.363096   0.578054   2.358  0.01837 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 276.54  on 199  degrees of freedom
+Residual deviance: 233.02  on 191  degrees of freedom
+AIC: 251.02
+
+NOte we have the residual variance at 233.02 on 191 df. The dispersion is calculated as follows
+
+```{r, BR_9}
+milk_model_logit$deviance/milk_model_logit$df.residual
+```
+
+The dispersion is 1.22, which is greater than 1, thus there is some overdispersion. 
+
+
+
+
+```{r, BR_10}
+1 - pchisq(milk_model_logit$deviance, milk_model_logit$df.residual)
+```
+
+The p value of the Chi square test returns a p = 0.02, which suggest that there is some overdisersion. 
+
+
+
+

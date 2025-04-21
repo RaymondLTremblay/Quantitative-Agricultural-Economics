@@ -1,0 +1,247 @@
+# Chi-square test/Contingency tables
+
+
+
+## Count data 
+
+- Count data is a type of data that represents the number of times an event occurs in a fixed interval of time or space.
+
+Thus the values used for analysis are the number of events.  
+
+Two basic aapproaches to analyze count data are:
+
+  - Chi-square test (which is the non-parametric for count data) a 2x2 table
+  - Contingency tables (which is the parametric for count data) a table larger than 2x2 and referred as RxC table (row x column table).
+  
+  
+## Chi-square test
+
+ The chi -square test was has a long history and was first introduced by Karl Pearson in 1900. It is used to test the association between two categorical variables. The test is based on the difference between the expected frequencies and the observed frequencies in one or more categories in the contingency table. The null hypothesis is that there is no association between the variables. The test statistic is calculated as the sum of the squared differences between the observed and expected frequencies divided by the expected frequencies. The test statistic follows a chi-square distribution with (r-1)(c-1) degrees of freedom, where r is the number of rows and c is the number of columns in the contingency table. The test is used to determine if the **observed frequencies** are significantly different from the **expected frequencies**. If the test statistic is greater than the critical value, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the test statistic is less than the critical value, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+ 
+
+```{r, chi_1}
+# Chi-square test
+
+# Create a 2x2 contingency table
+
+# Create a data frame
+
+datadf <- data.frame(
+  "A" = c(10, 20),
+  "B" = c(30, 10)
+)
+
+datadf
+```
+
+The test using the chisq.test() function in R.
+
+```{r, chi_2}
+# Chi-square test
+
+stats::chisq.test(datadf) # Chi-square test of independence of variables in a table
+
+
+
+
+```
+We evaluate the p-value to determine if the null hypothesis is rejected or not. If the p-value is less than the significance level, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the p-value is greater than the significance level, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+
+In this case the p-value is 0.001 which is less than the significance level of 0.05. Therefore, the null hypothesis is rejected and it is concluded that there is an association between the variables.
+
+
+Assumptions of chi square test are:
+
+- The data is in the form of frequencies.
+- The data is independent.
+- The data is categorical.
+- The **expected frequency** in each cell of the contingency table is greater than 5.
+- The sample size is large enough to ensure that the chi-square distribution is a good approximation of the sampling distribution of the test statistic.
+
+
+If the expected frequencies are less than 5, then the Fisher's exact test should be used instead of the chi-square test. The Fisher's exact test is used to test the association between two categorical variables when the expected frequencies are less than 5. The test is based on the hypergeometric distribution and is used to determine if the observed frequencies are significantly different from the expected frequencies. The test is used to determine if the null hypothesis is rejected or not. If the p-value is less than the significance level, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the p-value is greater than the significance level, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+
+
+Let us calculate the expected frqeuncies for the above example.
+
+```{r, chi_3}
+# Calculate the expected frequencies
+
+stats::chisq.test(datadf)$expected # Expected frequencies
+
+```
+
+The expected frequencies are 17.1, 12.9, 22.9, and 17.1. The expected frequencies are all greater than 5, so the chi-square test can be used to test the association between the variables.
+
+
+Now let us calculate the Fisher's exact test for a small sample size data set.
+
+- calculate the expected frequencies for the data set.
+
+
+```{r, chi_4}
+# Create a 2x2 contingency table
+
+# Create a data frame
+
+datadf2 <- data.frame(
+  "A" = c(20, 15),
+  "B" = c(5, 1)
+)
+
+stats::chisq.test(datadf2)$expected # Expected frequencies
+
+
+```
+
+
+```{r, chi_5}
+# Fisher's exact test
+
+stats::fisher.test(datadf2) # Fisher's exact test for count data
+
+
+
+```
+In this case the p-value is 0.38 which is greater than the significance level of 0.05. Therefore, the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+
+
+
+
+********
+
+
+
+## Contingency tables
+
+Contingency tables are used to display the relationship between two or more categorical variables. The table is organized so that the rows represent one variable and the columns represent another variable. The cells of the table contain the frequencies of the joint occurrences of the variables. The table is used to test the association between the variables. The null hypothesis is that there is no association between the variables. The test statistic is calculated as the sum of the squared differences between the observed and expected frequencies divided by the expected frequencies. The test statistic follows a chi-square distribution with (r-1)(c-1) degrees of freedom, where r is the number of rows and c is the number of columns in the contingency table. The test is used to determine if the **observed frequencies** are significantly different from the **expected frequencies**. If the test statistic is greater than the critical value, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the test statistic is less than the critical value, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+
+
+We will start with using the traditional package for evaluating the RxC table. 
+
+
+
+```{r, chi_6}
+# Contingency tables
+
+# Create a 4x2 contingency table
+
+# Create a data frame
+
+datadf3 <- as.table(rbind(c(10, 20, 30, 40), c(10, 60, 70, 300)))
+
+datadf3
+```
+
+
+Test of independence using the chisq.test() function in R.
+
+The test evaluates the differences between the observed and expected frequencies.
+
+Let us visualize the expected frequencies for the above example using the function mosaicplot() from the **graphics** package.
+
+Note the width of the bars in the plot is frequency of the observed data while the height of the bars represents the proportions.
+
+
+```{r, chi_7}
+library(graphics)
+
+mosaicplot(datadf3, main = "Contingency table", color=TRUE) # Mosaic plot of the contingency table
+
+```
+
+It is possible to the test we will use the **gmodels** package and function CrossTable() to evaluate the test of independence.
+
+CrossTable(data, fisher=TRUE, chisq=TRUE, expected=TRUE, sresid=TRUE, format="SAS")
+
+- data: a data frame or matrix containing the data
+- fisher: a logical value indicating whether to perform the Fisher's exact test
+- mcnemar: a logical value indicating whether to perform the McNemar test
+
+- chisq: a logical value indicating whether to perform the chi-square test
+- expected: a logical value indicating whether to display the expected frequencies
+- sresid: a logical value indicating whether to display the standardized residuals
+- format: a character string indicating the format of the output (either "SPSS" or "SAS")
+
+The output of the function is a table that contains the observed frequencies, the expected frequencies, the standardized residuals, and the p-values for the Fisher's exact test and the chi-square test. The table is used to determine if the null hypothesis is rejected or not. If the p-value is less than the significance level, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the p-value is greater than the significance level, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.
+
+ NOTE the order of how the data is shown in the table. 
+ 
+ 
+```{r, chi_8}
+library(gmodels)
+
+CrossTable(datadf3, fisher = TRUE, chisq = TRUE, 
+           expected = TRUE, sresid = TRUE, format = "SAS") # Test of independence of variables in a table
+
+
+
+
+```
+
+
+We can do a figure of the expected frequencies using the function mosaicplot() from the **graphics** package. Note that this figure shows the standardized residuals and their deviation from expecyed frequencies. 
+
+
+
+```{r, chi_9}
+mosaicplot(datadf3, shade = TRUE) # Expected frequencies
+```
+
+
+
+***
+
+
+
+
+We will use a new package called ca for the analysis of RxC table called 'contingencytables' 
+
+For analysis of RxC table we use the **contingencytables** package and the function **Pearson_LR_tests_rxc()** to evaluate the test of independence. The function will return the likelihood ratio test statistic and the p-value.
+
+
+
+```{r, chi_10}
+# Contingency tables
+library(contingencytables)
+Pearson_LR_tests_rxc(datadf3)  # Chi-square test of independence of variables in a table
+
+```
+
+
+
+It well known in statistics that development of new approaches are readily adopted by the statistical community. Here is an example of a function that different rxc contingency tables and compares alternative algorithm. At present this function only works for 3x2 and 3x3 tables.
+
+Here the function evaluates 
+ - Exact conditional and mid-P tests for the rxc table: 
+ 
+ Mid-P tests are exact tests that are more powerful than the Fisher's exact test for small sample sizes. The mid-P test is a modification of the Fisher's exact test that uses the mid-P value instead of the exact P value. The mid-P value is calculated by taking the average of the P values for all possible tables that are more extreme than the observed table. The mid-P test is more powerful than the Fisher's exact test because it takes into account the distribution of the P values for all possible tables. Consequently this is amore conservative approach. 
+ 
+ - the Fisher-Freeman-Halton: the Fisher-Freeman-Halton asymptotic test for unordered rxc tables
+ - Pearson: Pearson's chi-square test for independence 
+ - likelihood ratio: the likelihood test for association  
+ - Kruskal-Wallis: The Kruskal-Wallis asymptotic test for singly ordered rxc tables 
+ - linear-by-linear: The linear-by-linear test for association
+ - Jonckheere-Terpstra: The Jonckheere-Terpstra test for association
+ 
+ 
+ Information on these and many other Contingency tests can be found here
+ 
+ https://www.routledge.com/Statistical-Analysis-of-Contingency-Tables/Fagerland-Lydersen-Laake/p/book/9781466588172
+ 
+ 
+ 
+
+```{r}
+
+table_7.3 # the data used in the analysis
+
+
+Exact_cond_midP_tests_rxc(table_7.3) # the function to evaluate all the above algorthims 
+
+
+```
+
+
+
+

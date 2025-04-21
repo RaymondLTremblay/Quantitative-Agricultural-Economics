@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 18 Multinomial logit analysis | Quantitative Agricultural Economics</title>
-  <meta name="description" content="Chapter 18 Multinomial logit analysis | Quantitative Agricultural Economics" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <title>Chapter 20 Multinomial logit analysis | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 20 Multinomial logit analysis | Quantitative Agricultural Economics" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 18 Multinomial logit analysis | Quantitative Agricultural Economics" />
+  <meta property="og:title" content="Chapter 20 Multinomial logit analysis | Quantitative Agricultural Economics" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 18 Multinomial logit analysis | Quantitative Agricultural Economics" />
+  <meta name="twitter:title" content="Chapter 20 Multinomial logit analysis | Quantitative Agricultural Economics" />
   
   
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2025-02-13" />
+<meta name="date" content="2025-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generalized-linear-models.html"/>
+<link rel="prev" href="poisson-regression-1.html"/>
 <link rel="next" href="beta-regression.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -190,8 +190,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> Changing names of levels/factors</a></li>
 <li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
 <li class="chapter" data-level="5.6" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>5.6</b> </a></li>
-<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.7</b> Subsetting data set</a></li>
-<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.8</b> Titanic data set</a></li>
+<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#exclude-na-values-from-a-specific-variable-with-drop_na"><i class="fa fa-check"></i><b>5.7</b> Exclude NA values from a specific variable with <strong>drop_na</strong></a></li>
+<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.8</b> Subsetting data set</a></li>
+<li class="chapter" data-level="5.9" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.9</b> Titanic data set</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="data-wrangling.html"><a href="data-wrangling.html#arrange-rows-based-on-a-variable"><i class="fa fa-check"></i><b>5.9.1</b> Arrange rows based on a variable</a></li>
+<li class="chapter" data-level="5.9.2" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate-calculate-new-variables-based-on-existing-variables"><i class="fa fa-check"></i><b>5.9.2</b> Mutate: Calculate new variables based on existing variables</a></li>
+<li class="chapter" data-level="5.9.3" data-path="data-wrangling.html"><a href="data-wrangling.html#group-data-by-a-variable"><i class="fa fa-check"></i><b>5.9.3</b> Group data by a variable</a></li>
+<li class="chapter" data-level="5.9.4" data-path="data-wrangling.html"><a href="data-wrangling.html#group-by-multiple-variables."><i class="fa fa-check"></i><b>5.9.4</b> Group by multiple variables.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html"><i class="fa fa-check"></i><b>6</b> Understanding your file data strutcture</a>
 <ul>
@@ -204,7 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#recoding-variables"><i class="fa fa-check"></i><b>6.3.3</b> Recoding variables</a></li>
 <li class="chapter" data-level="6.3.4" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.3.4</b> Levels of the variables</a></li>
 <li class="chapter" data-level="6.3.5" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#summary-of-the-data"><i class="fa fa-check"></i><b>6.3.5</b> Summary of the data</a></li>
-<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-lat-rows-few-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and lat rows few rows of the data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-last-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and last rows of the data</a></li>
+<li class="chapter" data-level="6.3.7" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#unique-values-of-the-variables"><i class="fa fa-check"></i><b>6.3.7</b> Unique values of the variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html"><i class="fa fa-check"></i><b>7</b> Tests of Normality and Equality of Variance</a>
@@ -364,53 +372,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>16.4</b> Visualization</a></li>
 <li class="chapter" data-level="16.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>16.5</b> Example: Quantile regression in R</a></li>
 <li class="chapter" data-level="16.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>16.6</b> The quantile regression model, <code>rq()</code></a></li>
-<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq"><i class="fa fa-check"></i><b>16.7</b> nlrq</a></li>
+<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>16.7</b> nlrq() function</a></li>
+<li class="chapter" data-level="16.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>16.8</b> Multivariate quantile regression</a></li>
+<li class="chapter" data-level="16.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>16.9</b> Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Generalized Linear Models</a>
+<li class="chapter" data-level="17" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Introduction to Generalized Linear Models</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>17.1</b> Linear models</a></li>
-<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>17.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
-<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.3</b> When the dependent variable is not linear</a></li>
-<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.4</b> Link available</a></li>
-<li class="chapter" data-level="17.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.5</b> The assumptions</a></li>
-<li class="chapter" data-level="17.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.6</b> The advantages of GLM</a></li>
-<li class="chapter" data-level="17.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.7</b> Binomial or Bernoulli models</a>
+<li class="chapter" data-level="17.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>17.1</b> Generalized Linear models and distributions</a></li>
+<li class="chapter" data-level="17.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.2</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="17.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.3</b> Link available</a></li>
+<li class="chapter" data-level="17.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.4</b> The assumptions</a></li>
+<li class="chapter" data-level="17.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.5</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="17.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.6</b> Binomial or Bernoulli models</a>
 <ul>
-<li class="chapter" data-level="17.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.7.1</b> Gamma Distribution</a></li>
+<li class="chapter" data-level="17.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.6.1</b> Gamma Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="17.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.8</b> The basic parameters of the gamma.</a>
+<li class="chapter" data-level="17.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.7</b> The basic parameters of the gamma.</a>
 <ul>
-<li class="chapter" data-level="17.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#lthe-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.8.1</b> LThe inverse Gaussian distribution</a></li>
+<li class="chapter" data-level="17.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.7.1</b> The Inverse Gaussian distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="17.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.9</b> Evaluating distributions</a></li>
-<li class="chapter" data-level="17.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Binomial regression</a></li>
-<li class="chapter" data-level="17.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.11</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.12</b> Negative binomial regression</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>18</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="17.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.8</b> Evaluating distributions</a></li>
+<li class="chapter" data-level="17.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.9</b> Poisson regression</a></li>
+<li class="chapter" data-level="17.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Negative binomial regression</a>
 <ul>
-<li class="chapter" data-level="18.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>18.0.1</b> Load libraries</a></li>
-<li class="chapter" data-level="18.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>18.0.2</b> Data</a></li>
-<li class="chapter" data-level="18.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>18.0.3</b> Model</a></li>
-<li class="chapter" data-level="18.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>18.0.4</b> Assumptions</a></li>
-<li class="chapter" data-level="18.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>18.0.5</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="17.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>17.10.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="17.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>17.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>19</b> Beta Regression</a>
+</ul></li>
+<li class="chapter" data-level="18" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>18</b> Binomial_Regression</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>19.1</b> What is a beta regression?</a></li>
-<li class="chapter" data-level="19.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>19.2</b> What is the problem with the data?</a></li>
-<li class="chapter" data-level="19.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>19.3</b> First step, what is a beta distribution?</a></li>
-<li class="chapter" data-level="19.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>19.4</b> Wikipedia</a></li>
-<li class="chapter" data-level="19.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>19.5</b> Proportion of smokers in different countries</a></li>
-<li class="chapter" data-level="19.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>19.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
-<li class="chapter" data-level="19.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>19.7</b> Visualization of the distribution with CI.</a></li>
-<li class="chapter" data-level="19.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>19.8</b> Regression model</a></li>
-<li class="chapter" data-level="19.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>19.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
-<li class="chapter" data-level="19.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>19.10</b> Visualize the beta regression</a></li>
-<li class="chapter" data-level="19.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>19.11</b> Compare the traditional linear model versus a beta model</a></li>
-<li class="chapter" data-level="19.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>19.12</b> Distribution of specific values</a></li>
+<li class="chapter" data-level="18.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>18.1</b> Binomial regression</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>20</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="chapter" data-level="19" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>19</b> Poisson Regression</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>19.1</b> Negative binomial regression</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>19.1.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="19.1.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>19.1.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>20</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="20.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>20.0.1</b> Load libraries</a></li>
+<li class="chapter" data-level="20.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>20.0.2</b> Data</a></li>
+<li class="chapter" data-level="20.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>20.0.3</b> Model</a></li>
+<li class="chapter" data-level="20.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>20.0.4</b> Assumptions</a></li>
+<li class="chapter" data-level="20.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>20.0.5</b> Post estimation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>21</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>21.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="21.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>21.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="21.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>21.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="21.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>21.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="21.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>21.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="21.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>21.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="21.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>21.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="21.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>21.8</b> Regression model</a></li>
+<li class="chapter" data-level="21.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>21.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="21.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>21.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="21.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>21.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="21.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>21.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>22</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="chapter" data-level="23" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>23</b> Chi-square test/Contingency tables</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>23.1</b> Count data</a></li>
+<li class="chapter" data-level="23.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>23.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="23.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>23.3</b> Contingency tables</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -430,22 +460,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multinomial-logit-analysis" class="section level1 hasAnchor" number="18">
-<h1><span class="header-section-number">Chapter 18</span> Multinomial logit analysis<a href="multinomial-logit-analysis.html#multinomial-logit-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="multinomial-logit-analysis" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">Chapter 20</span> Multinomial logit analysis<a href="multinomial-logit-analysis.html#multinomial-logit-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A multinomial logit model is a type of regression analysis used to model nominal outcome variables. In this model, the dependent variable is a nominal variable with more than two levels. The model is used to estimate the probability of each level of the nominal variable. The model is an extension of the binary logit model, which is used to model binary outcome variables. The multinomial logit model is used in a wide range of fields, including economics, political science, and marketing.</p>
 <p>The model is based on the assumption that the log-odds of each level of the nominal variable are a linear function of the predictor variables. The model is estimated using maximum likelihood estimation, and the coefficients of the model are interpreted as the change in the log-odds of each level of the nominal variable associated with a one-unit change in the predictor variable.</p>
 <p>In this tutorial, we will walk through an example of how to estimate a multinomial logit model in R using the <code>nnet</code> package. We will use the <code>iris</code> dataset, which is a built-in dataset in R that contains measurements of iris flowers. The outcome variable in the dataset is the species of the iris flower, which has three levels: setosa, versicolor, and virginica. We will estimate a multinomial logit model to predict the species of the iris flower based on the measurements of the flower.</p>
-<div id="load-libraries" class="section level3 hasAnchor" number="18.0.1">
-<h3><span class="header-section-number">18.0.1</span> Load libraries<a href="multinomial-logit-analysis.html#load-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="multinomial-logit-analysis.html#cb444-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb444-2"><a href="multinomial-logit-analysis.html#cb444-2" tabindex="-1"></a><span class="fu">library</span>(nnet)</span></code></pre></div>
+<div id="load-libraries" class="section level3 hasAnchor" number="20.0.1">
+<h3><span class="header-section-number">20.0.1</span> Load libraries<a href="multinomial-logit-analysis.html#load-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="multinomial-logit-analysis.html#cb537-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb537-2"><a href="multinomial-logit-analysis.html#cb537-2" tabindex="-1"></a><span class="fu">library</span>(nnet)</span></code></pre></div>
 </div>
-<div id="data" class="section level3 hasAnchor" number="18.0.2">
-<h3><span class="header-section-number">18.0.2</span> Data<a href="multinomial-logit-analysis.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data" class="section level3 hasAnchor" number="20.0.2">
+<h3><span class="header-section-number">20.0.2</span> Data<a href="multinomial-logit-analysis.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data used in this analysis is the <code>iris</code> dataset, which is a built-in dataset in R. The dataset contains 150 observations of iris flowers, with four predictor variables (sepal length, sepal width, petal length, and petal width) and one outcome variable (species of iris flower). The outcome variable has three levels: setosa, versicolor, and virginica.</p>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="multinomial-logit-analysis.html#cb445-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb445-2"><a href="multinomial-logit-analysis.html#cb445-2" tabindex="-1"></a></span>
-<span id="cb445-3"><a href="multinomial-logit-analysis.html#cb445-3" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="multinomial-logit-analysis.html#cb538-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb538-2"><a href="multinomial-logit-analysis.html#cb538-2" tabindex="-1"></a></span>
+<span id="cb538-3"><a href="multinomial-logit-analysis.html#cb538-3" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
 <col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sepal.Length</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sepal.Width</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Petal.Length</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Petal.Width</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Species</th></tr>
@@ -464,14 +494,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 </div>
-<div id="model" class="section level3 hasAnchor" number="18.0.3">
-<h3><span class="header-section-number">18.0.3</span> Model<a href="multinomial-logit-analysis.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model" class="section level3 hasAnchor" number="20.0.3">
+<h3><span class="header-section-number">20.0.3</span> Model<a href="multinomial-logit-analysis.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="assumptions" class="section level3 hasAnchor" number="18.0.4">
-<h3><span class="header-section-number">18.0.4</span> Assumptions<a href="multinomial-logit-analysis.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="assumptions" class="section level3 hasAnchor" number="20.0.4">
+<h3><span class="header-section-number">20.0.4</span> Assumptions<a href="multinomial-logit-analysis.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="post-estimation-analysis" class="section level3 hasAnchor" number="18.0.5">
-<h3><span class="header-section-number">18.0.5</span> Post estimation analysis<a href="multinomial-logit-analysis.html#post-estimation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="post-estimation-analysis" class="section level3 hasAnchor" number="20.0.5">
+<h3><span class="header-section-number">20.0.5</span> Post estimation analysis<a href="multinomial-logit-analysis.html#post-estimation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>
@@ -480,7 +510,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="generalized-linear-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="poisson-regression-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="beta-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -495,42 +525,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/17-Multinomial_logit_analysis.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/17-Multinomial_logit_analysis.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/19-Multinomial_logit_analysis.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/19-Multinomial_logit_analysis.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

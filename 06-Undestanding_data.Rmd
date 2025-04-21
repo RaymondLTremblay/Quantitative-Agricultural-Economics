@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Every data analysis project starts with understanding the data. This includes understanding the dimensions of the data, the structure of the data, the levels of the variables, and the relationships between the variables. In this chapter, we will learn how to evaluate the data and understand the data.
+Every data analysis project starts with understanding the data. This includes understanding the dimensions of the data, the structure of the data, the levels of the variables, and the relationships between the variables. In this chapter, we will learn how to evaluate the data and understand the data. In addition to this, we will learn how to recode variables, change the levels of the variables, and summarize the data.
 
 ## Functions to evaluate your data
 
@@ -14,6 +14,17 @@ The following functions can be used to evaluate the data:
 - `summary()`: This function returns the summary of the data.
 - `head()`: This function returns the first 6 rows of the data.
 - `tail()`: This function returns the last f6 rows of the data.
+- `unique()`: This function returns the unique values of the variables.
+- `sort()`: This function sorts the values of the variables.
+- `as.factor()`: This function converts a variable to a factor variable.
+- `as.Date()`: This function converts a variable to a date variable.
+- `as.numeric()`: This function converts a variable to a numeric variable.
+- `as.character()`: This function converts a variable to a character variable.
+- `as.logical()`: This function converts a variable to a logical variable.
+- `as.integer()`: This function converts a variable to an integer variable.
+- `as.double()`: This function converts a variable to a double variable.
+
+
 
 ## Example
 
@@ -65,7 +76,7 @@ str(Sorghum)
 
 ### Recoding variables
 
-The variable is mis coded as a numeric variable where **Rust** represent different types of **Rust**, thus this variable should be recoded as a factor variable. 
+The variable is mis-coded as a numeric variable where **Rust** represent different types of **Rust**, thus this variable should be recoded as a factor variable. 
 
 ```{r}
 Sorghum$Rust=as.factor(Sorghum$Rust)
@@ -96,9 +107,9 @@ head(levels(Sorghum$Cultivar)) # levels of the variable Cultivar, showing only t
 
 
 
-Another miss coded variable is the variable is the **Julain days**, however, but the information is not the **Julian days** which would be the number of days that have passed since the first day since January 1, 4713 BC. What the authors have in the number of the consecutive days since the 1st January of that year.
+Another miss informed variable is the variable name **Julain days**, but the information is not the **Julian days** which would be the number of days that have passed since the first day since January 1, 4713 BC. What the authors have in the number of the consecutive days since the 1st January of that year.
 
- Thus we need to do the follwoing two steps:
+ Thus we need to do the following two steps:
  
  - change the name to `Consecutive_days`
  - change the `Consecutive_days` to be more informative by converting it to a date variable.
@@ -110,6 +121,8 @@ Sorghum$Consecutive_days=as.Date("2017-01-01")+ Sorghum$Consecutive_days-1
 
 
 str(Sorghum) # note now the variable **Consecutive_days** is a date variable.
+
+
 ```
  
 
@@ -138,15 +151,35 @@ summary(Sorghum)
 
 
 
-### First and lat rows few rows of the data
+### First and last rows of the data
 
 ```{r}
 head(Sorghum) # first few rows of the data
 
 tail(Sorghum) # last few rows of the data
 
-head(Sorghum, 10) # first 10 rows of the data, you change the output to any number of rows you want to see.
+# head(Sorghum, 10) # first 10 rows of the data, you change the output to any number of rows you want to see.
 ```
+
+### Unique values of the variables
+
+The unique function can be used to get the unique values of the variables. it is usefull to skim the different unique levels or values in a variable.
+
+Let us look at the unique values of the variable `Cultivar` and the unique values of the variable `Pani Length` from smallest to largest using the function **sort()**.
+
+
+```{r}
+head(unique(Sorghum$Cultivar)) # unique values of the variable Cultivar
+
+# there is 201 unique Cultivars in the data (remove head() to see all the unique values of the variable Cultivar))
+
+sort(unique(Sorghum$`Pani Length`)) # unique values of the variable Pani_length
+
+
+# there are Panicle Length from 10 to 80.  This is quick function for data cleaning and finding errors in the data set. 
+```
+
+
 
 
 

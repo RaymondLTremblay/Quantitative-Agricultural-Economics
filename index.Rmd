@@ -7,49 +7,53 @@ site: bookdown::bookdown_site
 
 # Daily Activities
 
+This is a bookdown project that will be used in a workshop for faculty and graduate students on Quantitative Agricultural Economics. 
+
 
 ***
 
+
 Day 1: Introduction to RStudio and available packages
 
-•⁠ ⁠Interaction with the Platform (Chapter 2)
+   -⁠ ⁠Interaction with the Platform (Chapter 2)
 
-•⁠ ⁠How to search and download statistical packages? (Chapter3)
+   -⁠ ⁠How to search and download statistical packages? (Chapter3)
 
-•⁠ ⁠How to understand the default programming of statistical packages?
+   -⁠ Understand the default programming of statistical packages?
 
-•⁠ ⁠How to find help?
+   -  ⁠How to find help?
 
-•⁠ ⁠How to upload data, rename variables, delete data, find missing values, view descriptive statistics, view variable types, etc.)
+   - ⁠ ⁠How to upload data, rename variables, delete data, find missing values, view descriptive statistics, view variable types, etc.)
 
-•⁠ ⁠Shapito-Wilk test
+   - Normality tests
+      - ⁠Shapiro-Wilk test
+      - Anderson-Darling test
 
-•⁠ ⁠T test
+   -⁠ t-test
 
-•⁠ ⁠Test
-
-•⁠ ⁠Kruskal Wallis tests
+ - ⁠Non- Parametric tests
+      - ⁠Kruskal Wallis tests
 
 
 ***
  
 Day 2: Data visualization - graphs
 
-•⁠ ⁠Scatter plot (simple and with multiple variables)
+  -⁠ ⁠Scatter plot (simple and with multiple variables)
 
-•⁠ ⁠Scatter plot matrix
+  -⁠ ⁠Scatter plot matrix
 
-•⁠ ⁠Linear graph (simple and with two variables)
+  -⁠ ⁠Linear graph (simple and with two variables)
 
-•⁠ ⁠Pie chart
+  - Donut Chart (an laternative to Pie charts)
 
-•⁠ ⁠Histograms (simple and with multiple variables
-)
+  -⁠ ⁠Histograms (simple and with multiple variables)
+
 •⁠ ⁠Kernel density
 
 •⁠ ⁠Box plot
 
-•⁠ ⁠Other gsph
+•⁠ ⁠Other grasph
 
 
 ***
@@ -62,7 +66,11 @@ Day 3: Econometric models and assumptions
 
 •⁠ ⁠Quantile regression
 
-•⁠ ⁠Logit regression and post-estimation tests/checks (% correct predictions, marginal effects, goodness of fit, description of data used, etc.)
+•⁠ ⁠Logit regression and post-estimation tests/check
+       - Percent correct predictions
+       - marginal effects, 
+       - goodness of fit, 
+       - description of data used
 
 
 ***

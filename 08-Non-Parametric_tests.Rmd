@@ -20,11 +20,35 @@ The most common non-parametric tests are:
 - Friedman test (which is the non-parametric equivalent of the repeated measures ANOVA)
 - Spearman's rank correlation (which is the non-parametric equivalent of the Pearson's correlation)
 - Kendall's tau (which is another non-parametric correlation test)
-- Chi-square test (which is the non-parametric for count data)
+
 
 A common confusion when using non-parametric is that I see in many publications is that the authors use the mean and some measure of dispersion based on normality, such as mean, variance, standard deviation or standar error. This is not correct. If the data is normally distributed, then the parametric parameters should NOT be used. Instead, the median and the interquartile range should be used.
 
 The typical non-parametric test converts the data into ranks and then compares the ranks. Thus the original data is not used, but the ranks of the data. The ranks are used to compare the groups. 
+
+All non-parametric tests are based on the ranks of the data
+
+Ranks are assigned to the data in ascending order. The smallest value is assigned a rank of 1, the second smallest value is assigned a rank of 2, and so on. If there are ties (values that are equal), then the average (mean) of the ranks is assigned to the tied values.
+
+The ranks are then used to compare the groups. The ranks are used to calculate the test statistic, which is then compared to a critical value to determine if the null hypothesis should be rejected. in non-parametric statistics we do not use the original data, but the ranks of the data.
+
+We will do a small example of converting the data into ranks. Let's say we have the following data:
+
+```{r}
+data=c(50, 33, 7, 2, 8, 4, 4, 6, 10000)
+
+data
+```
+
+The ranks of the data are:
+
+Now all the analyses will be done with these ranks, not the original data.
+
+The strenght of non-parametric tests is that they are robust to outliers and non-normal data. The weakness is that they are less powerful than parametric tests. Thus, if the data is normally distributed, then parametric tests should be used. If the data is not normally distributed, then non-parametric tests should be used. Note that the tied value of 4, where assigned a mean rank of 2.5, as the rank for these were 2, and 3, and the mean is 2.5. 
+
+```{r}
+rank(data)
+```
 
 
 ### Wilcoxon signed-rank test
@@ -44,7 +68,7 @@ DownloadFestival <- read_csv("Data/DownloadFestival.csv")
 Festival=DownloadFestival
 ```
 
-active packages
+Activate the `tidyverse` package
 
 ```{r}
 library(tidyverse)
@@ -69,6 +93,7 @@ str(Festival1) # Observe the data
 
 summary(Festival1) # Observe the summary statistics
 ```
+
 Now for the Wilcoxon signed-rank test, we can use the `wilcox.test()` function. The first argument is the first day of the festival, the second argument is the third day of the festival, and the `paired=TRUE` argument indicates that the data is paired.
 
 
@@ -92,7 +117,7 @@ We can use the same function as above but **without** the `paired=TRUE` argument
 ```{r}
 wilcox.test(Festival1$day1, Festival1$day3)
 ```
-Note that in this case it would be innapropriate to use this test as the data are not indpendent in this data set.  
+Note that in this case it would be innapropriate to use this test as the data are not indpendent in this data set.  The data are paired, thus the Wilcoxon signed-rank test should be used.
 
 ***
 
@@ -114,7 +139,9 @@ Sorghum=Sorghum_2017_2018_Diseaase_traits
 
 Sorghum$Rust=as.factor(Sorghum$Rust) # convert "Rust" to a factor variable
 
+## How many rust treatments are there?
 
+unique(Sorghum$Rust) # there are 6 rust treatments
 ```
 
 
@@ -123,6 +150,7 @@ The function kruskal.test() is used to perform the Kruskal-Wallis test. The firs
 
 ```{r}
 kruskal.test(Seedwt ~ Rust, data=Sorghum)
+
 ```
 
 
@@ -132,7 +160,7 @@ kruskal.test(Seedwt ~ Rust, data=Sorghum)
 
 This test is the non-parametric equivalent of the repeated measures ANOVA.  The Friedman test is used to compare the median of three or more related groups. The null hypothesis is that the median of the three groups are equal. 
 
-FIND a Dataset
+**FIND a Dataset**
 
 
 ***
@@ -142,7 +170,12 @@ FIND a Dataset
 The Spearman's rank correlation is the non-parametric equivalent of the Pearson's correlation. It is used when the data is not normally distributed and the variances are not equal. The Spearman's rank correlation is used to determine the strength and direction of the relationship between two variables. The null hypothesis is that there is no relationship between the two variables. The alternative hypothesis is that there is a relationship between the two variables.
 
 
-Using the Sorghum data, let's compare the relationship between the seed weight and the panicle Length.
+Using the *Sorghum* data, let's compare the relationship between the seed weight and the panicle Length.
+
+ - the rho value is the Spearman's rank correlation coefficient. The p-value is the probability of observing the data if the null hypothesis is true. If the p-value is less than 0.05, then we reject the null hypothesis. If the p-value is greater than 0.05, then we fail to reject the null hypothesis. The hipothesis is evaluating if rho is significtanly different from zero. 
+ 
+ - rho ranges from -1 to 1. A rho of 1 indicates a perfect positive relationship, a rho of -1 indicates a perfect negative relationship, and a rho of 0 indicates no relationship.
+ 
 
 ```{r}
 names(Sorghum)
@@ -155,7 +188,11 @@ cor.test(Sorghum$Seedwt, Sorghum$'Pani Length', method="spearman")
 
 ### Kendall's tau
 
-The Kendall's tau is another non-parametric correlation test. The Kendall's tau is used to determine the strength and direction of the relationship between two variables. Kendall's correlation is often used when sample size are small and appears to be robust under that situation where here are outliers and many tied ranks.
+The Kendall's tau is another non-parametric correlation test. The Kendall's tau is used to determine the strength and direction of the relationship between two variables. Kendall's correlation is often used when sample size are small and appears to be robust under that situation where here are outliers and many tied ranks. The null hypothesis is that there is no relationship between the two variables. The alternative hypothesis is that there is a relationship between the two variables.
+
+- tau ranges from -1 to 1. A tau of 1 indicates a perfect positive relationship, a tau of -1 indicates a perfect negative relationship, and a tau of 0 indicates no relationship.
+
+
 
 
 ```{r}
@@ -166,6 +203,10 @@ cor.test(Sorghum$Seedwt, Sorghum$'Pani Length', method="kendall")
 
 
 The difference between the Spearman's rank correlation and the Kendall's tau is that the Kendall's tau is based on the number of concordant and discordant pairs, while the Spearman's rank correlation is based on the difference between the ranks of the two variables. The Kendall's tau is more robust to outliers and tied ranks than the Spearman's rank correlation. While the Spearman's rank correlation is likely to give larger coefficients but easier to calculates.
+
+
+
+
 
 
 

@@ -5,11 +5,31 @@ A major component of data analysis is data wrangling. This is the process of cle
 
 In general this will be the most time consuming period of your analysis, cleaning the names of the variables, deleting variables, changing names of levels/factors, finding missing values, etc. A major issue will always be the missing values, and how to deal with them in addition to resolving the issues of the data such as outliers and non sensical data. In almost all project data wrangling will incolve more than 80% of your time and that data anlysis usually less than 20% of your time.
 
+In this chapter we will cover the following topics: **Put in the same order as the code in the text**
+
+- Cleaning column names with **janitor** and **clean_names**
+- Changing the names to variables with **rename**
+- Deleting variables with **select**
+- Changing names of levels/factors with **fct_recode**
+- Finding missing values with **is.na** and **summary**
+- Subsetting data set with **filter**
+- Select variables based on conditions with **select**
+- Filter rows based on conditions with **filter**
+- Arrange rows based on a variable with **arrange**
+- Calculate new variables based on existing variables with **mutate**
+- Exclude NA values with **complete.cases** and **na.omit**
+- Group data by a variable with **group_by**
+- Summarize data by a variable with **summarize**
+- Join data frames with **left_join**, **right_join**, **inner_join**, and **full_join**
+- Reshape data with **pivot_longer** and **pivot_wider**
+- Export data with as .csv file with **write_csv** or a Excel file with **write_xlsx**
+
+
 ## Cleaning column names
 
 ### Cleaning the names of the variables with **janitor**
 
-The easiest part is likely to clean the names of the variables. This can be done with the `janitor` package. This package has a function called `clean_names` that will organize the names of the variables in a data frame with specific charatceristics. This function will convert the names to lowercase, remove special characters, and replace spaces with underscores. This will make the names of the variables more consistent and easier to work with. Sometime older functions in R will not work with variables that have spaces or special characters, such as (é, ü, &, %, ect).
+The easiest part is likely to clean the names of the variables (column names). This can be done with the `janitor` package. This package has a function called `clean_names` that will organize the names of the variables in a data frame with specific charatceristics. This function will convert the names to lowercase, remove special characters, and replace spaces with underscores. This will make the names of the variables more consistent and easier to work with. Sometime older functions in R will not work with variables that have spaces or special characters, such as (é, ü, &, %, ect).
 
 Let us start with a dirty data frame with the following problems:
 
@@ -147,6 +167,20 @@ Clean_df[complete.cases(Clean_df), ] # this will return all rows with NO missing
 
 
 
+## Exclude NA values from a specific variable with **drop_na**
+
+This function will exclude missing values from a specific variable in a data frame. For example, to exclude missing values from the `place_of_birth` variable in a data frame called `Clean_df`.  Note it removes the row with the missing value in the place of birth variable.
+
+
+
+```{r}
+
+library(tidyverse)
+Clean_df |> drop_na(place_of_birth) # this will return all rows with missing values in the place of birth variable
+```
+
+
+
 ## Subsetting data set
 
 The function to subset a data frame is `filter`. This function is used to extract rows from a data frame that meet a certain condition. The syntax for the `filter` function is as follows:
@@ -174,14 +208,97 @@ names(Titanic) # this will return the names of the variables in the data frame
 
 
 
-Let us now select all rows with females, and that are in the first class and age less than 20. 
+Let us now filter all rows with females, and that are in the first class and age less than 20. 
 
 From 1,309 passengers we 16 females with the above characteristics.
 
 ```{r}
-Titanic %>% filter(sex=="female" & pclass==1 & age<20) # this will return
+Titanic %>% 
+  filter(sex=="female" & pclass==1 & age<20) # this will return
+
+# The following code those the same as the above code, but it is more readable for beginners
+
+
+Titanic %>% 
+  filter(sex == "female") |> 
+  filter(pclass == 1) |>
+  filter(age < 20) # this will return
+```
+
+### Arrange rows based on a variable
+
+To arrange the rows of a data frame based on a variable, you can use the `arrange` function from the `dplyr` package. This function allows you to sort the rows of a data frame based on the values of a variable. The syntax for the `arrange` function is as follows:
+
+Note now the data frame is sorted by the age variable. 
+
+
+```{r}
+library(dplyr)
+
+Clean_df_clean %>% arrange(age_2) # this will return all rows sorted by the age variable
 ```
 
 
+### Mutate: Calculate new variables based on existing variables
 
+To calculate new variables based on existing variables in a data frame, you can use the `mutate` function from the `dplyr` package. This function allows you to create new variables by performing calculations on existing variables. The syntax for the `mutate` function is as follows:
+
+Let us calculate the BMI of the individuals in the data frame. 
+
+- First of all let us add the missing value for the height of Charlie. 
+- The add a column of the weight in pounds of all individuals.
+
+
+```{r}
+library(dplyr)
+
+Clean_df_clean <- Clean_df_clean %>% mutate(height_m = ifelse(name == "Charlie", 1.75, height_m)) # this will return all rows with a new variable called height_m
+
+Clean_df_clean <- Clean_df_clean %>% mutate(weight_kg = ifelse(name == "Alice", 60, ifelse(name == "Bob", 70, 80))) # this will return all rows with a new variable called weight_kg
+
+
+```
+
+Now use mutate to calculate the BMI of the individuals in the data frame. 
+
+Note we use the same notattion as mathematical notation, the `^` symbol is used to raise a number to a power. the variable is given the name of `bmi`
+
+```{r}
+Clean_df_clean <- Clean_df_clean %>% mutate(bmi = weight_kg / height_m^2) # this will return all rows with a new variable called bmi
+
+Clean_df_clean # this will return the data frame with the new variable bmi
+
+
+```
+
+### Group data by a variable
+
+To group a data frame by a variable, you can use the `group_by` function from the `dplyr` package. This function allows you to group the rows of a data frame based on the values of a variable. The syntax for the `group_by` function is as follows:
+
+Let us group the data frame by the `sex` variable and calculate the mean age of the individuals in each group.
+
+
+
+```{r}
+library(dplyr)
+
+Titanic %>% group_by(sex) |>  # this will return all rows grouped
+  summarise(mean_age = mean(age, na.rm = TRUE)) # this will return the mean age of the individuals in the data frame
+
+```
+
+### Group by multiple variables. 
+
+Now we will summarize the by group by the `sex` and `pclass` variables and calculate the mean age and minimum and maximum age of the individuals in each subgroup in the data frame. 
+
+
+
+
+```{r}
+Titanic %>% 
+  group_by(sex, pclass) |>
+  summarise(mean_age = mean(age, na.rm = TRUE),
+            min_age = min(age, na.rm=TRUE),
+            max_age = max(age, na.rm=TRUE)) # this will return the mean age of the individuals in the data frame
+```
 

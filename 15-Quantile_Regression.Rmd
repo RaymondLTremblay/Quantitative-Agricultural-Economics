@@ -8,9 +8,7 @@ In this chapter, we will provide an overview of quantile regression, discuss its
 
 ## Overview
 
-Quantile regression is a regression technique that estimates the conditional quantiles of a response variable given a set of predictor variables. Unlike ordinary least squares (OLS) regression, which estimates the conditional mean of the response variable, quantile regression estimates the conditional quantiles, such as the median, 25th percentile, or 75th percentile.
-
-Quantile regression is particularly useful when the response variable is not normally distributed or when the relationship between the response variable and the predictor variables is not linear. By estimating the conditional quantiles, quantile regression provides a more complete picture of the relationship between the response variable and the predictor variables, allowing for a more nuanced analysis of the data.
+Quantile regression is a regression technique that estimates the conditional quantiles of a response variable given a set of predictor variables. Unlike ordinary least squares (OLS) regression, which estimates the conditional mean of the response variable, quantile regression estimates the conditional quantiles, such as the median, 25th percentile, or 75th percentile. By estimating the conditional quantiles, quantile regression provides a more complete picture of the relationship between the response variable and the predictor variables, allowing for a more nuanced analysis of the data.
 
 
 ## The model
@@ -68,9 +66,11 @@ head(mpg) #visualizar las primeras filas del data frame
 
 ```
 
-Nota que el patron de dispersion aumenta a medida que el desplasamiento del motor aumenta. Esto sugiere que la relación entre el desplasamiento y la cantidad de millas por galon no es lineal y que la varianza de mpg aumenta con el desplasamiento del motor. Para capturar esta relación no lineal y heterocedasticidad, ajustaremos un modelo de regresión cuantílica y trazaremos las estimaciones de los cuantiles condicionales de mpg en función de wt.
+Note that the pattern of dispersion increases as the engine displacement increases. This suggests that the relationship between engine displacement and miles per gallon is not linear and that the variance of mpg increases with engine displacement. To capture this non-linear relationship and heteroscedasticity, we will fit a quantile regression model and plot the conditional quantile estimates of mpg as a function of wt. 
 
-Sobrepuse la regressión lineal con si intervalo de confianza (en rojo) y los cuantiles de la regresión cuantílica (en azul). Note que la regresión cuantílica captura la relación no lineal entre displ y mpg y la heterocedasticidad en los errores, mientras que la regresión lineal no lo hace.
+The linear regression (in red) is added to the plot with its confidence interval (shaded grey) and the quantiles of the quantile regression (in blue). Note that the quantile regression captures the non-linear relationship between displ and mpg and the heteroscedasticity in the errors, while the linear regression does not.
+
+
 
 
 
@@ -84,7 +84,7 @@ ggplot(mpg, aes(x = displ, y = 1/hwy)) +
 
 Adding quantiles to the plot
 
-in this figure we add only the quantile 0.5, which corresponds to the median of the conditional distribution of mpg given wt.
+In this figure we add only the quantile 0.5, which corresponds to the median of the conditional distribution of mpg given wt.
 
 
 
@@ -98,14 +98,14 @@ ggplot(mpg, aes(x = displ, y = 1/hwy)) +
 
 Adding multiples quantiles
 
-Using multiple quantiles one clearly see the relationship between the predictor and the response variable and the quantiles are not equally dispersed.  The median quantile is in blue, while the 25th and 75th are in red
+Using multiple quantiles one clearly see the relationship between the predictor and the response variable and the quantiles are not equally dispersed.  The median quantile is in blue, while the 25th and 75th are in red. Note that the quantiles are not equally dispersed around the median, which suggests that the relationship between displ and mpg is not linear and that the variance of mpg increases with displ.
 
 ```{r, qr_4, message=FALSE, warning=FALSE}
 
-q10 <- seq(0.05, 0.95, by=0.05) #cuantiles del 5% al 95% en incrementos del 5%
+q5 <- seq(0.05, 0.95, by=0.05) #quantile levels in steps of 5. 
 ggplot(mpg, aes(x = displ, y = 1/hwy)) +
   geom_point() +
-  geom_quantile(quantiles = q10, colour = "grey")+
+  geom_quantile(quantiles = q5, colour = "grey")+
   geom_quantile(quantiles = 0.5, color = "blue")+
   geom_quantile(quantiles = 0.25, color = "red")+
   geom_quantile(quantiles = 0.75, color = "red")
@@ -138,12 +138,12 @@ summary(model)
 
 
 
-## nlrq
+## nlrq() function
 
-to model with this function, you need to install the `quantreg` package and load it into the R session.
+To model with this function, you need to install the `quantreg` package and load it into the R session.
 
 
-nlrq() is a function that fits a non-linear quantile regression model. This function takes two main arguments: the formula that specifies the model and the data frame that contains the data. In this case, we will fit a non-linear quantile regression model to estimate the median of mpg given wt.
+nlrq() is a function that fits a non-linear quantile regression model. This function takes two main arguments: the formula that specifies the model and the data frame that contains the data. In this case, we will fit a non-linear quantile regression model to estimate the median of mpg given wt. the advantage is that we can calcylate the quantiles of the conditional distribution of mpg given wt for a series of x values and visualize bteer the dispersion.
 
 
 
@@ -221,6 +221,16 @@ lines(fitted(model_nlrq) ~ displ, mpg)
 ```
 
 
+## Multivariate quantile regression
+
+In the previous examples, we estimated the conditional quantiles of the response variable given a single predictor variable. However, quantile regression can be extended to include multiple predictor variables, allowing for a more comprehensive analysis of the relationship between the response variable and the predictor variables.
+
+In this example, we will fit a multivariate quantile regression model to estimate the median of mpg given wt and hp. The formula specifies the model, which includes both wt and hp as predictor variables. The `tau` argument specifies the quantile level we want to estimate, in this case, the median of the conditional distribution of mpg given wt and hp.
+
+The summary of the multivariate quantile regression model provides the estimated coefficients for the predictor variables wt and hp, as well as the standard errors, t-values, and p-values for the coefficients. The residual standard error and the number of observations used in the model are also provided.
+
+Here is another function to evaluate a mutiple quantile regression model and their confidence intervals. 
+
 
 https://www.rdocumentation.org/packages/ggstatsplot/versions/0.6.5
 
@@ -234,11 +244,32 @@ https://broom.tidymodels.org/reference/augment.nlrq.html
 library(quantreg)
 library(ggstatsplot)
 # model
-mod <- quantreg::rq(formula = mpg ~ am * cyl, data = mtcars)
+mod <- quantreg::rq(formula = mpg ~ am * cyl-1, data = mtcars)
+summary(mod)
+```
+To visualize the results of the multivariate quantile regression model, we can use the `ggcoefstats()` function from the `ggstatsplot` package. This function creates a plot that displays the estimated coefficients for the predictor variables, along with their confidence intervals and p-values.
+
+The plot shows the estimated coefficients for the predictor variables wt and hp, as well as their confidence intervals and p-values. The confidence intervals provide a range of values within which we can be confident that the true coefficient lies, while the p-values indicate whether the coefficient is significantly different from zero.
+
+
+```{r}
 
 # plot
 ggstatsplot::ggcoefstats(mod)
+
 ```
+
+## Conclusion
+
+
+Quantile regression is a powerful regression technique that estimates the conditional quantiles of a response variable given a set of predictor variables. It is particularly useful when the response variable is not normally distributed or when the relationship between the response variable and the predictor variables is not linear or there is heteroscedasticity.
+  
+The relationship still does assume some type of linear model, but it is more robust to outliers and can provide a more complete picture of the relationship between the response variable and the predictor variables. By estimating the conditional quantiles, quantile regression allows for a more nuanced analysis of the data and can provide valuable insights into the relationship between the response variable and the predictor variables.
+
+If model is expected to be non-linear maybe a LOESS regression is more appropriate.
+
+
+
 
 
 References:

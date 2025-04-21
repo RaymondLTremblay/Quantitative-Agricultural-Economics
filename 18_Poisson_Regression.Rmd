@@ -1,0 +1,190 @@
+# Poisson Regression
+
+```{r, PR_1, echo=FALSE, message=FALSE, warning=FALSE}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse,  huxtable,  SuppDists, univariateML, invgamma)
+
+
+#detach("package::lubridate", unload=TRUE)
+library(tidyverse) # this is a package that includes dplyr, ggplot2, tidyr, readr, purrr, tibble, stringr, forcats
+library(huxtable) # this is a package to create tables
+library(SuppDists) # this is a package to create distributions
+library(univariateML) # this is a package to create distributions
+library(invgamma) # this is a package to create distributions
+
+# library(wakefield) # this is a package to create random data: (DO NOT activate it as there multiple conflicts wit other packages), Use is this alternative wakefield::r_sample_binary(50, x = 0:1, prob =c(0.3, 0.7), name = "Binary")
+
+```
+
+A poisson regression is used when the dependent variable is a count variable, that is, the number of events that occur in a fixed period of time. The Poisson distribution is used as a probability distribution and the **log** function is used as a link function. The model is called **Poisson Regression**.
+
+$$\log\left(\lambda_i\right)=\beta_0+\beta_1X_i$$
+where the distribution is a Poisson with $y_i\sim Poisson\left(\lambda_i\right)$.
+
+Here let use the data from the number of accidents in a city and the number of cars in the city.
+
+ - Brooklyn_Bridge:  The number cyclist on the Brooklyn Bridge on each day.
+ - Precipitation = The precipitation in inches on that day
+ 
+ 
+```{r, PR_2, warning=FALSE, message=FALSE}
+library(readr)
+NY_CITY_CYCLIST <- read_csv("Data/NY_CITY_CYCLIST.csv")
+
+NY=NY_CITY_CYCLIST
+
+head(NY)
+```
+ 
+ 
+Visualize the data
+
+- The data is not normally distributed.
+- The data is a count variable.
+- The regression line is not linear and is count (number of cylcist)
+- The 95% confidence interval is shown in the graph.
+
+
+```{r, PR_3, warning=FALSE, message=FALSE}
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+ # point represents a count of number of cyclist for a specific day
+  geom_smooth(method="glm", method.args=list(family="poisson"), se=T)+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+```
+
+Creating the Poisson model
+
+
+```{r, PR_4, warning=FALSE, message=FALSE}
+NY_model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
+summary(NY_model)
+```
+
+
+Testing for overdispersion of Poisson model.  In this case the model is highly obverdisperded. The dispersion is 418 and the p-value is p < 0.001.
+
+
+```{r, PR_5, warning=FALSE, message=FALSE}
+
+library(AER)
+dispersiontest(NY_model)
+
+
+
+```
+
+
+
+
+****
+
+## Negative binomial regression
+
+A negative binomial regression is used when the dependent variable is a count variable and that the data suggests overdipersion.  Overdispersion is when the variance is greater than the mean. The Poisson distribution is used as a probability distribution and the **log** function is used as a link function. The model is called **Negative Binomial Regression**.
+
+$$\log\left(\lambda_i\right)=\beta_0+\beta_1X_i$$
+where the distribution is a negative binomial with $y_i\sim NegBinomial\left(\lambda_i\right)$.
+
+We will start by calculating the mean and vaiance of the above data set and detemrine if there is overdisperion
+
+The function required **dispersiontest** is available in the package **AER**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
+
+
+```{r, PR_6, warning=FALSE, message=FALSE}
+library(AER)
+model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
+
+
+```
+
+
+
+Note that the alpha is very large and the p-value is less than 0.05, which indicates that there is overdispersion. We will now create the negative binomial model. We will use the MASS library and the function **glm.nb** to create the model. The function is used to create a negative binomial model. The function is used in the same way as the glm function, but the family is set to negative binomial.
+
+
+```{r, PR_7, warning=FALSE, message=FALSE}
+library(MASS)
+
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+
+  geom_smooth(method="glm.nb", se=T)+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+
+NY_model_nb=MASS::glm.nb(Brooklyn_Bridge ~ Precipitation, data=NY)
+
+summary(NY_model_nb) # note that theta is a the measure of dispersion
+```
+
+We interpret the results as follows
+
+- The precipitation has a negative effect on the number of cyclist (negative sign). With precipitation (exp(coef) = -0.53) which states that there is 47% decrease in the number of cyclist for **each inch of precipitation**. 
+
+We can reconvert the coefficient to a positive value by taking the exponential of the coefficient. 
+
+```{r, PR_8, warning=FALSE, message=FALSE}
+exp(coef(NY_model_nb))
+```
+
+
+In this case to evaluate overdispersion in the negative binomial model we use the function **odTest** from the package **pscl**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
+
+
+
+```{r, PR_9, warning=FALSE, message=FALSE}
+library(pscl)
+
+odTest(NY_model_nb)
+```
+
+****
+### Comparing dispersion models
+
+Comparing the dispersion of a Poisson and a negative binomial model. The approach is to use a likelyhood ratio test.  Note the fitted log-likelihood of the NB model (-1677.1) is much large/better than the Poisson model (-41692.7). The p-value is less than 0.05, thus the negative binomial model is better than the Poisson model.
+
+```{r, PR_10, warning=FALSE, message=FALSE}
+    # Calculate the likelihood ratio statistic
+    likelihood_ratio <- 2 * (logLik(NY_model_nb) - logLik(NY_model))
+    
+logLik(NY_model_nb) # the log likelihood of the negative binomial model
+logLik(NY_model) # the log likelihood of the Poisson model
+
+
+    # Degrees of freedom (df) is the difference in the number of parameters
+    df <- length(coef(NY_model_nb)) - length(coef(NY_model))
+    
+    # Perform the chi-squared test
+    p_value <- 1 - pchisq(likelihood_ratio, df)
+    
+    # Print the p-value
+    print(p_value)
+```
+
+### Alternative approach to compare the Poisson and the negative binomial model.
+
+You can also use the function **lrtest** from the package **lmtest** to perform the likelihood ratio test. The function will return the likelihood ratio test statistic and the p-value. If the p-value is less than 0.05, then the negative binomial model is better than the Poisson model.
+
+```{r, PR_11, warning=FALSE, message=FALSE}
+library(lmtest)
+lrtest(NY_model_nb, NY_model)
+```
+
+
+Overlaying the Poisson and the negative binomial models
+
+NEED To FIND a better example
+
+
+```{r, PR_12, warning=FALSE, message=FALSE}
+ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
+  geom_jitter(width=0.01, height = 0.1)+
+  geom_smooth(method="glm", method.args=list(family="poisson"), se=T, color="red")+ 
+  geom_smooth(method="glm.nb", se=T, color="blue")+ 
+    xlab("Precipitation in inches")+
+  ylab("Number of cyclist")+
+  scale_x_continuous(breaks = seq(0, 2, by = 0.1))
+```
+

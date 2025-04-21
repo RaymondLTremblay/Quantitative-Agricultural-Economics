@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Data wrangling | Quantitative Agricultural Economics</title>
   <meta name="description" content="Chapter 5 Data wrangling | Quantitative Agricultural Economics" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Data wrangling | Quantitative Agricultural Economics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2025-02-13" />
+<meta name="date" content="2025-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,8 +190,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="data-wrangling.html"><a href="data-wrangling.html#changing-names-of-levelsfactors"><i class="fa fa-check"></i><b>5.4</b> Changing names of levels/factors</a></li>
 <li class="chapter" data-level="5.5" data-path="data-wrangling.html"><a href="data-wrangling.html#finding-missing-values"><i class="fa fa-check"></i><b>5.5</b> Finding missing values</a></li>
 <li class="chapter" data-level="5.6" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>5.6</b> </a></li>
-<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.7</b> Subsetting data set</a></li>
-<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.8</b> Titanic data set</a></li>
+<li class="chapter" data-level="5.7" data-path="data-wrangling.html"><a href="data-wrangling.html#exclude-na-values-from-a-specific-variable-with-drop_na"><i class="fa fa-check"></i><b>5.7</b> Exclude NA values from a specific variable with <strong>drop_na</strong></a></li>
+<li class="chapter" data-level="5.8" data-path="data-wrangling.html"><a href="data-wrangling.html#subsetting-data-set"><i class="fa fa-check"></i><b>5.8</b> Subsetting data set</a></li>
+<li class="chapter" data-level="5.9" data-path="data-wrangling.html"><a href="data-wrangling.html#titanic-data-set"><i class="fa fa-check"></i><b>5.9</b> Titanic data set</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="data-wrangling.html"><a href="data-wrangling.html#arrange-rows-based-on-a-variable"><i class="fa fa-check"></i><b>5.9.1</b> Arrange rows based on a variable</a></li>
+<li class="chapter" data-level="5.9.2" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate-calculate-new-variables-based-on-existing-variables"><i class="fa fa-check"></i><b>5.9.2</b> Mutate: Calculate new variables based on existing variables</a></li>
+<li class="chapter" data-level="5.9.3" data-path="data-wrangling.html"><a href="data-wrangling.html#group-data-by-a-variable"><i class="fa fa-check"></i><b>5.9.3</b> Group data by a variable</a></li>
+<li class="chapter" data-level="5.9.4" data-path="data-wrangling.html"><a href="data-wrangling.html#group-by-multiple-variables."><i class="fa fa-check"></i><b>5.9.4</b> Group by multiple variables.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html"><i class="fa fa-check"></i><b>6</b> Understanding your file data strutcture</a>
 <ul>
@@ -204,7 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.3" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#recoding-variables"><i class="fa fa-check"></i><b>6.3.3</b> Recoding variables</a></li>
 <li class="chapter" data-level="6.3.4" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#levels-of-the-variables"><i class="fa fa-check"></i><b>6.3.4</b> Levels of the variables</a></li>
 <li class="chapter" data-level="6.3.5" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#summary-of-the-data"><i class="fa fa-check"></i><b>6.3.5</b> Summary of the data</a></li>
-<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-lat-rows-few-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and lat rows few rows of the data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#first-and-last-rows-of-the-data"><i class="fa fa-check"></i><b>6.3.6</b> First and last rows of the data</a></li>
+<li class="chapter" data-level="6.3.7" data-path="understanding-your-file-data-strutcture.html"><a href="understanding-your-file-data-strutcture.html#unique-values-of-the-variables"><i class="fa fa-check"></i><b>6.3.7</b> Unique values of the variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html"><i class="fa fa-check"></i><b>7</b> Tests of Normality and Equality of Variance</a>
@@ -364,53 +372,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>16.4</b> Visualization</a></li>
 <li class="chapter" data-level="16.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>16.5</b> Example: Quantile regression in R</a></li>
 <li class="chapter" data-level="16.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>16.6</b> The quantile regression model, <code>rq()</code></a></li>
-<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq"><i class="fa fa-check"></i><b>16.7</b> nlrq</a></li>
+<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>16.7</b> nlrq() function</a></li>
+<li class="chapter" data-level="16.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>16.8</b> Multivariate quantile regression</a></li>
+<li class="chapter" data-level="16.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>16.9</b> Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Generalized Linear Models</a>
+<li class="chapter" data-level="17" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Introduction to Generalized Linear Models</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#linear-models"><i class="fa fa-check"></i><b>17.1</b> Linear models</a></li>
-<li class="chapter" data-level="17.2" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#necesito-cambiar-este-gráfico-ya-que-viene-del-web-del-siguiente-website-httpstowardsdatascience.com."><i class="fa fa-check"></i><b>17.2</b> Necesito cambiar este gráfico, ya que viene del web (del siguiente website “https://towardsdatascience.com”).</a></li>
-<li class="chapter" data-level="17.3" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.3</b> When the dependent variable is not linear</a></li>
-<li class="chapter" data-level="17.4" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.4</b> Link available</a></li>
-<li class="chapter" data-level="17.5" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.5</b> The assumptions</a></li>
-<li class="chapter" data-level="17.6" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.6</b> The advantages of GLM</a></li>
-<li class="chapter" data-level="17.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.7</b> Binomial or Bernoulli models</a>
+<li class="chapter" data-level="17.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>17.1</b> Generalized Linear models and distributions</a></li>
+<li class="chapter" data-level="17.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.2</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="17.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.3</b> Link available</a></li>
+<li class="chapter" data-level="17.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.4</b> The assumptions</a></li>
+<li class="chapter" data-level="17.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.5</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="17.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.6</b> Binomial or Bernoulli models</a>
 <ul>
-<li class="chapter" data-level="17.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.7.1</b> Gamma Distribution</a></li>
+<li class="chapter" data-level="17.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.6.1</b> Gamma Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="17.8" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.8</b> The basic parameters of the gamma.</a>
+<li class="chapter" data-level="17.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.7</b> The basic parameters of the gamma.</a>
 <ul>
-<li class="chapter" data-level="17.8.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#lthe-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.8.1</b> LThe inverse Gaussian distribution</a></li>
+<li class="chapter" data-level="17.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.7.1</b> The Inverse Gaussian distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="17.9" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.9</b> Evaluating distributions</a></li>
-<li class="chapter" data-level="17.10" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Binomial regression</a></li>
-<li class="chapter" data-level="17.11" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.11</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.12" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.12</b> Negative binomial regression</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>18</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="17.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.8</b> Evaluating distributions</a></li>
+<li class="chapter" data-level="17.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.9</b> Poisson regression</a></li>
+<li class="chapter" data-level="17.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Negative binomial regression</a>
 <ul>
-<li class="chapter" data-level="18.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>18.0.1</b> Load libraries</a></li>
-<li class="chapter" data-level="18.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>18.0.2</b> Data</a></li>
-<li class="chapter" data-level="18.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>18.0.3</b> Model</a></li>
-<li class="chapter" data-level="18.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>18.0.4</b> Assumptions</a></li>
-<li class="chapter" data-level="18.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>18.0.5</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="17.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>17.10.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="17.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>17.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>19</b> Beta Regression</a>
+</ul></li>
+<li class="chapter" data-level="18" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>18</b> Binomial_Regression</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>19.1</b> What is a beta regression?</a></li>
-<li class="chapter" data-level="19.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>19.2</b> What is the problem with the data?</a></li>
-<li class="chapter" data-level="19.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>19.3</b> First step, what is a beta distribution?</a></li>
-<li class="chapter" data-level="19.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>19.4</b> Wikipedia</a></li>
-<li class="chapter" data-level="19.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>19.5</b> Proportion of smokers in different countries</a></li>
-<li class="chapter" data-level="19.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>19.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
-<li class="chapter" data-level="19.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>19.7</b> Visualization of the distribution with CI.</a></li>
-<li class="chapter" data-level="19.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>19.8</b> Regression model</a></li>
-<li class="chapter" data-level="19.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>19.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
-<li class="chapter" data-level="19.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>19.10</b> Visualize the beta regression</a></li>
-<li class="chapter" data-level="19.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>19.11</b> Compare the traditional linear model versus a beta model</a></li>
-<li class="chapter" data-level="19.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>19.12</b> Distribution of specific values</a></li>
+<li class="chapter" data-level="18.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>18.1</b> Binomial regression</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>20</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="chapter" data-level="19" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>19</b> Poisson Regression</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>19.1</b> Negative binomial regression</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>19.1.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="19.1.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>19.1.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>20</b> Multinomial logit analysis</a>
+<ul>
+<li class="chapter" data-level="20.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>20.0.1</b> Load libraries</a></li>
+<li class="chapter" data-level="20.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>20.0.2</b> Data</a></li>
+<li class="chapter" data-level="20.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>20.0.3</b> Model</a></li>
+<li class="chapter" data-level="20.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>20.0.4</b> Assumptions</a></li>
+<li class="chapter" data-level="20.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>20.0.5</b> Post estimation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>21</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>21.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="21.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>21.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="21.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>21.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="21.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>21.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="21.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>21.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="21.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>21.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="21.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>21.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="21.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>21.8</b> Regression model</a></li>
+<li class="chapter" data-level="21.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>21.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="21.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>21.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="21.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>21.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="21.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>21.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>22</b> Auto Regressive Vectorial Analysis</a></li>
+<li class="chapter" data-level="23" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>23</b> Chi-square test/Contingency tables</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>23.1</b> Count data</a></li>
+<li class="chapter" data-level="23.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>23.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="23.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>23.3</b> Contingency tables</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -434,11 +464,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 5</span> Data wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A major component of data analysis is data wrangling. This is the process of cleaning and transforming raw data into a usable format. This is a critical step in the data analysis process, as the quality of the data will directly impact the quality of the analysis. In this section, we will cover some common data wrangling tasks in R, including cleaning data, transforming data, and handling missing values.</p>
 <p>In general this will be the most time consuming period of your analysis, cleaning the names of the variables, deleting variables, changing names of levels/factors, finding missing values, etc. A major issue will always be the missing values, and how to deal with them in addition to resolving the issues of the data such as outliers and non sensical data. In almost all project data wrangling will incolve more than 80% of your time and that data anlysis usually less than 20% of your time.</p>
+<p>In this chapter we will cover the following topics: <strong>Put in the same order as the code in the text</strong></p>
+<ul>
+<li>Cleaning column names with <strong>janitor</strong> and <strong>clean_names</strong></li>
+<li>Changing the names to variables with <strong>rename</strong></li>
+<li>Deleting variables with <strong>select</strong></li>
+<li>Changing names of levels/factors with <strong>fct_recode</strong></li>
+<li>Finding missing values with <strong>is.na</strong> and <strong>summary</strong></li>
+<li>Subsetting data set with <strong>filter</strong></li>
+<li>Select variables based on conditions with <strong>select</strong></li>
+<li>Filter rows based on conditions with <strong>filter</strong></li>
+<li>Arrange rows based on a variable with <strong>arrange</strong></li>
+<li>Calculate new variables based on existing variables with <strong>mutate</strong></li>
+<li>Exclude NA values with <strong>complete.cases</strong> and <strong>na.omit</strong></li>
+<li>Group data by a variable with <strong>group_by</strong></li>
+<li>Summarize data by a variable with <strong>summarize</strong></li>
+<li>Join data frames with <strong>left_join</strong>, <strong>right_join</strong>, <strong>inner_join</strong>, and <strong>full_join</strong></li>
+<li>Reshape data with <strong>pivot_longer</strong> and <strong>pivot_wider</strong></li>
+<li>Export data with as .csv file with <strong>write_csv</strong> or a Excel file with <strong>write_xlsx</strong></li>
+</ul>
 <div id="cleaning-column-names" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Cleaning column names<a href="data-wrangling.html#cleaning-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="cleaning-the-names-of-the-variables-with-janitor" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Cleaning the names of the variables with <strong>janitor</strong><a href="data-wrangling.html#cleaning-the-names-of-the-variables-with-janitor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The easiest part is likely to clean the names of the variables. This can be done with the <code>janitor</code> package. This package has a function called <code>clean_names</code> that will organize the names of the variables in a data frame with specific charatceristics. This function will convert the names to lowercase, remove special characters, and replace spaces with underscores. This will make the names of the variables more consistent and easier to work with. Sometime older functions in R will not work with variables that have spaces or special characters, such as (é, ü, &amp;, %, ect).</p>
+<p>The easiest part is likely to clean the names of the variables (column names). This can be done with the <code>janitor</code> package. This package has a function called <code>clean_names</code> that will organize the names of the variables in a data frame with specific charatceristics. This function will convert the names to lowercase, remove special characters, and replace spaces with underscores. This will make the names of the variables more consistent and easier to work with. Sometime older functions in R will not work with variables that have spaces or special characters, such as (é, ü, &amp;, %, ect).</p>
 <p>Let us start with a dirty data frame with the following problems:</p>
 <ul>
 <li>the names of the variables are in uppercase</li>
@@ -585,38 +634,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 1 Alice           1.7              0.7 1997-01-01    NY            
 ## 2 Bob             1.8              0.8 1992-01-01    LA</code></pre>
 </div>
-<div id="subsetting-data-set" class="section level2 hasAnchor" number="5.7">
-<h2><span class="header-section-number">5.7</span> Subsetting data set<a href="data-wrangling.html#subsetting-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exclude-na-values-from-a-specific-variable-with-drop_na" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Exclude NA values from a specific variable with <strong>drop_na</strong><a href="data-wrangling.html#exclude-na-values-from-a-specific-variable-with-drop_na" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This function will exclude missing values from a specific variable in a data frame. For example, to exclude missing values from the <code>place_of_birth</code> variable in a data frame called <code>Clean_df</code>. Note it removes the row with the missing value in the place of birth variable.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-wrangling.html#cb56-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────
+## ✔ ggplot2   3.5.2     ✔ stringr   1.5.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.4     
+## ── Conflicts ───────────── tidyverse_conflicts() ──
+## ✖ dplyr::between()     masks data.table::between()
+## ✖ dplyr::filter()      masks stats::filter()
+## ✖ dplyr::first()       masks data.table::first()
+## ✖ lubridate::hour()    masks data.table::hour()
+## ✖ lubridate::isoweek() masks data.table::isoweek()
+## ✖ dplyr::lag()         masks stats::lag()
+## ✖ dplyr::last()        masks data.table::last()
+## ✖ lubridate::mday()    masks data.table::mday()
+## ✖ lubridate::minute()  masks data.table::minute()
+## ✖ lubridate::month()   masks data.table::month()
+## ✖ lubridate::quarter() masks data.table::quarter()
+## ✖ lubridate::second()  masks data.table::second()
+## ✖ purrr::transpose()   masks data.table::transpose()
+## ✖ lubridate::wday()    masks data.table::wday()
+## ✖ lubridate::week()    masks data.table::week()
+## ✖ lubridate::yday()    masks data.table::yday()
+## ✖ lubridate::year()    masks data.table::year()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-wrangling.html#cb58-1" tabindex="-1"></a>Clean_df <span class="sc">|&gt;</span> <span class="fu">drop_na</span>(place_of_birth) <span class="co"># this will return all rows with missing values in the place of birth variable</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 5
+##   first_name height_m percent_of_value date_of_birth place_of_birth
+##   &lt;chr&gt;         &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;fct&gt;         
+## 1 Alice           1.7              0.7 1997-01-01    NY            
+## 2 Bob             1.8              0.8 1992-01-01    LA</code></pre>
+</div>
+<div id="subsetting-data-set" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Subsetting data set<a href="data-wrangling.html#subsetting-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The function to subset a data frame is <code>filter</code>. This function is used to extract rows from a data frame that meet a certain condition. The syntax for the <code>filter</code> function is as follows:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-wrangling.html#cb56-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb56-2"><a href="data-wrangling.html#cb56-2" tabindex="-1"></a></span>
-<span id="cb56-3"><a href="data-wrangling.html#cb56-3" tabindex="-1"></a>Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age_2 <span class="sc">&gt;</span> <span class="dv">29</span>) <span class="co"># this will return all rows where the age is greater than 29</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-wrangling.html#cb60-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb60-2"><a href="data-wrangling.html#cb60-2" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="data-wrangling.html#cb60-3" tabindex="-1"></a>Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age_2 <span class="sc">&gt;</span> <span class="dv">29</span>) <span class="co"># this will return all rows where the age is greater than 29</span></span></code></pre></div>
 <pre><code>## # A tibble: 2 × 6
 ##   name    age_2 height_m percent_of_value date_of_birth place_of_birth
 ##   &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         
 ## 1 Bob        30      1.8              0.8 1992-01-01    Los Angeles   
 ## 2 Charlie    35     NA                0.9 1987-01-01    &lt;NA&gt;</code></pre>
 </div>
-<div id="titanic-data-set" class="section level2 hasAnchor" number="5.8">
-<h2><span class="header-section-number">5.8</span> Titanic data set<a href="data-wrangling.html#titanic-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-wrangling.html#cb58-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb58-2"><a href="data-wrangling.html#cb58-2" tabindex="-1"></a>Titanic <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/ Titanic.csv&quot;</span>) <span class="co"># The data is in the &quot;DATA&quot; folder</span></span></code></pre></div>
+<div id="titanic-data-set" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Titanic data set<a href="data-wrangling.html#titanic-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-wrangling.html#cb62-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb62-2"><a href="data-wrangling.html#cb62-2" tabindex="-1"></a>Titanic <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/ Titanic.csv&quot;</span>) <span class="co"># The data is in the &quot;DATA&quot; folder</span></span></code></pre></div>
 <pre><code>## Rows: 1309 Columns: 12
-## ── Column specification ───────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (5): Name, Sex, Ticket, Cabin, Embarked
 ## dbl (7): PassengerId, Survived, Pclass, Age, SibSp, Parch, Fare
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-wrangling.html#cb60-1" tabindex="-1"></a>Titanic <span class="ot">=</span> <span class="fu">clean_names</span>(Titanic) <span class="co"># this will clean the names of the variables in the data frame</span></span>
-<span id="cb60-2"><a href="data-wrangling.html#cb60-2" tabindex="-1"></a><span class="fu">names</span>(Titanic) <span class="co"># this will return the names of the variables in the data frame</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-wrangling.html#cb64-1" tabindex="-1"></a>Titanic <span class="ot">=</span> <span class="fu">clean_names</span>(Titanic) <span class="co"># this will clean the names of the variables in the data frame</span></span>
+<span id="cb64-2"><a href="data-wrangling.html#cb64-2" tabindex="-1"></a><span class="fu">names</span>(Titanic) <span class="co"># this will return the names of the variables in the data frame</span></span></code></pre></div>
 <pre><code>##  [1] &quot;passenger_id&quot; &quot;survived&quot;     &quot;pclass&quot;       &quot;name&quot;         &quot;sex&quot;         
 ##  [6] &quot;age&quot;          &quot;sib_sp&quot;       &quot;parch&quot;        &quot;ticket&quot;       &quot;fare&quot;        
 ## [11] &quot;cabin&quot;        &quot;embarked&quot;</code></pre>
-<p>Let us now select all rows with females, and that are in the first class and age less than 20.</p>
+<p>Let us now filter all rows with females, and that are in the first class and age less than 20.</p>
 <p>From 1,309 passengers we 16 females with the above characteristics.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-wrangling.html#cb62-1" tabindex="-1"></a>Titanic <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sex<span class="sc">==</span><span class="st">&quot;female&quot;</span> <span class="sc">&amp;</span> pclass<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> age<span class="sc">&lt;</span><span class="dv">20</span>) <span class="co"># this will return</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-wrangling.html#cb66-1" tabindex="-1"></a>Titanic <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="data-wrangling.html#cb66-2" tabindex="-1"></a>  <span class="fu">filter</span>(sex<span class="sc">==</span><span class="st">&quot;female&quot;</span> <span class="sc">&amp;</span> pclass<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> age<span class="sc">&lt;</span><span class="dv">20</span>) <span class="co"># this will return</span></span></code></pre></div>
 <pre><code>## # A tibble: 16 × 12
 ##    passenger_id survived pclass name       sex     age sib_sp parch ticket  fare
 ##           &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
@@ -637,7 +721,109 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 15         1074        1      1 Marvin, M… fema…    18      1     0 113773  53.1
 ## 16         1287        1      1 Smith, Mr… fema…    18      1     0 13695   60  
 ## # ℹ 2 more variables: cabin &lt;chr&gt;, embarked &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-wrangling.html#cb68-1" tabindex="-1"></a><span class="co"># The following code those the same as the above code, but it is more readable for beginners</span></span>
+<span id="cb68-2"><a href="data-wrangling.html#cb68-2" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="data-wrangling.html#cb68-3" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="data-wrangling.html#cb68-4" tabindex="-1"></a>Titanic <span class="sc">%&gt;%</span> </span>
+<span id="cb68-5"><a href="data-wrangling.html#cb68-5" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">&quot;female&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb68-6"><a href="data-wrangling.html#cb68-6" tabindex="-1"></a>  <span class="fu">filter</span>(pclass <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb68-7"><a href="data-wrangling.html#cb68-7" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;</span> <span class="dv">20</span>) <span class="co"># this will return</span></span></code></pre></div>
+<pre><code>## # A tibble: 16 × 12
+##    passenger_id survived pclass name       sex     age sib_sp parch ticket  fare
+##           &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+##  1          137        1      1 Newsom, M… fema…    19      0     2 11752   26.3
+##  2          292        1      1 Bishop, M… fema…    19      1     0 11967   91.1
+##  3          298        0      1 Allison, … fema…     2      1     2 113781 152. 
+##  4          308        1      1 Penasco y… fema…    17      1     0 PC 17… 109. 
+##  5          312        1      1 Ryerson, … fema…    18      2     2 PC 17… 262. 
+##  6          330        1      1 Hippach, … fema…    16      0     1 111361  58.0
+##  7          436        1      1 Carter, M… fema…    14      1     2 113760 120  
+##  8          505        1      1 Maioni, M… fema…    16      0     0 110152  86.5
+##  9          586        1      1 Taussig, … fema…    18      0     2 110413  79.6
+## 10          690        1      1 Madill, M… fema…    15      0     1 24160  211. 
+## 11          701        1      1 Astor, Mr… fema…    18      1     0 PC 17… 228. 
+## 12          782        1      1 Dick, Mrs… fema…    17      1     0 17474   57  
+## 13          854        1      1 Lines, Mi… fema…    16      0     1 PC 17…  39.4
+## 14          888        1      1 Graham, M… fema…    19      0     0 112053  30  
+## 15         1074        1      1 Marvin, M… fema…    18      1     0 113773  53.1
+## 16         1287        1      1 Smith, Mr… fema…    18      1     0 13695   60  
+## # ℹ 2 more variables: cabin &lt;chr&gt;, embarked &lt;chr&gt;</code></pre>
+<div id="arrange-rows-based-on-a-variable" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Arrange rows based on a variable<a href="data-wrangling.html#arrange-rows-based-on-a-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To arrange the rows of a data frame based on a variable, you can use the <code>arrange</code> function from the <code>dplyr</code> package. This function allows you to sort the rows of a data frame based on the values of a variable. The syntax for the <code>arrange</code> function is as follows:</p>
+<p>Note now the data frame is sorted by the age variable.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-wrangling.html#cb70-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb70-2"><a href="data-wrangling.html#cb70-2" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="data-wrangling.html#cb70-3" tabindex="-1"></a>Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(age_2) <span class="co"># this will return all rows sorted by the age variable</span></span></code></pre></div>
+<pre><code>## # A tibble: 3 × 6
+##   name    age_2 height_m percent_of_value date_of_birth place_of_birth         
+##   &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;                  
+## 1 Alice      25      1.7              0.7 1997-01-01    New York City Manhathan
+## 2 Bob        30      1.8              0.8 1992-01-01    Los Angeles            
+## 3 Charlie    35     NA                0.9 1987-01-01    &lt;NA&gt;</code></pre>
+</div>
+<div id="mutate-calculate-new-variables-based-on-existing-variables" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> Mutate: Calculate new variables based on existing variables<a href="data-wrangling.html#mutate-calculate-new-variables-based-on-existing-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To calculate new variables based on existing variables in a data frame, you can use the <code>mutate</code> function from the <code>dplyr</code> package. This function allows you to create new variables by performing calculations on existing variables. The syntax for the <code>mutate</code> function is as follows:</p>
+<p>Let us calculate the BMI of the individuals in the data frame.</p>
+<ul>
+<li>First of all let us add the missing value for the height of Charlie.</li>
+<li>The add a column of the weight in pounds of all individuals.</li>
+</ul>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-wrangling.html#cb72-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb72-2"><a href="data-wrangling.html#cb72-2" tabindex="-1"></a></span>
+<span id="cb72-3"><a href="data-wrangling.html#cb72-3" tabindex="-1"></a>Clean_df_clean <span class="ot">&lt;-</span> Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">height_m =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">&quot;Charlie&quot;</span>, <span class="fl">1.75</span>, height_m)) <span class="co"># this will return all rows with a new variable called height_m</span></span>
+<span id="cb72-4"><a href="data-wrangling.html#cb72-4" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="data-wrangling.html#cb72-5" tabindex="-1"></a>Clean_df_clean <span class="ot">&lt;-</span> Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">weight_kg =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">&quot;Alice&quot;</span>, <span class="dv">60</span>, <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">&quot;Bob&quot;</span>, <span class="dv">70</span>, <span class="dv">80</span>))) <span class="co"># this will return all rows with a new variable called weight_kg</span></span></code></pre></div>
+<p>Now use mutate to calculate the BMI of the individuals in the data frame.</p>
+<p>Note we use the same notattion as mathematical notation, the <code>^</code> symbol is used to raise a number to a power. the variable is given the name of <code>bmi</code></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-wrangling.html#cb73-1" tabindex="-1"></a>Clean_df_clean <span class="ot">&lt;-</span> Clean_df_clean <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bmi =</span> weight_kg <span class="sc">/</span> height_m<span class="sc">^</span><span class="dv">2</span>) <span class="co"># this will return all rows with a new variable called bmi</span></span>
+<span id="cb73-2"><a href="data-wrangling.html#cb73-2" tabindex="-1"></a></span>
+<span id="cb73-3"><a href="data-wrangling.html#cb73-3" tabindex="-1"></a>Clean_df_clean <span class="co"># this will return the data frame with the new variable bmi</span></span></code></pre></div>
+<pre><code>## # A tibble: 3 × 8
+##   name    age_2 height_m percent_of_value date_of_birth place_of_birth weight_kg
+##   &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;              &lt;dbl&gt;
+## 1 Alice      25     1.7               0.7 1997-01-01    New York City…        60
+## 2 Bob        30     1.8               0.8 1992-01-01    Los Angeles           70
+## 3 Charlie    35     1.75              0.9 1987-01-01    &lt;NA&gt;                  80
+## # ℹ 1 more variable: bmi &lt;dbl&gt;</code></pre>
+</div>
+<div id="group-data-by-a-variable" class="section level3 hasAnchor" number="5.9.3">
+<h3><span class="header-section-number">5.9.3</span> Group data by a variable<a href="data-wrangling.html#group-data-by-a-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To group a data frame by a variable, you can use the <code>group_by</code> function from the <code>dplyr</code> package. This function allows you to group the rows of a data frame based on the values of a variable. The syntax for the <code>group_by</code> function is as follows:</p>
+<p>Let us group the data frame by the <code>sex</code> variable and calculate the mean age of the individuals in each group.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-wrangling.html#cb75-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb75-2"><a href="data-wrangling.html#cb75-2" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="data-wrangling.html#cb75-3" tabindex="-1"></a>Titanic <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span>  <span class="co"># this will return all rows grouped</span></span>
+<span id="cb75-4"><a href="data-wrangling.html#cb75-4" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># this will return the mean age of the individuals in the data frame</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   sex    mean_age
+##   &lt;chr&gt;     &lt;dbl&gt;
+## 1 female     29.3
+## 2 male       31.4</code></pre>
+</div>
+<div id="group-by-multiple-variables." class="section level3 hasAnchor" number="5.9.4">
+<h3><span class="header-section-number">5.9.4</span> Group by multiple variables.<a href="data-wrangling.html#group-by-multiple-variables." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we will summarize the by group by the <code>sex</code> and <code>pclass</code> variables and calculate the mean age and minimum and maximum age of the individuals in each subgroup in the data frame.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-wrangling.html#cb77-1" tabindex="-1"></a>Titanic <span class="sc">%&gt;%</span> </span>
+<span id="cb77-2"><a href="data-wrangling.html#cb77-2" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, pclass) <span class="sc">|&gt;</span></span>
+<span id="cb77-3"><a href="data-wrangling.html#cb77-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb77-4"><a href="data-wrangling.html#cb77-4" tabindex="-1"></a>            <span class="at">min_age =</span> <span class="fu">min</span>(age, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb77-5"><a href="data-wrangling.html#cb77-5" tabindex="-1"></a>            <span class="at">max_age =</span> <span class="fu">max</span>(age, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="co"># this will return the mean age of the individuals in the data frame</span></span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;sex&#39;. You can
+## override using the `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 6 × 5
+## # Groups:   sex [2]
+##   sex    pclass mean_age min_age max_age
+##   &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 female      1     37.0       2      76
+## 2 female      2     28.4       1      92
+## 3 female      3     23.3       1      75
+## 4 male        1     41.6       4      92
+## 5 male        2     32.3       1      83
+## 6 male        3     26.6       1      83</code></pre>
 
+</div>
 </div>
 </div>
             </section>
@@ -660,42 +846,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/05-Data_Wrangling.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/05-Data_Wrangling.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/05-Data_Wrangling.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/05-Data_Wrangling.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

@@ -1,7 +1,7 @@
-# Generalized Linear Models
+# Introduction to Generalized Linear Models
 
 
-Test
+
 
 ```{r, GLM_1, echo=FALSE, message=FALSE, warning=FALSE}
 if (!require("pacman")) install.packages("pacman")
@@ -11,44 +11,59 @@ pacman::p_load(tidyverse,  huxtable,  SuppDists, univariateML, invgamma)
 #detach("package::lubridate", unload=TRUE)
 library(tidyverse) # this is a package that includes dplyr, ggplot2, tidyr, readr, purrr, tibble, stringr, forcats
 library(huxtable) # this is a package to create tables
-#library(wakefield) # this is a package to create random data
 library(SuppDists) # this is a package to create distributions
 library(univariateML) # this is a package to create distributions
 library(invgamma) # this is a package to create distributions
-#library(conflicted) # this is a package to solve conflicts in functions
-#conflict_prefer("lubridate")
-#conflicts_prefer(lubridate::hour) # this is state that if there is a conflict in function to use this package
+
+# library(wakefield) # this is a package to create random data: (NO NOT activate it as there multiple conflicts wit other packages), Use is this wakefield::r_sample_binary(50, x = 0:1, prob =c(0.3, 0.7), name = "Binary")
+
 ```
 
 ------------------------------------------------------------------------
 
 
 
-## Linear models
+## Generalized Linear models and distributions
 
-Generalized linear models, GLM, are an extension of linear models where the dependent variable has a normal distribution. We remember that in a linear regression the dependent variable follows the model $y_i = \beta_0 + \beta_1 x_i$, where $\beta_0$ is the intercept and the $\beta_1$ is the coefficient, that is, the slope and the $x_i$ are the values of x's. One of the assumptions is that the variation in the values of $\mu_i$, which are the $y_i$, have a normal distribution in each x's and that there is homogeneity of variance.
+Generalized linear models, GLM, are an extension of linear models where the dependent variable has a normal distribution. We remember that in a linear regression the dependent variable follows the model $y_i = \beta_0 + \beta_1 x_i$, where $\beta_0$ is the intercept and the $\beta_1$ is the coefficient, that is, the slope and the $x_i$ are the values of x's. One of the assumptions is that the variation in the values of $\mu_i$, which are the $y_i$, have a normal distribution in each x's and that there is homogeneity of variance across the predictive variable.
 
-$$\mu_i=\beta_0+\beta_1x_i$$ An important assumption is the assumption that the variation in the $y_i$ are normally distributed and that there is homogeneity of variance.
+$$\mu_i=\beta_0+\beta_1x_i$$ An important assumption is the assumption that the variation in the $y_i$ are normally distributed and that there is homogeneity of variance. That is, the values of $y_i$ have a normal distribution in each $x_i$ and that the variance is the same for all values of $x_i$.
 
 $$y_i\sim N\left(\mu_i,\ \epsilon\right)$$ We can visualize it with the following figure, where the values of y's have a normal distribution and that this distribution is homogeneous across the values of x's.
 
+We show two figures where the y's are normally distributed (with histogram) and that the distribution is homogeneous across the values of x's. The second figure shows the relationship between the x's and the y's, where the points are the values of the x's and y's and the line is the regression line aredistributed moreor less equally around the line.
 
 
-## Necesito cambiar este gráfico, ya que viene del web (del siguiente website "<https://towardsdatascience.com>").
+```{r}
+x=rnorm(1000, mean=0, sd=1) # create 1000 random values of x's
+y=2+3*x+rnorm(length(x), mean=0, sd=1) # create 1000 random values of y's, note that the y's are normally distributed
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default", fig.cap="Del siguiente website; https://towardsdatascience.com/generalized-linear-models-9cbf848bb8ab"}
-#knitr::include_graphics(c("Figures/Reg_Normal.png"))
+df=data.frame(x=x, y=y) # create a data frame with the x's and y's
+
+ggplot(df, aes(x=y))+ # create a histogram of the y's
+  geom_histogram(colour="white")+
+  xlab("x values")+
+  ylab("y values")
+
+
+ggplot(df, aes(x=x, y=y))+ # create a scatter plot of the x's and y's
+  geom_point()+
+  geom_smooth(method="lm", se=F)+
+  xlab("x values")+
+  ylab("y values")
 ```
+
+
 
 ------------------------------------------------------------------------
 
 ## When the dependent variable is not linear
 
 
-The main problem for a long time has been that the dependent variable does not have a normal distribution and consequently did not meet the assumptions of linear regression. The method of linearizing the response variable was developed by Nelder and Wedderburn 1972. Information about the test and its evolution of GLM can be found at <https://encyclopediaofmath.org/wiki/Generalized_linear_models>. With the advancement of the use of computers in the 80s, it ended up being one of the most used statistical methods.
+The main problem for a long time has been that the dependent variable does not always normally distributed and consequently did not meet the assumptions of linear regression. The method of linearizing the response variable was developed by Nelder and Wedderburn 1972. Information about the test and its evolution of GLM can be found at <https://encyclopediaofmath.org/wiki/Generalized_linear_models>. With the advancement of the use of computers in the 80s, it ended up being one of the most used statistical methods.
 
 
-The term GLM refers to a wide variety of regression models. The assumption in these models is that the response variable $y_i$ follows a distribution within the family of exponential distributions with an average $\mu_i$, where a function $\mu_i^T\beta$ is assumed that is frequently non-linear . To linearize the variable it is necessary to use a "link" to convert the dependent variable, $y_i$.
+The term GLM refers to a wide variety of regression models. The assumption in these models is that the response variable $y_i$ follows a distribution within the family of exponential distributions with an average $\mu_i$, where a function $\mu_i^T\beta$ is assumed that is frequently non-linear. To linearize the variable it is necessary to use a "link" to convert the dependent variable, $y_i$.
 
 
 ------------------------------------------------------------------------
@@ -56,7 +71,9 @@ The term GLM refers to a wide variety of regression models. The assumption in th
 
 ## Link available
 
-Here I show a partial list of the different types of "links" for different types of data (or distributions) of the independent variable, $y_i$. The decision of which transformation or **link** to use is necessary will depend on the data types and their distribution. This is only a subset of avaliable link functions.
+A link is a function that transforms the dependent variable, $y_i$, to make it linear with the independent variable, $x_i$. The link function connects the expected value of the dependent variable, $\mu_i$, with the linear combination of the independent variable, $x_i$. The link function is denoted by $g\left(\mu_i\right)=\beta_0+\beta_1x_i$. 
+
+Here I show a partial list of the different types of "links" for different types of data (or distributions) of the independent variable, $y_i$. The decision of which transformation or **link** to use will depend on the data types and their distribution. This is only a subset of avaliable link functions.
 
 
 
@@ -67,17 +84,18 @@ library(huxtable)
 
 LinkFunctions<-tribble(
   ~Modelo, ~Variable_Dep, ~Link, ~Variables_Independiente,
-  "Linear regressionl", "Normal", "Identidy", "Continuous",
+  "Linear regression", "Normal", "Identidy", "Continuous",
   "ANOVA", "Normal", "Identity", "Categorical",
   "Logistic Regression", "Binomial", "Logit","Mix",
   "Poisson Regression", "Poisson", "Log", "Mix",
+  "Beta Regression", "Beta", "Logit", "Continuous",
 )
 
 huxtable(LinkFunctions) %>% 
   set_bold(1, 1:4) %>% 
   set_text_color(1, 1:4, "red") %>% 
   set_bottom_border(row = 1, col = everywhere, value = 1) %>%
-set_bottom_border(row = 5, col = everywhere, value = 1) %>%
+set_bottom_border(row = 6, col = everywhere, value = 1) %>%
 set_caption("Common Link function in GLM.")
 ```
 
@@ -111,16 +129,16 @@ set_caption("Common link functions in GLM.")
 ## The assumptions
 
  - The advantage is that now the dependent variable does not have to have a normal distribution.
- - Furthermore, untransformed data does not have to have a linear relationship. However, the data must come from a distribution of the exponential family, for example, binomial, Poisson, multinomial, normal, inverse normal, etc.\
+ - Furthermore, untransformed data does not have to have a linear relationship. However, the data must come from a distribution of the exponential family, for example, binomial, Poisson, multinomial, normal, inverse normal, etc.
  - GLM does not assume a linear relationship between the dependent and independent variable, but assumes a linear relationship of the transformed dependent variable data and the independent variable. Consequently, a linear relationship is assumed between the binary variable and the explanatory variable after using the transformation with the link, $logit\left(\pi\right)=\beta_0+\beta_1\cdot x_i$.
- - The assumption of homogeneity of variance does not have to be taken into account.
+ - The assumption of homogeneity of variance does not have to be taken into account (necessary for Linear Regression).
  - The errors have to be independent but it does not matter if they comply with a normal distribution.
 
 ------------------------------------------------------------------------
 
 ## The advantages of GLM
 
-  - The parameters are estimated using likelihood (MLE = Maximum Likelihood estimators), not least squares (OLS = ordinary least square). The models are estimated via likelihood, then they optimize the estimators, $\beta$.
+  - The parameters are estimated using likelihood (MLE = Maximum Likelihood estimators), not least squares (OLS = ordinary least square). The models are estimated via likelihood, then they optimize the estimators, $\beta$. The likelihood is the probability of the data given the model.
   - There is no need to transform the data of the dependent variable to normalize them.
   - The selection of the "link" is independent of the dependent variable(s), which makes it easier to create models.
   - Tools to evaluate inferences and models are available such as evaluating residuals, confidence intervals, deviation, likelihood ratio test and Akaike Information Criterio index among others.
@@ -129,10 +147,10 @@ set_caption("Common link functions in GLM.")
 
 ## Binomial or Bernoulli models
 
-If the variable is binomial, there are only two alternatives, 0 and 1, or whether or not, dead or alive, the binomial distribution is used. The **logit** function is used as a link function and the binomial/Bernoulli distribution as a probability distribution, the model is called **Logistic Regression**.
+If the variable is binomial, there are only two alternative response outcome, 0 and 1, or dead or alive, with fruit or no fruits, with inflorescence or not. In this case the the binomial distribution is used. The **logit**, **probit**, **cauchit**, **log**, **cloglog** function are used as a link function and the binomial/Bernoulli distribution as a probability distribution, the model is called **Logistic Regression**.
 
 $$\log\frac{q_i}{1-q_i}=\beta_0+\beta_1X_i$$
-where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$.
+where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$, we will observe only two possible outcomes.
 
 ```{r, warning=FALSE, message=FALSE}
 #library(wakefield)
@@ -143,7 +161,8 @@ df=as.data.frame(as.factor(x))
 ggplot(df, aes(x))+
   geom_histogram(fill="blue")+
   scale_x_continuous(breaks = c(0, 1))+
-  xlab("Binary Values")
+  xlab("Binary Values")+
+  ylab("Frequency")
 ```
 
 ------------------------------------------------------------------------
@@ -158,18 +177,19 @@ $$f\left(x\right)=\frac{\left(\beta^{\alpha}\cdot x^{\alpha-1}e^{-\beta x}\right
 
 where $\Gamma\left(\alpha\right)$ is the gamma function. For each integer value $\Gamma\left(\alpha\right)=\left(\alpha-1\right)!$
 
-In another word, the gamma distribution is for modeling continuous variables that are always positive and have skewed distributions.
+In another word, the gamma distribution is for modeling continuous variables that are always positive and have skewed distributions (long tails).
 
 Examples where the gamma distribution is used
 
-- the time until the moment of failure of a team
+- the time until the moment of failure of a an equipment
 - the time until the death of individuals
 - the amount of water accumulated in a lake
 - the size of unpaid loans
+- the number of fruits on a plant
 
 Let's look at some gamma distributions
 
-
+Note that in all cases the data is always positive and the distribution has a long tail and none comply with normal distribution. When the distribution has a k=9 and theta=0.5, this distribution at a quick glance could appear normal but it has a very long tail, thus a normal distribution would not predict correctly data on the tail.
 
 
 
@@ -199,29 +219,28 @@ The average is equal to the multiplication of shape=k by scale = theta, $$averag
 
 The variance is equal to the multiplication of shape=k by scale = (theta)\^2, $$variance=k\cdot\theta^2$$
 
-You can find the formulas to calculate other parameters on the Wikipedia page.\
+You can find the formulas to calculate these and other parameters of the gamma distribution on the Wikipedia page.
+
 <https://en.wikipedia.org/wiki/Gamma_distribution>
 
 
 ------------------------------------------------------------------------
 
-### LThe inverse Gaussian distribution
+### The Inverse Gaussian distribution
 
-In probability theory, the inverse Gaussian distribution is a two-parameter family of continuous probability distributions with support at (0, ∞).
+In probability theory, the Inverse Gaussian distribution is a two-parameter family of continuous probability distributions with support at (0, ∞).
 
 The distribution follows the following form $$f\left(x;µ,\lambda\right)=\sqrt{\frac{\lambda}{2\pi x^3}}\exp\left(-\frac{\lambda\left(x-µ\right)^2}{2µ^2x}\right)$$
 
-where $x>0$, $µ>0$, and $\lambda$ It is the form of distribution and is always greater than zero. The larger the $\lambda$ (the shape parameter) the more symmetrical the distribution.
+where $x>0$, $µ>0$, and $\lambda$.  It is the form of distribution and is always greater than zero. The larger the $\lambda$ (the shape parameter) the more symmetrical the distribution.
 
 As λ tends to infinity, the inverse Gaussian distribution looks like a normal (Gaussian) distribution. The inverse Gaussian distribution is also known as the Wald distribution.
 
-The distribution is used when the population distribution where the lognormal distribution has too heavy a right tail. When referring to heavy tails in statistics, it means that there are more probabilities in this region than a normal distribution. Consequently, the probabilities in this region are greater.
-
-The distribution is used to model non-negative data that is positively skewed. In other words, all values are positive and the tail tends to decrease more slowly than in a normal distribution.
+The distribution is used when the population distribution where the lognormal distribution has too heavy a right tail. When referring to heavy tails in statistics, it means that there are more probabilities in this region than a normal distribution.  The distribution is used to model non-negative data that is positively skewed (similar to the Gamma distribution). In other words, all values are positive and the tail tends to decrease more slowly than in a normal distribution.
 
 
 
-#### Reverse Gaussian history
+#### Inverse Gaussian history
 
 Historical information on the inverse Gaussian distribution is somewhat limited. The distribution was apparently first derived by Louis Bachelier in 1900, when he was trying to estimate the stock market price for different companies. But the name "Inverse Gaussian" was suggested by Maurice Tweedie in 1945. See this link for more details.
 
@@ -241,19 +260,19 @@ library(SuppDists)
 #dinvGauss(x, nu, lambda, log=FALSE)
 
 x = -1:3
-curve(dinvGauss(x, nu=.7, lambda=0.2, log=FALSE), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 3, lwd = 2, 
+curve(dinvGauss(x, nu=.7, lambda=0.2, log=FALSE), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 3, lwd = 2, 
     main = "Gráfico distribución Gausiana Inversa")
-curve(dinvGauss(x, nu=.7, lambda=1), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 5, lwd = 2, 
+curve(dinvGauss(x, nu=.7, lambda=1), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 5, lwd = 2, 
     add = TRUE)
-curve(dinvGauss(x, nu=.7, lambda=3), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 6, lwd = 2, 
+curve(dinvGauss(x, nu=.7, lambda=3), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 6, lwd = 2, 
     add = TRUE)
-curve(dinvGauss(x, nu=2, lambda=0.2), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 7, lwd = 2, 
+curve(dinvGauss(x, nu=2, lambda=0.2), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 7, lwd = 2, 
     add = TRUE)
-curve(dinvGauss(x, nu=2, lambda=1), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 1, lwd = 2, 
+curve(dinvGauss(x, nu=2, lambda=1), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 1, lwd = 2, 
     add = TRUE)
-curve(dinvGauss(x, nu=2, lambda=4), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 2, lwd = 2, 
+curve(dinvGauss(x, nu=2, lambda=4), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 2, lwd = 2, 
     add = TRUE)
-curve(dinvGauss(x, nu=1, lambda=40), xlab = "x", ylab = "f(x;k,theta)", -0.3, 3, col = 4, lwd = 2, 
+curve(dinvGauss(x, nu=1, lambda=40), xlab = "x", ylab = "f(x;k,theta)", -0.1, 3, col = 4, lwd = 2, 
     add = TRUE)
 
 legend("topright", c("nu=.7,lambda=0.2", "nu=.7,lambda=1", "nu=.7,lambda=3","nu=2,lambda=0.2","nu=2,lambda=1", "nu=2,lambda=4","nu=1,lambda=40"), 
@@ -270,7 +289,7 @@ The variance is calculated in the following way
 
 $$Var\left[X\right]=\frac{1}{\mu\lambda}+\frac{2}{\lambda^2}$$
 
-For other parameters see this link
+For more details on these and other parameters of the Inverse Gaussian see this link
 
 <https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution>
 
@@ -312,7 +331,7 @@ ggplot(data = d.oropha.rec) +
 
 
 ```
-Example of diamond prices from the ggplot2 package
+Example of diamond prices from the ggplot2 package. This is the data set avaliable in the **ggplot2** package used to teach how to visualize data. 
 
 ```{r, GLM_7, warning=FALSE, message=FALSE}
 #library(univariateML)
@@ -336,60 +355,79 @@ ggplot(data = diamonds) +
 ```
 
 ***
+#### Poisson distribution
 
+The Poisson distribution is used for count data, that is, the number of events that occur in a fixed period of time. The Poisson distribution is used as a probability distribution and the **log** function is used as a link function. The model is called **Poisson Regression**. Note that the Poisson distibution is also bounded between zero and infinity and the values are discrete [0, 1, 2, ... inf]. Since these are counts, no negetive values are possible. 
 
-## Binomial regression
+Examples that could be of this type of distribution are
 
-The binomial regression is used when the dependent variable is binary, that is, it has two possible outcomes, 0 or 1, dead or alive, success or failure, etc. The binomial distribution is used as a probability distribution and the **logit** function is used as a link function. The model is called **Logistic Regression**.
-
-$$\log\frac{q_i}{1-q_i}=\beta_0+\beta_1X_i$$
-where the distribution is a binomial with $y_i\sim Binomial\left(q_i\right)$.
-
-Here let use the data from Karn and Penrose of the survival or death on infants and birth weight.
-
- - Survival:  1 = Infant survived, 0 = the Infant died
- - Weigth_lb = The weigth of the infant in pounds at birth.
+ - the number of accidents in a city
+ - the number of cars in the city
+ - the number of calls to a call center
+ - the number flowers on a plant
+ - the number of fruits on a tree
  
  
-```{r, GLM_8, warning=FALSE, message=FALSE}
-library(readr)
-Karn_Penrose_infant_survivorship <- read_csv("Data/Karn_Penrose_infant_survivorship.csv")
+ 
+ The parameters for the Poisson distribution are the following
+ 
+ - The mean of a Poisson distibution is $\lambda$
+ 
+ - The variance of a Poisson distribution is also $\lambda$
+ 
+For more details on these and other parameters of the Poisson distibution see this link
 
-Infant= Karn_Penrose_infant_survivorship
+<https://en.wikipedia.org/wiki/Poisson_distribution>
+ 
+ 
+ 
+ 
+ 
+```{r}
+data= rpois(1000, lambda=5)
 
-head(Infant)
+head(data, n=30)
+```
+ 
+To calculate the mean and variance of the data set, we can use the following code, which are the same as for a Gaussian distribution. 
+
+
+```{r}
+# Calculating the mean and variance of the data set
+
+mean(data)
+
+var(data)
 
 ```
 
-Visualize the data
+In the following figure we show the Poisson distribution for different values of $\lambda$. The larger the $\lambda$ the more symmetrical the distribution. 
 
-- The data is not normally distributed.
-- The data is binary, 0 or 1.
-- The regression line is not linear and is probability
-- The 95% confidence interval is shown in the graph.
-
+```{r}
+# Grid of X-axis values
+x <- 0:50
 
 
+plot(dpois(x, lambda=1), type = "h", lwd = 4,
+     main = "Poisson probability function",
+     ylab = "P(X = x)", xlab = "Number of events")
 
-```{r, GLM_9, warning=FALSE, message=FALSE}
-ggplot(Infant, aes(x=Weigth_lb, y=Survival))+
-  geom_jitter(width=0.1, height = 0.1)+ # point represents an infants outcome
-  geom_smooth(method="glm", method.args=list(family="binomial"), se=T)+ 
-    xlab("Weight in pounds")+
-  ylab("Probability of Survival")+
-  scale_x_continuous(breaks = seq(0, 14, by = 1))
+lines(dpois(x, lambda=5), type = "h", lwd = 4, col = rgb(1,0,0, 0.7))
 
+lines(dpois(x, lambda=25), type = "h", lwd = 4, col = rgb(0, 1, 0, 0.7))
 
+# Legend
+legend("topright", legend = c("1", "5", "25"),
+       title = expression(lambda), title.adj = 0.75,
+       lty = 1, col = c(1, 2, 3), lwd = 2, box.lty = 0)
 ```
 
-Creating the binomial model
 
 
-```{r, GLM_10, warning=FALSE, message=FALSE}
-Infant_model=glm(Survival ~ Weigth_lb, data=Infant, family=binomial)
+------------------------------------------------------------------------
 
-summary(Infant_model)
-```
+
+
 
 ****
 
@@ -442,6 +480,22 @@ NY_model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
 summary(NY_model)
 ```
 
+
+Testing for overdispersion of Poisson model.  In this case the model is highly obverdisperded. The dispersion is 418 and the p-value is p < 0.001.
+
+
+```{r}
+
+library(AER)
+dispersiontest(NY_model)
+
+
+
+```
+
+
+
+
 ****
 
 ## Negative binomial regression
@@ -453,16 +507,17 @@ where the distribution is a negative binomial with $y_i\sim NegBinomial\left(\la
 
 We will start by calculating the mean and vaiance of the above data set and detemrine if there is overdisperion
 
-The function requiered **dispersiontest** is available in the package **AER**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
+The function required **dispersiontest** is available in the package **AER**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
 
 
 ```{r, GLM_13, warning=FALSE, message=FALSE}
 library(AER)
 model=glm(Brooklyn_Bridge ~ Precipitation, data=NY, family=poisson)
 
-disp=dispersiontest(model, trafo=1)
 
 ```
+
+
 
 Note that the alpha is very large and the p-value is less than 0.05, which indicates that there is overdispersion. We will now create the negative binomial model. We will use the MASS library and the function **glm.nb** to create the model. The function is used to create a negative binomial model. The function is used in the same way as the glm function, but the family is set to negative binomial.
 
@@ -479,7 +534,7 @@ ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
 
 NY_model_nb=MASS::glm.nb(Brooklyn_Bridge ~ Precipitation, data=NY)
 
-summary(NY_model_nb)
+summary(NY_model_nb) # note that theta is a the measure of dispersion
 ```
 
 We interpret the results as follows
@@ -489,9 +544,51 @@ We interpret the results as follows
 We can reconvert the coefficient to a positive value by taking the exponential of the coefficient. 
 
 ```{r, GLM_15, warning=FALSE, message=FALSE}
-exp(coef(model))
+exp(coef(NY_model_nb))
 ```
 
+
+In this case to evaluate overdispersion in the negative binomial model we use the function **odTest** from the package **pscl**. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.
+
+
+
+```{r}
+library(pscl)
+
+odTest(NY_model_nb)
+```
+
+****
+### Comparing dispersion models
+
+Comparing the dispersion of a Poisson and a negative binomial model. The approach is to use a likelyhood ratio test.  Note the fitted log-likelihood of the NB model (-1677.1) is much large/better than the Poisson model (-41692.7). The p-value is less than 0.05, thus the negative binomial model is better than the Poisson model.
+
+```{r}
+    # Calculate the likelihood ratio statistic
+    likelihood_ratio <- 2 * (logLik(NY_model_nb) - logLik(NY_model))
+    
+logLik(NY_model_nb) # the log likelihood of the negative binomial model
+logLik(NY_model) # the log likelihood of the Poisson model
+
+
+    # Degrees of freedom (df) is the difference in the number of parameters
+    df <- length(coef(NY_model_nb)) - length(coef(NY_model))
+    
+    # Perform the chi-squared test
+    p_value <- 1 - pchisq(likelihood_ratio, df)
+    
+    # Print the p-value
+    print(p_value)
+```
+
+### Alternative approach to compare the Poisson and the negative binomial model.
+
+You can also use the function **lrtest** from the package **lmtest** to perform the likelihood ratio test. The function will return the likelihood ratio test statistic and the p-value. If the p-value is less than 0.05, then the negative binomial model is better than the Poisson model.
+
+```{r}
+library(lmtest)
+lrtest(NY_model_nb, NY_model)
+```
 
 
 Overlaying the Poisson and the negative binomial models
@@ -508,4 +605,8 @@ ggplot(NY, aes(x=Precipitation, y=Brooklyn_Bridge))+
   ylab("Number of cyclist")+
   scale_x_continuous(breaks = seq(0, 2, by = 0.1))
 ```
+
+
+
+
 
