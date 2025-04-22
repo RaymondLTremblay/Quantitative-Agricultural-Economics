@@ -7,7 +7,7 @@ site: bookdown::bookdown_site
 
 # Daily Activities
 
-This is a bookdown project that will be used in a workshop for faculty and graduate students on Quantitative Agricultural Economics. 
+This is a bookdown project that will be used in a workshop for faculty and graduate students on Quantitative Agricultural Economics at the University of Puerto Rico-Mayagüez. 
 
 
 ***
@@ -68,9 +68,9 @@ Day 3: Econometric models and assumptions
 
 •⁠ ⁠Logit regression and post-estimation tests/check
        - Percent correct predictions
-       - marginal effects, 
-       - goodness of fit, 
-       - description of data used
+       - Marginal effects, 
+       - Goodness of fit, 
+       
 
 
 ***

@@ -62,7 +62,7 @@ ggplot(Infant, aes(x=Weigth_lb, y=Survival))+
 
 ```
 
-Creating the binomial model
+## Creating the binomial model
 
 
 ```{r, BR_4, warning=FALSE, message=FALSE}
@@ -73,7 +73,7 @@ summary(Infant_model)
 
 **** 
 
-Second example of logistic regression
+## Second example of logistic regression
 
 Explanatory variables 
 
@@ -90,7 +90,7 @@ Response variable
 
 - milk_local: ready to buy local milk? 0 = no, 1 = yes
 
-
+## The logit link
 
 ```{r, BR_5}
 library(readxl)
@@ -109,6 +109,9 @@ summary(milk_model_logit)
 
 ```
 
+
+## The probit link
+
 The same model with a "probit" link function
 
 
@@ -120,7 +123,7 @@ summary(milk_model_probit)
 
 ```
 
-Evaluating assumptions of the binomial model
+## Evaluating assumptions of the binomial model
 
 You need to check for linearity, independence of errors, homoscedasticity, overdispersion and normality of residuals.
 
@@ -139,31 +142,28 @@ resid_panel(milk_model_logit, plots = "cookd")
 ```
 
 
-The easiest way to check dispersion in a model is to calculate the ratio of the residual deviance to the residual degrees of freedom.
+
+## Overdispersion
+Overdispersion is when the variance of the response variable is greater than the mean. This can happen when there are unobserved variables that are not included in the model, or when the data is not independent. Overdispersion can lead to biased estimates of the coefficients and standard errors.
+
+In a binomial model, the variance is given by $Var(y_i)=nq_i(1-q_i)$, where $n$ is the number of trials and $q_i$ is the probability of success. The mean is given by $E(y_i)=nq_i$. Thus, the ratio of the variance to the mean is given by
+$$\frac{Var(y_i)}{E(y_i)}=\frac{nq_i(1-q_i)}{nq_i}=\frac{1-q_i}{q_i}$$
+Thus, the ratio of the variance to the mean is equal to the ratio of the probability of failure to the probability of success. If this ratio is greater than 1, then there is overdispersion. If it is less than 1, then there is underdispersion. If it is equal to 1, then there is no dispersion.
+
+
+The easiest way to check dispersion in a binomial model is to calculate the ratio of the residual deviance to the residual degrees of freedom.
 
 Going back to the original output of the model, we can calculate the dispersion as follows
 
-Coefficients:
-                      Estimate Std. Error z value Pr(>|z|)   
-(Intercept)          -0.918174   0.878275  -1.045  0.29582   
-age                   0.025989   0.009741   2.668  0.00763 **
-sex                   0.662518   0.339971   1.949  0.05133 . 
-num_dependents        0.260138   0.131064   1.985  0.04716 * 
-descriminatory_buyer -0.817777   0.328015  -2.493  0.01266 * 
-income               -0.450150   0.150804  -2.985  0.00284 **
-Edu_none              0.027829   1.090379   0.026  0.97964   
-Educ_high             0.663716   0.589243   1.126  0.26000   
-Educ_bacj             1.363096   0.578054   2.358  0.01837 * 
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 276.54  on 199  degrees of freedom
-Residual deviance: 233.02  on 191  degrees of freedom
-AIC: 251.02
+  - Null deviance: 276.54  on 199  degrees of freedom
+  - Residual deviance: 233.02  on 191  degrees of freedom
+  - AIC: 251.02
 
-NOte we have the residual variance at 233.02 on 191 df. The dispersion is calculated as follows
+Note we have the residual variance at 233.02 on 191 df. The dispersion is calculated as follows
 
 ```{r, BR_9}
 milk_model_logit$deviance/milk_model_logit$df.residual
@@ -172,7 +172,7 @@ milk_model_logit$deviance/milk_model_logit$df.residual
 The dispersion is 1.22, which is greater than 1, thus there is some overdispersion. 
 
 
-
+Wer can test to see if the dispersion is significantly greater than 1 using a Chi square test. The null hypothesis is that the dispersion is equal to 1, and the alternative hypothesis is that the dispersion is greater than 1.
 
 ```{r, BR_10}
 1 - pchisq(milk_model_logit$deviance, milk_model_logit$df.residual)
