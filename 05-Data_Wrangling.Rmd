@@ -70,6 +70,8 @@ library(janitor)
 Clean_df_clean=clean_names(Dirty_data)
 
 Clean_df= Clean_df_clean
+
+Clean_df # observe the changes in the names of the variables
 ```
 
 
@@ -145,7 +147,7 @@ Note here that the place of birth for Charlie is missing, it has an NA value in 
 summary(Clean_df) # this will return a summary of the data frame, including the number of missing values in each variable
 ```
 
-## 
+## Subsetting data with missing values
 
 Subset all rows with missing values in the variables. This will result in a rwo that will include only Charlie. 
 
@@ -217,6 +219,9 @@ Titanic %>%
   filter(sex=="female" & pclass==1 & age<20) # this will return
 
 # The following code those the same as the above code, but it is more readable for beginners
+
+Titanic %>% 
+  filter(sex=="female" & age<20) |> arrange(age)
 
 
 Titanic %>% 
@@ -296,7 +301,7 @@ Now we will summarize the by group by the `sex` and `pclass` variables and calcu
 
 ```{r}
 Titanic %>% 
-  group_by(sex, pclass) |>
+  group_by(sex, survived, pclass) |>
   summarise(mean_age = mean(age, na.rm = TRUE),
             min_age = min(age, na.rm=TRUE),
             max_age = max(age, na.rm=TRUE)) # this will return the mean age of the individuals in the data frame

@@ -4,33 +4,32 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter23 Chi-square test/Contingency tables | Quantitative Agricultural Economics</title>
-  <meta name="description" content="Chapter23 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
+  <title>Chapter 21 Chi-square test/Contingency tables | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 21 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter23 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
+  <meta property="og:title" content="Chapter 21 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter23 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
+  <meta name="twitter:title" content="Chapter 21 Chi-square test/Contingency tables | Quantitative Agricultural Economics" />
   
   
   
 
-<meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2025-04-21" />
+<meta name="date" content="2025-05-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="auto-regressive-vectorial-analysis.html"/>
+<link rel="prev" href="beta-regression.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -124,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="bootstrap_Yeti.css" type="text/css" />
 </head>
 
 <body>
@@ -233,228 +232,231 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-variance"><i class="fa fa-check"></i><b>7.7.1</b> What is the variance?</a></li>
 <li class="chapter" data-level="7.7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-standard-deviation"><i class="fa fa-check"></i><b>7.7.2</b> What is the standard deviation?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html"><i class="fa fa-check"></i><b>8</b> What is the mode?</a>
+<li class="chapter" data-level="7.8" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-mode"><i class="fa fa-check"></i><b>7.8</b> What is the mode?</a></li>
+<li class="chapter" data-level="7.9" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>7.9</b> Test of normality, Shapiro Wilks Test</a></li>
+<li class="chapter" data-level="7.10" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>7.10</b> Tests of Equality of variances</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>8.1</b> Test of normality, Shapiro Wilks Test</a></li>
-<li class="chapter" data-level="8.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>8.2</b> Tests of Equality of variances</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.1</b> The F-test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.2</b> Bartlett’s test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.3" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.3</b> Brown-Forsythe test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.4" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.2.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+<li class="chapter" data-level="7.10.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.4" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#levenes-test-testing-for-assumption-of-equality-of-variance-among-groups"><i class="fa fa-check"></i><b>7.10.4</b> Levene’s Test: testing for assumption of equality of variance among groups</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>9</b> Non-parametric tests</a>
+<li class="chapter" data-level="8" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>8</b> Non-parametric tests</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.0.1</b> Wilcoxon signed-rank test</a></li>
-<li class="chapter" data-level="9.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>9.0.2</b> Mann-Whitney U test</a></li>
-<li class="chapter" data-level="9.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>9.0.3</b> Kruskal-Wallis test</a></li>
-<li class="chapter" data-level="9.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>9.0.4</b> Friedman test</a></li>
-<li class="chapter" data-level="9.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>9.0.5</b> Spearman’s rank correlation</a></li>
-<li class="chapter" data-level="9.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>9.0.6</b> Kendall’s tau</a></li>
-<li class="chapter" data-level="9.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearman-vs-kendall-correlations-comparison"><i class="fa fa-check"></i><b>9.1</b> Spearman vs Kendall correlations comparison</a>
+<li class="chapter" data-level="8.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>8.0.1</b> Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="8.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>8.0.2</b> Mann-Whitney U test</a></li>
+<li class="chapter" data-level="8.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>8.0.3</b> Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="8.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>8.0.4</b> Friedman test</a></li>
+<li class="chapter" data-level="8.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>8.0.5</b> Spearman’s rank correlation</a></li>
+<li class="chapter" data-level="8.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>8.0.6</b> Kendall’s tau</a></li>
+<li class="chapter" data-level="8.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearman-vs-kendall-correlations-comparison"><i class="fa fa-check"></i><b>8.1</b> Spearman vs Kendall correlations comparison</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1.1</b> Altenative to non-parametric tests</a></li>
+<li class="chapter" data-level="8.1.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1.1</b> Altenative to non-parametric tests</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>10.1</b> Basic scatter plots</a></li>
-<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>10.2</b> the lm() function</a></li>
-<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>10.3</b> Visualization of the regression</a></li>
-<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>10.4</b> The impact of outliers</a></li>
-<li class="chapter" data-level="10.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>10.5</b> Selling music records</a></li>
-<li class="chapter" data-level="10.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>10.6</b> Linear Regression Assumptions</a></li>
-<li class="chapter" data-level="10.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>10.7</b> Cook’s Distance</a></li>
-<li class="chapter" data-level="10.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>10.8</b> Steps to do a linear regression analysis</a>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>9.2</b> the lm() function</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>9.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>9.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="9.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>9.5</b> Selling music records</a></li>
+<li class="chapter" data-level="9.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>9.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="9.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>9.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="9.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>9.8</b> Steps to do a linear regression analysis</a>
 <ul>
-<li class="chapter" data-level="10.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1</a></li>
-<li class="chapter" data-level="10.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2</a></li>
-<li class="chapter" data-level="10.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3</a></li>
+<li class="chapter" data-level="9.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>9.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="9.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>9.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="9.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>9.8.3</b> Step 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>10.9</b> Alternative to Graph the Residuals</a>
+<li class="chapter" data-level="9.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>9.9</b> Alternative to Graph the Residuals</a>
 <ul>
-<li class="chapter" data-level="10.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>10.9.1</b> Plot the residuals</a></li>
-<li class="chapter" data-level="10.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>10.9.2</b> Exercise 1</a></li>
-<li class="chapter" data-level="10.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>10.9.3</b> Exercise 2</a></li>
+<li class="chapter" data-level="9.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>9.9.1</b> Plot the residuals</a></li>
+<li class="chapter" data-level="9.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>9.9.2</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>9.9.3</b> Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="10.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.10</b> Scatter plots with jitter</a></li>
-<li class="chapter" data-level="10.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.11</b> Scatter plots with marginal histograms</a></li>
-<li class="chapter" data-level="10.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.12</b> Scatter plots for multiple variables</a></li>
+<li class="chapter" data-level="9.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.10</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.11</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.12</b> Scatter plots for multiple variables</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to the pie chart)</a>
+<li class="chapter" data-level="10" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>10</b> Ring chart (alternative to the pie chart)</a>
 <ul>
-<li class="chapter" data-level="11.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>11.0.1</b> Adding values</a></li>
-<li class="chapter" data-level="11.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>11.0.2</b> Example of why PIE chart should NOT be used</a></li>
+<li class="chapter" data-level="10.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>10.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>10.0.2</b> Example of why PIE chart should NOT be used</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a>
+<li class="chapter" data-level="11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>11</b> Histograms/Density Plots</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>12.1</b> Histograms with geom_histogram</a></li>
-<li class="chapter" data-level="12.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>12.2</b> Changing bin sizes with <em>binwidth</em></a></li>
-<li class="chapter" data-level="12.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>12.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
-<li class="chapter" data-level="12.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>12.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
-<li class="chapter" data-level="12.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>12.5</b> Frequency and color intensity overlap</a></li>
-<li class="chapter" data-level="12.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>12.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
-<li class="chapter" data-level="12.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>12.7</b> Group graphics with <strong>Facet_wrap</strong></a>
+<li class="chapter" data-level="11.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>11.1</b> Histograms with geom_histogram</a></li>
+<li class="chapter" data-level="11.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>11.2</b> Changing bin sizes with <em>binwidth</em></a></li>
+<li class="chapter" data-level="11.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>11.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
+<li class="chapter" data-level="11.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>11.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
+<li class="chapter" data-level="11.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>11.5</b> Frequency and color intensity overlap</a></li>
+<li class="chapter" data-level="11.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>11.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
+<li class="chapter" data-level="11.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>11.7</b> Group graphics with <strong>Facet_wrap</strong></a>
 <ul>
-<li class="chapter" data-level="12.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>12.7.1</b> Change chart colors manually</a></li>
+<li class="chapter" data-level="11.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>11.7.1</b> Change chart colors manually</a></li>
 </ul></li>
-<li class="chapter" data-level="12.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>12.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
-<li class="chapter" data-level="12.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>12.9</b> DensityPlots</a>
+<li class="chapter" data-level="11.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>11.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>11.9</b> DensityPlots</a>
 <ul>
-<li class="chapter" data-level="12.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>12.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
+<li class="chapter" data-level="11.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>11.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="12.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>12.10</b> Area chart with <strong>geom_area</strong></a>
+<li class="chapter" data-level="11.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>11.10</b> Area chart with <strong>geom_area</strong></a>
 <ul>
-<li class="chapter" data-level="12.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>12.10.1</b> Area Chart Section</a></li>
-<li class="chapter" data-level="12.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>12.10.2</b> <strong>linetype</strong> types</a></li>
+<li class="chapter" data-level="11.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>11.10.1</b> Area Chart Section</a></li>
+<li class="chapter" data-level="11.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>11.10.2</b> <strong>linetype</strong> types</a></li>
 </ul></li>
-<li class="chapter" data-level="12.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>12.11</b> geom_area with multiple groups</a></li>
-<li class="chapter" data-level="12.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>12.12</b> The density function <strong>aes(y=..density..)</strong></a>
+<li class="chapter" data-level="11.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>11.11</b> geom_area with multiple groups</a></li>
+<li class="chapter" data-level="11.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>11.12</b> The density function <strong>aes(y=..density..)</strong></a>
 <ul>
-<li class="chapter" data-level="12.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>12.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>11.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="12.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>12.13</b> Density plot with <strong>geom_density</strong></a>
+<li class="chapter" data-level="11.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>11.13</b> Density plot with <strong>geom_density</strong></a>
 <ul>
-<li class="chapter" data-level="12.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>12.13.1</b> What is a kernel?</a></li>
+<li class="chapter" data-level="11.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>11.13.1</b> What is a kernel?</a></li>
 </ul></li>
-<li class="chapter" data-level="12.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>12.14</b> geom_density and simulated data</a>
+<li class="chapter" data-level="11.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>11.14</b> geom_density and simulated data</a>
 <ul>
-<li class="chapter" data-level="12.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>12.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>11.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="12.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>12.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
+<li class="chapter" data-level="11.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>11.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
 <ul>
-<li class="chapter" data-level="12.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>12.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>13</b> Boxplots</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>13.1</b> Boxplot with geom_boxplot</a></li>
-<li class="chapter" data-level="13.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>13.2</b> Teoretical boxplot</a>
-<ul>
-<li class="chapter" data-level="13.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>13.2.1</b> Change the width of the boxes</a></li>
-</ul></li>
-<li class="chapter" data-level="13.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>13.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
-<li class="chapter" data-level="13.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>13.4</b> Violin diagram with <strong>geom_violin</strong></a>
-<ul>
-<li class="chapter" data-level="13.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>13.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
-<li class="chapter" data-level="13.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>13.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
-<li class="chapter" data-level="13.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>13.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
-<li class="chapter" data-level="13.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>13.4.4</b> Quartiles and geom_violin</a></li>
-<li class="chapter" data-level="13.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>13.4.5</b> Adding color to the outline of the violin</a></li>
-<li class="chapter" data-level="13.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>13.4.6</b> geom_violin by category or factor</a></li>
-<li class="chapter" data-level="13.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>13.4.7</b> Geom_violin in proportion to sample size</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>13.5</b> geom_violin not in proportion to sample size</a></li>
-<li class="chapter" data-level="13.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>13.6</b> geom_violin and orientation change</a></li>
-<li class="chapter" data-level="13.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>13.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>14</b> Other visualizations</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="other-visualizations.html"><a href="other-visualizations.html#barplot"><i class="fa fa-check"></i><b>14.1</b> Barplot</a></li>
-<li class="chapter" data-level="14.2" data-path="other-visualizations.html"><a href="other-visualizations.html#line-chart"><i class="fa fa-check"></i><b>14.2</b> Line chart</a></li>
-<li class="chapter" data-level="14.3" data-path="other-visualizations.html"><a href="other-visualizations.html#heat-map"><i class="fa fa-check"></i><b>14.3</b> Heat map</a></li>
-<li class="chapter" data-level="14.4" data-path="other-visualizations.html"><a href="other-visualizations.html#plot-of-mean-and-confidence-intervals"><i class="fa fa-check"></i><b>14.4</b> Plot of mean and confidence intervals</a></li>
-<li class="chapter" data-level="14.5" data-path="other-visualizations.html"><a href="other-visualizations.html#major-error-caution"><i class="fa fa-check"></i><b>14.5</b> MAJOR error: CAUTION</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>15</b> Linear Regression</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>15.1</b> Model of linear regression</a></li>
-<li class="chapter" data-level="15.2" data-path="linear-regression.html"><a href="linear-regression.html#selling-music-records-1"><i class="fa fa-check"></i><b>15.2</b> Selling music records</a></li>
-<li class="chapter" data-level="15.3" data-path="linear-regression.html"><a href="linear-regression.html#cooks-distance-1"><i class="fa fa-check"></i><b>15.3</b> Cook’s Distance</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>16</b> Quantile Regression</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="quantile-regression.html"><a href="quantile-regression.html#overview"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
-<li class="chapter" data-level="16.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>16.2</b> The model</a></li>
-<li class="chapter" data-level="16.3" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions-of-quantile-regression"><i class="fa fa-check"></i><b>16.3</b> The assumptions of quantile regression</a></li>
-<li class="chapter" data-level="16.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>16.4</b> Visualization</a></li>
-<li class="chapter" data-level="16.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>16.5</b> Example: Quantile regression in R</a></li>
-<li class="chapter" data-level="16.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>16.6</b> The quantile regression model, <code>rq()</code></a></li>
-<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>16.7</b> nlrq() function</a></li>
-<li class="chapter" data-level="16.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>16.8</b> Multivariate quantile regression</a></li>
-<li class="chapter" data-level="16.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>16.9</b> Conclusion</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Introduction to Generalized Linear Models</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>17.1</b> Generalized Linear models and distributions</a></li>
-<li class="chapter" data-level="17.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.2</b> When the dependent variable is not linear</a></li>
-<li class="chapter" data-level="17.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.3</b> Link available</a></li>
-<li class="chapter" data-level="17.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.4</b> The assumptions</a></li>
-<li class="chapter" data-level="17.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.5</b> The advantages of GLM</a></li>
-<li class="chapter" data-level="17.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.6</b> Binomial or Bernoulli models</a>
-<ul>
-<li class="chapter" data-level="17.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.6.1</b> Gamma Distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="17.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.7</b> The basic parameters of the gamma.</a>
-<ul>
-<li class="chapter" data-level="17.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.7.1</b> The Inverse Gaussian distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="17.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.8</b> Evaluating distributions</a></li>
-<li class="chapter" data-level="17.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.9</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Negative binomial regression</a>
-<ul>
-<li class="chapter" data-level="17.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>17.10.1</b> Comparing dispersion models</a></li>
-<li class="chapter" data-level="17.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>17.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+<li class="chapter" data-level="11.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>11.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>18</b> Binomial_Regression</a>
+<li class="chapter" data-level="12" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>12</b> Boxplots</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>18.1</b> Binomial regression</a></li>
-<li class="chapter" data-level="18.2" data-path="binomial_regression.html"><a href="binomial_regression.html#creating-the-binomial-model"><i class="fa fa-check"></i><b>18.2</b> Creating the binomial model</a></li>
-<li class="chapter" data-level="18.3" data-path="binomial_regression.html"><a href="binomial_regression.html#second-example-of-logistic-regression"><i class="fa fa-check"></i><b>18.3</b> Second example of logistic regression</a></li>
-<li class="chapter" data-level="18.4" data-path="binomial_regression.html"><a href="binomial_regression.html#the-logit-link"><i class="fa fa-check"></i><b>18.4</b> The logit link</a></li>
-<li class="chapter" data-level="18.5" data-path="binomial_regression.html"><a href="binomial_regression.html#the-probit-link"><i class="fa fa-check"></i><b>18.5</b> The probit link</a></li>
-<li class="chapter" data-level="18.6" data-path="binomial_regression.html"><a href="binomial_regression.html#evaluating-assumptions-of-the-binomial-model"><i class="fa fa-check"></i><b>18.6</b> Evaluating assumptions of the binomial model</a></li>
-<li class="chapter" data-level="18.7" data-path="binomial_regression.html"><a href="binomial_regression.html#overdispersion"><i class="fa fa-check"></i><b>18.7</b> Overdispersion</a></li>
+<li class="chapter" data-level="12.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>12.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="12.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>12.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>12.2.1</b> Change the width of the boxes</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>19</b> Poisson Regression</a>
+<li class="chapter" data-level="12.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>12.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="12.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>12.4</b> Violin diagram with <strong>geom_violin</strong></a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualize-the-data"><i class="fa fa-check"></i><b>19.1</b> Visualize the data</a></li>
-<li class="chapter" data-level="19.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-a-poisson-model"><i class="fa fa-check"></i><b>19.2</b> Creating a Poisson model</a></li>
-<li class="chapter" data-level="19.3" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overdispersion-in-a-poisson-model"><i class="fa fa-check"></i><b>19.3</b> Overdispersion in a Poisson model</a></li>
-<li class="chapter" data-level="19.4" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>19.4</b> Negative binomial regression</a></li>
-<li class="chapter" data-level="19.5" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model"><i class="fa fa-check"></i><b>19.5</b> Visualization of the negative binomial model</a></li>
-<li class="chapter" data-level="19.6" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-the-negative-binomial-model"><i class="fa fa-check"></i><b>19.6</b> Creating the negative binomial model</a>
-<ul>
-<li class="chapter" data-level="19.6.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>19.6.1</b> Comparing dispersion models</a></li>
-<li class="chapter" data-level="19.6.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>19.6.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+<li class="chapter" data-level="12.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>12.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="12.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>12.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="12.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>12.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="12.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>12.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="12.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>12.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="12.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>12.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="12.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>12.4.7</b> Geom_violin in proportion to sample size</a></li>
 </ul></li>
-<li class="chapter" data-level="19.7" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models"><i class="fa fa-check"></i><b>19.7</b> Overlaying the Poisson and the Negative binomial models</a></li>
+<li class="chapter" data-level="12.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>12.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="12.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>12.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="12.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>12.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>20</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="13" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>13</b> Other visualizations</a>
 <ul>
-<li class="chapter" data-level="20.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>20.0.1</b> Load libraries</a></li>
-<li class="chapter" data-level="20.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>20.0.2</b> Data</a></li>
-<li class="chapter" data-level="20.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>20.0.3</b> Model</a></li>
-<li class="chapter" data-level="20.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>20.0.4</b> Assumptions</a></li>
-<li class="chapter" data-level="20.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>20.0.5</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="13.1" data-path="other-visualizations.html"><a href="other-visualizations.html#barplot"><i class="fa fa-check"></i><b>13.1</b> Barplot</a></li>
+<li class="chapter" data-level="13.2" data-path="other-visualizations.html"><a href="other-visualizations.html#line-chart"><i class="fa fa-check"></i><b>13.2</b> Line chart</a></li>
+<li class="chapter" data-level="13.3" data-path="other-visualizations.html"><a href="other-visualizations.html#heat-map"><i class="fa fa-check"></i><b>13.3</b> Heat map</a></li>
+<li class="chapter" data-level="13.4" data-path="other-visualizations.html"><a href="other-visualizations.html#plot-of-mean-and-confidence-intervals"><i class="fa fa-check"></i><b>13.4</b> Plot of mean and confidence intervals</a></li>
+<li class="chapter" data-level="13.5" data-path="other-visualizations.html"><a href="other-visualizations.html#major-error-caution"><i class="fa fa-check"></i><b>13.5</b> MAJOR error: CAUTION</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>21</b> Beta Regression</a>
+<li class="chapter" data-level="14" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>21.1</b> What is a beta regression?</a></li>
-<li class="chapter" data-level="21.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>21.2</b> What is the problem with the data?</a></li>
-<li class="chapter" data-level="21.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>21.3</b> First step, what is a beta distribution?</a></li>
-<li class="chapter" data-level="21.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>21.4</b> Wikipedia</a></li>
-<li class="chapter" data-level="21.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>21.5</b> Proportion of smokers in different countries</a></li>
-<li class="chapter" data-level="21.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>21.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
-<li class="chapter" data-level="21.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>21.7</b> Visualization of the distribution with CI.</a></li>
-<li class="chapter" data-level="21.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>21.8</b> Regression model</a></li>
-<li class="chapter" data-level="21.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>21.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
-<li class="chapter" data-level="21.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>21.10</b> Visualize the beta regression</a></li>
-<li class="chapter" data-level="21.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>21.11</b> Compare the traditional linear model versus a beta model</a></li>
-<li class="chapter" data-level="21.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>21.12</b> Distribution of specific values</a></li>
+<li class="chapter" data-level="14.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>14.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="14.2" data-path="linear-regression.html"><a href="linear-regression.html#selling-music-records-1"><i class="fa fa-check"></i><b>14.2</b> Selling music records</a></li>
+<li class="chapter" data-level="14.3" data-path="linear-regression.html"><a href="linear-regression.html#cooks-distance-1"><i class="fa fa-check"></i><b>14.3</b> Cook’s Distance</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>22</b> Auto Regressive Vectorial Analysis</a></li>
-<li class="chapter" data-level="23" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>23</b> Chi-square test/Contingency tables</a>
+<li class="chapter" data-level="15" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>15</b> Quantile Regression</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>23.1</b> Count data</a></li>
-<li class="chapter" data-level="23.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>23.2</b> Chi-square test</a></li>
-<li class="chapter" data-level="23.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>23.3</b> Contingency tables</a></li>
+<li class="chapter" data-level="15.1" data-path="quantile-regression.html"><a href="quantile-regression.html#overview"><i class="fa fa-check"></i><b>15.1</b> Overview</a></li>
+<li class="chapter" data-level="15.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>15.2</b> The model</a></li>
+<li class="chapter" data-level="15.3" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions-of-quantile-regression"><i class="fa fa-check"></i><b>15.3</b> The assumptions of quantile regression</a></li>
+<li class="chapter" data-level="15.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>15.4</b> Visualization</a></li>
+<li class="chapter" data-level="15.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>15.5</b> Example: Quantile regression in R</a></li>
+<li class="chapter" data-level="15.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>15.6</b> The quantile regression model, <code>rq()</code></a></li>
+<li class="chapter" data-level="15.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>15.7</b> nlrq() function</a></li>
+<li class="chapter" data-level="15.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>15.8</b> Multivariate quantile regression</a></li>
+<li class="chapter" data-level="15.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>15.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>16</b> Introduction to Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>16.1</b> Generalized Linear models and distributions</a></li>
+<li class="chapter" data-level="16.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>16.2</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="16.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>16.3</b> Link available</a></li>
+<li class="chapter" data-level="16.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>16.4</b> The assumptions</a></li>
+<li class="chapter" data-level="16.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>16.5</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="16.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>16.6</b> Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="16.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>16.6.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="16.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>16.7</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>16.7.1</b> The Inverse Gaussian distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>16.8</b> Evaluating distributions</a></li>
+<li class="chapter" data-level="16.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>16.9</b> Poisson regression</a></li>
+<li class="chapter" data-level="16.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>16.10</b> Negative binomial regression</a>
+<ul>
+<li class="chapter" data-level="16.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>16.10.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="16.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>16.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>17</b> Binomial_Regression</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>17.1</b> Binomial regression</a></li>
+<li class="chapter" data-level="17.2" data-path="binomial_regression.html"><a href="binomial_regression.html#creating-the-binomial-model"><i class="fa fa-check"></i><b>17.2</b> Creating the binomial model</a></li>
+<li class="chapter" data-level="17.3" data-path="binomial_regression.html"><a href="binomial_regression.html#second-example-of-logistic-regression"><i class="fa fa-check"></i><b>17.3</b> Second example of logistic regression</a></li>
+<li class="chapter" data-level="17.4" data-path="binomial_regression.html"><a href="binomial_regression.html#the-logit-link"><i class="fa fa-check"></i><b>17.4</b> The logit link</a></li>
+<li class="chapter" data-level="17.5" data-path="binomial_regression.html"><a href="binomial_regression.html#the-probit-link"><i class="fa fa-check"></i><b>17.5</b> The probit link</a></li>
+<li class="chapter" data-level="17.6" data-path="binomial_regression.html"><a href="binomial_regression.html#evaluating-assumptions-of-the-binomial-model"><i class="fa fa-check"></i><b>17.6</b> Evaluating assumptions of the binomial model</a></li>
+<li class="chapter" data-level="17.7" data-path="binomial_regression.html"><a href="binomial_regression.html#overdispersion"><i class="fa fa-check"></i><b>17.7</b> Overdispersion</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>18</b> Poisson Regression</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualize-the-data"><i class="fa fa-check"></i><b>18.1</b> Visualize the data</a></li>
+<li class="chapter" data-level="18.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-a-poisson-model"><i class="fa fa-check"></i><b>18.2</b> Creating a Poisson model</a></li>
+<li class="chapter" data-level="18.3" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overdispersion-in-a-poisson-model"><i class="fa fa-check"></i><b>18.3</b> Overdispersion in a Poisson model</a></li>
+<li class="chapter" data-level="18.4" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>18.4</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="18.5" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model"><i class="fa fa-check"></i><b>18.5</b> Visualization of the negative binomial model</a></li>
+<li class="chapter" data-level="18.6" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-the-negative-binomial-model"><i class="fa fa-check"></i><b>18.6</b> Creating the negative binomial model</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>18.6.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="18.6.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>18.6.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models"><i class="fa fa-check"></i><b>18.7</b> Overlaying the Poisson and the Negative binomial models</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="arima.html"><a href="arima.html"><i class="fa fa-check"></i><b>19</b> ARIMA</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="arima.html"><a href="arima.html#forecasting-r-packages"><i class="fa fa-check"></i><b>19.1</b> Forecasting R packages</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="arima.html"><a href="arima.html#load-libraries"><i class="fa fa-check"></i><b>19.1.1</b> Load libraries</a></li>
+<li class="chapter" data-level="19.1.2" data-path="arima.html"><a href="arima.html#fit-the-models"><i class="fa fa-check"></i><b>19.1.2</b> Fit the models</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="arima.html"><a href="arima.html#forcasting"><i class="fa fa-check"></i><b>19.2</b> Forcasting</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="arima.html"><a href="arima.html#other-functions"><i class="fa fa-check"></i><b>19.2.1</b> Other functions</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="arima.html"><a href="arima.html#how-to-create-a-tsibble-data-set-from-a-data-frame"><i class="fa fa-check"></i><b>19.3</b> How to create a <strong>tsibble</strong> data set from a data frame</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>20</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>20.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="20.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>20.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="20.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>20.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="20.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>20.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="20.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>20.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="20.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>20.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="20.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>20.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="20.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>20.8</b> Regression model</a></li>
+<li class="chapter" data-level="20.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>20.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="20.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>20.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="20.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>20.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="20.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>20.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>21</b> Chi-square test/Contingency tables</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>21.1</b> Count data</a></li>
+<li class="chapter" data-level="21.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>21.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="21.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>21.3</b> Contingency tables</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -472,10 +474,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chi-square-testcontingency-tables" class="section level1 hasAnchor" number="23">
-<h1><span class="header-section-number">Chapter23</span> Chi-square test/Contingency tables<a href="chi-square-testcontingency-tables.html#chi-square-testcontingency-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="count-data" class="section level2 hasAnchor" number="23.1">
-<h2><span class="header-section-number">23.1</span> Count data<a href="chi-square-testcontingency-tables.html#count-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chi-square-testcontingency-tables" class="section level1 hasAnchor" number="21">
+<h1><span class="header-section-number">Chapter 21</span> Chi-square test/Contingency tables<a href="chi-square-testcontingency-tables.html#chi-square-testcontingency-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="count-data" class="section level2 hasAnchor" number="21.1">
+<h2><span class="header-section-number">21.1</span> Count data<a href="chi-square-testcontingency-tables.html#count-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Count data is a type of data that represents the number of times an event occurs in a fixed interval of time or space.</li>
 </ul>
@@ -486,21 +488,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Contingency tables (which is the parametric for count data) a table larger than 2x2 and referred as RxC table (row x column table).</li>
 </ul>
 </div>
-<div id="chi-square-test" class="section level2 hasAnchor" number="23.2">
-<h2><span class="header-section-number">23.2</span> Chi-square test<a href="chi-square-testcontingency-tables.html#chi-square-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chi-square-test" class="section level2 hasAnchor" number="21.2">
+<h2><span class="header-section-number">21.2</span> Chi-square test<a href="chi-square-testcontingency-tables.html#chi-square-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The chi -square test was has a long history and was first introduced by Karl Pearson in 1900. It is used to test the association between two categorical variables. The test is based on the difference between the expected frequencies and the observed frequencies in one or more categories in the contingency table. The null hypothesis is that there is no association between the variables. The test statistic is calculated as the sum of the squared differences between the observed and expected frequencies divided by the expected frequencies. The test statistic follows a chi-square distribution with (r-1)(c-1) degrees of freedom, where r is the number of rows and c is the number of columns in the contingency table. The test is used to determine if the <strong>observed frequencies</strong> are significantly different from the <strong>expected frequencies</strong>. If the test statistic is greater than the critical value, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the test statistic is less than the critical value, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.</p>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="chi-square-testcontingency-tables.html#cb583-1" tabindex="-1"></a><span class="co"># Chi-square test</span></span>
-<span id="cb583-2"><a href="chi-square-testcontingency-tables.html#cb583-2" tabindex="-1"></a></span>
-<span id="cb583-3"><a href="chi-square-testcontingency-tables.html#cb583-3" tabindex="-1"></a><span class="co"># Create a 2x2 contingency table</span></span>
-<span id="cb583-4"><a href="chi-square-testcontingency-tables.html#cb583-4" tabindex="-1"></a></span>
-<span id="cb583-5"><a href="chi-square-testcontingency-tables.html#cb583-5" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb583-6"><a href="chi-square-testcontingency-tables.html#cb583-6" tabindex="-1"></a></span>
-<span id="cb583-7"><a href="chi-square-testcontingency-tables.html#cb583-7" tabindex="-1"></a>datadf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb583-8"><a href="chi-square-testcontingency-tables.html#cb583-8" tabindex="-1"></a>  <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>),</span>
-<span id="cb583-9"><a href="chi-square-testcontingency-tables.html#cb583-9" tabindex="-1"></a>  <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">10</span>)</span>
-<span id="cb583-10"><a href="chi-square-testcontingency-tables.html#cb583-10" tabindex="-1"></a>)</span>
-<span id="cb583-11"><a href="chi-square-testcontingency-tables.html#cb583-11" tabindex="-1"></a></span>
-<span id="cb583-12"><a href="chi-square-testcontingency-tables.html#cb583-12" tabindex="-1"></a>datadf</span></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="chi-square-testcontingency-tables.html#cb604-1" tabindex="-1"></a><span class="co"># Chi-square test</span></span>
+<span id="cb604-2"><a href="chi-square-testcontingency-tables.html#cb604-2" tabindex="-1"></a></span>
+<span id="cb604-3"><a href="chi-square-testcontingency-tables.html#cb604-3" tabindex="-1"></a><span class="co"># Create a 2x2 contingency table</span></span>
+<span id="cb604-4"><a href="chi-square-testcontingency-tables.html#cb604-4" tabindex="-1"></a></span>
+<span id="cb604-5"><a href="chi-square-testcontingency-tables.html#cb604-5" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb604-6"><a href="chi-square-testcontingency-tables.html#cb604-6" tabindex="-1"></a></span>
+<span id="cb604-7"><a href="chi-square-testcontingency-tables.html#cb604-7" tabindex="-1"></a>datadf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb604-8"><a href="chi-square-testcontingency-tables.html#cb604-8" tabindex="-1"></a>  <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb604-9"><a href="chi-square-testcontingency-tables.html#cb604-9" tabindex="-1"></a>  <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">10</span>)</span>
+<span id="cb604-10"><a href="chi-square-testcontingency-tables.html#cb604-10" tabindex="-1"></a>)</span>
+<span id="cb604-11"><a href="chi-square-testcontingency-tables.html#cb604-11" tabindex="-1"></a></span>
+<span id="cb604-12"><a href="chi-square-testcontingency-tables.html#cb604-12" tabindex="-1"></a>datadf</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:chi_1">
 <caption style="caption-side: top; text-align: center;">(#tab:chi_1) </caption><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">A</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">B</th></tr>
@@ -511,9 +513,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <p>The test using the chisq.test() function in R.</p>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="chi-square-testcontingency-tables.html#cb584-1" tabindex="-1"></a><span class="co"># Chi-square test</span></span>
-<span id="cb584-2"><a href="chi-square-testcontingency-tables.html#cb584-2" tabindex="-1"></a></span>
-<span id="cb584-3"><a href="chi-square-testcontingency-tables.html#cb584-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf) <span class="co"># Chi-square test of independence of variables in a table</span></span></code></pre></div>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="chi-square-testcontingency-tables.html#cb605-1" tabindex="-1"></a><span class="co"># Chi-square test</span></span>
+<span id="cb605-2"><a href="chi-square-testcontingency-tables.html#cb605-2" tabindex="-1"></a></span>
+<span id="cb605-3"><a href="chi-square-testcontingency-tables.html#cb605-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf) <span class="co"># Chi-square test of independence of variables in a table</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
@@ -531,9 +533,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>If the expected frequencies are less than 5, then the Fisher’s exact test should be used instead of the chi-square test. The Fisher’s exact test is used to test the association between two categorical variables when the expected frequencies are less than 5. The test is based on the hypergeometric distribution and is used to determine if the observed frequencies are significantly different from the expected frequencies. The test is used to determine if the null hypothesis is rejected or not. If the p-value is less than the significance level, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the p-value is greater than the significance level, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.</p>
 <p>Let us calculate the expected frqeuncies for the above example.</p>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="chi-square-testcontingency-tables.html#cb586-1" tabindex="-1"></a><span class="co"># Calculate the expected frequencies</span></span>
-<span id="cb586-2"><a href="chi-square-testcontingency-tables.html#cb586-2" tabindex="-1"></a></span>
-<span id="cb586-3"><a href="chi-square-testcontingency-tables.html#cb586-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf)<span class="sc">$</span>expected <span class="co"># Expected frequencies</span></span></code></pre></div>
+<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="chi-square-testcontingency-tables.html#cb607-1" tabindex="-1"></a><span class="co"># Calculate the expected frequencies</span></span>
+<span id="cb607-2"><a href="chi-square-testcontingency-tables.html#cb607-2" tabindex="-1"></a></span>
+<span id="cb607-3"><a href="chi-square-testcontingency-tables.html#cb607-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf)<span class="sc">$</span>expected <span class="co"># Expected frequencies</span></span></code></pre></div>
 <pre><code>##             A        B
 ## [1,] 17.14286 22.85714
 ## [2,] 12.85714 17.14286</code></pre>
@@ -542,24 +544,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>calculate the expected frequencies for the data set.</li>
 </ul>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="chi-square-testcontingency-tables.html#cb588-1" tabindex="-1"></a><span class="co"># Create a 2x2 contingency table</span></span>
-<span id="cb588-2"><a href="chi-square-testcontingency-tables.html#cb588-2" tabindex="-1"></a></span>
-<span id="cb588-3"><a href="chi-square-testcontingency-tables.html#cb588-3" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb588-4"><a href="chi-square-testcontingency-tables.html#cb588-4" tabindex="-1"></a></span>
-<span id="cb588-5"><a href="chi-square-testcontingency-tables.html#cb588-5" tabindex="-1"></a>datadf2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb588-6"><a href="chi-square-testcontingency-tables.html#cb588-6" tabindex="-1"></a>  <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">15</span>),</span>
-<span id="cb588-7"><a href="chi-square-testcontingency-tables.html#cb588-7" tabindex="-1"></a>  <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb588-8"><a href="chi-square-testcontingency-tables.html#cb588-8" tabindex="-1"></a>)</span>
-<span id="cb588-9"><a href="chi-square-testcontingency-tables.html#cb588-9" tabindex="-1"></a></span>
-<span id="cb588-10"><a href="chi-square-testcontingency-tables.html#cb588-10" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf2)<span class="sc">$</span>expected <span class="co"># Expected frequencies</span></span></code></pre></div>
+<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb609-1"><a href="chi-square-testcontingency-tables.html#cb609-1" tabindex="-1"></a><span class="co"># Create a 2x2 contingency table</span></span>
+<span id="cb609-2"><a href="chi-square-testcontingency-tables.html#cb609-2" tabindex="-1"></a></span>
+<span id="cb609-3"><a href="chi-square-testcontingency-tables.html#cb609-3" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb609-4"><a href="chi-square-testcontingency-tables.html#cb609-4" tabindex="-1"></a></span>
+<span id="cb609-5"><a href="chi-square-testcontingency-tables.html#cb609-5" tabindex="-1"></a>datadf2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb609-6"><a href="chi-square-testcontingency-tables.html#cb609-6" tabindex="-1"></a>  <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">15</span>),</span>
+<span id="cb609-7"><a href="chi-square-testcontingency-tables.html#cb609-7" tabindex="-1"></a>  <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb609-8"><a href="chi-square-testcontingency-tables.html#cb609-8" tabindex="-1"></a>)</span>
+<span id="cb609-9"><a href="chi-square-testcontingency-tables.html#cb609-9" tabindex="-1"></a></span>
+<span id="cb609-10"><a href="chi-square-testcontingency-tables.html#cb609-10" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">chisq.test</span>(datadf2)<span class="sc">$</span>expected <span class="co"># Expected frequencies</span></span></code></pre></div>
 <pre><code>## Warning in stats::chisq.test(datadf2): Chi-squared approximation may be
 ## incorrect</code></pre>
 <pre><code>##             A        B
 ## [1,] 21.34146 3.658537
 ## [2,] 13.65854 2.341463</code></pre>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="chi-square-testcontingency-tables.html#cb591-1" tabindex="-1"></a><span class="co"># Fisher&#39;s exact test</span></span>
-<span id="cb591-2"><a href="chi-square-testcontingency-tables.html#cb591-2" tabindex="-1"></a></span>
-<span id="cb591-3"><a href="chi-square-testcontingency-tables.html#cb591-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">fisher.test</span>(datadf2) <span class="co"># Fisher&#39;s exact test for count data</span></span></code></pre></div>
+<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="chi-square-testcontingency-tables.html#cb612-1" tabindex="-1"></a><span class="co"># Fisher&#39;s exact test</span></span>
+<span id="cb612-2"><a href="chi-square-testcontingency-tables.html#cb612-2" tabindex="-1"></a></span>
+<span id="cb612-3"><a href="chi-square-testcontingency-tables.html#cb612-3" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">fisher.test</span>(datadf2) <span class="co"># Fisher&#39;s exact test for count data</span></span></code></pre></div>
 <pre><code>## 
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
@@ -574,19 +576,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this case the p-value is 0.38 which is greater than the significance level of 0.05. Therefore, the null hypothesis is not rejected and it is concluded that there is no association between the variables.</p>
 <hr />
 </div>
-<div id="contingency-tables" class="section level2 hasAnchor" number="23.3">
-<h2><span class="header-section-number">23.3</span> Contingency tables<a href="chi-square-testcontingency-tables.html#contingency-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="contingency-tables" class="section level2 hasAnchor" number="21.3">
+<h2><span class="header-section-number">21.3</span> Contingency tables<a href="chi-square-testcontingency-tables.html#contingency-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contingency tables are used to display the relationship between two or more categorical variables. The table is organized so that the rows represent one variable and the columns represent another variable. The cells of the table contain the frequencies of the joint occurrences of the variables. The table is used to test the association between the variables. The null hypothesis is that there is no association between the variables. The test statistic is calculated as the sum of the squared differences between the observed and expected frequencies divided by the expected frequencies. The test statistic follows a chi-square distribution with (r-1)(c-1) degrees of freedom, where r is the number of rows and c is the number of columns in the contingency table. The test is used to determine if the <strong>observed frequencies</strong> are significantly different from the <strong>expected frequencies</strong>. If the test statistic is greater than the critical value, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the test statistic is less than the critical value, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.</p>
 <p>We will start with using the traditional package for evaluating the RxC table.</p>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="chi-square-testcontingency-tables.html#cb593-1" tabindex="-1"></a><span class="co"># Contingency tables</span></span>
-<span id="cb593-2"><a href="chi-square-testcontingency-tables.html#cb593-2" tabindex="-1"></a></span>
-<span id="cb593-3"><a href="chi-square-testcontingency-tables.html#cb593-3" tabindex="-1"></a><span class="co"># Create a 4x2 contingency table</span></span>
-<span id="cb593-4"><a href="chi-square-testcontingency-tables.html#cb593-4" tabindex="-1"></a></span>
-<span id="cb593-5"><a href="chi-square-testcontingency-tables.html#cb593-5" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb593-6"><a href="chi-square-testcontingency-tables.html#cb593-6" tabindex="-1"></a></span>
-<span id="cb593-7"><a href="chi-square-testcontingency-tables.html#cb593-7" tabindex="-1"></a>datadf3 <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>), <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">300</span>)))</span>
-<span id="cb593-8"><a href="chi-square-testcontingency-tables.html#cb593-8" tabindex="-1"></a></span>
-<span id="cb593-9"><a href="chi-square-testcontingency-tables.html#cb593-9" tabindex="-1"></a>datadf3</span></code></pre></div>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="chi-square-testcontingency-tables.html#cb614-1" tabindex="-1"></a><span class="co"># Contingency tables</span></span>
+<span id="cb614-2"><a href="chi-square-testcontingency-tables.html#cb614-2" tabindex="-1"></a></span>
+<span id="cb614-3"><a href="chi-square-testcontingency-tables.html#cb614-3" tabindex="-1"></a><span class="co"># Create a 4x2 contingency table</span></span>
+<span id="cb614-4"><a href="chi-square-testcontingency-tables.html#cb614-4" tabindex="-1"></a></span>
+<span id="cb614-5"><a href="chi-square-testcontingency-tables.html#cb614-5" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb614-6"><a href="chi-square-testcontingency-tables.html#cb614-6" tabindex="-1"></a></span>
+<span id="cb614-7"><a href="chi-square-testcontingency-tables.html#cb614-7" tabindex="-1"></a>datadf3 <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>), <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">300</span>)))</span>
+<span id="cb614-8"><a href="chi-square-testcontingency-tables.html#cb614-8" tabindex="-1"></a></span>
+<span id="cb614-9"><a href="chi-square-testcontingency-tables.html#cb614-9" tabindex="-1"></a>datadf3</span></code></pre></div>
 <pre><code>##     A   B   C   D
 ## A  10  20  30  40
 ## B  10  60  70 300</code></pre>
@@ -594,9 +596,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The test evaluates the differences between the observed and expected frequencies.</p>
 <p>Let us visualize the expected frequencies for the above example using the function mosaicplot() from the <strong>graphics</strong> package.</p>
 <p>Note the width of the bars in the plot is frequency of the observed data while the height of the bars represents the proportions.</p>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="chi-square-testcontingency-tables.html#cb595-1" tabindex="-1"></a><span class="fu">library</span>(graphics)</span>
-<span id="cb595-2"><a href="chi-square-testcontingency-tables.html#cb595-2" tabindex="-1"></a></span>
-<span id="cb595-3"><a href="chi-square-testcontingency-tables.html#cb595-3" tabindex="-1"></a><span class="fu">mosaicplot</span>(datadf3, <span class="at">main =</span> <span class="st">&quot;Contingency table&quot;</span>, <span class="at">color=</span><span class="cn">TRUE</span>) <span class="co"># Mosaic plot of the contingency table</span></span></code></pre></div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="chi-square-testcontingency-tables.html#cb616-1" tabindex="-1"></a><span class="fu">library</span>(graphics)</span>
+<span id="cb616-2"><a href="chi-square-testcontingency-tables.html#cb616-2" tabindex="-1"></a></span>
+<span id="cb616-3"><a href="chi-square-testcontingency-tables.html#cb616-3" tabindex="-1"></a><span class="fu">mosaicplot</span>(datadf3, <span class="at">main =</span> <span class="st">&quot;Contingency table&quot;</span>, <span class="at">color=</span><span class="cn">TRUE</span>) <span class="co"># Mosaic plot of the contingency table</span></span></code></pre></div>
 <p><img src="Quantitative-Agricultural-Economics_files/figure-html/chi_7-1.png" width="672" /></p>
 <p>It is possible to the test we will use the <strong>gmodels</strong> package and function CrossTable() to evaluate the test of independence.</p>
 <p>CrossTable(data, fisher=TRUE, chisq=TRUE, expected=TRUE, sresid=TRUE, format=“SAS”)</p>
@@ -611,10 +613,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>The output of the function is a table that contains the observed frequencies, the expected frequencies, the standardized residuals, and the p-values for the Fisher’s exact test and the chi-square test. The table is used to determine if the null hypothesis is rejected or not. If the p-value is less than the significance level, then the null hypothesis is rejected and it is concluded that there is an association between the variables. If the p-value is greater than the significance level, then the null hypothesis is not rejected and it is concluded that there is no association between the variables.</p>
 <p>NOTE the order of how the data is shown in the table.</p>
-<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="chi-square-testcontingency-tables.html#cb596-1" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
-<span id="cb596-2"><a href="chi-square-testcontingency-tables.html#cb596-2" tabindex="-1"></a></span>
-<span id="cb596-3"><a href="chi-square-testcontingency-tables.html#cb596-3" tabindex="-1"></a><span class="fu">CrossTable</span>(datadf3, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb596-4"><a href="chi-square-testcontingency-tables.html#cb596-4" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>) <span class="co"># Test of independence of variables in a table</span></span></code></pre></div>
+<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb617-1"><a href="chi-square-testcontingency-tables.html#cb617-1" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
+<span id="cb617-2"><a href="chi-square-testcontingency-tables.html#cb617-2" tabindex="-1"></a></span>
+<span id="cb617-3"><a href="chi-square-testcontingency-tables.html#cb617-3" tabindex="-1"></a><span class="fu">CrossTable</span>(datadf3, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb617-4"><a href="chi-square-testcontingency-tables.html#cb617-4" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>) <span class="co"># Test of independence of variables in a table</span></span></code></pre></div>
 <pre><code>## Warning in chisq.test(t, correct = FALSE, ...): Chi-squared approximation may
 ## be incorrect</code></pre>
 <pre><code>## 
@@ -671,16 +673,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## </code></pre>
 <p>We can do a figure of the expected frequencies using the function mosaicplot() from the <strong>graphics</strong> package. Note that this figure shows the standardized residuals and their deviation from expecyed frequencies.</p>
-<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="chi-square-testcontingency-tables.html#cb599-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(datadf3, <span class="at">shade =</span> <span class="cn">TRUE</span>) <span class="co"># Expected frequencies</span></span></code></pre></div>
+<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="chi-square-testcontingency-tables.html#cb620-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(datadf3, <span class="at">shade =</span> <span class="cn">TRUE</span>) <span class="co"># Expected frequencies</span></span></code></pre></div>
 <p><img src="Quantitative-Agricultural-Economics_files/figure-html/chi_9-1.png" width="672" /></p>
 <hr />
 <p>We will use a new package called ca for the analysis of RxC table called ‘contingencytables’</p>
 <p>For analysis of RxC table we use the <strong>contingencytables</strong> package and the function <strong>Pearson_LR_tests_rxc()</strong> to evaluate the test of independence. The function will return the likelihood ratio test statistic and the p-value.</p>
-<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="chi-square-testcontingency-tables.html#cb600-1" tabindex="-1"></a><span class="co"># Contingency tables</span></span>
-<span id="cb600-2"><a href="chi-square-testcontingency-tables.html#cb600-2" tabindex="-1"></a><span class="fu">library</span>(contingencytables)</span></code></pre></div>
+<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb621-1"><a href="chi-square-testcontingency-tables.html#cb621-1" tabindex="-1"></a><span class="co"># Contingency tables</span></span>
+<span id="cb621-2"><a href="chi-square-testcontingency-tables.html#cb621-2" tabindex="-1"></a><span class="fu">library</span>(contingencytables)</span></code></pre></div>
 <pre><code>## Welcome to contingencytables 3.0.1.
 ## Please run ?chapX or list_functions(x) to see the functions related to chapter X.</code></pre>
-<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="chi-square-testcontingency-tables.html#cb602-1" tabindex="-1"></a><span class="fu">Pearson_LR_tests_rxc</span>(datadf3)  <span class="co"># Chi-square test of independence of variables in a table</span></span></code></pre></div>
+<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="chi-square-testcontingency-tables.html#cb623-1" tabindex="-1"></a><span class="fu">Pearson_LR_tests_rxc</span>(datadf3)  <span class="co"># Chi-square test of independence of variables in a table</span></span></code></pre></div>
 <pre><code>## Pearson chi-squared test: T = 34.378, df = 3, P = 0.00000
 ## Likelihood ratio test:    T = 31.323, df = 3, P = 0.00000</code></pre>
 <p>It well known in statistics that development of new approaches are readily adopted by the statistical community. Here is an example of a function that different rxc contingency tables and compares alternative algorithm. At present this function only works for 3x2 and 3x3 tables.</p>
@@ -698,12 +700,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Information on these and many other Contingency tests can be found here</p>
 <p><a href="https://www.routledge.com/Statistical-Analysis-of-Contingency-Tables/Fagerland-Lydersen-Laake/p/book/9781466588172" class="uri">https://www.routledge.com/Statistical-Analysis-of-Contingency-Tables/Fagerland-Lydersen-Laake/p/book/9781466588172</a></p>
-<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="chi-square-testcontingency-tables.html#cb604-1" tabindex="-1"></a>table_7<span class="fl">.3</span> <span class="co"># the data used in the analysis</span></span></code></pre></div>
+<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb625-1"><a href="chi-square-testcontingency-tables.html#cb625-1" tabindex="-1"></a>table_7<span class="fl">.3</span> <span class="co"># the data used in the analysis</span></span></code></pre></div>
 <pre><code>##                                Cured Not cured
 ## Acetic acid                       40        25
 ## Corticosteroid and acetic acid    54         7
 ## Corticosteroid and antibiotic     63        10</code></pre>
-<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb606-1"><a href="chi-square-testcontingency-tables.html#cb606-1" tabindex="-1"></a><span class="fu">Exact_cond_midP_tests_rxc</span>(table_7<span class="fl">.3</span>) <span class="co"># the function to evaluate all the above algorthims </span></span></code></pre></div>
+<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb627-1"><a href="chi-square-testcontingency-tables.html#cb627-1" tabindex="-1"></a><span class="fu">Exact_cond_midP_tests_rxc</span>(table_7<span class="fl">.3</span>) <span class="co"># the function to evaluate all the above algorthims </span></span></code></pre></div>
 <pre><code>## 
 ## Exact Fisher-Freeman-Halton: P = 0.0002711
 ## Mid-P Fisher-Freeman-Halton: P = 0.0002674
@@ -725,7 +727,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="auto-regressive-vectorial-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="beta-regression.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -757,7 +759,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/22_Chi-Square_Contingency_Tables.Rmd",
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/edit/main/21_Chi-Square_Contingency_Tables.Rmd",
     "text": "Edit"
   },
   "history": {
@@ -765,7 +767,7 @@ gitbook.start({
     "text": null
   },
   "view": {
-    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/22_Chi-Square_Contingency_Tables.Rmd",
+    "link": "https://github.com/RaymondLTremblay/Quantitative_Agricultural_Economics/blob/main/21_Chi-Square_Contingency_Tables.Rmd",
     "text": null
   },
   "download": null,

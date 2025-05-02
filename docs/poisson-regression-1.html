@@ -4,26 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter19 Poisson Regression | Quantitative Agricultural Economics</title>
-  <meta name="description" content="Chapter19 Poisson Regression | Quantitative Agricultural Economics" />
+  <title>Chapter 18 Poisson Regression | Quantitative Agricultural Economics</title>
+  <meta name="description" content="Chapter 18 Poisson Regression | Quantitative Agricultural Economics" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter19 Poisson Regression | Quantitative Agricultural Economics" />
+  <meta property="og:title" content="Chapter 18 Poisson Regression | Quantitative Agricultural Economics" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter19 Poisson Regression | Quantitative Agricultural Economics" />
+  <meta name="twitter:title" content="Chapter 18 Poisson Regression | Quantitative Agricultural Economics" />
   
   
   
 
-<meta name="author" content="Raymond L. Tremblay" />
 
 
-<meta name="date" content="2025-04-21" />
+<meta name="date" content="2025-05-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +30,7 @@
   
   
 <link rel="prev" href="binomial_regression.html"/>
-<link rel="next" href="multinomial-logit-analysis.html"/>
+<link rel="next" href="arima.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -124,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="bootstrap_Yeti.css" type="text/css" />
 </head>
 
 <body>
@@ -233,228 +232,231 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-variance"><i class="fa fa-check"></i><b>7.7.1</b> What is the variance?</a></li>
 <li class="chapter" data-level="7.7.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-standard-deviation"><i class="fa fa-check"></i><b>7.7.2</b> What is the standard deviation?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html"><i class="fa fa-check"></i><b>8</b> What is the mode?</a>
+<li class="chapter" data-level="7.8" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#what-is-the-mode"><i class="fa fa-check"></i><b>7.8</b> What is the mode?</a></li>
+<li class="chapter" data-level="7.9" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>7.9</b> Test of normality, Shapiro Wilks Test</a></li>
+<li class="chapter" data-level="7.10" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>7.10</b> Tests of Equality of variances</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#test-of-normality-shapiro-wilks-test"><i class="fa fa-check"></i><b>8.1</b> Test of normality, Shapiro Wilks Test</a></li>
-<li class="chapter" data-level="8.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#tests-of-equality-of-variances"><i class="fa fa-check"></i><b>8.2</b> Tests of Equality of variances</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.1</b> The F-test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.2" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.2</b> Bartlett’s test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.3" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>8.2.3</b> Brown-Forsythe test of equality of variance</a></li>
-<li class="chapter" data-level="8.2.4" data-path="what-is-the-mode.html"><a href="what-is-the-mode.html#levenes-test-testing-for-assumption-of-normality-among-groups"><i class="fa fa-check"></i><b>8.2.4</b> Levene’s Test: testing for assumption of normality among groups</a></li>
+<li class="chapter" data-level="7.10.1" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#the-f-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.1</b> The F-test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.2" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#bartletts-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.2</b> Bartlett’s test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.3" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#brown-forsythe-test-of-equality-of-variance"><i class="fa fa-check"></i><b>7.10.3</b> Brown-Forsythe test of equality of variance</a></li>
+<li class="chapter" data-level="7.10.4" data-path="tests-of-normality-and-equality-of-variance.html"><a href="tests-of-normality-and-equality-of-variance.html#levenes-test-testing-for-assumption-of-equality-of-variance-among-groups"><i class="fa fa-check"></i><b>7.10.4</b> Levene’s Test: testing for assumption of equality of variance among groups</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>9</b> Non-parametric tests</a>
+<li class="chapter" data-level="8" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html"><i class="fa fa-check"></i><b>8</b> Non-parametric tests</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.0.1</b> Wilcoxon signed-rank test</a></li>
-<li class="chapter" data-level="9.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>9.0.2</b> Mann-Whitney U test</a></li>
-<li class="chapter" data-level="9.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>9.0.3</b> Kruskal-Wallis test</a></li>
-<li class="chapter" data-level="9.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>9.0.4</b> Friedman test</a></li>
-<li class="chapter" data-level="9.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>9.0.5</b> Spearman’s rank correlation</a></li>
-<li class="chapter" data-level="9.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>9.0.6</b> Kendall’s tau</a></li>
-<li class="chapter" data-level="9.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearman-vs-kendall-correlations-comparison"><i class="fa fa-check"></i><b>9.1</b> Spearman vs Kendall correlations comparison</a>
+<li class="chapter" data-level="8.0.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>8.0.1</b> Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="8.0.2" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>8.0.2</b> Mann-Whitney U test</a></li>
+<li class="chapter" data-level="8.0.3" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kruskal-wallis-test"><i class="fa fa-check"></i><b>8.0.3</b> Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="8.0.4" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#friedman-test"><i class="fa fa-check"></i><b>8.0.4</b> Friedman test</a></li>
+<li class="chapter" data-level="8.0.5" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearmans-rank-correlation"><i class="fa fa-check"></i><b>8.0.5</b> Spearman’s rank correlation</a></li>
+<li class="chapter" data-level="8.0.6" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#kendalls-tau"><i class="fa fa-check"></i><b>8.0.6</b> Kendall’s tau</a></li>
+<li class="chapter" data-level="8.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#spearman-vs-kendall-correlations-comparison"><i class="fa fa-check"></i><b>8.1</b> Spearman vs Kendall correlations comparison</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>9.1.1</b> Altenative to non-parametric tests</a></li>
+<li class="chapter" data-level="8.1.1" data-path="non-parametric-tests.html"><a href="non-parametric-tests.html#altenative-to-non-parametric-tests"><i class="fa fa-check"></i><b>8.1.1</b> Altenative to non-parametric tests</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>10</b> Scatter Plots</a>
+<li class="chapter" data-level="9" data-path="scatter-plots.html"><a href="scatter-plots.html"><i class="fa fa-check"></i><b>9</b> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>10.1</b> Basic scatter plots</a></li>
-<li class="chapter" data-level="10.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>10.2</b> the lm() function</a></li>
-<li class="chapter" data-level="10.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>10.3</b> Visualization of the regression</a></li>
-<li class="chapter" data-level="10.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>10.4</b> The impact of outliers</a></li>
-<li class="chapter" data-level="10.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>10.5</b> Selling music records</a></li>
-<li class="chapter" data-level="10.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>10.6</b> Linear Regression Assumptions</a></li>
-<li class="chapter" data-level="10.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>10.7</b> Cook’s Distance</a></li>
-<li class="chapter" data-level="10.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>10.8</b> Steps to do a linear regression analysis</a>
+<li class="chapter" data-level="9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#basic-scatter-plots"><i class="fa fa-check"></i><b>9.1</b> Basic scatter plots</a></li>
+<li class="chapter" data-level="9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#the-lm-function"><i class="fa fa-check"></i><b>9.2</b> the lm() function</a></li>
+<li class="chapter" data-level="9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#visualization-of-the-regression"><i class="fa fa-check"></i><b>9.3</b> Visualization of the regression</a></li>
+<li class="chapter" data-level="9.4" data-path="scatter-plots.html"><a href="scatter-plots.html#the-impact-of-outliers"><i class="fa fa-check"></i><b>9.4</b> The impact of outliers</a></li>
+<li class="chapter" data-level="9.5" data-path="scatter-plots.html"><a href="scatter-plots.html#selling-music-records"><i class="fa fa-check"></i><b>9.5</b> Selling music records</a></li>
+<li class="chapter" data-level="9.6" data-path="scatter-plots.html"><a href="scatter-plots.html#linear-regression-assumptions"><i class="fa fa-check"></i><b>9.6</b> Linear Regression Assumptions</a></li>
+<li class="chapter" data-level="9.7" data-path="scatter-plots.html"><a href="scatter-plots.html#cooks-distance"><i class="fa fa-check"></i><b>9.7</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="9.8" data-path="scatter-plots.html"><a href="scatter-plots.html#steps-to-do-a-linear-regression-analysis"><i class="fa fa-check"></i><b>9.8</b> Steps to do a linear regression analysis</a>
 <ul>
-<li class="chapter" data-level="10.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1</a></li>
-<li class="chapter" data-level="10.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2</a></li>
-<li class="chapter" data-level="10.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3</a></li>
+<li class="chapter" data-level="9.8.1" data-path="scatter-plots.html"><a href="scatter-plots.html#step-1"><i class="fa fa-check"></i><b>9.8.1</b> Step 1</a></li>
+<li class="chapter" data-level="9.8.2" data-path="scatter-plots.html"><a href="scatter-plots.html#step-2"><i class="fa fa-check"></i><b>9.8.2</b> Step 2</a></li>
+<li class="chapter" data-level="9.8.3" data-path="scatter-plots.html"><a href="scatter-plots.html#step-3"><i class="fa fa-check"></i><b>9.8.3</b> Step 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>10.9</b> Alternative to Graph the Residuals</a>
+<li class="chapter" data-level="9.9" data-path="scatter-plots.html"><a href="scatter-plots.html#alternative-to-graph-the-residuals"><i class="fa fa-check"></i><b>9.9</b> Alternative to Graph the Residuals</a>
 <ul>
-<li class="chapter" data-level="10.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>10.9.1</b> Plot the residuals</a></li>
-<li class="chapter" data-level="10.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>10.9.2</b> Exercise 1</a></li>
-<li class="chapter" data-level="10.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>10.9.3</b> Exercise 2</a></li>
+<li class="chapter" data-level="9.9.1" data-path="scatter-plots.html"><a href="scatter-plots.html#plot-the-residuals"><i class="fa fa-check"></i><b>9.9.1</b> Plot the residuals</a></li>
+<li class="chapter" data-level="9.9.2" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-1"><i class="fa fa-check"></i><b>9.9.2</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.9.3" data-path="scatter-plots.html"><a href="scatter-plots.html#exercise-2"><i class="fa fa-check"></i><b>9.9.3</b> Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="10.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>10.10</b> Scatter plots with jitter</a></li>
-<li class="chapter" data-level="10.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>10.11</b> Scatter plots with marginal histograms</a></li>
-<li class="chapter" data-level="10.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>10.12</b> Scatter plots for multiple variables</a></li>
+<li class="chapter" data-level="9.10" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-jitter"><i class="fa fa-check"></i><b>9.10</b> Scatter plots with jitter</a></li>
+<li class="chapter" data-level="9.11" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-with-marginal-histograms"><i class="fa fa-check"></i><b>9.11</b> Scatter plots with marginal histograms</a></li>
+<li class="chapter" data-level="9.12" data-path="scatter-plots.html"><a href="scatter-plots.html#scatter-plots-for-multiple-variables"><i class="fa fa-check"></i><b>9.12</b> Scatter plots for multiple variables</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>11</b> Ring chart (alternative to the pie chart)</a>
+<li class="chapter" data-level="10" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html"><i class="fa fa-check"></i><b>10</b> Ring chart (alternative to the pie chart)</a>
 <ul>
-<li class="chapter" data-level="11.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>11.0.1</b> Adding values</a></li>
-<li class="chapter" data-level="11.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>11.0.2</b> Example of why PIE chart should NOT be used</a></li>
+<li class="chapter" data-level="10.0.1" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#adding-values"><i class="fa fa-check"></i><b>10.0.1</b> Adding values</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ring-chart-alternative-to-the-pie-chart.html"><a href="ring-chart-alternative-to-the-pie-chart.html#example-of-why-pie-chart-should-not-be-used"><i class="fa fa-check"></i><b>10.0.2</b> Example of why PIE chart should NOT be used</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>12</b> Histograms/Density Plots</a>
+<li class="chapter" data-level="11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html"><i class="fa fa-check"></i><b>11</b> Histograms/Density Plots</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>12.1</b> Histograms with geom_histogram</a></li>
-<li class="chapter" data-level="12.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>12.2</b> Changing bin sizes with <em>binwidth</em></a></li>
-<li class="chapter" data-level="12.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>12.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
-<li class="chapter" data-level="12.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>12.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
-<li class="chapter" data-level="12.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>12.5</b> Frequency and color intensity overlap</a></li>
-<li class="chapter" data-level="12.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>12.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
-<li class="chapter" data-level="12.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>12.7</b> Group graphics with <strong>Facet_wrap</strong></a>
+<li class="chapter" data-level="11.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#histograms-with-geom_histogram"><i class="fa fa-check"></i><b>11.1</b> Histograms with geom_histogram</a></li>
+<li class="chapter" data-level="11.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#changing-bin-sizes-with-binwidth"><i class="fa fa-check"></i><b>11.2</b> Changing bin sizes with <em>binwidth</em></a></li>
+<li class="chapter" data-level="11.3" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#numbers-of-hospital-beds-per-1000-inhabitants-in-different-countries"><i class="fa fa-check"></i><b>11.3</b> Numbers of hospital beds per 1000 inhabitants in different countries</a></li>
+<li class="chapter" data-level="11.4" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#modifying-continuous-scales-with-scale_y_continuous-and-scale_x_continuous"><i class="fa fa-check"></i><b>11.4</b> Modifying continuous scales with scale_y_continuous and scale_x_continuous</a></li>
+<li class="chapter" data-level="11.5" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#frequency-and-color-intensity-overlap"><i class="fa fa-check"></i><b>11.5</b> Frequency and color intensity overlap</a></li>
+<li class="chapter" data-level="11.6" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#position-the-bars-next-to-each-other-with-the-dodge-function"><i class="fa fa-check"></i><b>11.6</b> Position the bars next to each other with the <strong>dodge</strong> function</a></li>
+<li class="chapter" data-level="11.7" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#group-graphics-with-facet_wrap"><i class="fa fa-check"></i><b>11.7</b> Group graphics with <strong>Facet_wrap</strong></a>
 <ul>
-<li class="chapter" data-level="12.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>12.7.1</b> Change chart colors manually</a></li>
+<li class="chapter" data-level="11.7.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#change-chart-colors-manually"><i class="fa fa-check"></i><b>11.7.1</b> Change chart colors manually</a></li>
 </ul></li>
-<li class="chapter" data-level="12.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>12.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
-<li class="chapter" data-level="12.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>12.9</b> DensityPlots</a>
+<li class="chapter" data-level="11.8" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_histogram-options-and-parameters"><i class="fa fa-check"></i><b>11.8</b> <strong>geom_histogram</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.9" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#densityplots"><i class="fa fa-check"></i><b>11.9</b> DensityPlots</a>
 <ul>
-<li class="chapter" data-level="12.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>12.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
+<li class="chapter" data-level="11.9.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-density-and-line-histogram-plots-with-geom_dotplot-geom_density-and-geom-freqpoly"><i class="fa fa-check"></i><b>11.9.1</b> Area, density and line histogram plots with <strong>geom_dotplot</strong>, <strong>geom_density</strong> and <strong>geom-freqpoly</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="12.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>12.10</b> Area chart with <strong>geom_area</strong></a>
+<li class="chapter" data-level="11.10" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-with-geom_area"><i class="fa fa-check"></i><b>11.10</b> Area chart with <strong>geom_area</strong></a>
 <ul>
-<li class="chapter" data-level="12.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>12.10.1</b> Area Chart Section</a></li>
-<li class="chapter" data-level="12.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>12.10.2</b> <strong>linetype</strong> types</a></li>
+<li class="chapter" data-level="11.10.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#area-chart-section"><i class="fa fa-check"></i><b>11.10.1</b> Area Chart Section</a></li>
+<li class="chapter" data-level="11.10.2" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#linetype-types"><i class="fa fa-check"></i><b>11.10.2</b> <strong>linetype</strong> types</a></li>
 </ul></li>
-<li class="chapter" data-level="12.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>12.11</b> geom_area with multiple groups</a></li>
-<li class="chapter" data-level="12.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>12.12</b> The density function <strong>aes(y=..density..)</strong></a>
+<li class="chapter" data-level="11.11" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-with-multiple-groups"><i class="fa fa-check"></i><b>11.11</b> geom_area with multiple groups</a></li>
+<li class="chapter" data-level="11.12" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#the-density-function-aesy..density.."><i class="fa fa-check"></i><b>11.12</b> The density function <strong>aes(y=..density..)</strong></a>
 <ul>
-<li class="chapter" data-level="12.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>12.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.12.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_area-options-and-parameters"><i class="fa fa-check"></i><b>11.12.1</b> <strong>geom_area</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="12.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>12.13</b> Density plot with <strong>geom_density</strong></a>
+<li class="chapter" data-level="11.13" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#density-plot-with-geom_density"><i class="fa fa-check"></i><b>11.13</b> Density plot with <strong>geom_density</strong></a>
 <ul>
-<li class="chapter" data-level="12.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>12.13.1</b> What is a kernel?</a></li>
+<li class="chapter" data-level="11.13.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#what-is-a-kernel"><i class="fa fa-check"></i><b>11.13.1</b> What is a kernel?</a></li>
 </ul></li>
-<li class="chapter" data-level="12.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>12.14</b> geom_density and simulated data</a>
+<li class="chapter" data-level="11.14" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-and-simulated-data"><i class="fa fa-check"></i><b>11.14</b> geom_density and simulated data</a>
 <ul>
-<li class="chapter" data-level="12.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>12.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="11.14.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#geom_density-options-and-parameters"><i class="fa fa-check"></i><b>11.14.1</b> <strong>geom_density</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="12.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>12.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
+<li class="chapter" data-level="11.15" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#polygon-frequency-graph-with-geom_freqpoly"><i class="fa fa-check"></i><b>11.15</b> Polygon frequency graph with <strong>geom_freqpoly</strong></a>
 <ul>
-<li class="chapter" data-level="12.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>12.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>13</b> Boxplots</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>13.1</b> Boxplot with geom_boxplot</a></li>
-<li class="chapter" data-level="13.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>13.2</b> Teoretical boxplot</a>
-<ul>
-<li class="chapter" data-level="13.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>13.2.1</b> Change the width of the boxes</a></li>
-</ul></li>
-<li class="chapter" data-level="13.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>13.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
-<li class="chapter" data-level="13.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>13.4</b> Violin diagram with <strong>geom_violin</strong></a>
-<ul>
-<li class="chapter" data-level="13.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>13.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
-<li class="chapter" data-level="13.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>13.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
-<li class="chapter" data-level="13.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>13.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
-<li class="chapter" data-level="13.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>13.4.4</b> Quartiles and geom_violin</a></li>
-<li class="chapter" data-level="13.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>13.4.5</b> Adding color to the outline of the violin</a></li>
-<li class="chapter" data-level="13.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>13.4.6</b> geom_violin by category or factor</a></li>
-<li class="chapter" data-level="13.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>13.4.7</b> Geom_violin in proportion to sample size</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>13.5</b> geom_violin not in proportion to sample size</a></li>
-<li class="chapter" data-level="13.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>13.6</b> geom_violin and orientation change</a></li>
-<li class="chapter" data-level="13.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>13.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>14</b> Other visualizations</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="other-visualizations.html"><a href="other-visualizations.html#barplot"><i class="fa fa-check"></i><b>14.1</b> Barplot</a></li>
-<li class="chapter" data-level="14.2" data-path="other-visualizations.html"><a href="other-visualizations.html#line-chart"><i class="fa fa-check"></i><b>14.2</b> Line chart</a></li>
-<li class="chapter" data-level="14.3" data-path="other-visualizations.html"><a href="other-visualizations.html#heat-map"><i class="fa fa-check"></i><b>14.3</b> Heat map</a></li>
-<li class="chapter" data-level="14.4" data-path="other-visualizations.html"><a href="other-visualizations.html#plot-of-mean-and-confidence-intervals"><i class="fa fa-check"></i><b>14.4</b> Plot of mean and confidence intervals</a></li>
-<li class="chapter" data-level="14.5" data-path="other-visualizations.html"><a href="other-visualizations.html#major-error-caution"><i class="fa fa-check"></i><b>14.5</b> MAJOR error: CAUTION</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>15</b> Linear Regression</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>15.1</b> Model of linear regression</a></li>
-<li class="chapter" data-level="15.2" data-path="linear-regression.html"><a href="linear-regression.html#selling-music-records-1"><i class="fa fa-check"></i><b>15.2</b> Selling music records</a></li>
-<li class="chapter" data-level="15.3" data-path="linear-regression.html"><a href="linear-regression.html#cooks-distance-1"><i class="fa fa-check"></i><b>15.3</b> Cook’s Distance</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>16</b> Quantile Regression</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="quantile-regression.html"><a href="quantile-regression.html#overview"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
-<li class="chapter" data-level="16.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>16.2</b> The model</a></li>
-<li class="chapter" data-level="16.3" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions-of-quantile-regression"><i class="fa fa-check"></i><b>16.3</b> The assumptions of quantile regression</a></li>
-<li class="chapter" data-level="16.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>16.4</b> Visualization</a></li>
-<li class="chapter" data-level="16.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>16.5</b> Example: Quantile regression in R</a></li>
-<li class="chapter" data-level="16.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>16.6</b> The quantile regression model, <code>rq()</code></a></li>
-<li class="chapter" data-level="16.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>16.7</b> nlrq() function</a></li>
-<li class="chapter" data-level="16.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>16.8</b> Multivariate quantile regression</a></li>
-<li class="chapter" data-level="16.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>16.9</b> Conclusion</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>17</b> Introduction to Generalized Linear Models</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>17.1</b> Generalized Linear models and distributions</a></li>
-<li class="chapter" data-level="17.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>17.2</b> When the dependent variable is not linear</a></li>
-<li class="chapter" data-level="17.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>17.3</b> Link available</a></li>
-<li class="chapter" data-level="17.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>17.4</b> The assumptions</a></li>
-<li class="chapter" data-level="17.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>17.5</b> The advantages of GLM</a></li>
-<li class="chapter" data-level="17.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>17.6</b> Binomial or Bernoulli models</a>
-<ul>
-<li class="chapter" data-level="17.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>17.6.1</b> Gamma Distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="17.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>17.7</b> The basic parameters of the gamma.</a>
-<ul>
-<li class="chapter" data-level="17.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>17.7.1</b> The Inverse Gaussian distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="17.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>17.8</b> Evaluating distributions</a></li>
-<li class="chapter" data-level="17.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>17.9</b> Poisson regression</a></li>
-<li class="chapter" data-level="17.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>17.10</b> Negative binomial regression</a>
-<ul>
-<li class="chapter" data-level="17.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>17.10.1</b> Comparing dispersion models</a></li>
-<li class="chapter" data-level="17.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>17.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+<li class="chapter" data-level="11.15.1" data-path="histogramsdensity-plots.html"><a href="histogramsdensity-plots.html#opciones-y-parametros-de-geom_freqpoly"><i class="fa fa-check"></i><b>11.15.1</b> Opciones y Parametros de <strong>geom_freqpoly</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>18</b> Binomial_Regression</a>
+<li class="chapter" data-level="12" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>12</b> Boxplots</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>18.1</b> Binomial regression</a></li>
-<li class="chapter" data-level="18.2" data-path="binomial_regression.html"><a href="binomial_regression.html#creating-the-binomial-model"><i class="fa fa-check"></i><b>18.2</b> Creating the binomial model</a></li>
-<li class="chapter" data-level="18.3" data-path="binomial_regression.html"><a href="binomial_regression.html#second-example-of-logistic-regression"><i class="fa fa-check"></i><b>18.3</b> Second example of logistic regression</a></li>
-<li class="chapter" data-level="18.4" data-path="binomial_regression.html"><a href="binomial_regression.html#the-logit-link"><i class="fa fa-check"></i><b>18.4</b> The logit link</a></li>
-<li class="chapter" data-level="18.5" data-path="binomial_regression.html"><a href="binomial_regression.html#the-probit-link"><i class="fa fa-check"></i><b>18.5</b> The probit link</a></li>
-<li class="chapter" data-level="18.6" data-path="binomial_regression.html"><a href="binomial_regression.html#evaluating-assumptions-of-the-binomial-model"><i class="fa fa-check"></i><b>18.6</b> Evaluating assumptions of the binomial model</a></li>
-<li class="chapter" data-level="18.7" data-path="binomial_regression.html"><a href="binomial_regression.html#overdispersion"><i class="fa fa-check"></i><b>18.7</b> Overdispersion</a></li>
+<li class="chapter" data-level="12.1" data-path="boxplots.html"><a href="boxplots.html#boxplot-with-geom_boxplot"><i class="fa fa-check"></i><b>12.1</b> Boxplot with geom_boxplot</a></li>
+<li class="chapter" data-level="12.2" data-path="boxplots.html"><a href="boxplots.html#teoretical-boxplot"><i class="fa fa-check"></i><b>12.2</b> Teoretical boxplot</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="boxplots.html"><a href="boxplots.html#change-the-width-of-the-boxes"><i class="fa fa-check"></i><b>12.2.1</b> Change the width of the boxes</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>19</b> Poisson Regression</a>
+<li class="chapter" data-level="12.3" data-path="boxplots.html"><a href="boxplots.html#geom_boxplot-options-and-parameters"><i class="fa fa-check"></i><b>12.3</b> <strong>geom_boxplot</strong> Options and Parameters:</a></li>
+<li class="chapter" data-level="12.4" data-path="boxplots.html"><a href="boxplots.html#violin-diagram-with-geom_violin"><i class="fa fa-check"></i><b>12.4</b> Violin diagram with <strong>geom_violin</strong></a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualize-the-data"><i class="fa fa-check"></i><b>19.1</b> Visualize the data</a></li>
-<li class="chapter" data-level="19.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-a-poisson-model"><i class="fa fa-check"></i><b>19.2</b> Creating a Poisson model</a></li>
-<li class="chapter" data-level="19.3" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overdispersion-in-a-poisson-model"><i class="fa fa-check"></i><b>19.3</b> Overdispersion in a Poisson model</a></li>
-<li class="chapter" data-level="19.4" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>19.4</b> Negative binomial regression</a></li>
-<li class="chapter" data-level="19.5" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model"><i class="fa fa-check"></i><b>19.5</b> Visualization of the negative binomial model</a></li>
-<li class="chapter" data-level="19.6" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-the-negative-binomial-model"><i class="fa fa-check"></i><b>19.6</b> Creating the negative binomial model</a>
-<ul>
-<li class="chapter" data-level="19.6.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>19.6.1</b> Comparing dispersion models</a></li>
-<li class="chapter" data-level="19.6.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>19.6.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+<li class="chapter" data-level="12.4.1" data-path="boxplots.html"><a href="boxplots.html#geom_violin-with-multiple-groups"><i class="fa fa-check"></i><b>12.4.1</b> <strong>Geom_violin</strong> with multiple groups</a></li>
+<li class="chapter" data-level="12.4.2" data-path="boxplots.html"><a href="boxplots.html#geom_violin-used-with-geom_point-and-geom_jitter"><i class="fa fa-check"></i><b>12.4.2</b> <strong>Geom_violin</strong> used with <strong>geom_point</strong> and <strong>geom_jitter</strong></a></li>
+<li class="chapter" data-level="12.4.3" data-path="boxplots.html"><a href="boxplots.html#geom_jitter-and-geom-overlap"><i class="fa fa-check"></i><b>12.4.3</b> geom_jitter and <strong>geom</strong> overlap</a></li>
+<li class="chapter" data-level="12.4.4" data-path="boxplots.html"><a href="boxplots.html#quartiles-and-geom_violin"><i class="fa fa-check"></i><b>12.4.4</b> Quartiles and geom_violin</a></li>
+<li class="chapter" data-level="12.4.5" data-path="boxplots.html"><a href="boxplots.html#adding-color-to-the-outline-of-the-violin"><i class="fa fa-check"></i><b>12.4.5</b> Adding color to the outline of the violin</a></li>
+<li class="chapter" data-level="12.4.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-by-category-or-factor"><i class="fa fa-check"></i><b>12.4.6</b> geom_violin by category or factor</a></li>
+<li class="chapter" data-level="12.4.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>12.4.7</b> Geom_violin in proportion to sample size</a></li>
 </ul></li>
-<li class="chapter" data-level="19.7" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models"><i class="fa fa-check"></i><b>19.7</b> Overlaying the Poisson and the Negative binomial models</a></li>
+<li class="chapter" data-level="12.5" data-path="boxplots.html"><a href="boxplots.html#geom_violin-not-in-proportion-to-sample-size"><i class="fa fa-check"></i><b>12.5</b> geom_violin not in proportion to sample size</a></li>
+<li class="chapter" data-level="12.6" data-path="boxplots.html"><a href="boxplots.html#geom_violin-and-orientation-change"><i class="fa fa-check"></i><b>12.6</b> geom_violin and orientation change</a></li>
+<li class="chapter" data-level="12.7" data-path="boxplots.html"><a href="boxplots.html#geom_violin-options-and-parameters"><i class="fa fa-check"></i><b>12.7</b> <strong>geom_violin</strong> Options and Parameters:</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html"><i class="fa fa-check"></i><b>20</b> Multinomial logit analysis</a>
+<li class="chapter" data-level="13" data-path="other-visualizations.html"><a href="other-visualizations.html"><i class="fa fa-check"></i><b>13</b> Other visualizations</a>
 <ul>
-<li class="chapter" data-level="20.0.1" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#load-libraries"><i class="fa fa-check"></i><b>20.0.1</b> Load libraries</a></li>
-<li class="chapter" data-level="20.0.2" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#data"><i class="fa fa-check"></i><b>20.0.2</b> Data</a></li>
-<li class="chapter" data-level="20.0.3" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#model"><i class="fa fa-check"></i><b>20.0.3</b> Model</a></li>
-<li class="chapter" data-level="20.0.4" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#assumptions"><i class="fa fa-check"></i><b>20.0.4</b> Assumptions</a></li>
-<li class="chapter" data-level="20.0.5" data-path="multinomial-logit-analysis.html"><a href="multinomial-logit-analysis.html#post-estimation-analysis"><i class="fa fa-check"></i><b>20.0.5</b> Post estimation analysis</a></li>
+<li class="chapter" data-level="13.1" data-path="other-visualizations.html"><a href="other-visualizations.html#barplot"><i class="fa fa-check"></i><b>13.1</b> Barplot</a></li>
+<li class="chapter" data-level="13.2" data-path="other-visualizations.html"><a href="other-visualizations.html#line-chart"><i class="fa fa-check"></i><b>13.2</b> Line chart</a></li>
+<li class="chapter" data-level="13.3" data-path="other-visualizations.html"><a href="other-visualizations.html#heat-map"><i class="fa fa-check"></i><b>13.3</b> Heat map</a></li>
+<li class="chapter" data-level="13.4" data-path="other-visualizations.html"><a href="other-visualizations.html#plot-of-mean-and-confidence-intervals"><i class="fa fa-check"></i><b>13.4</b> Plot of mean and confidence intervals</a></li>
+<li class="chapter" data-level="13.5" data-path="other-visualizations.html"><a href="other-visualizations.html#major-error-caution"><i class="fa fa-check"></i><b>13.5</b> MAJOR error: CAUTION</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>21</b> Beta Regression</a>
+<li class="chapter" data-level="14" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>21.1</b> What is a beta regression?</a></li>
-<li class="chapter" data-level="21.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>21.2</b> What is the problem with the data?</a></li>
-<li class="chapter" data-level="21.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>21.3</b> First step, what is a beta distribution?</a></li>
-<li class="chapter" data-level="21.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>21.4</b> Wikipedia</a></li>
-<li class="chapter" data-level="21.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>21.5</b> Proportion of smokers in different countries</a></li>
-<li class="chapter" data-level="21.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>21.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
-<li class="chapter" data-level="21.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>21.7</b> Visualization of the distribution with CI.</a></li>
-<li class="chapter" data-level="21.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>21.8</b> Regression model</a></li>
-<li class="chapter" data-level="21.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>21.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
-<li class="chapter" data-level="21.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>21.10</b> Visualize the beta regression</a></li>
-<li class="chapter" data-level="21.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>21.11</b> Compare the traditional linear model versus a beta model</a></li>
-<li class="chapter" data-level="21.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>21.12</b> Distribution of specific values</a></li>
+<li class="chapter" data-level="14.1" data-path="linear-regression.html"><a href="linear-regression.html#model-of-linear-regression"><i class="fa fa-check"></i><b>14.1</b> Model of linear regression</a></li>
+<li class="chapter" data-level="14.2" data-path="linear-regression.html"><a href="linear-regression.html#selling-music-records-1"><i class="fa fa-check"></i><b>14.2</b> Selling music records</a></li>
+<li class="chapter" data-level="14.3" data-path="linear-regression.html"><a href="linear-regression.html#cooks-distance-1"><i class="fa fa-check"></i><b>14.3</b> Cook’s Distance</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="auto-regressive-vectorial-analysis.html"><a href="auto-regressive-vectorial-analysis.html"><i class="fa fa-check"></i><b>22</b> Auto Regressive Vectorial Analysis</a></li>
-<li class="chapter" data-level="23" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>23</b> Chi-square test/Contingency tables</a>
+<li class="chapter" data-level="15" data-path="quantile-regression.html"><a href="quantile-regression.html"><i class="fa fa-check"></i><b>15</b> Quantile Regression</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>23.1</b> Count data</a></li>
-<li class="chapter" data-level="23.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>23.2</b> Chi-square test</a></li>
-<li class="chapter" data-level="23.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>23.3</b> Contingency tables</a></li>
+<li class="chapter" data-level="15.1" data-path="quantile-regression.html"><a href="quantile-regression.html#overview"><i class="fa fa-check"></i><b>15.1</b> Overview</a></li>
+<li class="chapter" data-level="15.2" data-path="quantile-regression.html"><a href="quantile-regression.html#the-model"><i class="fa fa-check"></i><b>15.2</b> The model</a></li>
+<li class="chapter" data-level="15.3" data-path="quantile-regression.html"><a href="quantile-regression.html#the-assumptions-of-quantile-regression"><i class="fa fa-check"></i><b>15.3</b> The assumptions of quantile regression</a></li>
+<li class="chapter" data-level="15.4" data-path="quantile-regression.html"><a href="quantile-regression.html#visualization"><i class="fa fa-check"></i><b>15.4</b> Visualization</a></li>
+<li class="chapter" data-level="15.5" data-path="quantile-regression.html"><a href="quantile-regression.html#example-quantile-regression-in-r"><i class="fa fa-check"></i><b>15.5</b> Example: Quantile regression in R</a></li>
+<li class="chapter" data-level="15.6" data-path="quantile-regression.html"><a href="quantile-regression.html#the-quantile-regression-model-rq"><i class="fa fa-check"></i><b>15.6</b> The quantile regression model, <code>rq()</code></a></li>
+<li class="chapter" data-level="15.7" data-path="quantile-regression.html"><a href="quantile-regression.html#nlrq-function"><i class="fa fa-check"></i><b>15.7</b> nlrq() function</a></li>
+<li class="chapter" data-level="15.8" data-path="quantile-regression.html"><a href="quantile-regression.html#multivariate-quantile-regression"><i class="fa fa-check"></i><b>15.8</b> Multivariate quantile regression</a></li>
+<li class="chapter" data-level="15.9" data-path="quantile-regression.html"><a href="quantile-regression.html#conclusion-1"><i class="fa fa-check"></i><b>15.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html"><i class="fa fa-check"></i><b>16</b> Introduction to Generalized Linear Models</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#generalized-linear-models-and-distributions"><i class="fa fa-check"></i><b>16.1</b> Generalized Linear models and distributions</a></li>
+<li class="chapter" data-level="16.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#when-the-dependent-variable-is-not-linear"><i class="fa fa-check"></i><b>16.2</b> When the dependent variable is not linear</a></li>
+<li class="chapter" data-level="16.3" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#link-available"><i class="fa fa-check"></i><b>16.3</b> Link available</a></li>
+<li class="chapter" data-level="16.4" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-assumptions"><i class="fa fa-check"></i><b>16.4</b> The assumptions</a></li>
+<li class="chapter" data-level="16.5" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-advantages-of-glm"><i class="fa fa-check"></i><b>16.5</b> The advantages of GLM</a></li>
+<li class="chapter" data-level="16.6" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#binomial-or-bernoulli-models"><i class="fa fa-check"></i><b>16.6</b> Binomial or Bernoulli models</a>
+<ul>
+<li class="chapter" data-level="16.6.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#gamma-distribution"><i class="fa fa-check"></i><b>16.6.1</b> Gamma Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="16.7" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-basic-parameters-of-the-gamma."><i class="fa fa-check"></i><b>16.7</b> The basic parameters of the gamma.</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#the-inverse-gaussian-distribution"><i class="fa fa-check"></i><b>16.7.1</b> The Inverse Gaussian distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#evaluating-distributions"><i class="fa fa-check"></i><b>16.8</b> Evaluating distributions</a></li>
+<li class="chapter" data-level="16.9" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#poisson-regression"><i class="fa fa-check"></i><b>16.9</b> Poisson regression</a></li>
+<li class="chapter" data-level="16.10" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#negative-binomial-regression"><i class="fa fa-check"></i><b>16.10</b> Negative binomial regression</a>
+<ul>
+<li class="chapter" data-level="16.10.1" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#comparing-dispersion-models"><i class="fa fa-check"></i><b>16.10.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="16.10.2" data-path="introduction-to-generalized-linear-models.html"><a href="introduction-to-generalized-linear-models.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model."><i class="fa fa-check"></i><b>16.10.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="binomial_regression.html"><a href="binomial_regression.html"><i class="fa fa-check"></i><b>17</b> Binomial_Regression</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="binomial_regression.html"><a href="binomial_regression.html#binomial-regression"><i class="fa fa-check"></i><b>17.1</b> Binomial regression</a></li>
+<li class="chapter" data-level="17.2" data-path="binomial_regression.html"><a href="binomial_regression.html#creating-the-binomial-model"><i class="fa fa-check"></i><b>17.2</b> Creating the binomial model</a></li>
+<li class="chapter" data-level="17.3" data-path="binomial_regression.html"><a href="binomial_regression.html#second-example-of-logistic-regression"><i class="fa fa-check"></i><b>17.3</b> Second example of logistic regression</a></li>
+<li class="chapter" data-level="17.4" data-path="binomial_regression.html"><a href="binomial_regression.html#the-logit-link"><i class="fa fa-check"></i><b>17.4</b> The logit link</a></li>
+<li class="chapter" data-level="17.5" data-path="binomial_regression.html"><a href="binomial_regression.html#the-probit-link"><i class="fa fa-check"></i><b>17.5</b> The probit link</a></li>
+<li class="chapter" data-level="17.6" data-path="binomial_regression.html"><a href="binomial_regression.html#evaluating-assumptions-of-the-binomial-model"><i class="fa fa-check"></i><b>17.6</b> Evaluating assumptions of the binomial model</a></li>
+<li class="chapter" data-level="17.7" data-path="binomial_regression.html"><a href="binomial_regression.html#overdispersion"><i class="fa fa-check"></i><b>17.7</b> Overdispersion</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html"><i class="fa fa-check"></i><b>18</b> Poisson Regression</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualize-the-data"><i class="fa fa-check"></i><b>18.1</b> Visualize the data</a></li>
+<li class="chapter" data-level="18.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-a-poisson-model"><i class="fa fa-check"></i><b>18.2</b> Creating a Poisson model</a></li>
+<li class="chapter" data-level="18.3" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overdispersion-in-a-poisson-model"><i class="fa fa-check"></i><b>18.3</b> Overdispersion in a Poisson model</a></li>
+<li class="chapter" data-level="18.4" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#negative-binomial-regression-1"><i class="fa fa-check"></i><b>18.4</b> Negative binomial regression</a></li>
+<li class="chapter" data-level="18.5" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model"><i class="fa fa-check"></i><b>18.5</b> Visualization of the negative binomial model</a></li>
+<li class="chapter" data-level="18.6" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#creating-the-negative-binomial-model"><i class="fa fa-check"></i><b>18.6</b> Creating the negative binomial model</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#comparing-dispersion-models-1"><i class="fa fa-check"></i><b>18.6.1</b> Comparing dispersion models</a></li>
+<li class="chapter" data-level="18.6.2" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1"><i class="fa fa-check"></i><b>18.6.2</b> Alternative approach to compare the Poisson and the negative binomial model.</a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="poisson-regression-1.html"><a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models"><i class="fa fa-check"></i><b>18.7</b> Overlaying the Poisson and the Negative binomial models</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="arima.html"><a href="arima.html"><i class="fa fa-check"></i><b>19</b> ARIMA</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="arima.html"><a href="arima.html#forecasting-r-packages"><i class="fa fa-check"></i><b>19.1</b> Forecasting R packages</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="arima.html"><a href="arima.html#load-libraries"><i class="fa fa-check"></i><b>19.1.1</b> Load libraries</a></li>
+<li class="chapter" data-level="19.1.2" data-path="arima.html"><a href="arima.html#fit-the-models"><i class="fa fa-check"></i><b>19.1.2</b> Fit the models</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="arima.html"><a href="arima.html#forcasting"><i class="fa fa-check"></i><b>19.2</b> Forcasting</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="arima.html"><a href="arima.html#other-functions"><i class="fa fa-check"></i><b>19.2.1</b> Other functions</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="arima.html"><a href="arima.html#how-to-create-a-tsibble-data-set-from-a-data-frame"><i class="fa fa-check"></i><b>19.3</b> How to create a <strong>tsibble</strong> data set from a data frame</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="beta-regression.html"><a href="beta-regression.html"><i class="fa fa-check"></i><b>20</b> Beta Regression</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="beta-regression.html"><a href="beta-regression.html#what-is-a-beta-regression"><i class="fa fa-check"></i><b>20.1</b> What is a beta regression?</a></li>
+<li class="chapter" data-level="20.2" data-path="beta-regression.html"><a href="beta-regression.html#what-is-the-problem-with-the-data"><i class="fa fa-check"></i><b>20.2</b> What is the problem with the data?</a></li>
+<li class="chapter" data-level="20.3" data-path="beta-regression.html"><a href="beta-regression.html#first-step-what-is-a-beta-distribution"><i class="fa fa-check"></i><b>20.3</b> First step, what is a beta distribution?</a></li>
+<li class="chapter" data-level="20.4" data-path="beta-regression.html"><a href="beta-regression.html#wikipedia"><i class="fa fa-check"></i><b>20.4</b> Wikipedia</a></li>
+<li class="chapter" data-level="20.5" data-path="beta-regression.html"><a href="beta-regression.html#proportion-of-smokers-in-different-countries"><i class="fa fa-check"></i><b>20.5</b> Proportion of smokers in different countries</a></li>
+<li class="chapter" data-level="20.6" data-path="beta-regression.html"><a href="beta-regression.html#convert-the-mean-and-variance-into-shape-alpha-and-beta"><i class="fa fa-check"></i><b>20.6</b> Convert the mean and variance into shape <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="20.7" data-path="beta-regression.html"><a href="beta-regression.html#visualization-of-the-distribution-with-ci."><i class="fa fa-check"></i><b>20.7</b> Visualization of the distribution with CI.</a></li>
+<li class="chapter" data-level="20.8" data-path="beta-regression.html"><a href="beta-regression.html#regression-model"><i class="fa fa-check"></i><b>20.8</b> Regression model</a></li>
+<li class="chapter" data-level="20.9" data-path="beta-regression.html"><a href="beta-regression.html#regresión-beta-proporción-de-frutos-por-cantidad-de-flores"><i class="fa fa-check"></i><b>20.9</b> Regresión beta, proporción de frutos por cantidad de flores</a></li>
+<li class="chapter" data-level="20.10" data-path="beta-regression.html"><a href="beta-regression.html#visualize-the-beta-regression"><i class="fa fa-check"></i><b>20.10</b> Visualize the beta regression</a></li>
+<li class="chapter" data-level="20.11" data-path="beta-regression.html"><a href="beta-regression.html#compare-the-traditional-linear-model-versus-a-beta-model"><i class="fa fa-check"></i><b>20.11</b> Compare the traditional linear model versus a beta model</a></li>
+<li class="chapter" data-level="20.12" data-path="beta-regression.html"><a href="beta-regression.html#distribution-of-specific-values"><i class="fa fa-check"></i><b>20.12</b> Distribution of specific values</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html"><i class="fa fa-check"></i><b>21</b> Chi-square test/Contingency tables</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#count-data"><i class="fa fa-check"></i><b>21.1</b> Count data</a></li>
+<li class="chapter" data-level="21.2" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#chi-square-test"><i class="fa fa-check"></i><b>21.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="21.3" data-path="chi-square-testcontingency-tables.html"><a href="chi-square-testcontingency-tables.html#contingency-tables"><i class="fa fa-check"></i><b>21.3</b> Contingency tables</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -472,8 +474,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="poisson-regression-1" class="section level1 hasAnchor" number="19">
-<h1><span class="header-section-number">Chapter19</span> Poisson Regression<a href="poisson-regression-1.html#poisson-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="poisson-regression-1" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Chapter 18</span> Poisson Regression<a href="poisson-regression-1.html#poisson-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A poisson regression is used when the dependent variable is a count variable, that is, the number of events that occur in a fixed period of time. The Poisson distribution is used as a probability distribution and the <strong>log</strong> function is used as a link function. The model is called <strong>Poisson Regression</strong>.</p>
 <p><span class="math display">\[\log\left(\lambda_i\right)=\beta_0+\beta_1X_i\]</span>
 where the distribution is a Poisson with <span class="math inline">\(y_i\sim Poisson\left(\lambda_i\right)\)</span>.</p>
@@ -482,12 +484,12 @@ where the distribution is a Poisson with <span class="math inline">\(y_i\sim Poi
 <li>Brooklyn_Bridge: The number cyclist on the Brooklyn Bridge on each day.</li>
 <li>Precipitation = The precipitation in inches on that day</li>
 </ul>
-<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="poisson-regression-1.html#cb514-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb514-2"><a href="poisson-regression-1.html#cb514-2" tabindex="-1"></a>NY_CITY_CYCLIST <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/NY_CITY_CYCLIST.csv&quot;</span>)</span>
-<span id="cb514-3"><a href="poisson-regression-1.html#cb514-3" tabindex="-1"></a></span>
-<span id="cb514-4"><a href="poisson-regression-1.html#cb514-4" tabindex="-1"></a>NY<span class="ot">=</span>NY_CITY_CYCLIST</span>
-<span id="cb514-5"><a href="poisson-regression-1.html#cb514-5" tabindex="-1"></a></span>
-<span id="cb514-6"><a href="poisson-regression-1.html#cb514-6" tabindex="-1"></a><span class="fu">head</span>(NY)</span></code></pre></div>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="poisson-regression-1.html#cb516-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb516-2"><a href="poisson-regression-1.html#cb516-2" tabindex="-1"></a>NY_CITY_CYCLIST <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/NY_CITY_CYCLIST.csv&quot;</span>)</span>
+<span id="cb516-3"><a href="poisson-regression-1.html#cb516-3" tabindex="-1"></a></span>
+<span id="cb516-4"><a href="poisson-regression-1.html#cb516-4" tabindex="-1"></a>NY<span class="ot">=</span>NY_CITY_CYCLIST</span>
+<span id="cb516-5"><a href="poisson-regression-1.html#cb516-5" tabindex="-1"></a></span>
+<span id="cb516-6"><a href="poisson-regression-1.html#cb516-6" tabindex="-1"></a><span class="fu">head</span>(NY)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:PR_2">
 <caption style="caption-side: top; text-align: center;">(#tab:PR_2) </caption><col><col><col><col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Date</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Day</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">High_Tem_F</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Low_Temp_F</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Precipitation</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Brooklyn_Bridge</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Manhattan_Bridge</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Williamsburg_Bridge</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Queensboro_Bridge</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Total</th></tr>
@@ -505,26 +507,26 @@ where the distribution is a Poisson with <span class="math inline">\(y_i\sim Poi
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6-Apr</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Wednesday</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">45&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">30&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.88e+03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.33e+03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.86e+03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.85e+03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.19e+04</td></tr>
 </table>
 
-<div id="visualize-the-data" class="section level2 hasAnchor" number="19.1">
-<h2><span class="header-section-number">19.1</span> Visualize the data<a href="poisson-regression-1.html#visualize-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualize-the-data" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Visualize the data<a href="poisson-regression-1.html#visualize-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>The data is not normally distributed.</li>
 <li>The data is a count variable.</li>
 <li>The regression line is not linear and is count (number of cylcist)</li>
 <li>The 95% confidence interval is shown in the graph.</li>
 </ul>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="poisson-regression-1.html#cb515-1" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
-<span id="cb515-2"><a href="poisson-regression-1.html#cb515-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span> <span class="co"># point represents a count of number of cyclist for a specific day</span></span>
-<span id="cb515-3"><a href="poisson-regression-1.html#cb515-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">method.args=</span><span class="fu">list</span>(<span class="at">family=</span><span class="st">&quot;poisson&quot;</span>), <span class="at">se=</span>T)<span class="sc">+</span> </span>
-<span id="cb515-4"><a href="poisson-regression-1.html#cb515-4" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
-<span id="cb515-5"><a href="poisson-regression-1.html#cb515-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
-<span id="cb515-6"><a href="poisson-regression-1.html#cb515-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="poisson-regression-1.html#cb517-1" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
+<span id="cb517-2"><a href="poisson-regression-1.html#cb517-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span> <span class="co"># point represents a count of number of cyclist for a specific day</span></span>
+<span id="cb517-3"><a href="poisson-regression-1.html#cb517-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">method.args=</span><span class="fu">list</span>(<span class="at">family=</span><span class="st">&quot;poisson&quot;</span>), <span class="at">se=</span>T)<span class="sc">+</span> </span>
+<span id="cb517-4"><a href="poisson-regression-1.html#cb517-4" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
+<span id="cb517-5"><a href="poisson-regression-1.html#cb517-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
+<span id="cb517-6"><a href="poisson-regression-1.html#cb517-6" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
 <p><img src="Quantitative-Agricultural-Economics_files/figure-html/PR_3-1.png" width="672" /></p>
 </div>
-<div id="creating-a-poisson-model" class="section level2 hasAnchor" number="19.2">
-<h2><span class="header-section-number">19.2</span> Creating a Poisson model<a href="poisson-regression-1.html#creating-a-poisson-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="poisson-regression-1.html#cb516-1" tabindex="-1"></a>NY_model<span class="ot">=</span><span class="fu">glm</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY, <span class="at">family=</span>poisson)</span>
-<span id="cb516-2"><a href="poisson-regression-1.html#cb516-2" tabindex="-1"></a><span class="fu">summary</span>(NY_model)</span></code></pre></div>
+<div id="creating-a-poisson-model" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Creating a Poisson model<a href="poisson-regression-1.html#creating-a-poisson-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="poisson-regression-1.html#cb518-1" tabindex="-1"></a>NY_model<span class="ot">=</span><span class="fu">glm</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY, <span class="at">family=</span>poisson)</span>
+<span id="cb518-2"><a href="poisson-regression-1.html#cb518-2" tabindex="-1"></a><span class="fu">summary</span>(NY_model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Brooklyn_Bridge ~ Precipitation, family = poisson, 
@@ -546,12 +548,12 @@ where the distribution is a Poisson with <span class="math inline">\(y_i\sim Poi
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
 </div>
-<div id="overdispersion-in-a-poisson-model" class="section level2 hasAnchor" number="19.3">
-<h2><span class="header-section-number">19.3</span> Overdispersion in a Poisson model<a href="poisson-regression-1.html#overdispersion-in-a-poisson-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overdispersion-in-a-poisson-model" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Overdispersion in a Poisson model<a href="poisson-regression-1.html#overdispersion-in-a-poisson-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Poisson model assumes that the mean and variance are equal. If the variance is greater than the mean, then the model is overdispersed. In this case, we will use the function <strong>dispersiontest</strong> from the package <strong>AER</strong> to test for overdispersion. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.</p>
 <p>Testing for overdispersion of Poisson model. In this case the model is highly obverdisperded. The dispersion is 418 and the p-value is p &lt; 0.001.</p>
-<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="poisson-regression-1.html#cb518-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
-<span id="cb518-2"><a href="poisson-regression-1.html#cb518-2" tabindex="-1"></a><span class="fu">dispersiontest</span>(NY_model)</span></code></pre></div>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="poisson-regression-1.html#cb520-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
+<span id="cb520-2"><a href="poisson-regression-1.html#cb520-2" tabindex="-1"></a><span class="fu">dispersiontest</span>(NY_model)</span></code></pre></div>
 <pre><code>## 
 ##  Overdispersion test
 ## 
@@ -563,35 +565,35 @@ where the distribution is a Poisson with <span class="math inline">\(y_i\sim Poi
 ##   418.2393</code></pre>
 <hr />
 </div>
-<div id="negative-binomial-regression-1" class="section level2 hasAnchor" number="19.4">
-<h2><span class="header-section-number">19.4</span> Negative binomial regression<a href="poisson-regression-1.html#negative-binomial-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="negative-binomial-regression-1" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Negative binomial regression<a href="poisson-regression-1.html#negative-binomial-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A negative binomial regression is used when the dependent variable is a count variable and that the data suggests overdipersion. Overdispersion is when the variance is greater than the mean. The Poisson distribution is used as a probability distribution and the <strong>log</strong> function is used as a link function. The model is called <strong>Negative Binomial Regression</strong>.</p>
 <p><span class="math display">\[\log\left(\lambda_i\right)=\beta_0+\beta_1X_i\]</span>
 where the distribution is a negative binomial with <span class="math inline">\(y_i\sim NegBinomial\left(\lambda_i\right)\)</span>.</p>
 <p>We will start by calculating the mean and vaiance of the above data set and detemrine if there is overdisperion</p>
 <p>The function required <strong>dispersiontest</strong> is available in the package <strong>AER</strong>. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.</p>
-<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="poisson-regression-1.html#cb520-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
-<span id="cb520-2"><a href="poisson-regression-1.html#cb520-2" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">glm</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY, <span class="at">family=</span>poisson)</span></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="poisson-regression-1.html#cb522-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
+<span id="cb522-2"><a href="poisson-regression-1.html#cb522-2" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">glm</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY, <span class="at">family=</span>poisson)</span></code></pre></div>
 <p>Note that the alpha is very large and the p-value is less than 0.05, which indicates that there is overdispersion. We will now create the negative binomial model. We will use the MASS library and the function <strong>glm.nb</strong> to create the model. The function is used to create a negative binomial model. The function is used in the same way as the glm function, but the family is set to negative binomial.</p>
 </div>
-<div id="visualization-of-the-negative-binomial-model" class="section level2 hasAnchor" number="19.5">
-<h2><span class="header-section-number">19.5</span> Visualization of the negative binomial model<a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualization-of-the-negative-binomial-model" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> Visualization of the negative binomial model<a href="poisson-regression-1.html#visualization-of-the-negative-binomial-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The graph shows the fitted line of the negative binomial model. The graph also shows the 95% confidence interval of the fitted line. The graph also shows the data points and the jitter of the data points. The graph also shows the x-axis and y-axis labels.</p>
-<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="poisson-regression-1.html#cb521-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb521-2"><a href="poisson-regression-1.html#cb521-2" tabindex="-1"></a></span>
-<span id="cb521-3"><a href="poisson-regression-1.html#cb521-3" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
-<span id="cb521-4"><a href="poisson-regression-1.html#cb521-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb521-5"><a href="poisson-regression-1.html#cb521-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm.nb&quot;</span>, <span class="at">se=</span>T)<span class="sc">+</span> </span>
-<span id="cb521-6"><a href="poisson-regression-1.html#cb521-6" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
-<span id="cb521-7"><a href="poisson-regression-1.html#cb521-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
-<span id="cb521-8"><a href="poisson-regression-1.html#cb521-8" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="poisson-regression-1.html#cb523-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb523-2"><a href="poisson-regression-1.html#cb523-2" tabindex="-1"></a></span>
+<span id="cb523-3"><a href="poisson-regression-1.html#cb523-3" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
+<span id="cb523-4"><a href="poisson-regression-1.html#cb523-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb523-5"><a href="poisson-regression-1.html#cb523-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm.nb&quot;</span>, <span class="at">se=</span>T)<span class="sc">+</span> </span>
+<span id="cb523-6"><a href="poisson-regression-1.html#cb523-6" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
+<span id="cb523-7"><a href="poisson-regression-1.html#cb523-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
+<span id="cb523-8"><a href="poisson-regression-1.html#cb523-8" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
 <p><img src="Quantitative-Agricultural-Economics_files/figure-html/PR_7-1.png" width="672" /></p>
 </div>
-<div id="creating-the-negative-binomial-model" class="section level2 hasAnchor" number="19.6">
-<h2><span class="header-section-number">19.6</span> Creating the negative binomial model<a href="poisson-regression-1.html#creating-the-negative-binomial-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="poisson-regression-1.html#cb522-1" tabindex="-1"></a>NY_model_nb<span class="ot">=</span>MASS<span class="sc">::</span><span class="fu">glm.nb</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY)</span>
-<span id="cb522-2"><a href="poisson-regression-1.html#cb522-2" tabindex="-1"></a></span>
-<span id="cb522-3"><a href="poisson-regression-1.html#cb522-3" tabindex="-1"></a><span class="fu">summary</span>(NY_model_nb) <span class="co"># note that theta is a the measure of dispersion</span></span></code></pre></div>
+<div id="creating-the-negative-binomial-model" class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">18.6</span> Creating the negative binomial model<a href="poisson-regression-1.html#creating-the-negative-binomial-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="poisson-regression-1.html#cb524-1" tabindex="-1"></a>NY_model_nb<span class="ot">=</span>MASS<span class="sc">::</span><span class="fu">glm.nb</span>(Brooklyn_Bridge <span class="sc">~</span> Precipitation, <span class="at">data=</span>NY)</span>
+<span id="cb524-2"><a href="poisson-regression-1.html#cb524-2" tabindex="-1"></a></span>
+<span id="cb524-3"><a href="poisson-regression-1.html#cb524-3" tabindex="-1"></a><span class="fu">summary</span>(NY_model_nb) <span class="co"># note that theta is a the measure of dispersion</span></span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## MASS::glm.nb(formula = Brooklyn_Bridge ~ Precipitation, data = NY, 
@@ -623,13 +625,13 @@ where the distribution is a negative binomial with <span class="math inline">\(y
 <li>The precipitation has a negative effect on the number of cyclist (negative sign). With precipitation (exp(coef) = -0.53) which states that there is 47% decrease in the number of cyclist for <strong>each inch of precipitation</strong>.</li>
 </ul>
 <p>We can reconvert the coefficient to a positive value by taking the exponential of the coefficient.</p>
-<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="poisson-regression-1.html#cb524-1" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(NY_model_nb))</span></code></pre></div>
+<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="poisson-regression-1.html#cb526-1" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(NY_model_nb))</span></code></pre></div>
 <pre><code>##   (Intercept) Precipitation 
 ##   3239.274773      0.587776</code></pre>
 <p>In this case to evaluate overdispersion in the negative binomial model we use the function <strong>odTest</strong> from the package <strong>pscl</strong>. The function will return the dispersion parameter and the p-value. If the p-value is less than 0.05, then there is overdispersion.</p>
-<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="poisson-regression-1.html#cb526-1" tabindex="-1"></a><span class="fu">library</span>(pscl)</span>
-<span id="cb526-2"><a href="poisson-regression-1.html#cb526-2" tabindex="-1"></a></span>
-<span id="cb526-3"><a href="poisson-regression-1.html#cb526-3" tabindex="-1"></a><span class="fu">odTest</span>(NY_model_nb)</span></code></pre></div>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="poisson-regression-1.html#cb528-1" tabindex="-1"></a><span class="fu">library</span>(pscl)</span>
+<span id="cb528-2"><a href="poisson-regression-1.html#cb528-2" tabindex="-1"></a></span>
+<span id="cb528-3"><a href="poisson-regression-1.html#cb528-3" tabindex="-1"></a><span class="fu">odTest</span>(NY_model_nb)</span></code></pre></div>
 <pre><code>## Likelihood ratio test of H0: Poisson, as restricted NB model:
 ## n.b., the distribution of the test-statistic under H0 is non-standard
 ## e.g., see help(odTest) for details/references
@@ -637,31 +639,31 @@ where the distribution is a negative binomial with <span class="math inline">\(y
 ## Critical value of test statistic at the alpha= 0.05 level: 2.7055 
 ## Chi-Square Test Statistic =  80031.1386 p-value = &lt; 2.2e-16</code></pre>
 <hr />
-<div id="comparing-dispersion-models-1" class="section level3 hasAnchor" number="19.6.1">
-<h3><span class="header-section-number">19.6.1</span> Comparing dispersion models<a href="poisson-regression-1.html#comparing-dispersion-models-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="comparing-dispersion-models-1" class="section level3 hasAnchor" number="18.6.1">
+<h3><span class="header-section-number">18.6.1</span> Comparing dispersion models<a href="poisson-regression-1.html#comparing-dispersion-models-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Comparing the dispersion of a Poisson and a Negative binomial model. The approach is to use a likelyhood ratio test. Note the fitted log-likelihood of the NB model (-1677.1) is much large/better than the Poisson model (-41692.7). The p-value is less than 0.05, thus the negative binomial model is better than the Poisson model.</p>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="poisson-regression-1.html#cb528-1" tabindex="-1"></a>    <span class="co"># Calculate the likelihood ratio statistic</span></span>
-<span id="cb528-2"><a href="poisson-regression-1.html#cb528-2" tabindex="-1"></a>    likelihood_ratio <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="fu">logLik</span>(NY_model_nb) <span class="sc">-</span> <span class="fu">logLik</span>(NY_model))</span>
-<span id="cb528-3"><a href="poisson-regression-1.html#cb528-3" tabindex="-1"></a>    </span>
-<span id="cb528-4"><a href="poisson-regression-1.html#cb528-4" tabindex="-1"></a><span class="fu">logLik</span>(NY_model_nb) <span class="co"># the log likelihood of the negative binomial model</span></span></code></pre></div>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="poisson-regression-1.html#cb530-1" tabindex="-1"></a>    <span class="co"># Calculate the likelihood ratio statistic</span></span>
+<span id="cb530-2"><a href="poisson-regression-1.html#cb530-2" tabindex="-1"></a>    likelihood_ratio <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="fu">logLik</span>(NY_model_nb) <span class="sc">-</span> <span class="fu">logLik</span>(NY_model))</span>
+<span id="cb530-3"><a href="poisson-regression-1.html#cb530-3" tabindex="-1"></a>    </span>
+<span id="cb530-4"><a href="poisson-regression-1.html#cb530-4" tabindex="-1"></a><span class="fu">logLik</span>(NY_model_nb) <span class="co"># the log likelihood of the negative binomial model</span></span></code></pre></div>
 <pre><code>## &#39;log Lik.&#39; -1677.1 (df=3)</code></pre>
-<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="poisson-regression-1.html#cb530-1" tabindex="-1"></a><span class="fu">logLik</span>(NY_model) <span class="co"># the log likelihood of the Poisson model</span></span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="poisson-regression-1.html#cb532-1" tabindex="-1"></a><span class="fu">logLik</span>(NY_model) <span class="co"># the log likelihood of the Poisson model</span></span></code></pre></div>
 <pre><code>## &#39;log Lik.&#39; -41692.67 (df=2)</code></pre>
-<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="poisson-regression-1.html#cb532-1" tabindex="-1"></a>    <span class="co"># Degrees of freedom (df) is the difference in the number of parameters</span></span>
-<span id="cb532-2"><a href="poisson-regression-1.html#cb532-2" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(NY_model_nb)) <span class="sc">-</span> <span class="fu">length</span>(<span class="fu">coef</span>(NY_model))</span>
-<span id="cb532-3"><a href="poisson-regression-1.html#cb532-3" tabindex="-1"></a>    </span>
-<span id="cb532-4"><a href="poisson-regression-1.html#cb532-4" tabindex="-1"></a>    <span class="co"># Perform the chi-squared test</span></span>
-<span id="cb532-5"><a href="poisson-regression-1.html#cb532-5" tabindex="-1"></a>    p_value <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(likelihood_ratio, df)</span>
-<span id="cb532-6"><a href="poisson-regression-1.html#cb532-6" tabindex="-1"></a>    </span>
-<span id="cb532-7"><a href="poisson-regression-1.html#cb532-7" tabindex="-1"></a>    <span class="co"># Print the p-value</span></span>
-<span id="cb532-8"><a href="poisson-regression-1.html#cb532-8" tabindex="-1"></a>    <span class="fu">print</span>(p_value)</span></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="poisson-regression-1.html#cb534-1" tabindex="-1"></a>    <span class="co"># Degrees of freedom (df) is the difference in the number of parameters</span></span>
+<span id="cb534-2"><a href="poisson-regression-1.html#cb534-2" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(NY_model_nb)) <span class="sc">-</span> <span class="fu">length</span>(<span class="fu">coef</span>(NY_model))</span>
+<span id="cb534-3"><a href="poisson-regression-1.html#cb534-3" tabindex="-1"></a>    </span>
+<span id="cb534-4"><a href="poisson-regression-1.html#cb534-4" tabindex="-1"></a>    <span class="co"># Perform the chi-squared test</span></span>
+<span id="cb534-5"><a href="poisson-regression-1.html#cb534-5" tabindex="-1"></a>    p_value <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(likelihood_ratio, df)</span>
+<span id="cb534-6"><a href="poisson-regression-1.html#cb534-6" tabindex="-1"></a>    </span>
+<span id="cb534-7"><a href="poisson-regression-1.html#cb534-7" tabindex="-1"></a>    <span class="co"># Print the p-value</span></span>
+<span id="cb534-8"><a href="poisson-regression-1.html#cb534-8" tabindex="-1"></a>    <span class="fu">print</span>(p_value)</span></code></pre></div>
 <pre><code>## &#39;log Lik.&#39; 0 (df=3)</code></pre>
 </div>
-<div id="alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1" class="section level3 hasAnchor" number="19.6.2">
-<h3><span class="header-section-number">19.6.2</span> Alternative approach to compare the Poisson and the negative binomial model.<a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1" class="section level3 hasAnchor" number="18.6.2">
+<h3><span class="header-section-number">18.6.2</span> Alternative approach to compare the Poisson and the negative binomial model.<a href="poisson-regression-1.html#alternative-approach-to-compare-the-poisson-and-the-negative-binomial-model.-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can also use the function <strong>lrtest</strong> from the package <strong>lmtest</strong> to perform the likelihood ratio test. The function will return the likelihood ratio test statistic and the p-value. If the p-value is less than 0.05, then the negative binomial model is better than the Poisson model.</p>
-<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="poisson-regression-1.html#cb534-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
-<span id="cb534-2"><a href="poisson-regression-1.html#cb534-2" tabindex="-1"></a><span class="fu">lrtest</span>(NY_model_nb, NY_model)</span></code></pre></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="poisson-regression-1.html#cb536-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb536-2"><a href="poisson-regression-1.html#cb536-2" tabindex="-1"></a><span class="fu">lrtest</span>(NY_model_nb, NY_model)</span></code></pre></div>
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:PR_12">
 <caption style="caption-side: top; text-align: center;">(#tab:PR_12) </caption><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">#Df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">LogLik</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Chisq</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Pr(&gt;Chisq)</th></tr>
@@ -673,16 +675,16 @@ where the distribution is a negative binomial with <span class="math inline">\(y
 
 </div>
 </div>
-<div id="overlaying-the-poisson-and-the-negative-binomial-models" class="section level2 hasAnchor" number="19.7">
-<h2><span class="header-section-number">19.7</span> Overlaying the Poisson and the Negative binomial models<a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overlaying-the-poisson-and-the-negative-binomial-models" class="section level2 hasAnchor" number="18.7">
+<h2><span class="header-section-number">18.7</span> Overlaying the Poisson and the Negative binomial models<a href="poisson-regression-1.html#overlaying-the-poisson-and-the-negative-binomial-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this case the Poisson model is shown in red and the negative binomial model is shown in blue. The graph shows the fitted line of the Poisson model and the negative binomial model. The graph also shows the 95% confidence interval of the fitted line. The graph also shows the data points and the jitter of the data points. The graph also shows the x-axis and y-axis labels. There is a statistical diference between the models, however the fitted lines are very similar and consequently in this case the differences may not be important.</p>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="poisson-regression-1.html#cb535-1" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
-<span id="cb535-2"><a href="poisson-regression-1.html#cb535-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb535-3"><a href="poisson-regression-1.html#cb535-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">method.args=</span><span class="fu">list</span>(<span class="at">family=</span><span class="st">&quot;poisson&quot;</span>), <span class="at">se=</span>T, <span class="at">color=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb535-4"><a href="poisson-regression-1.html#cb535-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm.nb&quot;</span>, <span class="at">se=</span>T, <span class="at">color=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb535-5"><a href="poisson-regression-1.html#cb535-5" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
-<span id="cb535-6"><a href="poisson-regression-1.html#cb535-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
-<span id="cb535-7"><a href="poisson-regression-1.html#cb535-7" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="poisson-regression-1.html#cb537-1" tabindex="-1"></a><span class="fu">ggplot</span>(NY, <span class="fu">aes</span>(<span class="at">x=</span>Precipitation, <span class="at">y=</span>Brooklyn_Bridge))<span class="sc">+</span></span>
+<span id="cb537-2"><a href="poisson-regression-1.html#cb537-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.01</span>, <span class="at">height =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb537-3"><a href="poisson-regression-1.html#cb537-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">method.args=</span><span class="fu">list</span>(<span class="at">family=</span><span class="st">&quot;poisson&quot;</span>), <span class="at">se=</span>T, <span class="at">color=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb537-4"><a href="poisson-regression-1.html#cb537-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm.nb&quot;</span>, <span class="at">se=</span>T, <span class="at">color=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb537-5"><a href="poisson-regression-1.html#cb537-5" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Precipitation in inches&quot;</span>)<span class="sc">+</span></span>
+<span id="cb537-6"><a href="poisson-regression-1.html#cb537-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of cyclist&quot;</span>)<span class="sc">+</span></span>
+<span id="cb537-7"><a href="poisson-regression-1.html#cb537-7" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code></pre></div>
 <p><img src="Quantitative-Agricultural-Economics_files/figure-html/PR_13-1.png" width="672" /></p>
 
 </div>
@@ -693,7 +695,7 @@ where the distribution is a negative binomial with <span class="math inline">\(y
         </div>
       </div>
 <a href="binomial_regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="multinomial-logit-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="arima.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

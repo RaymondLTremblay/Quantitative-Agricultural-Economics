@@ -286,7 +286,7 @@ The standard deviation of the mean is a measure of the dispersion of the mean of
 $$s=\sqrt { s^{ 2 } } $$
 
 
-# What is the mode?
+## What is the mode?
 
 
 The mode is the value that appears most frequently in a data set. A set of data may have one mode, more than one mode, or no mode at all. The mode is one of the measures of CENTRAL TENDENCIES.  
@@ -375,7 +375,7 @@ subset(dlf, select = c("day1", "day2")) -> dlfsub # create a subset of the data
 
 dlfsub1 <- stack(dlfsub)  # reorganize the data in the long form
 
-dlfsub1 # the data is now in the long form
+head(dlfsub1) # the data is now in the long form
 
 bartlett.test(values~ind, data=dlfsub1)
 
@@ -403,7 +403,7 @@ bf.test(values~ind, data=dlfsub1)
 
 
 
-### Levene's Test: testing for assumption of normality among groups
+### Levene's Test: testing for assumption of equality of variance among groups
 
 Levene's test is a test of the null hypothesis that the variances in the different groups are equal. The test is based on the absolute deviations of the observations from the group means. The test is considered to be robust against departures from normality, but it is sensitive to the presence of outliers.
 

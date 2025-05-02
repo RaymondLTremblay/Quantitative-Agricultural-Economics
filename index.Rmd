@@ -1,9 +1,36 @@
---- 
-title: "Quantitative Agricultural Economics"
-author: "Raymond L. Tremblay"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
 ---
+author:
+- name: Raymond L. Tremblay
+  affiliation: Universidad de Puerto Rico
+  email: raymond.tremblay@upr.edu
+date: '`r format(Sys.Date())`'
+title: Quantitative Agricultural Economics
+site: bookdown::bookdown_site
+output:
+  html_document:
+    keep_tex: true
+    theme: lumen
+    highlight: tango
+#    includes:
+#      after_body: footer.tex
+biblio-style: apalike
+---
+  
+
+
+
+
+
+
+
+
+#--- 
+#title: "Quantitative Agricultural Economics"
+#author: "Raymond L. Tremblay"
+#date: "`r Sys.Date()`"
+#site: bookdown::bookdown_site
+
+#---
 
 # Daily Activities
 
@@ -79,6 +106,5 @@ Day 4: Econometric models and assumptions
 
 •⁠ ⁠Multinomial logit regression and post-estimation tests/checks
 
-•⁠ ⁠Beta regression
+•⁠ ⁠Beta regresonsi
 
-•⁠ ⁠VAR models (Vector autoregressive models)

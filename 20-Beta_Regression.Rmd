@@ -204,7 +204,8 @@ First convert the data in proportions since the program has to use data greater 
 
 ```{r, beta_7}
 Smokers$Y2000P=(Smokers$Y2000)/100 # convertir en proporción
-Smokers %>% dplyr::select(Country_Name, Y2000P)
+Smokers %>% dplyr::select(Country_Name, Y2000P) |> 
+  head()
 ```
 
 ***
@@ -421,7 +422,8 @@ dp2$quantile_.85=predict(modelpropFr, type = "quantile", at = c(0.85))
 dp2$quantile_.90=predict(modelpropFr, type = "quantile", at = c(0.90)) # calculate the quantiles of 90%
 dp2$quantile_.95=predict(modelpropFr, type = "quantile", at = c(0.95))
 dp2$quantile_.99=predict(modelpropFr, type = "quantile", at = c(0.99)) # calculate the quantiles of 99%
-dp2
+dp2 |> 
+  head()
 
 ```
 

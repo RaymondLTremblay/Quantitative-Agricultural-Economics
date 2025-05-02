@@ -1,0 +1,386 @@
+# ARIMA
+
+ARIMA models are a class of models that can be used to predict time series data. They are particularly useful when the data is non-stationary, meaning that the mean and variance of the data change over time. ARIMA models are a combination of three components:
+
+- Autoregressive (AR) component: This component uses the relationship between an observation and a number of lagged observations (previous time points).
+
+- Integrated (I) component: This component uses differencing of raw observations to allow for the time series to become stationary.
+
+- Moving Average (MA) component: This component uses the relationship between an observation and a residual error from a moving average model applied to lagged observations.
+
+ARIMA models are typically denoted as ARIMA(p, d, q), where:
+
+- p is the number of lag observations included in the model (the number of autoregressive terms).
+- d is the number of times that the raw observations are differenced (the degree of differencing).
+- q is the size of the moving average window (the number of lagged forecast errors in the prediction equation).
+
+ARIMA models can be used for both univariate and multivariate time series data. They are widely used in various fields, including finance, economics, and environmental science, for forecasting future values based on past observations.
+
+
+## Forecasting R packages
+
+There is multiple packages in R which can be used to do ARIMA models and forecasting. Each will have its own advantages and disadvantages. Some of the most popular packages are:
+
+
+- `arima2` arima2 is a package that provides a fast and efficient implementation of the ARIMA model. It is designed to handle large datasets and provides a user-friendly interface for modeling and forecasting time series data. The arima2 package is particularly useful for users who need to quickly fit ARIMA models to large datasets without sacrificing performance.
+
+- using the `forecast` package and the function Arima(). The forecast package is a widely used package for forecasting time series data in R. It provides a comprehensive set of tools for modeling and forecasting time series data, including ARIMA models. The forecast package is user-friendly and provides a consistent interface for modeling and forecasting time series data. It also includes functions for evaluating the accuracy of forecasts and visualizing the results.
+
+- `fable` which is a new package for forecasting in R. It is part of the tidyverse and is designed to work with the `tidy` data format. The fable package provides a consistent interface for modeling and forecasting time series data, making it easier to work with complex models and large datasets. See https://otexts.com/fpp3/.
+
+- `modeltime` which is a package that provides a framework for modeling and forecasting time series data in R. It is designed to work with the `tidy` data format and provides a consistent interface for modeling and forecasting time series data. The modeltime package allows users to easily create, evaluate, and visualize time series models, making it a powerful tool for time series analysis.
+
+
+
+
+
+
+### Load libraries
+
+```{r Arima1, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(tsibble) # for tsibble data format, which is used in fable
+library(fabletools) # for fabletools, which is used in fable 
+
+library(fable) # the main forecasting package
+```
+
+
+To evaluate the use of thediffrent functions in **fable** we will use the data set `tourism` which is a built-in dataset in the `fable` package. The dataset contains information about the number of tourists visiting different regions of Australia over time. The data is in a tsibble format, which is a tidy data format for time series data.
+
+- Later on I will show how to create tsiblle format data set from a data frame using the `tsibble` package.
+
+
+In the `tourism` dataset, the data is organized by 
+
+ - Quarter: the time period of the observation, which is in quarters (Q1, Q2, Q3, Q4) of each year.
+ - Region: the region of Australia where the observation was made.
+ - State: the state of Australia where the observation was made.
+ - Purpose: the purpose of the visit (e.g., holiday, business, etc.)
+ - Trips: the number of trips made by tourists to that region in that quarter.
+ 
+
+note:
+
+Upper left corner 
+
+ - A tsibble is a data frame with a time index. It is a tidy data format for time series data that allows for easy manipulation and analysis of time series data in R. A tsibble is similar to a regular data frame, but it has additional attributes that make it easier to work with time series data.
+ - we see the first 6 rows with the 5 columns
+
+```{r, Arima2, message=FALSE, warning=FALSE}
+head(tourism)
+
+
+
+```
+
+
+Let's choose a subset of the data to work with. We will use the data for Alice Springs, which is a region in the Northern Territory of Australia. We will filter the data to include only the observations for Alice Springs and then group the data by purpose of visit. 
+
+We have 320 rows and 5 columns in the dataset. The columns are:
+
+- Quarter: the time period of the observation, which is in quarters (Q1, Q2, Q3, Q4) of each year.
+- Region: the region of Australia where the observation was made.
+- State: the state of Australia where the observation was made.
+- Purpose: the purpose of the visit (e.g., holiday, business, etc.)
+- Trips: the number of trips made by tourists to that region in that quarter.
+
+
+
+```{r, Arima3, message=FALSE, warning=FALSE}
+tourism_Alice <- tourism %>%
+  dplyr::filter(Region == "Alice Springs")
+
+tourism_Alice %>%
+  group_by(Purpose)
+
+
+```
+
+
+Let's look at the data for Alice Springs. We will use the `ggplot2` package to create a line plot of the number of trips made by tourists to Alice Springs over time. We will use the `geom_line()` function to create the line plot and the `facet_wrap()` function to create separate plots for each purpose of visit.
+
+```{r, Arima4, message=FALSE, warning=FALSE}
+tourism_Alice %>%
+  ggplot(aes(x = Quarter, y = Trips)) +
+  geom_line() +
+  facet_wrap(~ Purpose) +
+  labs(title = "Number of trips to Alice Springs by purpose of visit",
+       x = "Quarter",
+       y = "Number of trips") +
+  theme_minimal()
+```
+
+
+Alternative plot: autoplot
+
+In the following figure we can use the `autoplot()` function from the `fable` package to create a line plot of the number of trips made by tourists to Alice Springs over time. The `autoplot()` function is a convenient way to create plots of time series data in R. It automatically detects the time index and creates a line plot of the data.
+
+
+
+```{r, Arima5, message=FALSE, warning=FALSE}
+tourism_Alice %>%
+  autoplot(Trips)
+```
+
+
+We will comprae2 types of models the ETS model and the ARIMA model. The ETS model is a state space model that is used to forecast time series data. It is a flexible model that can handle a wide range of time series data, including seasonal and non-seasonal data. The ARIMA model is a more traditional time series model that is used to forecast time series data. It is a more complex model that requires more parameters to be estimated.
+
+Reference for the ETS and ARIMA models can be found here: Hyndman, R. J., & Athanasopoulos, G. (2018). Forecasting: principles and practice (3nd ed.). OTexts. https://otexts.com/fpp3/
+
+
+
+### Fit the models
+
+We will use the `model()` function from the `fable` package to fit the ETS and ARIMA models to the data. The `model()` function takes a tsibble object as input and fits the specified models to the data. The `ETS()` function is used to fit the ETS model, and the `ARIMA()` function is used to fit the ARIMA model. We will use the `trend("A")` argument in the `ETS()` function to specify that we want to use an additive trend in the model. While in the ARIMA model we will use the default settings.
+
+The function will create an object called fit which contains the fitted models in a **mable** format. A mable is a data frame that contains the fitted models and their parameters. The mable format is used in the `fable` package to store the fitted models and their parameters and shown as a table. Note that variable **ets** and **arima** are nested within the variable **.model**. The **.model** variable contains the fitted models and their parameters. The **.model** variable is a list column that contains the fitted models and their parameters. The **.model** variable is used to store the fitted models and their parameters in a tidy format.
+
+
+
+
+```{r, Arima6, message=FALSE, warning=FALSE}
+fit <- tourism_Alice %>%
+  model(
+    ets = ETS(Trips ~ trend("A")),
+    arima = ARIMA(Trips)
+  )
+fit
+```
+
+```{r, Arima7, message=FALSE, warning=FALSE}
+fit |> 
+  dplyr::select(Region, Purpose, arima) |> 
+  coef()
+```
+
+
+
+The function **glance** will give an output for each model with the following information:
+
+
+- .model: the name of the model.
+
+- sigma2: the estimated variance of the residuals. The lower the sigma2, the better the model fits the data.
+
+- log-lik: a measure of how well the model fits the data. The higher the log likelihood, the better the model fits the data.
+
+- AIC: Akaike Information Criterion, a measure of the relative quality of a statistical model for a given dataset. The lower the AIC, the better the model fits the data.
+
+- AICc: Corrected Akaike Information Criterion, a measure of the relative quality of a statistical model for a given dataset. The lower the AICc, the better the model fits the data.
+
+- BIC: Bayesian Information Criterion, a measure of the relative quality of a statistical model for a given dataset. The lower the BIC, the better the model fits the data.
+
+- MSE: Mean Squared Error, a measure of the average squared difference between the predicted and actual values. The lower the MSE, the better the model fits the data.
+
+- AMSE: Adjusted Mean Squared Error, a measure of the average squared difference between the predicted and actual values. The lower the AMSE, the better the model fits the data.
+
+- MAE: Mean Absolute Error, a measure of the average absolute difference between the predicted and actual values. The lower the MAE, the better the model fits the data.
+
+- ar_roots: the estimated autoregressive roots of the model. The closer the roots are to 1, the better the model fits the data.
+
+- ma_roots: the estimated moving average roots of the model. The closer the roots are to 1, the better the model fits the data.
+
+
+
+
+```{r, Arima8, message=FALSE, warning=FALSE}
+fit %>%
+ dplyr::select(Region, Purpose, arima) %>%
+  glance() 
+```
+
+If you are evaluating on model of evaluate one model you can use the function **report** function which decribes more of the model parameters
+
+```{r, Arima9, message=FALSE, warning=FALSE}
+fit %>%
+  dplyr::filter(Purpose == "Business") %>%
+ dplyr::select(ets) %>%
+  report()
+```
+
+One of the nice function in tidyverse is the **augment** function which will give you the fitted values and the residuals of the model. The fitted values are the predicted values of the model, and the residuals are the difference between the predicted and actual values. The residuals are used to evaluate the model fit. The residuals should be normally distributed and have a mean of zero. If the residuals are not normally distributed or have a mean of zero, then the model is not a good fit for the data.
+
+Note that the augment function will give you the fitted values and the residuals for all the models in the mable for each of the rows in your data frame
+
+- .fitted: the fitted values of the model.
+- .resid: the residuals of the model.
+- .innov: the innovations of the model.
+
+
+```{r, Arima10, message=FALSE, warning=FALSE}
+fit |> 
+  augment()
+```
+
+From this augmented data frame you can evaluate if your model is a good fit for the data. You can use the `ggplot2` package to create a scatter plot of the fitted values vs the residuals. The residuals should be normally distributed and have a mean of zero. If the residuals are not normally distributed or have a mean of zero, then the model is not a good fit for the data.
+
+
+```{r, Arima11, message=FALSE, warning=FALSE}
+fit %>%
+  dplyr::select(Region, Purpose, arima) %>%
+  augment() %>%
+  ggplot(aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Residuals vs Fitted values",
+       x = "Fitted values",
+       y = "Residuals") +
+  theme_minimal()
+```
+
+
+
+We can compare how well the models fit the data using the `accuracy()` function. The `accuracy()` function will give you a summary of the model fit for each model in the mable. The summary includes the following information:
+
+- ME: Mean Error, a measure of the average error of the model. The lower the ME, the better the model fits the data.
+- RMSE: Root Mean Squared Error, a measure of the average squared difference between the predicted and actual values. The lower the RMSE, the better the model fits the data.
+- MAE: Mean Absolute Error, a measure of the average absolute difference between the predicted and actual values. The lower the MAE, the better the model fits the data.
+- MPE: Mean Percentage Error, a measure of the average percentage error of the model. The lower the MPE, the better the model fits the data.
+- MAPE: Mean Absolute Percentage Error, a measure of the average absolute percentage error of the model. The lower the MAPE, the better the model fits the data.
+- MASE: Mean Absolute Scaled Error, a measure of the average absolute scaled error of the model. The lower the MASE, the better the model fits the data.
+- RMSSE: Root Mean Squared Scaled Error, a measure of the average squared scaled error of the model. The lower the RMSSE, the better the model fits the data.
+- ACF1: Autocorrelation of the residuals at lag 1, a measure of the autocorrelation of the residuals. The lower the ACF1, the better the model fits the data.
+
+```{r, Arima12, message=FALSE, warning=FALSE}
+fit %>%
+  accuracy() |> 
+  arrange (RMSE)
+```
+
+
+## Forcasting
+
+We can forecasts the models using the `forecast()` function. The `forecast()` function will give you a forecast of the model for the specified number of periods. The forecast will include the predicted values and the confidence intervals for the predicted values. The confidence intervals are used to evaluate the uncertainty of the forecast. The wider the confidence intervals, the more uncertain the forecast is.
+
+```{r, Arima13, message=FALSE, warning=FALSE}
+fit |> dplyr::filter(Purpose == "Business") |>
+  forecast(h = "10 years") |> 
+  autoplot(tourism_Alice) +
+  labs(title = "Forecast of trips to Alice Springs",
+       x = "Quarter",
+       y = "Number of trips") +
+  theme_minimal()
+
+```
+
+
+The data for the forecast is in a tsibble format. The forecast data is in a tidy data format, which makes it easy to work with and visualize. The forecast data is in a long format, which means that each row represents a single observation. The forecast data includes the following columns:
+
+
+```{r, Arima14, message=FALSE, warning=FALSE}
+future_10=fit |> dplyr::filter(Purpose == "Business" | Purpose == "Visiting") |>
+  forecast(h = "10 years")
+
+future_10
+
+
+```
+
+
+
+The results are in a **fable** (forecast table) format. The fable format is a tidy data format for forecast data that allows for easy manipulation and analysis of forecast data in R. The mean and confidence intervals are in a long format and can extracted, which means that each row represents a single observation. The fable format is similar to the tsibble format, but it has additional attributes that make it easier to work with forecast data. To extract the confidence interval you need to use the function **hilo**. The **hilo** function will give you the confidence intervals for the forecast. The confidence intervals are used to evaluate the uncertainty of the forecast. The wider the confidence intervals, the more uncertain the forecast is.
+
+```{r, Arima15, message=FALSE, warning=FALSE}
+future_10 |> 
+  hilo(level = c(80, 95)) 
+
+```
+
+
+
+We can also visualize the forcast using the `autoplot()` function from the `fable` package. 
+
+```{r, Arima16, message=FALSE, warning=FALSE}
+future_10 |> 
+  autoplot(tourism_Alice) +
+  labs(title = "Forecast of trips to Alice Springs",
+       x = "Quarter",
+       y = "Number of trips") +
+  theme_minimal()
+```
+
+
+### Other functions
+
+
+ - refit: The `refit()` function is used to refit a model to a new dataset. The `refit()` function takes a fitted model and a new dataset as input and refits the model to the new dataset. The `refit()` function is useful when you want to update a model with new data or when you want to use a different dataset to fit the model.
+ 
+ - stream: The `stream()` function is used to create a stream plot of the forecast data. The `stream()` function takes a fitted model and a new dataset as input and creates a stream plot of the forecast data. The `stream()` function is useful when you want to visualize the forecast data in a stream plot format.
+ 
+ - generate: The `generate()` function is used to generate a new dataset from a fitted model. The `generate()` function takes a fitted model and a new dataset as input and generates a new dataset from the fitted model. The `generate()` function is useful when you want to create a new dataset from a fitted model or when you want to use a different dataset to generate the new dataset.
+ 
+ 
+ - interpolate: The `interpolate()` function is used to interpolate missing values in a dataset. The `interpolate()` function takes a dataset as input and interpolates the missing values in the dataset. The `interpolate()` function is useful when you want to fill in missing values in a dataset or when you want to use a different dataset to interpolate the missing values.
+ 
+ - equation: The `equation()` function is used to create a mathematical equation from a fitted model. The `equation()` function takes a fitted model as input and creates a mathematical equation from the fitted model. The `equation()` function is useful when you want to create a mathematical equation from a fitted model or when you want to use a different dataset to create the mathematical equation.
+ 
+ 
+****
+
+
+## How to create a **tsibble** data set from a data frame
+
+
+
+
+In this section I'll explain how to create a file to be used with this package. The format requires the data frame to be a tsibble object. A tsibble is a data frame with a time index. It is a tidy data format for time series data that allows for easy manipulation and analysis of time series data in R. A tsibble is similar to a regular data frame, but it has additional attributes that make it easier to work with time series data.
+
+Let use create a data frame with the following columns:
+
+- Year: the year of the observation.
+- Month: the month of the observation.
+- Day: the day of the observation.
+- Value: the value of the observation.
+- Type: the type of observation (e.g., temperature, precipitation, etc.)
+- Location: the location of the observation (e.g., city, state, etc.)
+
+
+```{r, Arima17, message=FALSE, warning=FALSE}
+library(tsibble)
+library(lubridate)
+library(dplyr)
+library(tibble)
+
+
+# now let us create a small tsibble 
+
+df <- tibble(
+  Year = c(2020, 2020, 2020, 2020, 2020, 2020),
+  Month = c(1, 2, 3, 4, 5, 6),
+  Day = c(1, 1, 1, 1, 1, 1),
+  number_flowers = c(10, 20, 30, 40, 50, 60),
+  precipitation = c(1, 20, 3, 40, 5, 25)
+)
+
+
+df
+
+``` 
+
+Convert the df as tsibble. Note that when we call the df it is now a tsibble (top left corner of the df)
+
+```{r, Arima18, message=FALSE, warning=FALSE}
+df_tsibble <- df %>%
+  mutate(Date = make_date(Year, Month, Day)) %>%
+  dplyr::select(-Year, -Month, -Day) %>%
+  as_tsibble(index = Date)
+
+df_tsibble
+```
+
+Note that the tsibble object has a time index, which is the Date column. The Date column is used as the time index for the tsibble object.
+
+```{r, Arima19, message=FALSE, warning=FALSE}
+df_tsibble %>%
+  autoplot(precipitation)
+
+
+```
+
+See also this link for more information on how to create a tsibble object from a data frame:
+
+https://otexts.com/fpp3/tsibble.html#creating-a-tsibble
+
+

@@ -98,6 +98,39 @@ In this tutorial, we introduced you to R and RStudio, two powerful tools for dat
 
 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ymlthis)
+```
+
+
+
+```{r, echo= FALSE, eval=FALSE}
+
+yml() %>% 
+  yml_title("Quantitative Agricultural Economics") |> 
+ yml_output(
+    html_document = list(
+      toc = TRUE,
+      number_sections = TRUE,
+      fig_caption = TRUE
+    )
+  )
+
+yml() %>%
+  yml_author(
+    c("Raymond L. Tremblay"),
+    affiliation = "Universidad de Puerto Rico"
+  ) %>%
+  yml_title("Quantitative Agricultural Economics") %>% 
+  yml_output(
+    html_document(
+      keep_tex = TRUE,
+      theme = "cerulean",
+      includes = includes2(after_body = "footer.tex")
+    )
+  ) %>%
+  yml_latex_opts(biblio_style = "apalike")
+```
 
 
 

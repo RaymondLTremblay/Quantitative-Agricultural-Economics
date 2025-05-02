@@ -5,13 +5,6 @@
 
 
 
-Last Revision
-
-```{r echo=FALSE}
-
-Sys.Date()
-```
-
 ------------------------------------------------------------------------
 
 The following command verifies that you have the necessary libraries installed and activates them if available on your system. The package **pacman** evaluates if you have them installed and installs them if necessary.

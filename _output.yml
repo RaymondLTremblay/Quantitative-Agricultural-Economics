@@ -1,8 +1,50 @@
 bookdown::gitbook:
-  css: style.css # custom css with tutorial.css
+  css: bootstrap_Yeti.css # custom css with tutorial.css
   config:
     toc:
       before: |
         <li><a href="./">QAE</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+
+
+
+
+---
+#bookdown::gitbook:
+ # css: style.css # custom css with tutorial.css
+ #output:
+#  bookdown::html_book:
+ #   theme: cerulean
+  #  highlight: tango
+   # toc: true
+    #toc_depth: 2
+#    number_sections: true
+ #   fig_caption: true
+  #  self_contained: false
+   # lib_dir: libs
+    #includes:
+     # in_header: header.html
+      #after_body: footer.html
+---
+ # pdf_document:
+  #  toc: true
+   # toc_depth: 2
+  #  number_sections: true
+  #  fig_caption: true
+  #  includes:
+   #   in_header: header.tex
+    #  after_body: footer.tex
+ # html_document:
+   # keep_tex: true
+    #includes:
+   #   after_body: footer.tex
+#    toc: true
+ #   theme: cerulean
+ # config:
+ #   toc:
+  #    before: |
+ #       <li><a href="./">QAE</a></li>
+ #     after: |
+ #       <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
